@@ -1,0 +1,1654 @@
+{
+ "schema": "LONG2_DIRECTION_OMNI_JOBS_V1",
+ "plan_doc": "DIRECTION_PLAN_v1.md",
+ "status": "PROPOSAL_ONLY_NOT_PRODUCTION_APPROVAL",
+ "source_storyboard_created_kst": "2026-10-07T08:09:25+09:00",
+ "timeline": {
+  "fps": 30,
+  "shots": 111,
+  "frames": 11039,
+  "duration": "06:07.97",
+  "timeline_frame_indexing": "global F frames are zero-based; ranges are inclusive per source cue sheet"
+ },
+ "rules": [
+  "Blender base pixels never pass through a generative model",
+  "Fact pixels (times, 160 m, 192, labels) only from Blender originals",
+  "Original and diagram twin share identical trims and identical 24->30fps conversion",
+  "No people/faces/flames/text/numbers/logos/station names in Omni output",
+  "Do not crop or inpaint visible watermarks; regenerate under a no-visible-mark export condition"
+ ],
+ "lock_block": "LOCK: keep exact framing, camera path, timing and all geometry. NO people, NO faces, NO flames, NO fire, NO text, NO letters, NO numbers, NO logos, NO brand livery, NO station names, NO signage words. Present-day, unbranded, location-unspecified Korean-style metro interior.",
+ "boundaries": [
+  {
+   "n": 1,
+   "from": "S001",
+   "from_type": "BLENDER",
+   "to": "S002",
+   "to_type": "FLOW",
+   "cut_frame": 67,
+   "primary": "T1",
+   "secondary": [
+    "T4",
+    "T6"
+   ],
+   "motif": [
+    "M2"
+   ]
+  },
+  {
+   "n": 2,
+   "from": "S002",
+   "from_type": "FLOW",
+   "to": "S003",
+   "to_type": "BLENDER",
+   "cut_frame": 148,
+   "primary": "T2_tail",
+   "secondary": [
+    "T6"
+   ],
+   "motif": []
+  },
+  {
+   "n": 3,
+   "from": "S004",
+   "from_type": "BLENDER",
+   "to": "S005",
+   "to_type": "FLOW",
+   "cut_frame": 275,
+   "primary": "T2_head",
+   "secondary": [
+    "T5"
+   ],
+   "motif": [
+    "M3"
+   ]
+  },
+  {
+   "n": 4,
+   "from": "S005",
+   "from_type": "FLOW",
+   "to": "S006",
+   "to_type": "BLENDER",
+   "cut_frame": 385,
+   "primary": "T2_tail",
+   "secondary": [
+    "T1"
+   ],
+   "motif": [
+    "M3"
+   ]
+  },
+  {
+   "n": 5,
+   "from": "S006",
+   "from_type": "BLENDER",
+   "to": "S007",
+   "to_type": "FLOW",
+   "cut_frame": 480,
+   "primary": "T3",
+   "secondary": [
+    "T5"
+   ],
+   "motif": [
+    "M2",
+    "M3"
+   ]
+  },
+  {
+   "n": 6,
+   "from": "S008",
+   "from_type": "FLOW",
+   "to": "S009",
+   "to_type": "BLENDER",
+   "cut_frame": 628,
+   "primary": "T1",
+   "secondary": [
+    "T2_tail"
+   ],
+   "motif": [
+    "window"
+   ]
+  },
+  {
+   "n": 7,
+   "from": "S014",
+   "from_type": "BLENDER",
+   "to": "S015",
+   "to_type": "FLOW",
+   "cut_frame": 1097,
+   "primary": "T2_head",
+   "secondary": [
+    "T5",
+    "T7"
+   ],
+   "motif": [
+    "M1"
+   ]
+  },
+  {
+   "n": 8,
+   "from": "S015",
+   "from_type": "FLOW",
+   "to": "S016",
+   "to_type": "BLENDER",
+   "cut_frame": 1175,
+   "primary": "T2_tail",
+   "secondary": [
+    "T6"
+   ],
+   "motif": [
+    "M1"
+   ]
+  },
+  {
+   "n": 9,
+   "from": "S018",
+   "from_type": "BLENDER",
+   "to": "S019",
+   "to_type": "FLOW",
+   "cut_frame": 1472,
+   "primary": "T2_head",
+   "secondary": [
+    "T5"
+   ],
+   "motif": [
+    "M3"
+   ]
+  },
+  {
+   "n": 10,
+   "from": "S019",
+   "from_type": "FLOW",
+   "to": "S020",
+   "to_type": "BLENDER",
+   "cut_frame": 1588,
+   "primary": "T2_tail",
+   "secondary": [
+    "T7"
+   ],
+   "motif": []
+  },
+  {
+   "n": 11,
+   "from": "S020",
+   "from_type": "BLENDER",
+   "to": "S021",
+   "to_type": "FLOW",
+   "cut_frame": 1691,
+   "primary": "T2_head",
+   "secondary": [],
+   "motif": []
+  },
+  {
+   "n": 12,
+   "from": "S021",
+   "from_type": "FLOW",
+   "to": "S022",
+   "to_type": "BLENDER",
+   "cut_frame": 1770,
+   "primary": "T1",
+   "secondary": [
+    "T2_tail"
+   ],
+   "motif": [
+    "sign"
+   ]
+  },
+  {
+   "n": 13,
+   "from": "S037",
+   "from_type": "BLENDER",
+   "to": "S038",
+   "to_type": "FLOW",
+   "cut_frame": 3259,
+   "primary": "T1",
+   "secondary": [
+    "T2_head"
+   ],
+   "motif": [
+    "M4"
+   ]
+  },
+  {
+   "n": 14,
+   "from": "S038",
+   "from_type": "FLOW",
+   "to": "S039",
+   "to_type": "BLENDER",
+   "cut_frame": 3421,
+   "primary": "T2_tail",
+   "secondary": [
+    "T1"
+   ],
+   "motif": [
+    "M4"
+   ]
+  },
+  {
+   "n": 15,
+   "from": "S046",
+   "from_type": "BLENDER",
+   "to": "S047",
+   "to_type": "FLOW",
+   "cut_frame": 4234,
+   "primary": "T2_head",
+   "secondary": [
+    "T6"
+   ],
+   "motif": []
+  },
+  {
+   "n": 16,
+   "from": "S048",
+   "from_type": "FLOW",
+   "to": "S049",
+   "to_type": "BLENDER",
+   "cut_frame": 4415,
+   "primary": "T1",
+   "secondary": [
+    "T2_tail"
+   ],
+   "motif": [
+    "duct"
+   ]
+  },
+  {
+   "n": 17,
+   "from": "S053",
+   "from_type": "BLENDER",
+   "to": "S054",
+   "to_type": "FLOW",
+   "cut_frame": 4772,
+   "primary": "T1",
+   "secondary": [
+    "T2_head",
+    "T5"
+   ],
+   "motif": [
+    "M4"
+   ]
+  },
+  {
+   "n": 18,
+   "from": "S054",
+   "from_type": "FLOW",
+   "to": "S055",
+   "to_type": "BLENDER",
+   "cut_frame": 4860,
+   "primary": "T2_tail",
+   "secondary": [
+    "T1"
+   ],
+   "motif": [
+    "M4"
+   ]
+  },
+  {
+   "n": 19,
+   "from": "S057",
+   "from_type": "BLENDER",
+   "to": "S058",
+   "to_type": "FLOW",
+   "cut_frame": 5296,
+   "primary": "T2_head",
+   "secondary": [],
+   "motif": []
+  },
+  {
+   "n": 20,
+   "from": "S058",
+   "from_type": "FLOW",
+   "to": "S059",
+   "to_type": "BLENDER",
+   "cut_frame": 5354,
+   "primary": "T1",
+   "secondary": [
+    "T2_tail"
+   ],
+   "motif": [
+    "M4",
+    "duct"
+   ]
+  },
+  {
+   "n": 21,
+   "from": "S061",
+   "from_type": "BLENDER",
+   "to": "S062",
+   "to_type": "FLOW",
+   "cut_frame": 5743,
+   "primary": "T2_head",
+   "secondary": [
+    "T6"
+   ],
+   "motif": []
+  },
+  {
+   "n": 22,
+   "from": "S062",
+   "from_type": "FLOW",
+   "to": "S063",
+   "to_type": "BLENDER",
+   "cut_frame": 5813,
+   "primary": "T2_tail",
+   "secondary": [
+    "T7"
+   ],
+   "motif": []
+  },
+  {
+   "n": 23,
+   "from": "S065",
+   "from_type": "BLENDER",
+   "to": "S066",
+   "to_type": "FLOW",
+   "cut_frame": 6143,
+   "primary": "T1",
+   "secondary": [
+    "T2_head"
+   ],
+   "motif": [
+    "M2"
+   ]
+  },
+  {
+   "n": 24,
+   "from": "S066",
+   "from_type": "FLOW",
+   "to": "S067",
+   "to_type": "BLENDER",
+   "cut_frame": 6271,
+   "primary": "T2_tail",
+   "secondary": [
+    "T1"
+   ],
+   "motif": [
+    "M2"
+   ]
+  },
+  {
+   "n": 25,
+   "from": "S067",
+   "from_type": "BLENDER",
+   "to": "S068",
+   "to_type": "FLOW",
+   "cut_frame": 6331,
+   "primary": "T2_head",
+   "secondary": [],
+   "motif": []
+  },
+  {
+   "n": 26,
+   "from": "S068",
+   "from_type": "FLOW",
+   "to": "S069",
+   "to_type": "BLENDER",
+   "cut_frame": 6438,
+   "primary": "T5",
+   "secondary": [
+    "T2_tail"
+   ],
+   "motif": [
+    "M1"
+   ]
+  },
+  {
+   "n": 27,
+   "from": "S070",
+   "from_type": "BLENDER",
+   "to": "S071",
+   "to_type": "FLOW",
+   "cut_frame": 6702,
+   "primary": "T2_head",
+   "secondary": [
+    "T6"
+   ],
+   "motif": []
+  },
+  {
+   "n": 28,
+   "from": "S073",
+   "from_type": "FLOW",
+   "to": "S074",
+   "to_type": "BLENDER",
+   "cut_frame": 7031,
+   "primary": "T1",
+   "secondary": [
+    "T2_tail"
+   ],
+   "motif": [
+    "layers"
+   ]
+  },
+  {
+   "n": 29,
+   "from": "S076",
+   "from_type": "BLENDER",
+   "to": "S077",
+   "to_type": "FLOW",
+   "cut_frame": 7400,
+   "primary": "T2_head",
+   "secondary": [
+    "T7"
+   ],
+   "motif": []
+  },
+  {
+   "n": 30,
+   "from": "S077",
+   "from_type": "FLOW",
+   "to": "S078",
+   "to_type": "BLENDER",
+   "cut_frame": 7475,
+   "primary": "T1",
+   "secondary": [
+    "T2_tail"
+   ],
+   "motif": [
+    "layers"
+   ]
+  },
+  {
+   "n": 31,
+   "from": "S078",
+   "from_type": "BLENDER",
+   "to": "S079",
+   "to_type": "FLOW",
+   "cut_frame": 7623,
+   "primary": "T2_head",
+   "secondary": [],
+   "motif": []
+  },
+  {
+   "n": 32,
+   "from": "S080",
+   "from_type": "FLOW",
+   "to": "S081",
+   "to_type": "BLENDER",
+   "cut_frame": 7875,
+   "primary": "T1",
+   "secondary": [
+    "T2_tail"
+   ],
+   "motif": [
+    "M4"
+   ]
+  },
+  {
+   "n": 33,
+   "from": "S086",
+   "from_type": "BLENDER",
+   "to": "S087",
+   "to_type": "FLOW",
+   "cut_frame": 8301,
+   "primary": "T1",
+   "secondary": [
+    "T2_head"
+   ],
+   "motif": [
+    "M4"
+   ]
+  },
+  {
+   "n": 34,
+   "from": "S087",
+   "from_type": "FLOW",
+   "to": "S088",
+   "to_type": "BLENDER",
+   "cut_frame": 8392,
+   "primary": "T2_tail",
+   "secondary": [
+    "T6"
+   ],
+   "motif": []
+  },
+  {
+   "n": 35,
+   "from": "S090",
+   "from_type": "BLENDER",
+   "to": "S091",
+   "to_type": "FLOW",
+   "cut_frame": 8804,
+   "primary": "T2_head",
+   "secondary": [
+    "T6"
+   ],
+   "motif": [
+    "M4"
+   ]
+  },
+  {
+   "n": 36,
+   "from": "S092",
+   "from_type": "FLOW",
+   "to": "S093",
+   "to_type": "BLENDER",
+   "cut_frame": 8941,
+   "primary": "M5_sync",
+   "secondary": [
+    "T6"
+   ],
+   "motif": [
+    "M5"
+   ]
+  },
+  {
+   "n": 37,
+   "from": "S098",
+   "from_type": "BLENDER",
+   "to": "S099",
+   "to_type": "FLOW",
+   "cut_frame": 9621,
+   "primary": "T2_head",
+   "secondary": [],
+   "motif": []
+  },
+  {
+   "n": 38,
+   "from": "S100",
+   "from_type": "FLOW",
+   "to": "S101",
+   "to_type": "BLENDER",
+   "cut_frame": 9833,
+   "primary": "T2_tail",
+   "secondary": [],
+   "motif": []
+  },
+  {
+   "n": 39,
+   "from": "S102",
+   "from_type": "BLENDER",
+   "to": "S103",
+   "to_type": "FLOW",
+   "cut_frame": 9971,
+   "primary": "T5",
+   "secondary": [
+    "T2_head"
+   ],
+   "motif": [
+    "M1"
+   ]
+  },
+  {
+   "n": 40,
+   "from": "S103",
+   "from_type": "FLOW",
+   "to": "S104",
+   "to_type": "BLENDER",
+   "cut_frame": 10064,
+   "primary": "T2_tail",
+   "secondary": [
+    "T5"
+   ],
+   "motif": [
+    "M1"
+   ]
+  },
+  {
+   "n": 41,
+   "from": "S109",
+   "from_type": "BLENDER",
+   "to": "S110",
+   "to_type": "FLOW",
+   "cut_frame": 10642,
+   "primary": "T2_head",
+   "secondary": [
+    "T7"
+   ],
+   "motif": []
+  },
+  {
+   "n": 42,
+   "from": "S111",
+   "from_type": "FLOW",
+   "to": "S112",
+   "to_type": "BLENDER",
+   "cut_frame": 10777,
+   "primary": "T5",
+   "secondary": [
+    "T2_tail"
+   ],
+   "motif": [
+    "M1"
+   ]
+  }
+ ],
+ "pilots": [
+  {
+   "id": "P1",
+   "shots": [
+    "S014",
+    "S015",
+    "S016"
+   ]
+  },
+  {
+   "id": "P2",
+   "shots": [
+    "S090",
+    "S091",
+    "S092",
+    "S093"
+   ]
+  },
+  {
+   "id": "P3",
+   "shots": [
+    "S005",
+    "S006",
+    "S007"
+   ]
+  }
+ ],
+ "jobs": [
+  {
+   "job_id": "GEN-S002",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S002",
+   "mode": "T1_KEYFRAME+MOTIONREF",
+   "timeline_frames": {
+    "start": 67,
+    "end": 147,
+    "count_30fps": 81
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 일반 객실의 빈 통로 와이드",
+   "note": "center vanishing point = S001; forward dolly continuing S001 push-in"
+  },
+  {
+   "job_id": "DG-S002",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S002",
+   "source": "GEN-S002 selected 8s master (24fps)",
+   "crossfade_at": [
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S005",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S005",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 275,
+    "end": 384,
+    "count_30fps": 110
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 객실의 빈 좌석과 닫힌 창",
+   "note": "ceiling line height = S004 grey layer top"
+  },
+  {
+   "job_id": "DG-S005",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S005",
+   "source": "GEN-S005 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S007",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S007",
+   "mode": "BRIDGE",
+   "timeline_frames": {
+    "start": 480,
+    "end": 511,
+    "count_30fps": 32
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "장소 불특정 현재형 빈 승강장",
+   "note": "first frame = photoreal of S006 last frame (same pillars); 8s gen, use 32f; T5 grey band overlay"
+  },
+  {
+   "job_id": "GEN-S008",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S008",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 512,
+    "end": 627,
+    "count_30fps": 116
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 지하 통로의 외부 연결부. 개방 방향을 향해 고정",
+   "note": "keep above-ground room + open window; window placed at S009 opening coords; fix cue text"
+  },
+  {
+   "job_id": "DG-S008",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S008",
+   "source": "GEN-S008 selected 8s master (24fps)",
+   "crossfade_at": [
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S015",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S015",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 1097,
+    "end": 1174,
+    "count_30fps": 78
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 통로 바닥 유도선이 먼 계단까지 이어진다",
+   "note": "floor guide line = M1 legend; cyan line T5 overlay"
+  },
+  {
+   "job_id": "DG-S015",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S015",
+   "source": "GEN-S015 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S019",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S019",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 1472,
+    "end": 1587,
+    "count_30fps": 116
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 계단. 난간과 계단의 반복",
+   "note": "stair center axis aligned with S018 smoke line"
+  },
+  {
+   "job_id": "DG-S019",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S019",
+   "source": "GEN-S019 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S021",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S021",
+   "mode": "REGEN_FROM_2D_CARD",
+   "timeline_frames": {
+    "start": 1691,
+    "end": 1769,
+    "count_30fps": 79
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 유도 표지. 추상 블록과 화살표만",
+   "note": "ceiling exit pictogram (no text) at S022 white block coords"
+  },
+  {
+   "job_id": "DG-S021",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S021",
+   "source": "GEN-S021 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S038",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S038",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 3259,
+    "end": 3420,
+    "count_30fps": 162
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 통로의 방화문과 벽체 정면",
+   "note": "fire door frame at S037/S039 wall x-position; M4 legend"
+  },
+  {
+   "job_id": "DG-S038",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S038",
+   "source": "GEN-S038 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S047",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S047",
+   "mode": "DEDUP_MACRO",
+   "timeline_frames": {
+    "start": 4234,
+    "end": 4282,
+    "count_30fps": 49
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 방화문과 벽체 표면 근접",
+   "note": "exhaust grille macro; fix cue to match narration; extend into S048"
+  },
+  {
+   "job_id": "DG-S047",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S047",
+   "source": "GEN-S047 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S048",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S048",
+   "mode": "DEDUP_WIDE_EXTEND",
+   "timeline_frames": {
+    "start": 4283,
+    "end": 4414,
+    "count_30fps": 132
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 승강장 천장의 배기구와 덕트 그릴",
+   "note": "wide of same ceiling via extend; duct at S049 upper-right box"
+  },
+  {
+   "job_id": "DG-S048",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S048",
+   "source": "GEN-S048 selected 8s master (24fps)",
+   "crossfade_at": [
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S054",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S054",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 4772,
+    "end": 4859,
+    "count_30fps": 88
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 계단 로비의 문과 난간",
+   "note": "door at S053/S055 door position; cyan air T5"
+  },
+  {
+   "job_id": "DG-S054",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S054",
+   "source": "GEN-S054 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S058",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S058",
+   "mode": "DEDUP_BRIDGE",
+   "timeline_frames": {
+    "start": 5296,
+    "end": 5353,
+    "count_30fps": 58
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 빈 승강장과 보호된 계단 방향",
+   "note": "photoreal of S059 unified section; 3-beat T5 overlays"
+  },
+  {
+   "job_id": "DG-S058",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S058",
+   "source": "GEN-S058 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S062",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S062",
+   "mode": "DEDUP_REALIZE",
+   "timeline_frames": {
+    "start": 5743,
+    "end": 5812,
+    "count_30fps": 70
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 빈 승강장. 열차가 들어올 깊은 축",
+   "note": "empty platform deep axis from Blender clay; distant rumble"
+  },
+  {
+   "job_id": "DG-S062",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S062",
+   "source": "GEN-S062 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S066",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S066",
+   "mode": "REGEN_FROM_2D_CARD",
+   "timeline_frames": {
+    "start": 6143,
+    "end": 6270,
+    "count_30fps": 128
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 승강장 긴 축과 먼 끝의 터널 개구부",
+   "note": "long platform axis + tunnel portals; perspective = S065 end"
+  },
+  {
+   "job_id": "DG-S066",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S066",
+   "source": "GEN-S066 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S068",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S068",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 6331,
+    "end": 6437,
+    "count_30fps": 107
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 승강장에서 계단과 대합실이 깊이로 연결",
+   "note": "floor guide line emphasized (M1)"
+  },
+  {
+   "job_id": "DG-S068",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S068",
+   "source": "GEN-S068 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S071",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S071",
+   "mode": "REALIZE",
+   "timeline_frames": {
+    "start": 6702,
+    "end": 6788,
+    "count_30fps": 87
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "무브랜드 전동차가 플랫폼으로 들어와 멈춘다",
+   "note": "train arrival/stop timing from Blender clay; unbranded"
+  },
+  {
+   "job_id": "DG-S071",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S071",
+   "source": "GEN-S071 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S072",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S072",
+   "mode": "PLAIN",
+   "timeline_frames": {
+    "start": 6789,
+    "end": 6922,
+    "count_30fps": 134
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 객실의 좌석·벽·바닥이 연속된 깊이로",
+   "note": "car interior depth; no twin"
+  },
+  {
+   "job_id": "GEN-S073",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S073",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 6923,
+    "end": 7030,
+    "count_30fps": 108
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 금속 좌석의 표면과 고정 구조 근접",
+   "note": "seat slats at S074 slab heights/spacing"
+  },
+  {
+   "job_id": "DG-S073",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S073",
+   "source": "GEN-S073 selected 8s master (24fps)",
+   "crossfade_at": [
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S077",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S077",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 7400,
+    "end": 7474,
+    "count_30fps": 75
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 객실의 무광 벽 패널 표면 고정",
+   "note": "-1 stop grade; panel grain aligned to S078 layers"
+  },
+  {
+   "job_id": "DG-S077",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S077",
+   "source": "GEN-S077 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S079",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S079",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 7623,
+    "end": 7737,
+    "count_30fps": 115
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 승강장과 정차 열차 측면을 같은 깊이 축에",
+   "note": "platform + stopped train side"
+  },
+  {
+   "job_id": "DG-S079",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S079",
+   "source": "GEN-S079 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S080",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S080",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 7738,
+    "end": 7874,
+    "count_30fps": 137
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "정차 열차의 닫힌 문과 플랫폼 가장자리 디테일",
+   "note": "closed door center at S081 white box coords"
+  },
+  {
+   "job_id": "DG-S080",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S080",
+   "source": "GEN-S080 selected 8s master (24fps)",
+   "crossfade_at": [
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S087",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S087",
+   "mode": "T1_KEYFRAME",
+   "timeline_frames": {
+    "start": 8301,
+    "end": 8391,
+    "count_30fps": 91
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 객실 출입문 개방 상태 고정",
+   "note": "open door (no people) at S086 train door coords"
+  },
+  {
+   "job_id": "DG-S087",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S087",
+   "source": "GEN-S087 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S091",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S091",
+   "mode": "REALIZE_SHARED",
+   "timeline_frames": {
+    "start": 8804,
+    "end": 8845,
+    "count_30fps": 42
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 출입문 개방",
+   "note": "one Blender clay gen: open-hold-close; S091 = open part"
+  },
+  {
+   "job_id": "DG-S091",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S091",
+   "source": "GEN-S091 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S092",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S092",
+   "mode": "REALIZE_SHARED+FIX",
+   "timeline_frames": {
+    "start": 8846,
+    "end": 8940,
+    "count_30fps": 95
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "같은 문이 닫힌 상태로 전환",
+   "note": "same gen close part; lights dim one step synced to S093"
+  },
+  {
+   "job_id": "GEN-S099",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S099",
+   "mode": "REGEN_FROM_2D_CARD",
+   "timeline_frames": {
+    "start": 9621,
+    "end": 9690,
+    "count_30fps": 70
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 비상개방장치 디테일",
+   "note": "generic emergency door release detail, no text"
+  },
+  {
+   "job_id": "DG-S099",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S099",
+   "source": "GEN-S099 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S100",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S100",
+   "mode": "BRIDGE_EXTEND",
+   "timeline_frames": {
+    "start": 9691,
+    "end": 9832,
+    "count_30fps": 142
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "제안 · 미채택",
+   "visual_cue_original": "같은 장치를 넓은 구도에서",
+   "note": "first frame = S099 last frame; pull back to wide of same device; currently HOLD"
+  },
+  {
+   "job_id": "DG-S100",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S100",
+   "source": "GEN-S100 selected 8s master (24fps)",
+   "crossfade_at": [
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S103",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S103",
+   "mode": "REGEN_FROM_2D_CARD",
+   "timeline_frames": {
+    "start": 9971,
+    "end": 10063,
+    "count_30fps": 93
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "프리뷰 문안",
+   "visual_cue_original": "현재형 개찰구 통로",
+   "note": "unbranded fare gates; cyan line passes through"
+  },
+  {
+   "job_id": "DG-S103",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S103",
+   "source": "GEN-S103 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head",
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S110",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S110",
+   "mode": "GLOW_SHARED",
+   "timeline_frames": {
+    "start": 10642,
+    "end": 10719,
+    "count_30fps": 78
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "제안 · 미채택",
+   "visual_cue_original": "현재형 장치 디테일",
+   "note": "lights off, photoluminescent marking macro"
+  },
+  {
+   "job_id": "DG-S110",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S110",
+   "source": "GEN-S110 selected 8s master (24fps)",
+   "crossfade_at": [
+    "head"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "GEN-S111",
+   "type": "FLOW_SLOT_GENERATION",
+   "shot_id": "S111",
+   "mode": "GLOW_SHARED",
+   "timeline_frames": {
+    "start": 10720,
+    "end": 10776,
+    "count_30fps": 57
+   },
+   "generate_seconds": 8,
+   "min_v2v_source_ok": true,
+   "candidates": 3,
+   "narration_status": "제안 · 미채택",
+   "visual_cue_original": "장치와 사용법 표시의 위치 관계",
+   "note": "same gen pull-back: device + usage marking relation"
+  },
+  {
+   "job_id": "DG-S111",
+   "type": "OMNI_V2V_DIAGRAM_TWIN",
+   "shot_id": "S111",
+   "source": "GEN-S111 selected 8s master (24fps)",
+   "crossfade_at": [
+    "tail"
+   ],
+   "crossfade_frames_30fps": "10-18",
+   "prompt_template": "J-DIAGRAM",
+   "gate": [
+    "G1",
+    "G2",
+    "G3"
+   ]
+  },
+  {
+   "job_id": "REALIZE-S062",
+   "type": "OMNI_V2V_REALIZE",
+   "shots": [
+    "S062"
+   ],
+   "input": "Blender B4 clay render >=3.2s with handles",
+   "prompt_template": "J-REALIZE"
+  },
+  {
+   "job_id": "REALIZE-S071",
+   "type": "OMNI_V2V_REALIZE",
+   "shots": [
+    "S071"
+   ],
+   "input": "Blender B4 clay render >=3.2s with handles",
+   "prompt_template": "J-REALIZE"
+  },
+  {
+   "job_id": "REALIZE-S091S092",
+   "type": "OMNI_V2V_REALIZE",
+   "shots": [
+    "S091",
+    "S092"
+   ],
+   "input": "Blender B4 clay render >=3.2s with handles",
+   "prompt_template": "J-REALIZE"
+  },
+  {
+   "job_id": "REALIZE-S100",
+   "type": "OMNI_V2V_REALIZE",
+   "shots": [
+    "S100"
+   ],
+   "input": "Blender B4 clay render >=3.2s with handles",
+   "prompt_template": "J-REALIZE"
+  },
+  {
+   "job_id": "BRIDGE-S007",
+   "type": "OMNI_FIRST_LAST_FRAME",
+   "shot_id": "S007",
+   "prompt_template": "J-BRIDGE"
+  },
+  {
+   "job_id": "BRIDGE-S058",
+   "type": "OMNI_FIRST_LAST_FRAME",
+   "shot_id": "S058",
+   "prompt_template": "J-BRIDGE"
+  },
+  {
+   "job_id": "BRIDGE-S100",
+   "type": "OMNI_FIRST_LAST_FRAME",
+   "shot_id": "S100",
+   "prompt_template": "J-BRIDGE"
+  },
+  {
+   "job_id": "MOTIONREF-S002",
+   "type": "OMNI_VIDEO_REFERENCE",
+   "shot_id": "S002",
+   "reference": "S001 camera move 3s clay",
+   "prompt_template": "J-MOTIONREF"
+  },
+  {
+   "job_id": "FIX-S092",
+   "type": "OMNI_V2V_PARTIAL_EDIT",
+   "shot_id": "S092",
+   "edits": [
+    "doors fully closed",
+    "ceiling lights dim one step synced to S093 brightness step"
+   ],
+   "prompt_template": "J-FIX"
+  },
+  {
+   "job_id": "GLOW-S110S111",
+   "type": "OMNI_V2V_PARTIAL_EDIT",
+   "shots": [
+    "S110",
+    "S111"
+   ],
+   "prompt_template": "J-GLOW"
+  }
+ ],
+ "counts": {
+  "boundaries": 42,
+  "flow_slots": 29,
+  "diagram_twins": 26,
+  "jobs": 65
+ }
+}
