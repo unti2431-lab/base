@@ -1,0 +1,761 @@
+# =====================================================================
+# KTX 차축 제동 디스크 숏폼 — 19컷 상세 명세 v3 (LLM 입력용)
+# ---------------------------------------------------------------------
+# 이 파일은 사람이 아니라 LLM/자동화 도구가 읽고 그대로 실행하도록 쓴 명세입니다.
+# 사람용 설명은 shot-list-v2.md(연출 의도)와 signature-loop.md(시그니처 루프 템플릿)를 보세요.
+#
+# v2 → v3 변경점
+#   1. 모든 컷을 같은 필드 구조로 정규화(타임코드·프레임·배속·홀드·프롬프트 전문).
+#   2. 시리즈 공통 톤앤매너(series_lock)를 분리 → 다음 영상에서 hero만 바꿔 재사용.
+#   3. 단면 절개 위치를 "오른쪽 아래 1/4(시계 3시~6시)"로 통일.
+#      이유: 캘리퍼가 원판 위쪽을 덮고 있어 오른쪽 위 1/4은 절개면이 가려짐.
+#      시그니처 루프와 같은 규칙을 써서 두 영상의 단면이 같은 모양으로 보이게 함.
+#   4. 배경을 REF-1 기준 미드 그레이로 확정(v1의 다크 차콜 폐기).
+#   5. 시그니처 루프(10초) 키프레임·클립을 같은 파일에 포함.
+# =====================================================================
+
+meta:
+  title: "시속 300km KTX를 세우는 건 '쇠 원판'이다"
+  version: v3
+  duration_s: 55.0
+  fps: 24
+  total_frames: 1320
+  resolution: { width: 1080, height: 1920, aspect: "9:16" }
+  loop: true                     # 마지막 프레임(5-5 끝) == 첫 프레임(1-1 시작) == REF-2′
+  generator:
+    keyframes: "Google Flow 이미지 생성/편집"
+    video: "Omni 1.1 — First & Last Frame (FL) / Image to Video (I2V)"
+    edit: "CapCut"
+  generation_unit_s: 5           # 콘솔이 10초만 지원하면 10으로 바꾸고 speed_factor를 2배로
+  voice: { engine: ElevenLabs, stability: 0.45, speed: 1.05 }
+
+# ---------------------------------------------------------------------
+# LLM 실행 규칙 — 프롬프트를 조립하거나 컷을 수정할 때 반드시 지킬 것
+# ---------------------------------------------------------------------
+rules_for_llm:
+  prompt_assembly: >
+    keyframe 프롬프트 = series_lock.text + hero.text + keyframe.prompt.
+    파생(edit) keyframe 프롬프트 = blocks.edit_prefix + keyframe.prompt (series_lock/hero는 붙이지 않음, 원본 이미지가 대신함).
+    clip 프롬프트 = series_lock.text + clip.prompt + blocks.negative_common (+ reverse_safe가 true면 blocks.negative_reverse_safe).
+    world가 track인 컷은 series_lock 대신 blocks.track_lock을 사용.
+  invariants:
+    - "한 클립에 형태 변화는 하나만. 카메라가 움직이는 클립(I2V push-in)은 피사체 형태 변화가 없어야 한다."
+    - "FL 클립은 카메라 고정(locked-off)."
+    - "start_kf와 end_kf는 반드시 같은 캔버스에서 편집으로 파생된 쌍이어야 한다."
+    - "FL 클립은 잘라내지(trim) 말고 speed_factor로만 길이를 맞춘다. 끝 프레임이 루프와 역재생의 기준이다."
+    - "reverse_safe: true인 클립에는 불꽃·연기·입자·아지랑이가 생성되면 안 된다."
+    - "생성 이미지/영상에 글자·숫자·로고가 있으면 탈락. 모든 글자는 post 레이어에서만."
+    - "프롬프트에 cm·mm·bar 같은 수치, 'sub-millimeter', 'zero tolerance' 같은 정밀도 문구를 넣지 않는다. 거리는 '부품 두께만큼'처럼 상대 표현으로."
+    - "캘리퍼 색(머스터드 옐로)과 형태는 모든 컷에서 동일해야 한다."
+    - "단면 절개는 항상 원판의 오른쪽 아래 1/4(시계 3시~6시), 절개면은 평평한 가공면."
+  crops: >
+    crop 좌표 [x, y, w, h]는 derived_from 이미지 기준 정규화 값. 원본이 9:16이므로 w == h여야 9:16이 유지된다.
+    w가 0.5 미만인 크롭은 해상도가 부족하므로 단순 crop이 아니라 crop_then_edit(재묘사)로 처리하고 1080x1920으로 맞춘다.
+  holds: "FL 클립은 편집에서 시작·끝 프레임을 각각 hold_frames만큼 정지시킨다(역재생 이음매에서 속도 0)."
+  speed_factor: "원본 생성 길이(generation_unit_s) ÷ 최종 길이(duration_s - hold 시간). 표의 값은 hold 포함 근사치."
+
+# ---------------------------------------------------------------------
+# 시리즈 공통 톤앤매너 — 다음 영상에서도 그대로 사용
+# ---------------------------------------------------------------------
+series_lock:
+  name: "MECHANICAL SPECIMEN"
+  text: |
+    Vertical 9:16 photoreal industrial specimen render. Seamless mid-grey studio backdrop with a soft
+    vertical gradient, slightly lighter behind the subject. Soft key light from upper left, cool rim light
+    from right, one soft fixed contact shadow under the subject. The object stands on a dark machined-steel
+    display stand. Materials read as real metal: brushed steel, forged steel, painted cast steel.
+    Rigid-body engineering motion only: every part moves as one solid piece along its own assembly axis.
+    No text, no letters, no numbers, no logos, no people.
+  palette:
+    backdrop: "#8E9194 → #B4B6B8 (세로 그라데이션)"
+    hero_accent: "에피소드별 1색. KTX 제동 편 = 머스터드 옐로 #C9A227"
+    heat: "#FF6A1A(오렌지) → #C8261B(레드) — 열 표현에만"
+    xray_air: "#3FC5F0(시안) — X-ray 투명화와 차가운 공기에만"
+    temper: "강철 표면의 옅은 청보라 템퍼 링 — 열 이력 디테일"
+  hud:
+    font: "모노스페이스(예: JetBrains Mono, Roboto Mono), 대문자"
+    color: "흰색 #F2F2F2 + 강조 시안 #3FC5F0, 경고는 오렌지 #FF6A1A"
+    safe_area:
+      hud_top: "화면 높이 8%~18%, 왼쪽 정렬"
+      subtitle: "화면 높이 68%~78%(하단 22~32% 구간), 한 줄 최대 14자, 최대 2줄"
+      keep_clear: "하단 22% 아래 전체, 오른쪽 15% 세로 띠(쇼츠 UI)"
+
+hero:
+  id: KTX_BRAKE_DISC
+  text: |
+    Subject: a ventilated railway brake disc with continuous brushed-steel friction faces and a faint
+    blue-purple heat-temper ring, straight radial cooling-vane openings evenly spaced around the outer edge,
+    a bolted central hub flange on a dark forged-steel axle; a mustard-yellow cast-steel brake caliper
+    bridging the top of the disc with two dark sintered pads, one on each face; a small silver pneumatic
+    cylinder with black air hoses mounted on the caliper's right side.
+
+blocks:
+  edit_prefix: |
+    Keep the exact same camera, framing, object positions, object sizes, shapes, materials and lighting.
+    Change only:
+  track_lock: |
+    Vertical 9:16 photoreal low-angle action shot beside a high-speed train running at full speed,
+    golden backlight from a low sun, strong motion blur on sleepers, ballast and rails, sharp brake disc and
+    mustard-yellow caliper. No text, no letters, no numbers, no logos, no people.
+  negative_common: |
+    No morphing, no melting, no bending or warping of metal, no new parts appearing, no parts disappearing
+    except where described, no floating debris, no text.
+  negative_reverse_safe: |
+    No sparks, no smoke, no particles, no heat haze, no dust.
+
+# ---------------------------------------------------------------------
+# 레퍼런스 정비 (사용자 제공 이미지 2장)
+# ---------------------------------------------------------------------
+references:
+  - id: REF-1
+    file: "ref/ref1_studio.webp"        # 사용자가 제공한 노란 캘리퍼 스튜디오 컷, 941x1672
+    role: "해부 세계(studio) 형상 마스터"
+  - id: REF-1′
+    derived_from: REF-1
+    op: edit
+    prompt: |
+      Remove the two vertical seam lines on the brake disc so each friction face is one continuous,
+      uninterrupted brushed-steel surface. Remove all engraved letters and numbers on the hub flange,
+      leaving plain machined metal with bolt holes. Keep the faint blue-purple heat-temper ring.
+    post: "1080x1920 업스케일"
+    state: { caliper: clamped, temperature: cool, cutaway: none }
+  - id: REF-2
+    file: "ref/ref2_track.webp"         # 사용자가 제공한 주행 현장 컷, 941x1672
+    role: "현실 세계(track) 분위기 마스터"
+  - id: REF-2′
+    derived_from: [REF-2, REF-1′]
+    op: edit
+    prompt: |
+      Replace only the silver brake caliper on the right side of the glowing disc with the mustard-yellow
+      cast brake caliper from the second reference image, with the same small silver pneumatic cylinder and
+      black air hoses, sized to fit the disc. Keep the disc glow exactly as it is. No text, no logos.
+    alt_B: |
+      (정확도 우선 재생성) Vertical 9:16 photoreal low-angle shot from the middle of the track, under a
+      high-speed train running at full speed, looking sideways at one wheelset: two wheels on the rails at
+      the edges of frame, the axle between them carrying ventilated brake discs, the nearest disc glowing
+      orange-red at its rim, gripped by a mustard-yellow caliper like the reference. Golden backlight,
+      strong motion blur on sleepers and ballast, sharp disc and caliper. No text, no logos.
+    post: "1080x1920 업스케일"
+    note: "원본 REF-2는 원판이 바퀴 바깥쪽에 있어 실제 배치와 다름. alt_B가 정확함"
+    state: { caliper: clamped, temperature: hot, world: track }
+
+# ---------------------------------------------------------------------
+# 키프레임 19장 (+ 레퍼런스 정비본 REF-1′, REF-2′)
+#   crop: 원본 기준 정규화 좌표 [x, y, w, h] (0~1), 9:16 비율 유지 후 1080x1920 업스케일
+# ---------------------------------------------------------------------
+keyframes:
+  - id: KF-S0
+    derived_from: REF-2′
+    op: edit
+    world: studio
+    prompt: >
+      the train body, rails, sleepers, ballast, overhead wires and sky are replaced by a seamless mid-grey
+      studio backdrop with one soft contact shadow; the wheel, axle, glowing brake disc and yellow caliper
+      remain in exactly the same position, size and glow, now perfectly sharp with no motion blur.
+    state: { caliper: clamped, temperature: hot }
+
+  - id: KF-B1
+    derived_from: null
+    reference_images: [REF-1′]
+    op: generate
+    prompt: >
+      3/4 high-angle wide view of a simplified high-speed passenger-car bogie standing on the studio floor:
+      solid grey bogie frame with coil springs, two axles, each axle carrying four ventilated brake discs
+      between its two wheels, each disc gripped by a mustard-yellow caliper like the reference.
+      The bogie fills the middle 60% of the frame height.
+    state: { xray: false }
+  - id: KF-B2
+    derived_from: KF-B1
+    op: edit
+    prompt: >
+      the bogie frame, springs and dampers become a translucent glowing cyan X-ray wireframe; axles, wheels,
+      discs and calipers stay solid and opaque.
+    state: { xray: true }
+
+  - id: KF-C1
+    derived_from: REF-1′
+    op: crop_then_edit
+    crop: [0.62, 0.08, 0.36, 0.36]
+    prompt: >
+      the silver pneumatic cylinder body becomes semi-transparent glass-like metal, showing an empty chamber
+      and a retracted piston rod inside; hoses unchanged.
+    state: { air: empty, rod: retracted }
+  - id: KF-C2
+    derived_from: KF-C1
+    op: edit
+    prompt: >
+      the chamber is filled with softly glowing cyan compressed air and the piston rod is extended out of
+      the cylinder along its own axis.
+    state: { air: full, rod: extended }
+
+  - id: KF-E
+    derived_from: REF-1′
+    op: crop_then_edit
+    crop: [0.14, 0.04, 0.78, 0.78]
+    prompt: >
+      the yellow caliper housing becomes semi-transparent, revealing two internal lever arms shaped like
+      tongs, one on each side of the disc, pivoting on visible pins; the levers are open and there is a clear
+      gap between each pad and the disc face.
+    state: { caliper: open, xray: true }
+  - id: KF-F
+    derived_from: KF-E
+    op: edit
+    prompt: >
+      the two tong levers are closed and both pads press flat against both disc faces.
+    state: { caliper: clamped, xray: true }
+
+  - id: KF-P1
+    derived_from: null
+    reference_images: [REF-1′]
+    op: generate
+    prompt: >
+      extreme close-up looking along the disc face edge-on: the disc thickness fills the center with the
+      straight cooling vanes visible between two plates, one dark sintered pad on each side held by the
+      yellow caliper, a small visible gap between each pad and the disc.
+    state: { pads: open }
+  - id: KF-P2
+    derived_from: KF-P1
+    op: edit
+    prompt: >
+      both pads touch both disc faces; a thin orange glowing line runs along each contact edge.
+    state: { pads: clamped, glow: contact_line }
+
+  - id: KF-H1
+    derived_from: REF-1′
+    op: crop
+    crop: [0.06, 0.22, 0.76, 0.76]
+    prompt: null
+    note: "원판 정면 마찰면 클로즈업, 캘리퍼 하단이 프레임 위쪽에 살짝 걸림. 차가운 상태"
+    state: { temperature: cool }
+  - id: KF-H2
+    derived_from: KF-H1
+    op: edit
+    prompt: >
+      the friction face glows orange at the outer rim, blending into deep red toward the middle; the hub
+      flange stays dark cool metal; surface texture and temper ring shapes stay identical.
+    state: { temperature: hot }
+
+  - id: KF-J1
+    derived_from: KF-H2
+    op: crop_then_edit
+    crop: [0.25, 0.17, 0.40, 0.40]
+    prompt: >
+      sharpen into a macro view of the joint where the glowing friction ring meets the dark cool hub flange,
+      bolts and round bushings clearly visible.
+    state: { temperature: hot, xray: false }
+  - id: KF-J2
+    derived_from: KF-J1
+    op: edit
+    prompt: >
+      the hub flange becomes semi-transparent, revealing radial sliding bushings that connect the friction
+      ring to the hub; the fit is tight with no gaps.
+    state: { xray: true, gap: none }
+  - id: KF-J3
+    derived_from: KF-J2
+    op: edit
+    prompt: >
+      the glowing friction ring sits slightly further outward from the hub; a small visible gap has opened at
+      each bushing.
+    state: { xray: true, gap: open }
+
+  - id: KF-K0
+    derived_from: REF-1′
+    op: edit
+    prompt: >
+      the whole friction face glows orange-red, the hub stays dark; caliper unchanged and still clamped.
+    state: { temperature: hot, cutaway: none }
+  - id: KF-K1
+    derived_from: KF-K0
+    op: edit
+    prompt: >
+      the lower-right quarter of the disc, from the 3 o'clock to the 6 o'clock position, is cut away with
+      perfectly flat machined cut faces, revealing two parallel friction plates joined by evenly spaced
+      straight radial cooling vanes with air channels between them; the cut faces are bright machined steel.
+    state: { temperature: hot, cutaway: lower_right_quarter }
+  - id: KF-K2
+    derived_from: KF-K1
+    op: crop_then_edit
+    crop: [0.42, 0.50, 0.40, 0.40]
+    prompt: >
+      re-render this close-up of the flat cut face at full sharp detail: two parallel friction plates and the
+      evenly spaced straight radial cooling vanes between them, bright machined cut faces.
+    note: "절개면 클로즈업(두 판 + 방사형 핀). I2V 입력"
+  - id: KF-K3
+    derived_from: KF-K1
+    op: edit
+    prompt: >
+      translucent cyan air streams enter near the hub and travel outward between the vanes, turning orange as
+      they exit at the rim.
+    state: { airflow: visible }
+  - id: KF-K4
+    derived_from: REF-1′
+    op: crop_then_edit
+    crop: [0.50, 0.40, 0.45, 0.45]
+    prompt: >
+      side view of the disc edge with its row of vane openings, the disc glowing orange-red; faint orange heat
+      plumes leaving the openings.
+    state: { temperature: hot, plumes: visible }
+
+# ---------------------------------------------------------------------
+# 19컷 명세
+#   mode: FL(시작·끝 프레임) | I2V(단일 이미지) | POST(CapCut만) | REV(기존 클립 역재생)
+#   reverse_safe: true → 이후 REV로 재사용되므로 불꽃·연기·입자 금지
+# ---------------------------------------------------------------------
+shots:
+
+  # ================= S1 HOOK =================
+  - id: "1-1"
+    section: S1_hook
+    time: { in: 0.0, out: 2.5, duration_s: 2.5, frames: 60 }
+    narration: { text: "시속 300킬로로 달리는 KTX를", sync: "'300'에 HUD 카운터가 300에 도달" }
+    world: track
+    shot: { size: WS, angle: "로우앵글, 레일 높이", lens_feel: "24mm 광각", subject_position: "원판 중심이 화면 (0.62, 0.55)" }
+    generation:
+      mode: FL
+      start_kf: REF-2′
+      end_kf: REF-2′
+      fallback_mode: I2V
+      gen_length_s: 5
+      speed_factor: 2.0
+      hold_frames: { start: 0, end: 0 }
+    reverse_safe: false
+    subject: { start: "질주 중, 원판 외곽 발광", end: "동일(루프)" }
+    motion: { primary: "바닥·레일이 흐르는 모션 블러 + 원판 발광 맥동", forbidden: ["카메라 이동", "열차 위치 변화"] }
+    camera: locked
+    cg_in_generation: ["모션 블러", "발광 맥동"]
+    cg_post:
+      - "HUD 카운터 `000 → 300 km/h`, 0.0~1.6초 이징, 상단 HUD 영역"
+      - "화면 좌우 가장자리 속도선(스크린 블렌드 30%)"
+    sfx: ["Train Rush(0.0)", "Brake Screech 시작(1.8)"]
+    transition: { in: "루프: 5-5의 마지막 프레임과 동일 이미지", out: "컷(1-2 첫 프레임은 정지된 REF-2′)" }
+    prompt: |
+      The high-speed train keeps running at full speed. Ballast and rails stream past with strong motion blur,
+      the brake disc rim pulses with orange-red glow. The train, wheel, disc and caliper stay in the same place
+      in frame. Camera locked. The clip ends exactly as it started.
+    qc_reject: ["열차·원판 위치가 이동", "캘리퍼 색 변화", "1초 이상 거의 정지(→ I2V로 대체)"]
+
+  - id: "1-2"
+    section: S1_hook
+    time: { in: 2.5, out: 6.0, duration_s: 3.5, frames: 84 }
+    narration: { text: "멈춰 세우는 건, 지름 64센티 쇠 원판입니다.", sync: "'멈춰'에 타임 프리즈(첫 프레임), '64센티'에 원형 스트로크" }
+    world: "track → studio"
+    shot: { size: WS, angle: "1-1과 동일", lens_feel: "24mm", subject_position: "1-1과 동일" }
+    generation:
+      mode: FL
+      start_kf: REF-2′
+      end_kf: KF-S0
+      gen_length_s: 5
+      speed_factor: 1.5
+      hold_frames: { start: 6, end: 6 }
+    reverse_safe: true
+    subject: { start: "주행 장면 정지 상태", end: "같은 위치의 원판·바퀴·캘리퍼만 남은 그레이 스튜디오" }
+    motion: { primary: "배경이 가장자리부터 회색 스튜디오로 벗겨짐(피사체 고정)", forbidden: ["피사체 이동·크기 변화", "카메라 이동"] }
+    camera: locked
+    cg_in_generation: ["월드 스위치(배경 전환)"]
+    cg_post:
+      - "0프레임: 흰색 플래시 2프레임 + 크로매틱 수차 6프레임"
+      - "끝 1초: 원판 둘레에 흰 원형 스트로크가 시계 방향으로 그려짐 + `Ø 640 mm` 라벨"
+    sfx: ["Time-Freeze Hit(2.5)", "Sub Drop(2.6)", "Reverse Whoosh(3.0)"]
+    transition: { in: "컷 + 플래시", out: "컷" }
+    prompt: |
+      Time freezes: the speeding scene is completely still. Then the train body, rails, ballast, overhead wires
+      and sky peel away from the edges of the frame and are replaced by a seamless mid-grey studio backdrop.
+      The wheel, axle, glowing brake disc and yellow caliper stay perfectly fixed in position and size the whole
+      time. Camera locked. Holds still for a moment at the start and at the end.
+    qc_reject: ["원판·캘리퍼 위치가 1% 이상 이동", "캘리퍼 형태 변화", "입자·연기 발생", "끝 프레임이 KF-S0와 다름"]
+    reused_by: ["5-5"]
+
+  # ================= S2 CLAMP =================
+  - id: "2-1"
+    section: S2_clamp
+    time: { in: 6.0, out: 9.0, duration_s: 3.0, frames: 72 }
+    narration: { text: "객차 바퀴축 하나에, 이 원판이 네 장.", sync: "'네 장'에 4번째 카운트" }
+    world: studio
+    shot: { size: WS, angle: "3/4 부감 약 35°", lens_feel: "35mm", subject_position: "대차가 화면 높이 중앙 60%" }
+    generation: { mode: FL, start_kf: KF-B1, end_kf: KF-B2, gen_length_s: 5, speed_factor: 1.67, hold_frames: { start: 4, end: 4 } }
+    reverse_safe: false
+    subject: { start: "솔리드 대차", end: "대차 프레임만 시안 X-ray, 차축·원판·캘리퍼는 솔리드" }
+    motion: { primary: "프레임의 X-ray 투명화", forbidden: ["카메라 이동", "원판 개수 변화"] }
+    camera: locked
+    cg_in_generation: ["X-ray 투명화", "원판 가장자리 시안 림"]
+    cg_post:
+      - "앞 차축 원판 4장에 순서대로 흰 외곽선 하이라이트 + `1` `2` `3` `4` (0.4초 간격)"
+      - "마지막에 상단 HUD `×4 / AXLE`"
+    sfx: ["Scan Sweep(6.0)", "Tick ×4(7.2~8.4)"]
+    transition: { in: "컷", out: "컷(사이즈 점프 WS → CU)" }
+    prompt: |
+      The solid bogie frame, springs and dampers gradually turn into a translucent cyan X-ray wireframe,
+      revealing two axles with four brake discs each. Axles, wheels, discs and calipers remain solid and
+      unchanged. Camera locked. Smooth, even transition. Holds still at the start and at the end.
+    qc_reject: ["원판 수가 차축당 4장이 아님", "바퀴·원판이 투명해짐", "대차 형태 변화"]
+
+  - id: "2-2"
+    section: S2_clamp
+    time: { in: 9.0, out: 12.0, duration_s: 3.0, frames: 72 }
+    narration: { text: "제동이 걸리면 압축공기가 실린더를 밀고,", sync: "'압축공기가'에 시안 충전 시작" }
+    world: studio
+    shot: { size: CU, angle: "측면 수평", lens_feel: "85mm", subject_position: "실린더가 화면 중앙 세로 방향" }
+    generation: { mode: FL, start_kf: KF-C1, end_kf: KF-C2, gen_length_s: 5, speed_factor: 1.67, hold_frames: { start: 4, end: 4 } }
+    reverse_safe: false
+    subject: { start: "빈 챔버, 로드 수축", end: "시안 공기 충전, 로드 신장" }
+    motion: { primary: "시안 공기 유입 → 로드가 축 방향으로 밀려 나옴", forbidden: ["실린더 몸체 이동", "호스 변형"] }
+    camera: locked
+    cg_in_generation: ["반투명 실린더", "시안 기체 충전"]
+    cg_post: ["호스를 따라 흐르는 시안 점선 화살표", "상단 HUD `AIR IN`"]
+    sfx: ["Pneumatic Hiss(9.2)"]
+    transition: { in: "컷", out: "컷" }
+    prompt: |
+      Inside the semi-transparent pneumatic cylinder, glowing cyan compressed air flows in from the hose and
+      fills the chamber, pushing the piston rod straight out along the cylinder axis. Only the air and the rod
+      move. Camera locked. Holds still at the start and at the end.
+    qc_reject: ["로드가 휘거나 축을 벗어남", "실린더가 사라짐"]
+
+  - id: "2-3"
+    section: S2_clamp
+    time: { in: 12.0, out: 15.0, duration_s: 3.0, frames: 72 }
+    narration: { text: "집게처럼 생긴 캘리퍼가 원판 양면을", sync: "'집게처럼'에 레버 회전 시작" }
+    world: studio
+    shot: { size: MCU, angle: "정면에서 약간 위 15°", lens_feel: "65mm", subject_position: "캘리퍼가 화면 상단 1/3~중앙" }
+    generation: { mode: FL, start_kf: KF-E, end_kf: KF-F, gen_length_s: 5, speed_factor: 1.67, hold_frames: { start: 6, end: 6 } }
+    reverse_safe: true
+    subject: { start: "레버 열림, 패드-원판 간극", end: "레버 닫힘, 패드 밀착" }
+    motion: { primary: "두 레버가 핀을 축으로 집게처럼 오므라듦", forbidden: ["하우징 이동", "원판 이동"] }
+    camera: locked
+    cg_in_generation: ["하우징 반투명", "내부 레버 노출"]
+    cg_post: ["레버 회전축에 흰 원호 화살표 2개", "상단 HUD `CLAMP`"]
+    sfx: ["Heavy Mechanical Click(14.4)"]
+    transition: { in: "컷", out: "컷(사이즈 점프 MCU → ECU)" }
+    prompt: |
+      Inside the semi-transparent yellow caliper, the two tong-shaped levers pivot inward around their pins and
+      close like pincers, moving both pads straight onto both faces of the disc. The disc and the caliper
+      housing stay still. Camera locked. Holds still at the start and at the end.
+    qc_reject: ["레버가 핀에서 떨어짐", "패드가 원판을 관통", "불꽃 발생"]
+    reused_by: ["5-2"]
+
+  - id: "2-4"
+    section: S2_clamp
+    time: { in: 15.0, out: 18.0, duration_s: 3.0, frames: 72 }
+    narration: { text: "꽉 물어버립니다.", sync: "'꽉'에 충격 프레임" }
+    world: studio
+    shot: { size: ECU, angle: "원판 면과 평행(엣지온)", lens_feel: "100mm 매크로", subject_position: "원판 두께가 화면 중앙 세로선" }
+    generation: { mode: FL, start_kf: KF-P1, end_kf: KF-P2, gen_length_s: 5, speed_factor: 1.67, hold_frames: { start: 4, end: 8 } }
+    reverse_safe: false
+    subject: { start: "양쪽 패드 간극", end: "양면 동시 접촉 + 오렌지 접촉선" }
+    motion: { primary: "양쪽 패드가 동시에 원판으로 직진", forbidden: ["원판 이동", "패드 회전"] }
+    camera: locked
+    cg_in_generation: ["접촉선 오렌지 발광"]
+    cg_post:
+      - "접촉 순간(약 15.9초): 흰 플래시 2프레임 + 화면 흔들림 6프레임(진폭 1.5%)"
+      - "접촉선에서 위아래로 튀는 불꽃 오버레이(스크린 블렌드, 0.6초)"
+    sfx: ["Metal Clang(15.9)", "Friction Squeal(16.0~18.0)"]
+    transition: { in: "컷", out: "컷" }
+    prompt: |
+      Extreme close-up, edge-on. Both sintered pads move straight toward the disc and clamp both faces at the
+      same instant; a thin orange glow line appears along each contact edge. The disc does not move.
+      Camera locked.
+    qc_reject: ["패드가 한쪽만 접촉", "원판 두께 변화"]
+
+  # ================= S3 HEAT =================
+  - id: "3-1"
+    section: S3_heat
+    time: { in: 18.0, out: 21.5, duration_s: 3.5, frames: 84 }
+    narration: { text: "열차의 운동에너지는 고스란히 마찰열이 됩니다.", sync: "'마찰열'에 레드 도달" }
+    world: studio
+    shot: { size: CU, angle: "원판 정면", lens_feel: "85mm", subject_position: "원판이 화면 폭 90%" }
+    generation: { mode: FL, start_kf: KF-H1, end_kf: KF-H2, gen_length_s: 5, speed_factor: 1.43, hold_frames: { start: 6, end: 6 } }
+    reverse_safe: true
+    subject: { start: "차가운 강철", end: "외경 오렌지 → 안쪽 레드, 허브는 어두움" }
+    motion: { primary: "외경에서 안쪽으로 번지는 발광", forbidden: ["원판 회전", "표면 무늬 변화"] }
+    camera: locked
+    cg_in_generation: ["에미션 발광 그라데이션"]
+    cg_post: ["아지랑이 왜곡 효과(정방향에서만)", "상단 HUD `E_k → HEAT`"]
+    sfx: ["High Pitch Friction(18.0)", "Fire Burst Low(19.5)"]
+    transition: { in: "컷", out: "프리즈(3-2로 연속)" }
+    prompt: |
+      The brushed-steel friction face heats up: orange glow appears at the outer rim and spreads inward,
+      deepening to red; the hub stays dark and cool. Shape and surface details stay identical.
+      Camera locked. Holds still at the start and at the end.
+    qc_reject: ["원판 외곽 일그러짐", "아지랑이·연기 생성"]
+    reused_by: ["5-3"]
+
+  - id: "3-2"
+    section: S3_heat
+    time: { in: 21.5, out: 24.0, duration_s: 2.5, frames: 60 }
+    narration: { text: "원판 표면은 순식간에 수백 도.", sync: "'수백 도'에 온도 막대가 HOT 끝에 도달" }
+    world: studio
+    shot: { size: CU, angle: "3-1과 동일", lens_feel: "85mm", subject_position: "3-1과 동일" }
+    generation: { mode: POST, source: "3-1 마지막 프레임 정지" }
+    reverse_safe: null
+    subject: { start: "실사 발광", end: "열화상 팔레트" }
+    motion: { primary: "열화상 모드 와이프(왼쪽→오른쪽 0.3초)", forbidden: [] }
+    camera: "CapCut 디지털 줌 100% → 104%"
+    cg_in_generation: []
+    cg_post:
+      - "그라데이션 맵: 검정 → 보라 → 빨강 → 노랑 → 흰색"
+      - "오른쪽 세로 온도 막대 `COLD ↔ HOT`(숫자 없음)"
+      - "스캔 라인 1회 위→아래"
+    sfx: ["Thermal Beep(21.6)", "Low Hum"]
+    transition: { in: "연속(프리즈)", out: "컷" }
+    prompt: null
+    qc_reject: ["온도 숫자 표기(출처 확인 전 금지)"]
+
+  - id: "3-3"
+    section: S3_heat
+    time: { in: 24.0, out: 27.0, duration_s: 3.0, frames: 72 }
+    narration: { text: "그래서 마찰판은 허브에 통째로 고정되지 않고,", sync: "-" }
+    world: studio
+    shot: { size: ECU, angle: "체결부 정면 약간 비스듬히", lens_feel: "100mm 매크로", subject_position: "링-허브 경계가 화면 중앙 대각선" }
+    generation: { mode: I2V, image: KF-J1, gen_length_s: 5, trim_allowed: true, use_range_s: [0.5, 3.5] }
+    reverse_safe: false
+    subject: { start: "발광 링 + 차가운 허브", end: "동일" }
+    motion: { primary: "아주 느린 푸시인", forbidden: ["피사체 형태 변화"] }
+    camera: "slow push-in"
+    cg_in_generation: ["링 발광"]
+    cg_post: ["링에서 바깥 방향으로 맥동하는 흰 방사형 화살표 `↔`"]
+    sfx: ["Metal Creak(25.0)"]
+    transition: { in: "컷", out: "컷(같은 사이즈 → X-ray 전환이라 허용)" }
+    prompt: |
+      Very slow push-in toward the joint between the glowing friction ring and the cool hub flange.
+      Nothing else moves.
+    qc_reject: ["볼트·부싱 개수 변화"]
+    fallback: "3-4와 합쳐 I2V 6초 1컷"
+
+  - id: "3-4"
+    section: S3_heat
+    time: { in: 27.0, out: 30.0, duration_s: 3.0, frames: 72 }
+    narration: { text: "늘어나는 만큼 미끄러질 여유를 두고 체결됩니다.", sync: "'미끄러질'에 간극 하이라이트" }
+    world: studio
+    shot: { size: ECU, angle: "3-3과 동일 구도의 X-ray", lens_feel: "100mm", subject_position: "KF-J2와 동일" }
+    generation: { mode: FL, start_kf: KF-J2, end_kf: KF-J3, gen_length_s: 5, speed_factor: 1.67, hold_frames: { start: 4, end: 8 } }
+    reverse_safe: false
+    subject: { start: "부싱 밀착", end: "링이 바깥으로 살짝 이동, 부싱 간극" }
+    motion: { primary: "링의 반경 방향 미세 이동", forbidden: ["허브 이동", "링 형태 변화"] }
+    camera: locked
+    cg_in_generation: ["반투명 허브", "링 이동"]
+    cg_post: ["간극에 노란 하이라이트", "상단 HUD `THERMAL EXPANSION`", "Warning Beep 아이콘 1회 깜빡임"]
+    sfx: ["Warning Beep(28.5)"]
+    transition: { in: "컷", out: "컷" }
+    prompt: |
+      The glowing friction ring expands and slides slightly outward along the radial bushings, small gaps
+      opening at each bushing; the hub stays still. Camera locked. Holds still at the start and at the end.
+    qc_reject: ["움직임이 보이지 않음(2회 실패 시 fallback)", "링이 깨짐"]
+    fallback: "3-3과 합쳐 I2V 6초 1컷, 팽창은 CapCut 화살표로만"
+
+  # ================= S4 INSIDE =================
+  - id: "4-1"
+    section: S4_inside
+    time: { in: 30.0, out: 33.0, duration_s: 3.0, frames: 72 }
+    narration: { text: "진짜 비밀은 원판 속에 있습니다.", sync: "'속에'에 조각 분리 완료" }
+    world: studio
+    shot: { size: MS, angle: "REF-1 앵글(3/4)", lens_feel: "50mm", subject_position: "REF-1과 동일" }
+    generation: { mode: FL, start_kf: KF-K0, end_kf: KF-K1, gen_length_s: 5, speed_factor: 1.67, hold_frames: { start: 6, end: 6 } }
+    reverse_safe: true
+    subject: { start: "발열 원판(온전)", end: "오른쪽 아래 1/4 절개, 두 판 + 방사형 핀 노출" }
+    motion: { primary: "1/4 조각이 카메라 쪽으로 직진해 프레임 밖으로 빠짐", forbidden: ["나머지 원판·캘리퍼 이동", "절개면 곡면화"] }
+    camera: locked
+    cg_in_generation: ["쿼터 컷어웨이"]
+    cg_post: ["시작 0.5초: 시안 레이저 절단선이 3시→중심→6시 경로로 그려짐(정방향에서만)", "상단 HUD `CUTAWAY`"]
+    sfx: ["Metal Slice(30.3)", "Reverse Whoosh(30.8)"]
+    transition: { in: "컷", out: "컷(MS → CU)" }
+    prompt: |
+      A flat cut separates the lower-right quarter of the glowing disc, from the 3 o'clock to the 6 o'clock
+      position; that quarter slides straight toward the camera and out of frame, revealing two parallel plates
+      joined by straight radial cooling vanes. The rest of the disc, the hub and the caliper stay perfectly
+      still and rigid. Camera locked. Holds still at the start and at the end.
+    qc_reject: ["절개면이 휘어짐", "핀 개수가 프레임마다 변함", "조각이 녹듯이 사라짐", "불꽃·입자 발생"]
+    reused_by: ["5-1"]
+
+  - id: "4-2"
+    section: S4_inside
+    time: { in: 33.0, out: 37.0, duration_s: 4.0, frames: 96 }
+    narration: { text: "두 장의 판 사이에, 냉각 핀이 촘촘히 박힌 통풍 구조.", sync: "'두 장'에 첫 라벨, '냉각 핀'에 둘째 라벨" }
+    world: studio
+    shot: { size: CU, angle: "절개면 정면", lens_feel: "85mm", subject_position: "절개면이 화면 중앙" }
+    generation: { mode: I2V, image: KF-K2, gen_length_s: 5, trim_allowed: true, use_range_s: [0.5, 4.5] }
+    reverse_safe: false
+    subject: { start: "절개면", end: "동일" }
+    motion: { primary: "느린 푸시인", forbidden: ["핀·판 형태 변화"] }
+    camera: "slow push-in"
+    cg_in_generation: []
+    cg_post: ["지시선 라벨 `FRICTION PLATE ×2`(33.3)", "지시선 라벨 `COOLING VANES`(35.0)"]
+    sfx: ["Low Drone"]
+    transition: { in: "컷", out: "컷" }
+    prompt: |
+      Slow push-in on the flat cut face showing two friction plates and the evenly spaced straight cooling
+      vanes between them. Nothing moves except the camera.
+    qc_reject: ["핀 간격 불규칙해짐"]
+
+  - id: "4-3"
+    section: S4_inside
+    time: { in: 37.0, out: 41.0, duration_s: 4.0, frames: 96 }
+    narration: { text: "바퀴가 돌면 원판 자체가 송풍기가 돼, 안쪽의 찬 공기를 빨아들여", sync: "'빨아들여'에 허브 쪽 유입 강조" }
+    world: studio
+    shot: { size: MCU, angle: "절개 원판 3/4", lens_feel: "65mm", subject_position: "절개부가 화면 오른쪽 아래 1/3" }
+    generation: { mode: I2V, image: KF-K3, gen_length_s: 5, trim_allowed: true, use_range_s: [0.5, 4.5] }
+    reverse_safe: false
+    subject: { start: "절개 원판 + 기류", end: "동일, 기류 지속" }
+    motion: { primary: "시안 기류가 허브에서 핀 사이로 흘러 외경에서 오렌지로", forbidden: ["원판 회전", "절개 형태 변화"] }
+    camera: locked
+    cg_in_generation: ["기류 스트림(시안 → 오렌지)"]
+    cg_post: ["허브 쪽 `AIR IN ↘`", "외경 쪽 `HEAT OUT ↗`"]
+    sfx: ["Air Flow Whoosh(37.0)", "Turbine Whine"]
+    transition: { in: "컷", out: "컷(MCU → MS)" }
+    prompt: |
+      The cutaway disc stays completely still. Translucent cyan air streams are drawn in near the hub, swirl
+      outward through the channels between the vanes, turn orange as they pass the hot plates and stream out
+      from the rim. Steady, continuous flow. Camera locked.
+    qc_reject: ["원판이 회전", "기류가 원판을 관통"]
+    note: "원판을 회전시키지 않음. 회전하면 절개된 1/4이 함께 돌아 구조 판독이 무너짐"
+
+  - id: "4-4"
+    section: S4_inside
+    time: { in: 41.0, out: 44.0, duration_s: 3.0, frames: 72 }
+    narration: { text: "바깥으로 열을 뿜어냅니다.", sync: "'뿜어냅니다'에 화살표 링 확장" }
+    world: studio
+    shot: { size: MS, angle: "원판 측면(두께 방향)", lens_feel: "50mm", subject_position: "원판 외경이 화면 세로 중앙 호" }
+    generation: { mode: I2V, image: KF-K4, gen_length_s: 5, trim_allowed: true, use_range_s: [0.5, 3.5] }
+    reverse_safe: false
+    subject: { start: "외경 개구부 + 열기", end: "동일, 열기 지속" }
+    motion: { primary: "개구부마다 오렌지 열기 플룸이 바깥으로", forbidden: ["원판 이동"] }
+    camera: locked
+    cg_in_generation: ["열기 플룸"]
+    cg_post: ["외경을 따라 바깥으로 퍼지는 흰 화살표 링"]
+    sfx: ["Vortex Wind(41.0)"]
+    transition: { in: "컷", out: "컷" }
+    prompt: |
+      Side view of the glowing disc edge. Orange heat plumes flow steadily outward from every vane opening
+      around the rim, radiating away from the disc. The disc stays still. Camera locked.
+    qc_reject: ["개구부 개수 변화", "원판 형태 변화"]
+
+  # ================= S5 RETURN =================
+  - id: "5-1"
+    section: S5_return
+    time: { in: 44.0, out: 45.5, duration_s: 1.5, frames: 36 }
+    narration: { text: "(무음 0.3초 후) 패드가", sync: "-" }
+    world: studio
+    shot: { size: MS, angle: "4-1과 동일", lens_feel: "50mm", subject_position: "4-1과 동일" }
+    generation: { mode: REV, source: "4-1", speed_factor: 3.33 }
+    subject: { start: "1/4 절개", end: "온전한 발열 원판" }
+    motion: { primary: "조각이 돌아와 원판이 닫힘", forbidden: [] }
+    camera: locked
+    cg_post: ["레이저선 없음", "끝 프레임에 흰 테두리 1프레임 글린트"]
+    sfx: ["Reverse Whoosh(44.0)"]
+    transition: { in: "컷", out: "컷" }
+
+  - id: "5-2"
+    section: S5_return
+    time: { in: 45.5, out: 47.0, duration_s: 1.5, frames: 36 }
+    narration: { text: "떨어지면,", sync: "'떨어지면'에 패드 분리" }
+    world: studio
+    shot: { size: MCU, angle: "2-3과 동일", lens_feel: "65mm", subject_position: "2-3과 동일" }
+    generation: { mode: REV, source: "2-3", speed_factor: 3.33 }
+    subject: { start: "레버 닫힘", end: "레버 열림, 간극" }
+    motion: { primary: "레버가 열리고 패드가 떨어짐", forbidden: [] }
+    camera: locked
+    cg_post: ["상단 HUD `RELEASE`"]
+    sfx: ["Pneumatic Release(45.6)"]
+    transition: { in: "컷", out: "컷" }
+    note: "2-3은 차가운 원판, 5-1은 뜨거운 원판 → 상태가 어긋나 보이면 5-2 위에 오렌지 컬러 오버레이 20%"
+
+  - id: "5-3"
+    section: S5_return
+    time: { in: 47.0, out: 50.0, duration_s: 3.0, frames: 72 }
+    narration: { text: "원판은 다시 차가운 강철로.", sync: "'강철로'에 완전 냉각" }
+    world: studio
+    shot: { size: CU, angle: "3-1과 동일", lens_feel: "85mm", subject_position: "3-1과 동일" }
+    generation: { mode: REV, source: "3-1", speed_factor: 1.67 }
+    subject: { start: "발광", end: "차가운 강철" }
+    motion: { primary: "발광이 외경 쪽으로 물러남", forbidden: [] }
+    camera: locked
+    cg_post: ["푸른 톤 컬러 그레이딩 +5"]
+    sfx: ["Cooling Tick(금속 수축음, 48.0/48.6/49.3)"]
+    transition: { in: "컷", out: "컷" }
+
+  - id: "5-4"
+    section: S5_return
+    time: { in: 50.0, out: 52.5, duration_s: 2.5, frames: 60 }
+    narration: { text: "물고, 달아오르고, 스스로 식히고.", sync: "각 단어 시작에 서브컷 전환" }
+    world: studio
+    shot: { size: ECU, angle: "몽타주", lens_feel: "-", subject_position: "-" }
+    generation:
+      mode: POST
+      subclips:
+        - { source: "2-4", range: "접촉 직후 20프레임", word: "물고" }
+        - { source: "3-2", range: "열화상 20프레임", word: "달아오르고" }
+        - { source: "4-3", range: "기류 20프레임", word: "스스로 식히고" }
+    cg_post: ["서브컷마다 흰 플래시 2프레임", "자막 단어를 시안으로 강조"]
+    sfx: ["Hit ×3(50.0/50.8/51.6)"]
+    transition: { in: "컷", out: "컷" }
+
+  - id: "5-5"
+    section: S5_return
+    time: { in: 52.5, out: 55.0, duration_s: 2.5, frames: 60 }
+    narration: { text: "그렇게 오늘도,", sync: "문장 끝 = 영상 끝 → 1-1 첫 문장으로 이어짐" }
+    world: "studio → track"
+    shot: { size: WS, angle: "1-1과 동일", lens_feel: "24mm", subject_position: "1-1과 동일" }
+    generation: { mode: REV, source: "1-2", speed_factor: 2.0 }
+    subject: { start: "KF-S0(스튜디오)", end: "REF-2′(주행 장면, 정지)" }
+    motion: { primary: "스튜디오가 주행 장면으로 다시 덮임", forbidden: [] }
+    camera: locked
+    cg_post: ["끝 0.5초: HUD `300 km/h`가 1-1과 같은 위치·크기로 등장"]
+    sfx: ["Heartbeat Thump(54.0) — 꼬리를 1-1 Train Rush 앞 0.2초에 겹침"]
+    transition: { in: "컷", out: "루프 → 1-1 (같은 이미지 REF-2′)" }
+
+# ---------------------------------------------------------------------
+# 시그니처 루프 10초 (시리즈 아이덴트 / 다음 영상 콜드오픈 / 단독 티저 쇼츠)
+#   상세 설명과 다른 부품용 템플릿은 signature-loop.md
+# ---------------------------------------------------------------------
+signature_loop:
+  duration_s: 10.0
+  frames: 240
+  keyframes:
+    - id: SIG-A
+      derived_from: REF-1′
+      op: none
+      state: { assembly: assembled, caliper: clamped, cutaway: none, temperature: cool }
+    - id: SIG-B
+      derived_from: SIG-A
+      op: edit
+      prompt: >
+        exploded view: the yellow caliper with its pneumatic cylinder and hoses has lifted straight up, away
+        from the axle center, by about the caliper's own height; the two sintered pads have moved straight
+        outward away from each disc face by about one pad thickness and float in line with their original
+        positions; the disc, hub, axle and stand are unchanged.
+      state: { assembly: exploded, caliper: lifted, pads: separated, cutaway: none }
+    - id: SIG-C
+      derived_from: SIG-B
+      op: edit
+      prompt: >
+        the lower-right quarter of the disc, from the 3 o'clock to the 6 o'clock position, is cut away with
+        perfectly flat machined cut faces, revealing two parallel friction plates joined by evenly spaced
+        straight radial cooling vanes, and the cut hub flange showing the axle bore; everything else unchanged.
+      state: { assembly: exploded, cutaway: lower_right_quarter }
+  clips:
+    - id: SIG-1
+      mode: FL
+      start_kf: SIG-A
+      end_kf: SIG-B
+      reverse_safe: true
+      prompt: |
+        Exploded-view motion: the yellow caliper with its pneumatic cylinder lifts straight up along its
+        mounting axis, away from the axle center, while the two sintered pads slide straight outward away from
+        the disc faces. Every part stays rigid and moves only along its own assembly axis. The disc, hub, axle
+        and stand do not move. Camera locked. Holds still at the start and at the end.
+    - id: SIG-2
+      mode: FL
+      start_kf: SIG-B
+      end_kf: SIG-C
+      reverse_safe: true
+      prompt: |
+        A flat cut separates the lower-right quarter of the disc, from the 3 o'clock to the 6 o'clock position;
+        that quarter slides straight toward the camera and out of frame, revealing two parallel plates joined by
+        straight radial cooling vanes and the cut hub. The lifted caliper, the floating pads and the rest of the
+        disc stay perfectly still. Camera locked. Holds still at the start and at the end.
+  edit_timeline:            # 프레임 기준(24fps)
+    - { frames: [0, 6],     source: "SIG-A 정지" }
+    - { frames: [6, 60],    source: "SIG-1 정방향", speed_factor: 2.22 }
+    - { frames: [60, 114],  source: "SIG-2 정방향", speed_factor: 2.22 }
+    - { frames: [114, 126], source: "SIG-C 정지(리빌 비트) + 절개면 흰 글린트 1회" }
+    - { frames: [126, 180], source: "SIG-2 역재생", speed_factor: 2.22 }
+    - { frames: [180, 234], source: "SIG-1 역재생", speed_factor: 2.22 }
+    - { frames: [234, 240], source: "SIG-A 정지 → 0프레임으로 루프" }
