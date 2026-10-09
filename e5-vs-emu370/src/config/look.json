@@ -1,0 +1,46 @@
+{
+  "_doc": "룩 규격. 레퍼런스(밝은 주간 하이키 + 인월드 인포그래픽)를 따른다. 초안의 암전·네온·볼류메트릭 룩은 폐기.",
+  "render": {
+    "engine_final": "CYCLES", "device_final": "GPU (사용자 PC)",
+    "samples_final": 192, "denoiser": "OIDN", "adaptive_threshold": 0.01,
+    "engine_preview": "CYCLES CPU", "preview_tiers": {"animatic": [270, 4], "still": [540, 16], "key4s": [540, 24]},
+    "resolution_px": [1080, 1440], "fps": 30, "frames": [1, 900],
+    "motion_blur": true, "motion_blur_shutter_default": 0.5, "motion_blur_position": "CENTER",
+    "_shutter_doc": "컷별 셔터는 shots.json. render.motion_blur_shutter 키프레임으로 컷 경계에서 CONSTANT 보간 전환",
+    "view_transform": "AgX", "look": "AgX - Medium Contrast", "exposure": 0.3,
+    "film_transparent": false,
+    "volumetrics": "사용 안 함 (초안의 Principled Volume 0.03 큐브 폐기)"
+  },
+  "world": {
+    "lighting": "Nishita sky (sun_disc OFF), sun elevation 48°, rotation 측면 역광 30°, air 1.0, dust 0.6",
+    "sun_lamp": {"strength": 4.0, "angle_deg": 1.0, "color_k": 5600},
+    "camera_sky": "Light Path Is Camera Ray 분기 → 상단 #8FB7E3 / 지평 #DCE9F5 그라디언트 + 저대비 적운 노이즈 (레퍼런스 하늘 톤)",
+    "ground_far": "저채도 들판 + 원경 산 실루엣, 대기 원근(지평 쪽 명도 상승)",
+    "holo_grid": {"floor": "#9DB4D3", "line": "#FFFFFF", "line_emission": 1.5, "used_in": ["C3 끝", "C4"]}
+  },
+  "materials": {
+    "paint_clearcoat": {
+      "base_roughness": 0.32, "coat_weight": 0.8, "coat_roughness": 0.04,
+      "_doc": "하늘 반사가 노즈 곡률을 읽히게 하는 핵심. 패널 라인은 노멀/베벨로, 데칼은 별도 슬롯"
+    },
+    "E5_tokiwa_green":  {"srgb": "#0A7D5B", "status": "UNVERIFIED 근사값 — 공식 사진 스포이드로 재샘플"},
+    "E5_hiun_white":    {"srgb": "#F2F3F1", "status": "UNVERIFIED 근사값"},
+    "E5_tsutsuji_pink": {"srgb": "#E2457D", "status": "UNVERIFIED 근사값"},
+    "EMU370_paint":     {"srgb": null, "status": "UNVERIFIED — 이노트란스 공개 이미지에서 샘플링 전까지 중립 화이트 #EDEFF2 + 회색 윈도우 밴드"},
+    "window_glass": {"base": "#0B0F14", "roughness": 0.02, "coat": 1.0, "_doc": "내부 미모델 → 거의 검정 + 강한 반사"},
+    "bogie_metal": {"base": "#3A3D41", "roughness": 0.45, "metallic": 0.9, "edge_wear": "Pointiness 기반 미세 밝힘"},
+    "rail": {"head": "polished steel roughness 0.15", "web": "#4A3B30 녹 0.7"},
+    "slab_concrete": {"base": "#9C9A94", "roughness": 0.85},
+    "xray_shell": {"_doc": "Texture Coordinate(Object=XRAY_CLIP).X > 0 → Transparent BSDF + 얇은 프레넬 시안 림(#5FD7FF, 0.6). 내부: 대차·전동기·변압기 박스 메시 필요"},
+    "dimension_line": {"color": "#FFFFFF", "outline": "#1A1A1A", "emission": 2.0, "font": "Pretendard ExtraBold"},
+    "data_accent": {"color": "#7CF07C", "_doc": "레퍼런스 녹색 데이터 링크 톤. 압력 링 E5=#7CF07C, 짧은 노즈 고스트=#FF5A4F"}
+  },
+  "typography": {
+    "in_world_labels": "Pretendard ExtraBold, 흰색, 1.5px 상당 검정 외곽선 + 소프트 섀도 (레퍼런스 'F-22 vs F-35' 라벨 스타일)",
+    "top_bar_title": "Black Han Sans 88px, 흰색 — 상단 240px 레터박스 안 (전편 고정: 'E5 vs EMU-370')",
+    "bottom_bar_subtitle": "Pretendard Bold 54px, 흰색, 하단 240px 레터박스 안, 2줄 이내",
+    "disclaimer": "Pretendard 26px 60% 흰색 — 'CG 재현 · EMU-370은 2026 공개 콘셉트 디자인 기준' C3·C5a 하단 바 우측",
+    "fonts_license": "Pretendard(OFL), Black Han Sans(OFL)"
+  },
+  "banned": ["볼류메트릭 안개 큐브", "20mm 이하 광각으로 노즈 비교", "휠-레일 마찰 불꽃(정상 주행에서 비현실)", "Wireframe 노드 오버레이(고밀도 에셋에서 삼각형 노이즈)", "깃발 네온 과다 글로우"]
+}

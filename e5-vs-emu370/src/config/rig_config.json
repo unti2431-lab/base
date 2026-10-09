@@ -1,0 +1,170 @@
+{
+  "_doc": "모든 기하·운동 수치의 유일한 원본. 코드는 풀이만 담는다. status: CONFIRMED(출처 있음) / UNVERIFIED(에셋·공식 도면으로 재확인 필요) / DESIGN(연출용 가정, 사실 주장 아님).",
+  "units": "m, s, rad. 좌표: 선로 좌표계 X=진행방향, Y=좌측, Z=위, 레일 상면 Z=0.",
+  "fps": 30,
+  "frame_bake_range": [
+    0,
+    901
+  ],
+  "trains": {
+    "E5": {
+      "speed_kmh": 320,
+      "speed_status": "CONFIRMED (영업 최고속도)",
+      "nose_length_m": 15.0,
+      "nose_status": "CONFIRMED-약 15 m (일부 자료 16 m. 화면 표기는 '15 m')",
+      "formation": "10량 8M2T",
+      "formation_status": "CONFIRMED",
+      "cars_built": 6,
+      "_cars_built_doc": "선두차 1 + 중간차 인스턴스 5. C5 패스 샷에서 보이는 길이(1.4s x v)보다 길게",
+      "lead_car_length_m": 26.5,
+      "mid_car_length_m": 25.0,
+      "car_length_status": "UNVERIFIED (에셋 실측으로 교체)",
+      "body_width_m": 3.35,
+      "body_height_m": 3.65,
+      "body_status": "UNVERIFIED",
+      "wheel_diameter_m": 0.86,
+      "wheel_status": "UNVERIFIED (차륜 신품경, 에셋 실측)",
+      "bogie_centers_from_car_end_m": [
+        3.5,
+        21.5
+      ],
+      "bogie_status": "UNVERIFIED",
+      "axle_base_m": 2.5,
+      "axle_status": "UNVERIFIED",
+      "pantograph_cars": [
+        2
+      ],
+      "pantograph_status": "UNVERIFIED (실차 사진으로 위치 확인)",
+      "livery": {
+        "upper": "tokiwa_green",
+        "lower": "hiun_white",
+        "stripe": "tsutsuji_pink",
+        "status": "CONFIRMED 배색 / 색값 UNVERIFIED"
+      }
+    },
+    "EMU370": {
+      "speed_kmh": 370,
+      "speed_status": "CONFIRMED-목표 (상업운행 목표속도, 미운행)",
+      "design_max_kmh": "400~407",
+      "design_status": "CONFLICT (보도마다 400/407) — 화면에 쓰지 않음",
+      "nose_length_m": 10.2,
+      "nose_status": "CONFIRMED (이노트란스 2026 공개, KTX-청룡 6.5 m 대비)",
+      "motor_kw_class": 560,
+      "motor_status": "CONFIRMED-보도 (560 kW급, 방식(PMSM 여부) UNVERIFIED → 화면에 방식 표기 금지)",
+      "formation": "1편성 16량(보도) / 1~16호차 대칭, 선두객차+동력차 혼합",
+      "formation_status": "CONFIRMED-보도, 동력차 위치 UNVERIFIED",
+      "motor_car_pattern": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "_motor_car_pattern_doc": "DESIGN — 8량 가시 구간용 연출 패턴. 공식 편성도 확보 시 교체 (TASK G-FACT-2)",
+      "cars_built": 8,
+      "lead_car_length_m": 27.0,
+      "mid_car_length_m": 25.0,
+      "car_length_status": "UNVERIFIED",
+      "body_width_m": 3.1,
+      "body_height_m": 3.6,
+      "body_status": "UNVERIFIED",
+      "wheel_diameter_m": 0.86,
+      "wheel_status": "UNVERIFIED",
+      "bogie_centers_from_car_end_m": [
+        3.5,
+        21.5
+      ],
+      "axle_base_m": 2.6,
+      "pantograph_cars": [
+        3
+      ],
+      "pantograph_status": "UNVERIFIED",
+      "livery": {
+        "status": "UNVERIFIED — 이노트란스 공개 이미지에서 샘플링 (G-ASSET-2)"
+      }
+    },
+    "CR450": {
+      "speed_kmh": 400,
+      "speed_status": "CONFIRMED-목표 (시험 453 km/h, 상업운행 개시 미확인)",
+      "usage": "C4 축소 모델 전용. 형상은 공개 사진 수준의 실루엣이면 충분"
+    }
+  },
+  "track": {
+    "gauge_m": 1.435,
+    "gauge_status": "CONFIRMED",
+    "track_spacing_m": 4.3,
+    "spacing_status": "DESIGN (C1·C5 가상 병렬 선로)",
+    "rail_head_to_contact_wire_m": 5.0,
+    "contact_wire_status": "UNVERIFIED (일반값)",
+    "mast_spacing_m": 50.0,
+    "mast_status": "UNVERIFIED (일반값). 102.8 m/s에서 약 0.49 s = 15F마다 기둥 통과 → 속도 리듬",
+    "sleeper_spacing_m": 0.6,
+    "slab_track": true,
+    "viaduct": true
+  },
+  "tunnel": {
+    "inner_radius_m": 4.8,
+    "hood_length_m": 30.0,
+    "visible_length_m": 260.0,
+    "status": "DESIGN (설명용 축약 터널. 실제 터널은 km 단위)",
+    "speed_of_sound_ms": 340.0,
+    "pressure_ring": {
+      "E5_start_frame": 255,
+      "ghost_start_frame": 285,
+      "travel_frames": 23,
+      "thickness_E5_m": 6.0,
+      "thickness_ghost_m": 1.2,
+      "_doc": "x = x_portal_in + 340*(t - t0). 260 m / 340 m/s = 0.76 s = 23F. 링 두께 = 압력 상승 구간 표현: 긴 노즈 → 완만(두껍고 흐림), 짧은 노즈 고스트 → 급격(얇고 밝음)"
+    }
+  },
+  "motion": {
+    "speeds_are_real_time": true,
+    "_doc": "주행 샷은 실제 속도 그대로. 슬로모션 금지. 판독은 hull 카메라로 확보.",
+    "wheel_rev_per_frame": {
+      "E5": 1.097,
+      "EMU370": 1.268,
+      "_doc": "v/(pi*D)/fps. 1 rev/frame 초과 → 스포크 판독 불가(왜곡 회전 착시). 디스크 차륜 + 셔터 0.5 블러로 번지게 둔다. 차륜 텍스처에 비대칭 마킹 1개 필수"
+    },
+    "bogie_bounce_amp_m": 0.003,
+    "bogie_bounce_hz": 6.0,
+    "body_sway_deg": 0.15,
+    "pantograph": {
+      "raised": true,
+      "contact_force_wobble_m": 0.01,
+      "wobble_hz": 4.0
+    }
+  },
+  "xray": {
+    "clip_empty": "XRAY_CLIP",
+    "sweep_frames": [
+      420,
+      480
+    ],
+    "sweep_axis": "X",
+    "sweep_from_nose_to_tail": true,
+    "motor_light_rise_frames": 6,
+    "motor_emission_peak": 25.0,
+    "motor_color_srgb": "#FFB23F"
+  },
+  "infographic": {
+    "grid_floor_spacing_m": 4.0,
+    "grid_line_width_m": 0.08,
+    "pillar_height_per_kmh_m": 0.02,
+    "_pillar_doc": "320→6.4 m, 370→7.4 m, 400→8.0 m (축소 모델 1:20 기준)",
+    "pillar_rise_frames": 24,
+    "overshoot": 0.06,
+    "settle_frames": 10,
+    "counter_font": "Pretendard ExtraBold (OFL)"
+  },
+  "qc": {
+    "camera_min_clearance_m": 0.15,
+    "contact_gap_m": [
+      0.0005,
+      0.002
+    ],
+    "wheel_rail_penetration_max_m": 0.0001
+  }
+}

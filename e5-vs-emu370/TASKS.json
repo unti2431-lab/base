@@ -1,0 +1,26 @@
+{
+  "project": "e5-vs-emu370",
+  "revision": "R1",
+  "blocked_by_user": [
+    {"id": "G-FACT-1", "do": "공개 직전 CR450 상업운행 개시 여부 재확인. 개시됐으면 C4 태그를 '현역'으로 바꾼다", "accept": "LOCKS F-CR-2 상태 갱신 + 날짜"},
+    {"id": "G-FACT-2", "do": "EMU-370 공식 편성도·동력차 위치 확보 시 rig_config.motor_car_pattern 교체", "accept": "출처 URL 기록. 없으면 DESIGN 유지 + 면책 문구"},
+    {"id": "G-ASSET-1", "do": "E5 3D 모델 구매(상업 영상 사용 가능 라이선스, 대차·팬터 분리 메시 권장) → assets/e5/", "accept": "라이선스 파일 동봉, asset_map.json 항목"},
+    {"id": "G-ASSET-2", "do": "EMU-370 이노트란스 2026 공개 이미지(측면·정면·상면) 확보 → assets/emu370/ref/. 색·헤드라이트 샘플링", "accept": "이미지 3장 이상 + 출처. look.json EMU370_paint 값 입력"},
+    {"id": "G-VO", "do": "N1–N5 녹음(TTS 또는 성우), 줄별 wav", "accept": "줄별 길이를 REPORT에 기록 → Codex T10"},
+    {"id": "G-FINAL", "do": "1080p GPU 최종 렌더, 믹스, 공개 승인", "accept": "ffprobe 1080x1920 30fps 900F + 디코드 오류 0"}
+  ],
+  "tasks": [
+    {"id": "T01", "deps": [], "do": "재현: tools/check_beats.py 실행, HANDOFF §2 기준값과 비교", "accept": "ALL true, 음절/s 수치 일치. REPORT 기록"},
+    {"id": "T02", "deps": ["T01"], "do": "scripts/setup_env.sh로 bpy 4.5 환경. bpy.app.version 출력", "accept": "(4,5,x) 출력"},
+    {"id": "T03", "deps": ["T02"], "do": "src/kin.py(순수 numpy) + src/bake.py 구현 → src/motion_bake.npz (F0–F901). shots.json hull 공간 → 월드 변환 포함", "accept": "npz 키 목록이 HANDOFF §3과 일치, 같은 입력 2회 md5 동일"},
+    {"id": "T04", "deps": ["T03"], "do": "src/verify_bake.py: 차륜각=v·t/r 오차, 링 속도 340 m/s 오차, 열차 속도 상수성, 카메라 튐(카메라 프레임당 이동/중앙값 > 1.25), t<0 선형 외삽 확인", "accept": "evidence/verify_bake.json ALL true. 실패 시 exit 1"},
+    {"id": "T05", "deps": ["T03"], "do": "가짜 에셋(큐브 열차) 생성기 + src/build_scene.py: 환경(고가 슬래브, 레일, 기둥, 전차선, 터널, 그리드), 열차 인스턴스, 카메라 8대 + 마커 바인딩, 슬롯 액션 베이크", "accept": "F1·F450·F768에서 카메라·열차 위치 출력이 npz와 1 mm 이내. 270p 스틸 8장이 검은 화면 아님"},
+    {"id": "T06", "deps": ["T05"], "do": "src/verify_scene.py: BVH 충돌(HANDOFF §4.5 쌍) + 카메라 최근접 거리. 일부러 차륜 5 mm 침하 버전으로 FAIL 확인", "accept": "정상본 ALL true, 고장본 FAIL — 두 결과 모두 evidence/에 저장"},
+    {"id": "T07", "deps": ["T05"], "do": "셰이더·GN: 스캔 밴드, 치수선 GN, 압력 링, 출구 퍼프, X-Ray 클립 + 전동기 드라이버 점등, 광주 + GN 카운터, 아크 플래시, 전차선 진동", "accept": "각 효과가 beats.json 사건 프레임에 시작(±2F). 키프레임 시트에서 판독"},
+    {"id": "T08", "deps": ["T05"], "do": "src/verify_proportion.py: C1·C5b에서 두 노즈를 카메라 투영해 화면 크기비 계산", "accept": "실제 비례 대비 ±5% 이내, evidence/proportion.json"},
+    {"id": "T09", "deps": ["T06", "T07", "T08"], "do": "src/render_preview.py: 270p 4spp 애니매틱 MP4 + 키프레임 8장 시트(F1, F66, F212, F266, F330, F450, F655, F774) + 540p C2b–C2c 핵심 4초 MP4", "accept": "ffprobe 해상도·fps·프레임 수 일치, 디코드 오류 0. 대표 1프레임 렌더 시간 기록"},
+    {"id": "T10", "deps": ["T09", "G-VO"], "do": "음성 실측 반영: 컷 경계 ±6F 조정 → beats.json 수정 → check_beats → 재베이크", "accept": "check_beats ALL true, 프레임 대응표 REPORT 기록"},
+    {"id": "T11", "deps": ["T09", "G-ASSET-1", "G-ASSET-2"], "do": "src/import_assets.py + asset_map 통합, 노즈 길이 실측 검사(config 대비 3%), 이름 규칙 재부착, G03 재실행", "accept": "verify_scene ALL true(에셋 부품 포함), proportion PASS"},
+    {"id": "T12", "deps": ["T11"], "do": "RUN_ALL.ps1 완성(-VerifyOnly, -Rebake, -AssetMap, 렌더 이어하기, ffprobe + sha256)", "accept": "깨끗한 폴더 재실행에서 증거 수치·npz md5 일치"}
+  ]
+}

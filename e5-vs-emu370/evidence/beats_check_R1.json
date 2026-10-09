@@ -1,0 +1,27 @@
+{
+  "PASS": {
+    "G-B1_cut_coverage": true,
+    "G-B2_max_event_gap": true,
+    "G-B3_speech_rate": true,
+    "G-B4_no_overlap": true,
+    "G-B5_noun_visible_first": true
+  },
+  "ALL": true,
+  "log": [
+    "B2 최대 사건 간격 50F (1.67s) @F450–F500",
+    "B3 N1 22음절 / 3.03s = 7.25음절/s OK",
+    "B5 N1 '이오'(E5) 추정 청취 F22 in C1 → 노출 F1 OK",
+    "B5 N1 '이엠유'(EMU370) 추정 청취 F47 in C1 → 노출 F36 OK",
+    "B3 N2 43음절 / 6.43s = 6.68음절/s OK",
+    "B5 N2 '이오'(E5) 추정 청취 F158 in C2a → 노출 F151 OK",
+    "B5 N2 '터널'(TUNNEL) 추정 청취 F207 in C2a → 노출 F180 OK",
+    "B3 N3 46음절 / 6.43s = 7.15음절/s OK",
+    "B5 N3 '이엠유'(EMU370) 추정 청취 F368 in C3 → 노출 F361 OK",
+    "B5 N3 '전동기'(MOTORS) 추정 청취 F489 in C3 → 노출 F450 OK",
+    "B3 N4 38음절 / 5.43s = 6.99음절/s OK",
+    "B5 N4 '이오'(E5) 추정 청취 F578 in C4 → 노출 F571 OK",
+    "B5 N4 '씨알'(CR450) 추정 청취 F663 in C4 → 노출 F571 OK",
+    "B3 N5 28음절 / 4.10s = 6.83음절/s OK",
+    "B5 N5 '신칸센'(E5) 추정 청취 F828 in C5b → 노출 F811 OK"
+  ]
+}

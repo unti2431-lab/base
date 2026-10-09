@@ -1,0 +1,21 @@
+{
+  "E5": {
+    "file": "assets/e5/E5.blend",
+    "collection": "E5_LEAD",
+    "nose_tip_object": "BODY_LEAD",
+    "nose_tip_local": [0.0, 0.0, 0.0],
+    "forward_axis": "-Y",
+    "scale_to_m": 1.0,
+    "rename": {"wheel_*": "WHEEL_{car}_{axle}_{side}", "panto*": "PANTO_{car}", "bogie*": "BOGIE_{car}_{pos}"},
+    "collision_parts": ["BODY_*", "BOGIE_*", "WHEEL_*", "PANTO_*"]
+  },
+  "EMU370": {
+    "file": "assets/emu370/EMU370_base.blend",
+    "collection": "EMU370_LEAD",
+    "nose_tip_object": "BODY_LEAD",
+    "nose_tip_local": [0.0, 0.0, 0.0],
+    "forward_axis": "-Y",
+    "scale_to_m": 1.0,
+    "collision_parts": ["BODY_*", "BOGIE_*", "WHEEL_*", "PANTO_*", "MOTOR_*"]
+  }
+}
