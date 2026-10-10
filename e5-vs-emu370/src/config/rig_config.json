@@ -117,7 +117,8 @@
       "travel_frames": 23,
       "thickness_E5_m": 6.0,
       "thickness_ghost_m": 1.2,
-      "_doc": "x = x_portal_in + 340*(t - t0). 260 m / 340 m/s = 0.76 s = 23F. 링 두께 = 압력 상승 구간 표현: 긴 노즈 → 완만(두껍고 흐림), 짧은 노즈 고스트 → 급격(얇고 밝음)"
+      "_doc": "x = x_portal_in + 340*(t - t0). 260 m / 340 m/s = 0.76 s = 23F. 링 두께 = 압력 상승 구간 표현: 긴 노즈 → 완만(두껍고 흐림), 짧은 노즈 고스트 → 급격(얇고 밝음)",
+      "_width_doc": "6 m/1.2 m는 축방향 펄스 폭. 반경방향 두께는 터널 내부에 들어가는 별도 값. 출구 도달 E5 F278, 고스트 F308"
     }
   },
   "motion": {
@@ -134,8 +135,10 @@
     "pantograph": {
       "raised": true,
       "contact_force_wobble_m": 0.01,
-      "wobble_hz": 4.0
-    }
+      "wobble_hz": 4.0,
+      "_doc": "습판은 애니메이션된 전차선 위치를 추종하고 링크가 변위를 흡수. 간극 0.5–2 mm는 시각 제작 허용치"
+    },
+    "_suspension_doc": "차륜 접점은 레일에 구속. 진동(bogie_bounce)은 대차 프레임·차체에만 적용하고 차륜 부모 변환은 베이크에서 보상"
   },
   "xray": {
     "clip_empty": "XRAY_CLIP",
@@ -147,7 +150,8 @@
     "sweep_from_nose_to_tail": true,
     "motor_light_rise_frames": 6,
     "motor_emission_peak": 25.0,
-    "motor_color_srgb": "#FFB23F"
+    "motor_color_srgb": "#FFB23F",
+    "_sign_doc": "노즈 0, 후미 -X. 진행 변수 s = -local_x 사용: sweep_s >= motor_s 이후 6F 상승. 단순 clip_x - motor_x는 순서가 뒤집힌다"
   },
   "infographic": {
     "grid_floor_spacing_m": 4.0,
@@ -165,6 +169,7 @@
       0.0005,
       0.002
     ],
-    "wheel_rail_penetration_max_m": 0.0001
+    "wheel_rail_penetration_max_m": 0.0001,
+    "_sampling_doc": "6 Hz 진동은 30fps에서 주기 5F → 5F 간격 검사는 같은 위상만 본다. 전 프레임 + 극값 + 셔터 서브프레임 + swept 검사"
   }
 }

@@ -30,7 +30,7 @@ LOCK 항목은 사용자 승인 없이 바꾸지 않는다. 상태: CONFIRMED / 
 
 | 항목 | 값 |
 |---|---|
-| 렌더 | 1080×1440, 30fps, F1–F900, Cycles, AgX Medium Contrast |
+| 렌더 | 1080×1440, 30fps, F1–F900, Cycles, AgX Base Contrast (4.5에 Medium Contrast 없음) |
 | 납품 | 1080×1920 (위아래 240px 레터박스), H.264 High, AAC 48k, −14 LUFS |
 | 시간 규약 | t = (F−1)/30, 프레임 범위 양끝 포함 |
 | 비트 원본 | `src/config/beats.json` |
