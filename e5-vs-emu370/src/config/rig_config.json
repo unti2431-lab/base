@@ -28,7 +28,7 @@
         3.5,
         21.5
       ],
-      "bogie_status": "UNVERIFIED",
+      "bogie_status": "WRONG FOR LEAD CAR — 3.5 m는 일반 차량 기준값이라 15 m 롱 노즈에서는 대차가 노즈 밖으로 드러난다(R8 R006 실측). 선두차 앞 대차는 차체 외피가 대차를 완전히 덮는 위치에 두고, 실제 값은 E5 에셋·측면 사진에서 확정",
       "axle_base_m": 2.5,
       "axle_status": "UNVERIFIED",
       "pantograph_cars": [

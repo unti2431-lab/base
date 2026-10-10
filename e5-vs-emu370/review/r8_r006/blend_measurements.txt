@@ -1,0 +1,47 @@
+res 540 960 100 fps 30 frames 1 900 engine CYCLES mblur False 0.5 view AgX AgX - Base Contrast exp -0.30000001192092896
+samples 16
+markers [('S01', 1, 'S01_CAM'), ('S02', 91, 'S02_CAM'), ('S03', 199, 'S03_CAM'), ('S04', 289, 'S04_CAM'), ('S05', 397, 'S05_CAM'), ('S06', 505, 'S06_CAM'), ('S07', 604, 'S07_CAM'), ('S08', 703, 'S08_CAM'), ('S09', 811, 'S09_CAM')]
+types Counter({'MESH': 1324, 'EMPTY': 315, 'CURVE': 71, 'CAMERA': 9, 'LIGHT': 1}) FONT data 0
+images [('Render Result', '')]
+collections [('Collection', 0), ('S01', 315), ('S02', 120), ('S03', 203), ('S04', 202), ('S05', 121), ('S06', 121), ('S07', 120), ('S08', 202), ('S09', 315)]
+cam S01_CAM lens 42.0 rotZYX deg [65.3, 35.4, 165.1] has_anim True
+cam S02_CAM lens 48.0 rotZYX deg [63.3, 25.4, 140.3] has_anim True
+cam S03_CAM lens 40.0 rotZYX deg [61.5, -0.0, -119.1] has_anim True
+cam S04_CAM lens 48.0 rotZYX deg [63.3, 25.4, 140.3] has_anim True
+cam S05_CAM lens 65.0 rotZYX deg [85.5, 8.0, 158.8] has_anim True
+cam S06_CAM lens 70.0 rotZYX deg [67.0, 9.2, 148.0] has_anim True
+cam S07_CAM lens 75.0 rotZYX deg [66.7, 11.0, 142.6] has_anim True
+cam S08_CAM lens 55.0 rotZYX deg [74.6, 17.4, 132.4] has_anim True
+cam S09_CAM lens 42.0 rotZYX deg [65.3, 35.4, 165.1] has_anim True
+E5_S01_CAR_00_BODY_ROOT v m/s min/med/max [  2.1    2.1  220.22] km/h med 7.6
+  roll ratio |dθ|r/|dx| min/med/max [0. 0. 0.]
+EMU names sample ['EMU370_S01_CAR_00_BODY_ROOT', 'EMU370_S01_CAR_00_BOGIE_0_FRAME_ROOT', 'EMU370_S01_CAR_00_BOGIE_0_FRAME_ROOT_MESH', 'EMU370_S01_CAR_00_BOGIE_1_FRAME_ROOT', 'EMU370_S01_CAR_00_BOGIE_1_FRAME_ROOT_MESH', 'EMU370_S01_CAR_01_BODY_ROOT', 'EMU370_S01_CAR_01_BOGIE_0_FRAME_ROOT', 'EMU370_S01_CAR_01_BOGIE_0_FRAME_ROOT_MESH']
+E5 S01 per-frame speed km/h [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 10, 31, 51, 72, 93, 113, 134, 154, 175, 196, 216, 237, 257, 278, 299, 319, 340, 360, 381, 402, 422, 443, 463, 484, 504, 525, 546, 566, 587, 607, 628, 649, 669, 690, 710, 731, 752, 772, 793]
+E5_S02_CAR_00_BODY_ROOT v m/s min/med/max [88.89 88.89 88.89] km/h med 320.0
+  roll ratio |dθ|r/|dx| min/med/max [0. 0. 0.]
+E5_S05_CAR_00_BODY_ROOT v m/s min/med/max [88.89 88.89 88.89] km/h med 320.0
+  roll ratio |dθ|r/|dx| min/med/max [0. 0. 0.]
+E5_S06_CAR_00_BODY_ROOT v m/s min/med/max [88.89 88.89 88.89] km/h med 320.0
+  roll ratio |dθ|r/|dx| min/med/max [0. 0. 0.]
+E5_S07_CAR_00_BODY_ROOT v m/s min/med/max [88.89 88.89 88.89] km/h med 320.0
+  roll ratio |dθ|r/|dx| min/med/max [0. 0. 0.]
+E5_S02_CAR_00_GLASS_1 X [134.22 147.28] Z [2.46 2.98] dist to body min/max 0.012 0.256
+E5_S02_CAR_00_GLASS_-1 X [134.22 147.28] Z [2.46 2.98] dist to body min/max 0.012 0.256
+E5_S02_CAR_00_PINK_1 X [133.5 148. ] Z [2.17 2.24] dist to body min/max 0.0 0.112
+body at X 157 Z [1.34 2.06] Y [-0.42  0.42]
+body at X 155 Z [1.13 2.45] Y [-0.76  0.76]
+body at X 152 Z [0.86 2.99] Y [-1.23  1.23]
+body at X 150 Z [0.77 3.22] Y [-1.42  1.42]
+body at X 148 Z [0.71 3.47] Y [-1.59  1.59]
+body at X 146 Z [0.72 3.62] Y [-1.67  1.67]
+wheel Y [0.688 0.817] [-0.817 -0.688]
+rail objs ['R7_C1_RAILS', 'R7_C1_RAILS.001', 'R7_C2b_RAILS', 'R7_S02_RAILS', 'R7_S04_RAILS', 'R7_S05_RAILS', 'R7_S06_RAILS', 'R7_S07_RAILS', 'R7_S08_RAILS']
+R7_C1_RAILS Y uniq [-2.963 -2.938 -2.915 -2.89  -2.868 -2.842 -1.457 -1.433 -1.41  -1.385
+ -1.362 -1.337] Ztop 0.0
+R7_C1_RAILS.001 Y uniq [-2.963 -2.938 -2.915 -2.89  -2.868 -2.842 -1.457 -1.433 -1.41  -1.385
+ -1.362 -1.337] Ztop 0.0
+R7_C2b_RAILS Y uniq [-0.812 -0.788 -0.765 -0.74  -0.717 -0.692  0.692  0.717  0.74   0.765
+  0.788  0.812] Ztop 0.0
+R7_S02_RAILS Y uniq [-0.812 -0.788 -0.765 -0.74  -0.717 -0.692  0.692  0.717  0.74   0.765
+  0.788  0.812] Ztop 0.0
+F1 vs F900 pixel diff: mean 0.0 max 0.0 (identical) ; blend sha256 prefix f309a7eadec137f7b6af
