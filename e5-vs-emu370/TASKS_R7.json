@@ -1,0 +1,25 @@
+{
+  "project": "e5-vs-emu370",
+  "revision": "R7_C1.5_ALIGNMENT",
+  "base": "R6 C1 runtime (BSK_VS_TRAIN_RUNTIME_R6) + R1 config",
+  "blocked_by_user": [
+    {"id": "D-TIMELINE", "do": "타임라인을 R1 비트표(C1–C5b)로 되돌릴지 결정", "default": "예"},
+    {"id": "D-ASPECT", "do": "화면비 결정: 1080x1440+레터박스 / 9:16 풀프레임", "default": "레터박스"},
+    {"id": "G00", "do": "LOCKS.md FACT 승인 + CR450 상업운행 재확인 → S05/S08 HOLD 해제", "accept": "LOCKS에 날짜·서명"},
+    {"id": "G-VO", "do": "N1–N5 녹음", "accept": "줄별 wav + 길이"},
+    {"id": "G-ASSET-1", "do": "E5 에셋 구매 + 라이선스", "accept": "assets/e5/ + LICENSE"},
+    {"id": "G-ASSET-2", "do": "EMU-370 공개 이미지 3면 + 출처", "accept": "assets/emu370/ref/ + SOURCES"}
+  ],
+  "tasks": [
+    {"id": "R7-01", "deps": [], "do": "R1 패키지 config(beats/rig_config/shots/look)를 R6 runtime에 들여오고 tools/check_beats.py 실행", "accept": "G01 ALL PASS, 최대 사건 간격 50F"},
+    {"id": "R7-02", "deps": ["R7-01"], "do": "스케일을 미터로 전환. proxy_geometry.py를 nose_length_m 파라미터 프록시로 교체, 편성(E5 6량·EMU 8량 인스턴스), 차륜 0.86 m, 궤간 1.435 m, 팬터그래프 프록시", "accept": "빌드 직후 노즈 실측 E5 15.0·EMU 10.2 m ±1%, 차륜·궤간 config 일치 출력"},
+    {"id": "R7-03", "deps": ["R7-02"], "do": "motion.py를 등속 실속도로 변경(smoothstep·정지 제거), bake F0–F901 + 선형 외삽, 대차 진동·롤", "accept": "G02: 등속·차륜각 오차 < 0.1%"},
+    {"id": "R7-04", "deps": ["R7-02"], "do": "환경 재빌드: 고가 슬래브 2선, 기둥 50 m + 전차선, 원경, 터널 컷어웨이, 그리드 월드. 지면 끝선 제거", "accept": "모든 카메라 F1·중간·끝에서 지면 끝선 비노출(투영 검사)"},
+    {"id": "R7-05", "deps": ["R7-03", "R7-04"], "do": "카메라를 shots.json 기준으로 재작성(hull/world, Catmull-Rom). C2a↔C3 361–420 매치 페어", "accept": "G-MOT: 정지 카메라 0F, 줌 전용 구간 0F. G-S1~S4"},
+    {"id": "R7-06", "deps": ["R7-05"], "do": "효과: 치수선 GN, 스캔 밴드, 압력 링 340 m/s, 출구 퍼프, X-Ray 클립 + 전동기 드라이버, 광주 + GN 카운터, 아크 플래시, 전차선 진동, 인월드 라벨", "accept": "각 효과 시작이 beats.json 사건 프레임 ±2F"},
+    {"id": "R7-07", "deps": ["R7-05"], "do": "모션블러 ON(셔터 0.5 / C4 0.35 / C5a 0.8 CONSTANT 키), 룩을 look.json 하이키로", "accept": "render 설정 출력이 look.json과 일치"},
+    {"id": "R7-08", "deps": ["R7-06", "R7-07"], "do": "verify_scene(BVH) + verify_proportion", "accept": "G03·G05 ALL PASS. 고장본(차륜 5 mm 침하) FAIL 확인"},
+    {"id": "R7-09", "deps": ["R7-08"], "do": "270p 4spp 30초 애니매틱(레터박스 합성 포함) + 540p 키프레임 8장 시트 + 540p C2b–C2c 4초", "accept": "G04 미디어 검사 + G-VIS 시트 사용자 판독 요청"},
+    {"id": "R7-10", "deps": ["R7-09"], "do": "REPORT.md에 R7 블록 1개 작성(변경 파일·게이트 값·렌더 시간·남은 문제)", "accept": "다른 신규 문서 없음"}
+  ]
+}

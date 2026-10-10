@@ -1,0 +1,4 @@
+S01 A 4.02 m/s 14.5 km/h
+S02 B 4.02 m/s 14.5 km/h
+S07 A 3.35 m/s 12.1 km/h
+wheel dia ratio 1.79 gauge ratio 1.52

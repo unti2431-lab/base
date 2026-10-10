@@ -1,6 +1,7 @@
 # AGENTS.md — Codex 작업 규칙 (E5 vs EMU-370, R1)
 
 ## 읽는 순서
+0. `CODEX_R7_ALIGNMENT.md` — 현재 단계(C1.5) 지시서. R6 runtime 위에서 작업한다
 1. `LOCKS.md` — 바꾸면 안 되는 사실·규격
 2. `PRODUCTION_PLAN_R1.md` — 콘티, 컷별 제작법, 게이트
 3. `HANDOFF_E5_EMU370.md` — 시스템 구조, 코드 표준, 함정

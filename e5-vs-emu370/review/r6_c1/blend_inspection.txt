@@ -1,0 +1,65 @@
+scene Scene frames 1 900 fps 30 res 540 960 100
+engine CYCLES motion_blur False shutter 0.5 view AgX AgX - Medium High Contrast
+samples 4 device CPU
+markers [('S01', 1, 'S01_CAMERA'), ('S02', 76, 'S02_CAMERA'), ('S03', 151, 'S03_CAMERA'), ('S04', 271, 'S04_CAMERA'), ('S05', 391, 'S05_CAMERA'), ('S06', 541, 'S06_CAMERA'), ('S07', 661, 'S07_CAMERA'), ('S08', 811, 'S08_CAMERA')]
+world R6_LOCAL_SKY ['ShaderNodeTexCoord', 'ShaderNodeSeparateXYZ', 'ShaderNodeValToRGB', 'ShaderNodeBackground', 'ShaderNodeOutputWorld']
+types Counter({'MESH': 89, 'EMPTY': 16, 'CAMERA': 8, 'LIGHT': 3})
+collections [('CODEX_R6_ENVIRONMENT', 10), ('INTERNAL_PROXY_proxyA_RIG', 22), ('INTERNAL_PROXY_proxyB_RIG', 22), ('R6_SHOT_CAMERAS', 8)]
+n objects 116
+['R6_BALLAST_SIMPLE', 'R6_FAR_PLAIN', 'R6_LOW_HILL_0', 'R6_LOW_HILL_1', 'R6_NEAR_PLAIN', 'R6_RAILS_STATIC', 'R6_SLEEPERS_STATIC', 'R6_SOFT_FILL', 'R6_SOFT_KEY', 'R6_SOFT_RIM', 'S01_CAMERA', 'S02_CAMERA', 'S03_CAMERA', 'S04_CAMERA', 'S05_CAMERA', 'S06_CAMERA', 'S07_CAMERA', 'S08_CAMERA', 'proxyA_PROXY_cab_glass', 'proxyA_PROXY_cab_mask', 'proxyA_PROXY_center_skirt', 'proxyA_PROXY_center_skirt.001', 'proxyA_PROXY_door', 'proxyA_PROXY_door.001', 'proxyA_PROXY_door_infill', 'proxyA_PROXY_door_infill.001', 'proxyA_PROXY_door_pane', 'proxyA_PROXY_door_pane.001', 'proxyA_PROXY_roof_service', 'proxyA_PROXY_shell', 'proxyA_PROXY_underfloor', 'proxyA_PROXY_window', 'proxyA_PROXY_window.001', 'proxyA_PROXY_window.002', 'proxyA_PROXY_window.003', 'proxyA_PROXY_window.004', 'proxyA_PROXY_window.005', 'proxyA_PROXY_window.006', 'proxyA_PROXY_window.007', 'proxyA_PROXY_window.008', 'proxyA_PROXY_window.009', 'proxyA_PROXY_window.010', 'proxyA_PROXY_window.011', 'proxyA_PROXY_window.012', 'proxyA_PROXY_window.013', 'proxyA__BODY_ROOT', 'proxyA__BOGIE_FRONT', 'proxyA__BOGIE_FRONT_FRAME', 'proxyA__BOGIE_FRONT__WHEELSET_01', 'proxyA__BOGIE_FRONT__WHEELSET_01_AXLE', 'proxyA__BOGIE_FRONT__WHEELSET_01_LEFT', 'proxyA__BOGIE_FRONT__WHEELSET_01_RIGHT', 'proxyA__BOGIE_FRONT__WHEELSET_02', 'proxyA__BOGIE_FRONT__WHEELSET_02_AXLE', 'proxyA__BOGIE_FRONT__WHEELSET_02_LEFT', 'proxyA__BOGIE_FRONT__WHEELSET_02_RIGHT', 'proxyA__BOGIE_REAR', 'proxyA__BOGIE_REAR_FRAME', 'proxyA__BOGIE_REAR__WHEELSET_01', 'proxyA__BOGIE_REAR__WHEELSET_01_AXLE', 'proxyA__BOGIE_REAR__WHEELSET_01_LEFT', 'proxyA__BOGIE_REAR__WHEELSET_01_RIGHT', 'proxyA__BOGIE_REAR__WHEELSET_02', 'proxyA__BOGIE_REAR__WHEELSET_02_AXLE', 'proxyA__BOGIE_REAR__WHEELSET_02_LEFT', 'proxyA__BOGIE_REAR__WHEELSET_02_RIGHT', 'proxyA__MOTION_ROOT', 'proxyB_PROXY_cab_glass', 'proxyB_PROXY_cab_mask', 'proxyB_PROXY_center_skirt', 'proxyB_PROXY_center_skirt.001', 'proxyB_PROXY_door', 'proxyB_PROXY_door.001', 'proxyB_PROXY_door_infill', 'proxyB_PROXY_door_infill.001', 'proxyB_PROXY_door_pane', 'proxyB_PROXY_door_pane.001', 'proxyB_PROXY_roof_service', 'proxyB_PROXY_shell', 'proxyB_PROXY_underfloor', 'proxyB_PROXY_window', 'proxyB_PROXY_window.001', 'proxyB_PROXY_window.002', 'proxyB_PROXY_window.003', 'proxyB_PROXY_window.004', 'proxyB_PROXY_window.005', 'proxyB_PROXY_window.006', 'proxyB_PROXY_window.007', 'proxyB_PROXY_window.008', 'proxyB_PROXY_window.009', 'proxyB_PROXY_window.010', 'proxyB_PROXY_window.011', 'proxyB_PROXY_window.012', 'proxyB_PROXY_window.013', 'proxyB__BODY_ROOT', 'proxyB__BOGIE_FRONT', 'proxyB__BOGIE_FRONT_FRAME', 'proxyB__BOGIE_FRONT__WHEELSET_01', 'proxyB__BOGIE_FRONT__WHEELSET_01_AXLE', 'proxyB__BOGIE_FRONT__WHEELSET_01_LEFT', 'proxyB__BOGIE_FRONT__WHEELSET_01_RIGHT', 'proxyB__BOGIE_FRONT__WHEELSET_02', 'proxyB__BOGIE_FRONT__WHEELSET_02_AXLE', 'proxyB__BOGIE_FRONT__WHEELSET_02_LEFT', 'proxyB__BOGIE_FRONT__WHEELSET_02_RIGHT', 'proxyB__BOGIE_REAR', 'proxyB__BOGIE_REAR_FRAME', 'proxyB__BOGIE_REAR__WHEELSET_01', 'proxyB__BOGIE_REAR__WHEELSET_01_AXLE', 'proxyB__BOGIE_REAR__WHEELSET_01_LEFT', 'proxyB__BOGIE_REAR__WHEELSET_01_RIGHT', 'proxyB__BOGIE_REAR__WHEELSET_02', 'proxyB__BOGIE_REAR__WHEELSET_02_AXLE', 'proxyB__BOGIE_REAR__WHEELSET_02_LEFT', 'proxyB__BOGIE_REAR__WHEELSET_02_RIGHT', 'proxyB__MOTION_ROOT']
+materials ['R6_LOCAL_ballast', 'R6_LOCAL_clay', 'R6_LOCAL_far_ground', 'R6_LOCAL_glass', 'R6_LOCAL_ground', 'R6_LOCAL_hill', 'R6_LOCAL_maskblack', 'R6_LOCAL_metal', 'R6_LOCAL_primaryA', 'R6_LOCAL_primaryB', 'R6_LOCAL_rail', 'R6_LOCAL_rubber', 'R6_LOCAL_sleeper', 'R6_LOCAL_wheel', 'R6_PROXY_BOGIE_METAL', 'R6_PROXY_WHEEL']
+roots ['proxyA__BODY_ROOT', 'proxyA__MOTION_ROOT', 'proxyB__BODY_ROOT', 'proxyB__MOTION_ROOT']
+{'F': 1, 'cam': 'S01_CAMERA', 'lens': 59.8, 'cam_loc': [6.6, -4.3, 1.85], 'proxyA__BODY_ROOT': [-3.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [-3.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 40, 'cam': 'S01_CAMERA', 'lens': 51.2, 'cam_loc': [6.6, -4.3, 1.85], 'proxyA__BODY_ROOT': [-1.378, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [-1.378, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 75, 'cam': 'S01_CAMERA', 'lens': 42.9, 'cam_loc': [6.6, -4.3, 1.85], 'proxyA__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 76, 'cam': 'S02_CAMERA', 'lens': 42.9, 'cam_loc': [3.6, -4.3, 1.85], 'proxyA__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [-3.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [-3.0, 0.0, 0.0, 'vis']}
+{'F': 150, 'cam': 'S02_CAMERA', 'lens': 42.9, 'cam_loc': [6.6, -4.3, 1.85], 'proxyA__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 151, 'cam': 'S03_CAMERA', 'lens': 42.0, 'cam_loc': [6.0, -4.0, 2.1], 'proxyA__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 270, 'cam': 'S03_CAMERA', 'lens': 42.0, 'cam_loc': [2.8, -3.0, 1.8], 'proxyA__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 391, 'cam': 'S05_CAMERA', 'lens': 35.0, 'cam_loc': [7.0, -10.0, 5.0], 'proxyA__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 540, 'cam': 'S05_CAMERA', 'lens': 35.0, 'cam_loc': [7.0, -10.0, 5.0], 'proxyA__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 541, 'cam': 'S06_CAMERA', 'lens': 52.0, 'cam_loc': [3.9, -3.0, 0.68], 'proxyA__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 661, 'cam': 'S07_CAMERA', 'lens': 45.9, 'cam_loc': [4.5, -8.0, 3.2], 'proxyA__BODY_ROOT': [-2.5, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [-2.5, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 700, 'cam': 'S07_CAMERA', 'lens': 45.9, 'cam_loc': [5.35, -8.0, 3.2], 'proxyA__BODY_ROOT': [-1.652, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [-1.652, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 810, 'cam': 'S07_CAMERA', 'lens': 45.9, 'cam_loc': [9.5, -8.0, 3.2], 'proxyA__BODY_ROOT': [2.5, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [2.5, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 811, 'cam': 'S08_CAMERA', 'lens': 44.9, 'cam_loc': [6.8, -8.3, 2.6], 'proxyA__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 856, 'cam': 'S08_CAMERA', 'lens': 44.9, 'cam_loc': [6.8, -8.3, 2.6], 'proxyA__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+{'F': 900, 'cam': 'S08_CAMERA', 'lens': 44.9, 'cam_loc': [6.8, -8.3, 2.6], 'proxyA__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyA__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__BODY_ROOT': [0.0, 0.0, 0.0, 'vis'], 'proxyB__MOTION_ROOT': [0.0, 0.0, 0.0, 'vis']}
+bbox proxyA__BOGIE_FRONT__WHEELSET_01_AXLE [-0.484, -0.4, 0.236] [-0.396, 0.4, 0.324]
+bbox proxyA__BOGIE_FRONT__WHEELSET_01_LEFT [-0.67, 0.275, 0.05] [-0.21, 0.375, 0.51]
+bbox proxyA__BOGIE_FRONT__WHEELSET_01_RIGHT [-0.67, -0.375, 0.05] [-0.21, -0.275, 0.51]
+bbox proxyA__BOGIE_FRONT__WHEELSET_02_AXLE [-1.404, -0.4, 0.236] [-1.316, 0.4, 0.324]
+bbox proxyA__BOGIE_FRONT__WHEELSET_02_LEFT [-1.59, 0.275, 0.05] [-1.13, 0.375, 0.51]
+bbox proxyA__BOGIE_FRONT__WHEELSET_02_RIGHT [-1.59, -0.375, 0.05] [-1.13, -0.275, 0.51]
+bbox proxyA__BOGIE_REAR__WHEELSET_01_AXLE [-4.684, -0.4, 0.236] [-4.596, 0.4, 0.324]
+bbox proxyA__BOGIE_REAR__WHEELSET_01_LEFT [-4.87, 0.275, 0.05] [-4.41, 0.375, 0.51]
+bbox proxyA__BOGIE_REAR__WHEELSET_01_RIGHT [-4.87, -0.375, 0.05] [-4.41, -0.275, 0.51]
+bbox proxyA__BOGIE_REAR__WHEELSET_02_AXLE [-5.604, -0.4, 0.236] [-5.516, 0.4, 0.324]
+bbox proxyA__BOGIE_REAR__WHEELSET_02_LEFT [-5.79, 0.275, 0.05] [-5.33, 0.375, 0.51]
+bbox proxyA__BOGIE_REAR__WHEELSET_02_RIGHT [-5.79, -0.375, 0.05] [-5.33, -0.275, 0.51]
+bbox proxyB__BOGIE_FRONT__WHEELSET_01_AXLE [2.501, -0.4, 0.221] [2.619, 0.4, 0.339]
+bbox proxyB__BOGIE_FRONT__WHEELSET_01_LEFT [2.25, 0.275, -0.03] [2.87, 0.375, 0.59]
+bbox proxyB__BOGIE_FRONT__WHEELSET_01_RIGHT [2.25, -0.375, -0.03] [2.87, -0.275, 0.59]
+bbox proxyB__BOGIE_FRONT__WHEELSET_02_AXLE [1.581, -0.4, 0.221] [1.699, 0.4, 0.339]
+bbox proxyB__BOGIE_FRONT__WHEELSET_02_LEFT [1.33, 0.275, -0.03] [1.95, 0.375, 0.59]
+bbox proxyB__BOGIE_FRONT__WHEELSET_02_RIGHT [1.33, -0.375, -0.03] [1.95, -0.275, 0.59]
+bbox proxyB__BOGIE_REAR__WHEELSET_01_AXLE [-1.699, -0.4, 0.221] [-1.581, 0.4, 0.339]
+bbox proxyB__BOGIE_REAR__WHEELSET_01_LEFT [-1.95, 0.275, -0.03] [-1.33, 0.375, 0.59]
+bbox proxyB__BOGIE_REAR__WHEELSET_01_RIGHT [-1.95, -0.375, -0.03] [-1.33, -0.275, 0.59]
+bbox proxyB__BOGIE_REAR__WHEELSET_02_AXLE [-2.619, -0.4, 0.221] [-2.501, 0.4, 0.339]
+bbox proxyB__BOGIE_REAR__WHEELSET_02_LEFT [-2.87, 0.275, -0.03] [-2.25, 0.375, 0.59]
+bbox proxyB__BOGIE_REAR__WHEELSET_02_RIGHT [-2.87, -0.375, -0.03] [-2.25, -0.275, 0.59]
+bbox R6_RAILS_STATIC [-60.0, -0.363, -0.041] [60.0, 0.363, 0.05]
+bbox R6_SLEEPERS_STATIC [-60.05, -0.515, -0.09] [60.05, 0.515, -0.04]
+proxyA shell extent L,W,H [7.5   1.    1.268] min [-5.25  -0.5    0.592]
+proxyB shell extent L,W,H [7.5   1.    1.268] min [-3.75  -0.5    0.592]
+rail top Z 0.05000000074505806 rail Y [-0.363 -0.349 -0.334 -0.316 -0.301 -0.287  0.287  0.301  0.316  0.334
+  0.349  0.363]
+[1, ('proxyA', 'vis', 'wheelminZ', 0.05), ('proxyB', 'hid', 'wheelminZ', -0.23)]
+[40, ('proxyA', 'vis', 'wheelminZ', 0.05), ('proxyB', 'hid', 'wheelminZ', -0.23)]
+[75, ('proxyA', 'vis', 'wheelminZ', 0.0502), ('proxyB', 'hid', 'wheelminZ', -0.23)]
+[100, ('proxyA', 'hid', 'wheelminZ', 0.0502), ('proxyB', 'vis', 'wheelminZ', 0.0508)]
+[150, ('proxyA', 'hid', 'wheelminZ', 0.0502), ('proxyB', 'vis', 'wheelminZ', 0.0502)]
+[300, ('proxyA', 'hid', 'wheelminZ', 0.0502), ('proxyB', 'vis', 'wheelminZ', 0.0502)]
+[700, ('proxyA', 'vis', 'wheelminZ', 0.0501), ('proxyB', 'hid', 'wheelminZ', 0.0502)]
+[810, ('proxyA', 'vis', 'wheelminZ', 0.0502), ('proxyB', 'hid', 'wheelminZ', 0.0502)]
