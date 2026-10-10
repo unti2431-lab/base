@@ -1,0 +1,103 @@
+{
+ "frames": 120,
+ "R_e": 238.0,
+ "checks": [
+  {
+   "frame": 60,
+   "hub_dx_px": -122.0,
+   "expected_deg": 29.37,
+   "rim_deg": 29.35,
+   "tyre_sidewall_deg": 29.35,
+   "rim_minus_tyre_deg": 0.0,
+   "noslip_ratio_rim": 0.9993,
+   "noslip_ratio_tyre": 0.9993,
+   "fit_mae": [
+    1.15,
+    0.54
+   ]
+  },
+  {
+   "frame": 119,
+   "hub_dx_px": -240.0,
+   "expected_deg": 57.78,
+   "rim_deg": 57.8,
+   "tyre_sidewall_deg": 57.75,
+   "rim_minus_tyre_deg": 0.05,
+   "noslip_ratio_rim": 1.0004,
+   "noslip_ratio_tyre": 0.9995,
+   "fit_mae": [
+    1.14,
+    0.62
+   ]
+  }
+ ],
+ "windows_0p5s": [
+  {
+   "frames": [
+    24,
+    36
+   ],
+   "dx": -27.0,
+   "expected_deg": 6.5,
+   "rim_ratio": 1.0,
+   "tyre_ratio": 1.0
+  },
+  {
+   "frames": [
+    36,
+    48
+   ],
+   "dx": -40.0,
+   "expected_deg": 9.63,
+   "rim_ratio": 1.002,
+   "tyre_ratio": 1.002
+  },
+  {
+   "frames": [
+    48,
+    60
+   ],
+   "dx": -46.0,
+   "expected_deg": 11.07,
+   "rim_ratio": 0.998,
+   "tyre_ratio": 0.998
+  },
+  {
+   "frames": [
+    60,
+    72
+   ],
+   "dx": -46.0,
+   "expected_deg": 11.07,
+   "rim_ratio": 0.998,
+   "tyre_ratio": 0.998
+  },
+  {
+   "frames": [
+    72,
+    84
+   ],
+   "dx": -39.0,
+   "expected_deg": 9.39,
+   "rim_ratio": 1.001,
+   "tyre_ratio": 1.001
+  },
+  {
+   "frames": [
+    84,
+    96
+   ],
+   "dx": -25.0,
+   "expected_deg": 6.02,
+   "rim_ratio": 0.997,
+   "tyre_ratio": 0.997
+  }
+ ],
+ "window_ratio_minmax": [
+  0.997,
+  1.002
+ ],
+ "road_maxdiff_y820": 4.0,
+ "version": "v2_whole_wheel",
+ "verdict": "PASS(합성 모델 기준): 림=옆면 회전, 누적비 0.9993–1.0004, 0.5초 창 0.997–1.002, 노면 고정"
+}

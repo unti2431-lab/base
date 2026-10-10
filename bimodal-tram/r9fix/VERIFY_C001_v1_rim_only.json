@@ -1,0 +1,107 @@
+{
+ "frames": 120,
+ "R_e": 232.0,
+ "checks": [
+  {
+   "frame": 60,
+   "hub_dx_px": -122.0,
+   "expected_deg": 30.13,
+   "rim_deg": 30.2,
+   "tyre_sidewall_deg": -0.0,
+   "rim_minus_tyre_deg": 30.2,
+   "noslip_ratio_rim": 1.0023,
+   "noslip_ratio_tyre": -0.0,
+   "fit_mae": [
+    5.6,
+    0.0
+   ]
+  },
+  {
+   "frame": 119,
+   "hub_dx_px": -240.0,
+   "expected_deg": 59.27,
+   "rim_deg": 59.55,
+   "tyre_sidewall_deg": -0.0,
+   "rim_minus_tyre_deg": 59.55,
+   "noslip_ratio_rim": 1.0047,
+   "noslip_ratio_tyre": -0.0,
+   "fit_mae": [
+    10.06,
+    0.0
+   ]
+  }
+ ],
+ "windows_0p5s": [
+  {
+   "frames": [
+    24,
+    36
+   ],
+   "dx": -27.0,
+   "expected_deg": 6.67,
+   "rim_ratio": 0.982,
+   "tyre_ratio": -0.0
+  },
+  {
+   "frames": [
+    36,
+    48
+   ],
+   "dx": -40.0,
+   "expected_deg": 9.88,
+   "rim_ratio": 0.992,
+   "tyre_ratio": -0.0
+  },
+  {
+   "frames": [
+    48,
+    60
+   ],
+   "dx": -46.0,
+   "expected_deg": 11.36,
+   "rim_ratio": 1.012,
+   "tyre_ratio": -0.0
+  },
+  {
+   "frames": [
+    60,
+    72
+   ],
+   "dx": -46.0,
+   "expected_deg": 11.36,
+   "rim_ratio": 1.003,
+   "tyre_ratio": -0.0
+  },
+  {
+   "frames": [
+    72,
+    84
+   ],
+   "dx": -39.0,
+   "expected_deg": 9.63,
+   "rim_ratio": 0.992,
+   "tyre_ratio": -0.0
+  },
+  {
+   "frames": [
+    84,
+    96
+   ],
+   "dx": -25.0,
+   "expected_deg": 6.17,
+   "rim_ratio": 1.012,
+   "tyre_ratio": -0.0
+  }
+ ],
+ "window_ratio_minmax": [
+  -0.0,
+  1.012
+ ],
+ "road_maxdiff_y820": 4.0,
+ "version": "v1_rim_only",
+ "hub_used_by_render": [
+  1146,
+  482
+ ],
+ "verdict": "REJECT: 림 구간비 0.982–1.012로 림만 보면 정상이지만 타이어 옆면 회전 0 → 림이 타이어 안에서 미끄러짐. 바퀴 전체 무미끄럼 아님."
+}
