@@ -4,8 +4,8 @@
 
 | 파일 | 내용 |
 |---|---|
-| R9_RESOLUTION_PLAN.md | 해결안 본문 (§0~§8) |
-| VO_PICKUP_SCRIPT.md | VO 부분 재녹음 원고 P1~P3 (승인 전 실행 금지) |
+| R9_RESOLUTION_PLAN.md / .pdf | 해결안 본문 (§0~§8), PDF 9쪽 |
+| VO_PICKUP_SCRIPT.md / .pdf | VO 부분 재녹음 원고 P1~P3 (승인 전 실행 금지) |
 | POC_C001_v2_wholewheel_1080p.mp4 | 바퀴 구름 v2: 타이어+림 전체 회전, R_e 238, 5초 |
 | POC_C001_v1_rim_only_REJECTED.mp4 | v1 림만 회전 — 기각본(비교용) |
 | COMPARE_C001_v1_vs_v2.mp4 / _frames.jpg | v1·v2 바퀴 부분 나란히 비교 |
