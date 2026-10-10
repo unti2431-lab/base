@@ -1,0 +1,28 @@
+{
+  "PASS": {
+    "G-B1_cut_coverage": true,
+    "G-B2_max_event_gap": true,
+    "G-B3_speech_rate": true,
+    "G-B4_no_overlap": true,
+    "G-B5_noun_visible_first": true
+  },
+  "ALL": true,
+  "log": [
+    "B2 최대 사건 간격 55F (1.83s) @F756–F811",
+    "B3 L1 11음절 / 2.77s = 3.98음절/s OK",
+    "B3 L2 19음절 / 3.33s = 5.70음절/s OK",
+    "B5 L2 '이오'(E5) 추정 청취 F95 in S02 → 노출 F91 OK",
+    "B3 L3 18음절 / 2.73s = 6.59음절/s OK",
+    "B5 L3 '터널'(TUNNEL) 추정 청취 F203 in S03 → 노출 F199 OK",
+    "B3 L4 22음절 / 3.33s = 6.60음절/s OK",
+    "B5 L4 '이엠유'(EMU370) 추정 청취 F293 in S04 → 노출 F289 OK",
+    "B3 L5 14음절 / 3.33s = 4.20음절/s OK",
+    "B5 L5 '대차'(BOGIE) 추정 청취 F436 in S05 → 노출 F397 OK",
+    "B3 L6 16음절 / 3.03s = 5.27음절/s OK",
+    "B5 L6 '바퀴'(WHEEL) 추정 청취 F509 in S06 → 노출 F505 OK",
+    "B3 L7 16음절 / 3.03s = 5.27음절/s OK",
+    "B5 L7 '팬터'(PANTO) 추정 청취 F625 in S07 → 노출 F604 OK",
+    "B3 L8 14음절 / 3.33s = 4.20음절/s OK",
+    "B3 L9 20음절 / 2.73s = 7.32음절/s OK"
+  ]
+}
