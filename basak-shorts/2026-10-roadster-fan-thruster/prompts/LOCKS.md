@@ -107,3 +107,22 @@ expansion joints, a wide river far below, overcast daylight
 a huge vertical concrete dam face covered in dark green-black algae and water stains,
 mountains around, clear morning light
 ```
+
+---
+
+## 3안(C) 전용 — 1톤 트럭
+
+### [LIGHT TRUCK LOCK]
+브랜드·형식명을 쓰지 않는다. 형상은 기하학으로만 적는다.
+```
+a small one-tonne cab-over light truck, flat vertical front face directly above the front wheels,
+short square cab, low flat cargo bed with fold-down aluminium side gates, small-diameter rear wheels,
+plain white paint slightly weathered, no badges, no logos, no lettering, same truck in every shot
+```
+
+### [VILLAGE HILL LOCK]
+```
+a steep narrow concrete-paved lane climbing through a small rural Korean village in winter,
+thin packed snow and glazed ice on the concrete, low stone walls, slate and tin roofs,
+a bare persimmon tree, grey overcast morning light
+```
