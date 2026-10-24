@@ -1,0 +1,281 @@
+{
+  "_README": [
+    "R02 제안본 — 적용 전. 사용자 승인 후 src/rig_config.json으로 복사한다. LOCKED 값은 R01과 동일.",
+    "모든 기하 수치의 단일 출처. 코드에 숫자를 박지 않는다.",
+    "단위: 미터(m). Blender 씬 스케일 1.0.",
+    "_status 값의 뜻:",
+    "  LOCKED             별표24 / KS B 6918 근거. 변경 금지. 화면 비례가 FAIL 기준.",
+    "  MODEL_ONLY         근거는 있으나 대본·자막 사용 금지. 모델링에만 쓴다.",
+    "  DESIGN_ASSUMPTION  근거 미확인 설계 가정. 화면에 치수로 제시하지 않는다.",
+    "DESIGN_ASSUMPTION 값을 LOCKED처럼 다루지 말 것. 사실로 단정해 자막·내레이션에 넣으면 안 된다."
+  ],
+  "deflector": {
+    "protrusion_min_m": {
+      "value": 0.033,
+      "_status": "LOCKED",
+      "_note": "C06 '33밀리미터에서'"
+    },
+    "protrusion_max_m": {
+      "value": 0.05,
+      "_status": "LOCKED",
+      "_note": "C06 '50밀리미터까지'"
+    },
+    "rigid_part_m": {
+      "value": [
+        0.018,
+        0.025
+      ],
+      "_status": "MODEL_ONLY",
+      "_note": "강성부. 대본 미포함"
+    },
+    "flexible_part_m": {
+      "value": [
+        0.015,
+        0.03
+      ],
+      "_status": "MODEL_ONLY",
+      "_note": "유연부. 대본 미포함"
+    },
+    "end_flush_with_skirt": {
+      "value": true,
+      "_status": "LOCKED",
+      "_note": "C09 — 끝단이 스커트면과 같은 높이"
+    },
+    "terminates_before_comb_line": {
+      "value": true,
+      "_status": "LOCKED",
+      "_note": "C08 — 빗판 교차선보다 앞에서 종료. 상대 위치가 내용 그 자체"
+    },
+    "protrusion_total_m": {
+      "value": 0.045,
+      "_status": "MODEL_ONLY",
+      "_note": "33~50 범위 안 선택값 = rigid_sel + flexible_sel"
+    },
+    "rigid_part_sel_m": {
+      "value": 0.02,
+      "_status": "MODEL_ONLY",
+      "_note": "rigid_part_m 범위 안"
+    },
+    "flexible_part_sel_m": {
+      "value": 0.025,
+      "_status": "MODEL_ONLY",
+      "_note": "flexible_part_m 범위 안"
+    },
+    "mount_height_above_tread_m": {
+      "value": null,
+      "_status": "UNVERIFIED",
+      "_note": "블로커 G-04. 별표24 원문 확인 전 모델링 금지"
+    },
+    "end_taper_length_m": {
+      "value": 0.12,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "end_before_comb_line_m": {
+      "value": 0.05,
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "원문 수치 있으면 교체"
+    },
+    "flexible_type": {
+      "value": "brush",
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "훅 문장 '솔'과 일치"
+    },
+    "bristle_diameter_m": {
+      "value": 0.0004,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "clump_pitch_m": {
+      "value": 0.004,
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "깜빡임 대책 — 다발 단위 식재"
+    },
+    "bolt_pitch_m": {
+      "value": 0.3,
+      "_status": "DESIGN_ASSUMPTION"
+    }
+  },
+  "gap": {
+    "step_to_skirt_single_max_m": {
+      "value": 0.004,
+      "_status": "LOCKED",
+      "_note": "C03 한쪽 4mm"
+    },
+    "step_to_skirt_both_max_m": {
+      "value": 0.007,
+      "_status": "LOCKED",
+      "_note": "C04 양쪽 합 7mm"
+    },
+    "_modeling_rule": "동일 평면 금지. 실제 간극으로 모델링한다. 0으로 두면 C-1 위반이자 충돌 검사 오탐 원인."
+  },
+  "escalator": {
+    "_WARNING": "이 블록은 전부 DESIGN_ASSUMPTION이다. 실제 에셋 또는 사용자 확인으로 교체할 것.",
+    "incline_deg": {
+      "value": 30.0,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "step_width_m": {
+      "value": 1.0,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "step_depth_m": {
+      "value": 0.4,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "step_rise_m": {
+      "value": 0.231,
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "R02 제안 A1: 0.4*tan(30deg). R01의 0.200은 30도와 모순"
+    },
+    "chain_pitch_m": {
+      "value": 0.4,
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "디딤판 1매당 전륜 트랙상 체인 길이. 폐곡선 둘레는 pitch 정수배가 되도록 귀환 길이로 조정(텐셔너)"
+    },
+    "speed_mps": {
+      "value": 0.5,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "visible_step_count": {
+      "value": 7,
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "화면에 필요한 최소. 인스턴스로 복제"
+    },
+    "cleat_height_m": {
+      "value": 0.005,
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "디딤판 클리트. 접촉면을 올리므로 높이 계산에 반드시 포함"
+    }
+  },
+  "contact": {
+    "ground_sink_m": {
+      "value": 0.0001,
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "접지 침하 <= 0.001 x pitch"
+    },
+    "part_clearance_m": {
+      "value": 0.0015,
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "맞닿는 부품 1~2mm 간극. 충돌 검사 0건을 목표로"
+    }
+  },
+  "render": {
+    "resolution": [
+      1080,
+      1920
+    ],
+    "fps": {
+      "value": null,
+      "_status": "PENDING",
+      "_note": "확정 음성 락 후 역산. 24fps는 가예산일 뿐"
+    },
+    "total_frames": {
+      "value": null,
+      "_status": "PENDING"
+    },
+    "frame_start": 1,
+    "seed": 20261025
+  },
+  "step": {
+    "cleat_pitch_m": {
+      "value": 0.0096,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "cleat_width_m": {
+      "value": 0.0056,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "demarcation_width_m": {
+      "value": 0.02,
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "노란 경계선. 색 의미=디딤판 가장자리"
+    },
+    "side_wall_thickness_m": {
+      "value": 0.006,
+      "_status": "DESIGN_ASSUMPTION"
+    }
+  },
+  "comb": {
+    "tooth_tip_below_tread_m": {
+      "value": 0.004,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "tooth_side_clearance_m": {
+      "value": 0.001,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "_rule": "tooth_count = 클리트 홈 수 + 1. COMB_LINE Empty가 교차선의 단일 출처"
+  },
+  "motion": {
+    "speed_curve": {
+      "value": [
+        [
+          0.0,
+          0.5
+        ],
+        [
+          8.0,
+          0.5
+        ],
+        [
+          9.0,
+          0.2
+        ],
+        [
+          36.0,
+          0.2
+        ],
+        [
+          37.5,
+          0.5
+        ],
+        [
+          44.0,
+          0.5
+        ]
+      ],
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "(t초, m/s). 전역 곡선 하나. 컷별 속도 금지"
+    },
+    "track_radius_upper_m": {
+      "value": 0.8,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "track_radius_lower_m": {
+      "value": 0.8,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "return_length_adjust_m": {
+      "value": null,
+      "_status": "BAKE_OUTPUT",
+      "_note": "베이크가 기록"
+    }
+  },
+  "camera": {
+    "keys_file": "camera_keys.json",
+    "ui_mask": "reference/shorts_ui_mask.png",
+    "lens_min_mm": 50,
+    "lens_max_mm": 85,
+    "side": "left_skirt_from_step_side"
+  },
+  "look": {
+    "section_color_rigid": "#3D7BFF",
+    "section_color_flexible": "#F08A24",
+    "section_color_neutral": "#F2F2F2",
+    "luma_targets_Lstar": {
+      "skirt": [
+        55,
+        75
+      ],
+      "step_comb": [
+        35,
+        50
+      ],
+      "brush_max": 18,
+      "rigid": [
+        25,
+        35
+      ],
+      "delta_skirt_brush_min": 35
+    }
+  }
+}
