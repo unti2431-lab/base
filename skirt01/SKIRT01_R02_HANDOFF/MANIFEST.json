@@ -1,0 +1,169 @@
+{
+ "package": "SKIRT01_R02_HANDOFF",
+ "round": "R02",
+ "created": "2026-10-24",
+ "files": [
+  {
+   "path": "00_START_HERE.md",
+   "bytes": 701,
+   "sha256": "ec840dd69c7bca3c34727c70597da3224a4256164dd04eac46d36aff5241ec99",
+   "drive_file_id": ""
+  },
+  {
+   "path": "AGENTS.md",
+   "bytes": 6518,
+   "sha256": "3a2d469774cd20638aaa1c9689894c23328e33049780e904d0e35db3c3fdef47",
+   "drive_file_id": ""
+  },
+  {
+   "path": "BEATS.TEMPLATE.csv",
+   "bytes": 1893,
+   "sha256": "6f999134057c5247ae774f9747e2ae26a18df18b72efadce1190d5829d3362c3",
+   "drive_file_id": ""
+  },
+  {
+   "path": "DECISIONS.md",
+   "bytes": 1915,
+   "sha256": "461fd476aeaa29202612069aedc73591d3cbb7f3e0c461aee0d624390794e5ab",
+   "drive_file_id": ""
+  },
+  {
+   "path": "LOCKS.md",
+   "bytes": 5988,
+   "sha256": "c91979e4d4ce531297f63a44ee184edb1c83475bc62a5ab5cc4218100521af34",
+   "drive_file_id": ""
+  },
+  {
+   "path": "PRODUCTION_PLAN_R02.md",
+   "bytes": 38584,
+   "sha256": "bb56548da18280ebc8b0e53f5a41a13e95a690f895b3c739835a1ef985fd7123",
+   "drive_file_id": ""
+  },
+  {
+   "path": "REFERENCE_NOTES.md",
+   "bytes": 5229,
+   "sha256": "14b26a2305dc448c8966b5126c1e7d6b341093ebc04d09d7b1044abad526074d",
+   "drive_file_id": ""
+  },
+  {
+   "path": "REPORT.md",
+   "bytes": 706,
+   "sha256": "0016efca72d51101635122897b120b1dccacd9f7613011b5a70c7b15fcde2869",
+   "drive_file_id": ""
+  },
+  {
+   "path": "RUN_ALL.ps1",
+   "bytes": 2163,
+   "sha256": "21d55d290790ca01a9e1be573ad843baed1bf7fa3b7152e83e8b799ce647b2f7",
+   "drive_file_id": ""
+  },
+  {
+   "path": "SCR-03_대본원본.md",
+   "bytes": 1963,
+   "sha256": "39cb0f38538c9d5746498383b82225211d047425d17eb2786c1374557e55db1c",
+   "drive_file_id": ""
+  },
+  {
+   "path": "TASKS.json",
+   "bytes": 9708,
+   "sha256": "e14560e48a05b866fc325f94caa2c9b342a99949837454df5b448af7d7d26650",
+   "drive_file_id": ""
+  },
+  {
+   "path": "camera_keys.TEMPLATE.json",
+   "bytes": 1381,
+   "sha256": "f768c4a2bfdc8ea202759f399af2fbbb0a9bb7663d7eeaf36c5864a5e7048b32",
+   "drive_file_id": ""
+  },
+  {
+   "path": "overlay/README.md",
+   "bytes": 755,
+   "sha256": "27369bb0fd69bf8d43efafd41cf63e519e5124d4e47e220648831c0b54ab8536",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/bake_helpers.py",
+   "bytes": 3869,
+   "sha256": "d560977de9667c4d845796410b5258ec8a79f4c4f91096d6451b1d2c6a3318f8",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/rig_config.json",
+   "bytes": 8016,
+   "sha256": "80596630ccc082e156eed1e01c7545182c18100866cd02690f51a050830e131c",
+   "drive_file_id": ""
+  },
+  {
+   "path": "assets/ASSET_ORDER.md",
+   "bytes": 5260,
+   "sha256": "5199fd3359a9023c10663b101380b6bd138a5473b10be1df8e29630c7c74309d",
+   "drive_file_id": ""
+  },
+  {
+   "path": "assets/LICENSES.csv",
+   "bytes": 98,
+   "sha256": "0b6450d118e76d72ff077ce26a589699ab9d14e10b50610b0c35bc07b16af086",
+   "drive_file_id": ""
+  },
+  {
+   "path": "assets/README.md",
+   "bytes": 613,
+   "sha256": "b83ba2ffab236ceba016b0c4895127e46a42d447e64fd4640bd1c0b0ed70a9a1",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R02/CHANGELOG.md",
+   "bytes": 326,
+   "sha256": "8e77b43fd7bbeb2bd2a7926ad4ae42f2b3e73d2502947c84ea5c2e5c473c053f",
+   "drive_file_id": ""
+  },
+  {
+   "path": "audio/SFX_CUES.csv",
+   "bytes": 52,
+   "sha256": "786c2cfea96f3d18381f5d0152b7026023ec6f5f6ed2669a1fd29c7ce6ffc7d9",
+   "drive_file_id": ""
+  },
+  {
+   "path": "audio/VO_LOCK.TEMPLATE.json",
+   "bytes": 313,
+   "sha256": "d99d118f6229cd768f3e1148c0fdfd504563f35e4bcc6dd5d05160d69c2fa2b1",
+   "drive_file_id": ""
+  },
+  {
+   "path": "audio/VO_WORDS.SCHEMA.json",
+   "bytes": 276,
+   "sha256": "3e4d92cc96b5a7a1b691528d73c6d23decefac8a0209657a7ad8f621b0273a2f",
+   "drive_file_id": ""
+  },
+  {
+   "path": "scripts/encode.sh",
+   "bytes": 758,
+   "sha256": "ee8eceab9ec55bf6d29b67bdb8242b4c63a3846b7481da96fdab72e565c8d948",
+   "drive_file_id": ""
+  },
+  {
+   "path": "scripts/run_pipeline.sh",
+   "bytes": 2104,
+   "sha256": "0d25ccfcf5f50c6a2d3baa13ec423666e1adb535e66e86443abe397e78376d1c",
+   "drive_file_id": ""
+  },
+  {
+   "path": "scripts/setup_env.sh",
+   "bytes": 292,
+   "sha256": "d132b2e937405c67107e0a4e8f7c6f5f9dd76e9d3d1757ffe2f22f2203801632",
+   "drive_file_id": ""
+  },
+  {
+   "path": "reference/ref_bf109_contact_1fps.png",
+   "bytes": 1699433,
+   "sha256": "1624f68d38443882dfce6a1a59d34e27d7bae5e1be92510de12ee4b52b9e6911",
+   "drive_file_id": ""
+  },
+  {
+   "path": "reference/ref_bf109_contact_2fps.jpg",
+   "bytes": 947893,
+   "sha256": "ebfd1984ab35b4bc23dfab4d8f11cd53a73f865b2d8b5f1f7c9fb7fa1b0a66ea",
+   "drive_file_id": ""
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+cut,start_F,end_F,camera_mode,new_info,event_F,event_name,narration,noun_first_F,subject_first_F,sfx_cue,fps_basis
+C01,1,96,follow,솔의 생김새,40,step_crest_k,"에스컬레이터 양옆에 달린 이 솔, 신발 닦으라고 있는 걸까요?",,1,chain_loop,24_provisional
+C02,97,192,world,장치 전체 형상,120,push_in,"아닙니다. 정식 명칭은 스커트 디플렉터입니다.",,1,whoosh,24_provisional
+C03,193,288,world,틈 4mm,230,dim_line_gap,"계단과 옆면 사이에는 틈이 있습니다. 이 틈은 한쪽 4밀리미터를 넘지 않도록 관리됩니다.",,193,step_pass_low,24_provisional
+C04,289,384,world,양쪽 합 7mm,301,cut_c04_open,"양쪽을 합쳐도 7밀리미터가 한계입니다.",,301,section_slide,24_provisional
+C05,385,480,world,틈만으로 부족,420,probe_shadow,"그런데 이 좁은 틈만으로는 부족합니다.",,400,tension_low,24_provisional
+C06,481,576,world,돌출 33~50mm,505,cam_arrive_c06,"그래서 옆면에서 33밀리미터에서 50밀리미터까지 튀어나온 디플렉터를 답니다.",,481,none,24_provisional
+C07,577,672,world,2중 단면,625,probe_contact,"단단한 부분과 부드러운 부분으로 나뉘어, 닿는 물체를 밀어냅니다.",,593,brush_brush,24_provisional
+C08,673,768,world,끝단 vs 교차선,721,step_enters_comb_k,"끝나는 위치도 정해져 있습니다. 계단이 빗 모양 판과 만나는 선보다 앞에서 멈춥니다.",,673,comb_tick,24_provisional
+C09,769,864,world,끝단 = 스커트면,800,cam_tangent_c09,"그 끝은 옆면과 같은 높이가 되도록 다듬습니다.",,769,ambience,24_provisional
+C10,865,960,follow,전체 복귀,880,dim_lines_x3,"솔처럼 보이지만, 치수 하나까지 안전기준이 정해둔 장치입니다.",,,whoosh,24_provisional
+C11,961,1056,follow,CTA,,,"이 솔, 신발 닦으려고 대본 적 있으신가요?",,,tail,24_provisional

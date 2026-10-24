@@ -1,0 +1,18 @@
+{
+  "_README": ["샷 키 = [t_sec, px,py,pz, tx,ty,tz, lens_mm, fstop]. 보간 Catmull-Rom(끝점 접선 0). 좌표계: x=진행 방향 수평, y=스커트 법선(왼쪽 스커트 +y 바깥), z=위. 값은 PRODUCTION_PLAN_R02 §8.2를 좌표로 옮겨 채운다. 'follow' 컷은 STEP 기준 로컬 좌표.",
+              "fps는 config.render.fps. t는 초 단위로 적어 fps 변경에 독립."],
+  "ui_mask": "reference/shorts_ui_mask.png",
+  "cuts": {
+    "C01": {"mode": "follow", "anchor": "STEP_L_03", "keys": [[0.0, null,null,null, null,null,null, 50, 4.0], [4.0, null,null,null, null,null,null, 50, 4.0]]},
+    "C02": {"mode": "world", "keys": []},
+    "C03": {"mode": "world", "focus": "GAP_L", "shutter": 0.25, "keys": []},
+    "C04": {"mode": "world", "focus": "CUT_C04_CAP", "shutter": 0.25, "keys": []},
+    "C05": {"mode": "world", "keys": []},
+    "C06": {"mode": "world", "focus": "DEFL_TIP", "max_px_per_frame": 0.3, "keys": []},
+    "C07": {"mode": "world", "focus": "CUT_C07_CAP", "max_px_per_frame": 0.3, "keys": []},
+    "C08": {"mode": "world", "focus": "COMB_LINE", "keys": []},
+    "C09": {"mode": "world", "focus": "DEFL_END", "max_px_per_frame": 0.3, "continuous_from": "C08", "keys": []},
+    "C10": {"mode": "follow", "anchor": "STEP_L_03", "keys": []},
+    "C11": {"mode": "follow", "anchor": "STEP_L_03", "continuous_from": "C10", "keys": []}
+  }
+}

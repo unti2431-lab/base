@@ -1,0 +1,2 @@
+{"file": "VO_hyuk_v1.wav", "sha256": "", "duration_sec": null, "sample_rate": 48000, "voice": "ElevenLabs Hyuk", "recorded_at": "", "sentences": 11,
+ "_derive": "fps 선택(권고 30) → total_frames = round(duration_sec * fps). config.render.fps/total_frames 갱신 → 재베이크 → BEATS.csv ±6F 조정"}

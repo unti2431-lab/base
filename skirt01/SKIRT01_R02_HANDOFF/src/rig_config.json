@@ -1,6 +1,6 @@
 {
   "_README": [
-    "R02 제안본 — 적용 전. 사용자 승인 후 src/rig_config.json으로 복사한다. LOCKED 값은 R01과 동일.",
+    "R02 확정본 (2026-10-24 사용자 승인). LOCKED 값은 R01과 동일. 변경 이력은 DECISIONS.md.",
     "모든 기하 수치의 단일 출처. 코드에 숫자를 박지 않는다.",
     "단위: 미터(m). Blender 씬 스케일 1.0.",
     "_status 값의 뜻:",
@@ -62,9 +62,9 @@
       "_note": "flexible_part_m 범위 안"
     },
     "mount_height_above_tread_m": {
-      "value": null,
-      "_status": "UNVERIFIED",
-      "_note": "블로커 G-04. 별표24 원문 확인 전 모델링 금지"
+      "value": 0.028,
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "사용자 확인: 고시 원문에 수치 없음(2026-10-24). 디딤판 노징선에서 강성부 아랫면까지 수직 거리. 화면·자막에 치수로 제시 금지"
     },
     "end_taper_length_m": {
       "value": 0.12,
@@ -73,7 +73,7 @@
     "end_before_comb_line_m": {
       "value": 0.05,
       "_status": "DESIGN_ASSUMPTION",
-      "_note": "원문 수치 있으면 교체"
+      "_note": "사용자 확인: 고시 원문에 수치 없음. 화면 치수 제시 금지"
     },
     "flexible_type": {
       "value": "brush",
@@ -124,7 +124,7 @@
     "step_rise_m": {
       "value": 0.231,
       "_status": "DESIGN_ASSUMPTION",
-      "_note": "R02 제안 A1: 0.4*tan(30deg). R01의 0.200은 30도와 모순"
+      "_note": "R02 A1 승인: 0.4*tan(30deg). R01의 0.200은 30도와 모순이었음"
     },
     "chain_pitch_m": {
       "value": 0.4,
@@ -276,6 +276,21 @@
         35
       ],
       "delta_skirt_brush_min": 35
+    }
+  },
+  "probe": {
+    "type": {
+      "value": "sneaker_toe",
+      "_status": "DESIGN_ASSUMPTION",
+      "_note": "사용자 승인. 발목 위 비노출. 옆으로 스치다 밀려나는 동작만. 끼임·빨림 연출 금지"
+    },
+    "approach_speed_mps": {
+      "value": 0.08,
+      "_status": "DESIGN_ASSUMPTION"
+    },
+    "max_bristle_bend_deg": {
+      "value": 25,
+      "_status": "DESIGN_ASSUMPTION"
     }
   }
 }

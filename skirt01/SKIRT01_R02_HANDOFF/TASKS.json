@@ -1,0 +1,200 @@
+{
+  "project": "SKIRT01",
+  "title": "에스컬레이터 스커트 디플렉터 — 바삭숏 공학 쇼츠",
+  "round": "R02",
+  "scope": "G2 음성 대기 중 T-13~T-18 선행 → G7 무음 프리뷰까지. G8 최종 렌더·G9 공개는 범위 밖.",
+  "rules": [
+    "LOCKS.md를 고쳐야 할 것 같으면 고치지 말고 보고한다",
+    "대본은 SCRIPT_LOCKED다. 문장을 수정하지 않는다",
+    "생성자 != 검증자. 씬을 만든 주체가 자기 결과를 PASS로 판정하지 않는다",
+    "한 라운드에 변수 하나만 바꾼다",
+    "같은 결함이 국소 수정 2회 뒤에도 남으면 재설계 보고 후 멈춘다",
+    "통과하지 못한 게이트 위에 다음 단계를 쌓지 않는다",
+    "실행하지 않은 검사를 N/A로 쓰지 않는다. PASS / FAIL / NOT_PERFORMED / NOT_DECIDABLE 중 하나로 적는다",
+    "fps·총 프레임은 config에서만 읽는다. G2 확정 시 config 두 값만 바꾸고 재베이크한다",
+    "모델 에셋 다운로드·구매 금지 (DECISIONS.md). CC0 텍스처·HDRI만"
+  ],
+  "tasks": [
+    {
+      "id": "G-01",
+      "blocked_by_user": false,
+      "do": "LIFT 편의 소재가 무엇인지 사용자에게 확인한다. 스커트 디플렉터면 이 프로젝트를 중단하고 SCR-05(방호울타리 철도인접)로 교체한다.",
+      "accept": "사용자 회신 1줄. 중복 아님이 확인될 것.",
+      "deps": [],
+      "status": "DONE",
+      "result": "LIFT = 트럭리프트. 중복 아님 (2026-10-24)"
+    },
+    {
+      "id": "G-02",
+      "blocked_by_user": true,
+      "do": "확정 음성 녹음 수령 (ElevenLabs Hyuk, 대본 11문장). 파일명/sha256/길이(초)/샘플레이트를 받는다.",
+      "accept": "audio/VO_LOCK.json 작성 완료. 재녹음은 새 LOCK으로 취급.",
+      "deps": [],
+      "status": "BLOCKED",
+      "note": "사용자 녹음 예정. 그동안 T-13~T-18 선행"
+    },
+    {
+      "id": "G-03",
+      "blocked_by_user": false,
+      "do": "레퍼런스 영상 지정 수령 (트위스트락 편 또는 wnut 편 권장).",
+      "accept": "영상 파일 또는 링크 확보.",
+      "deps": [],
+      "status": "DONE",
+      "result": "Bf 109 모터카노네 편 확정"
+    },
+    {
+      "id": "T-01",
+      "do": "레퍼런스 ffprobe 측정 → REFERENCE_NOTES.md의 '측정값 → 목표값' 2열 표 작성. 샷 길이 중앙값·최댓값, 10초당 컷 수, 사건 밀도, 통합 LUFS 포함.",
+      "accept": "G1 통과. 목표값 열에 빈칸 없음.",
+      "deps": [
+        "G-03"
+      ],
+      "status": "DONE",
+      "result": "REFERENCE_NOTES.md"
+    },
+    {
+      "id": "T-02",
+      "do": "확정 음성에서 단어 타임스탬프 추출(faster-whisper word_timestamps=True) → audio/VO_WORDS.json. fps와 총 프레임을 음성 길이에서 LOCK하고 LOCKS.md SPEC을 갱신한다.",
+      "accept": "G2 통과. SPEC의 'fps 미확정'이 확정값으로 바뀜.",
+      "deps": [
+        "G-02"
+      ]
+    },
+    {
+      "id": "T-03",
+      "do": "BEATS.csv 작성. 컷 경계를 음성 실측에 맞춰 ±6F 안에서 조정하고 프레임 대응표를 남긴다. C02 '스커트 디플렉터' 명사 첫 발화 F와 대상 첫 노출 F를 기록한다.",
+      "accept": "명사 선행 노출: 대상 첫 노출 F <= 명사 첫 발화 F - 6.",
+      "deps": [
+        "T-02"
+      ]
+    },
+    {
+      "id": "T-04",
+      "do": "CC0 텍스처(헤어라인 스테인리스 2K, 주조 알루미늄 1K, 고무 1K, 타일 1K)와 실내 HDRI 2K를 assets/ASSET_ORDER.md 발주서대로 받아 LICENSES.csv에 기록. 모델 에셋은 받지 않는다.",
+      "accept": "LICENSES.csv에 품목 5건, 전부 CC0, 상업 영상 OK.",
+      "deps": [
+        "G-01"
+      ]
+    },
+    {
+      "id": "T-05",
+      "do": "디딤판 체인 배치를 해석적으로 계산해 베이크한다. 곡선 등간격 배치 금지. 디딤판-스커트 간극 4mm를 실제 간극으로 둔다(동일 평면 금지). 풀이는 PRODUCTION_PLAN_R02 §5.1(전륜·후륜 2트랙 해석).",
+      "accept": "src/*_bake.npz 생성. 모션블러용으로 프레임 0과 F+1까지 베이크, t<0은 선형 외삽.",
+      "deps": [
+        "T-03"
+      ]
+    },
+    {
+      "id": "T-06",
+      "do": "베이크 독립 검증(numpy, 생성 코드 불신). 피치 오차, 디딤판 관통, 튐 검출(이동 기준 좌표계로 판정 — 월드 좌표 금지).",
+      "accept": "G3 통과. evidence/bake_qc.json의 PASS 딕셔너리 전항목 PASS.",
+      "deps": [
+        "T-05"
+      ]
+    },
+    {
+      "id": "T-07",
+      "do": "씬 빌드. bpy.ops 사용 금지(bmesh + bpy.data). 베이크는 src/bake_helpers.py의 bake_fcurves 사용. 베벨은 bmesh.ops.bevel로 메시에 굽는다. 빌드 직후 프레임 2개에서 카메라·히어로 위치를 출력해 실제로 움직이는지 확인한다.",
+      "accept": "렌더 1장이 검은 화면이 아님.",
+      "deps": [
+        "T-06",
+        "T-04"
+      ]
+    },
+    {
+      "id": "T-08",
+      "do": "씬 충돌 검사(월드 좌표 삼각형 BVH, 5프레임 간격 전수). 쌍 목록: 디딤판-이웃디딤판, 디딤판-스커트패널, 디딤판-빗판, 디플렉터-디딤판. 1mm 이하 접촉은 설계 접촉으로 분류하고 프레임 목록과 함께 기록한다.",
+      "accept": "G4 통과. evidence/scene_qc.json. 충돌 0건 또는 설계 접촉 목록만 남음.",
+      "deps": [
+        "T-07"
+      ]
+    },
+    {
+      "id": "T-09",
+      "do": "270p 3-6spp 애니매틱 전편 렌더(모션블러 켬).",
+      "accept": "G5 통과. 사건 간격 <=3초, 명사 선행 노출 위반 0건, 카메라 완전 정지 구간 0개.",
+      "deps": [
+        "T-18"
+      ]
+    },
+    {
+      "id": "T-10",
+      "do": "핵심 4초(C06-C07) 540p 24spp+ 렌더 후 MP4 인코딩. 정상속도로 감상 판독. 수치 PASS를 화면 PASS로 대체하지 않는다.",
+      "accept": "G6 통과. 33~50mm 돌출량과 강성부·유연부 2중 구조가 540p에서 구분됨.",
+      "deps": [
+        "T-09"
+      ]
+    },
+    {
+      "id": "T-11",
+      "do": "전편 프리뷰 360-540p. 무음 구조 판독 → 음성 인과 판독 순으로 본다. UI 마스크 겹침 확인, 저비트레이트 스트레스 테스트(2M) 후 핵심 4초 재확인(솔 가닥 깜빡임), 휴대폰 실기 1회 시청.",
+      "accept": "G7 통과. preview_540p.mp4 + review/R01/CHANGELOG.md.",
+      "deps": [
+        "T-10"
+      ]
+    },
+    {
+      "id": "T-12",
+      "do": "REPORT.md 작성 후 사용자 보고. 결론 1-2문장 + 항목/상태/근거 표 + 블로커는 굵게 + 사용자 할 일은 번호 목록.",
+      "accept": "사용자 승인.",
+      "deps": [
+        "T-11"
+      ]
+    },
+    {
+      "id": "T-13",
+      "do": "src/rig_config.json R02 확정본 재확인(LOCKED·MODEL_ONLY 변경 없음, step_rise 0.231, mount_height 0.028 DESIGN_ASSUMPTION). scripts/setup_env.sh 실행, bpy 4.5.14 버전 가드 통과 확인.",
+      "accept": "env/bin/python -c 'import bpy' 성공, bpy.app.version[:2]==(4,5).",
+      "deps": []
+    },
+    {
+      "id": "T-14",
+      "do": "src/kin_steps.py(전륜 트랙 폐곡선·후륜 해석·텐셔너 조정량)와 src/bake_steps.py(frame 0~F+1, t<0 선형 외삽, 마스터 속도 곡선 config.motion.speed_curve) 작성 → src/step_bake.npz, src/probe_bake.npz, geometry_qc.json.events(step_enters_comb_k, step_crest_k, probe_contact/release).",
+      "accept": "npz 생성. events에 C08 빗판 진입 F와 C07 접촉 F가 있음.",
+      "deps": [
+        "T-13"
+      ]
+    },
+    {
+      "id": "T-15",
+      "do": "src/verify_bake.py (numpy만, 생성 코드 import 금지): 피치 오차≤0.1mm, 경사부 트레드 기울기≤0.05°, 이웃 간극 1.5±0.3mm, 디딤판–스커트 간극 4.00±0.05mm 전 프레임, 이동 좌표계 튐 검출.",
+      "accept": "G3 PASS. evidence/bake_qc.json.",
+      "deps": [
+        "T-14"
+      ]
+    },
+    {
+      "id": "T-16",
+      "do": "src/build_parts.py(STEP·COMB_PLATE·SKIRT_L·DEFL_RIGID·DEFL_BRUSH 근접/원경 LOD·PROBE·CUT_C04·CUT_C07·BALUSTRADE·HANDRAIL·NEWEL·ENV, bmesh, 베벨 굽기, 이름 규칙) + src/build_scene.py(인스턴스, 재질표 §6.2, 조명 §7, camera_keys.json, 마커·카메라 바인딩, AgX). 빌드 직후 verify_moving.",
+      "accept": "scene.blend 저장. 프레임 1·2 카메라·STEP_L_03 위치 다름. 270p 1장 검은 화면 아님.",
+      "deps": [
+        "T-15",
+        "T-04"
+      ]
+    },
+    {
+      "id": "T-17",
+      "do": "src/verify_scene.py(월드 BVH 충돌, 5F 간격, 쌍: STEP–STEP, STEP–SKIRT, STEP–COMB, DEFL–STEP, PROBE–DEFL(접촉 F 구간은 설계 접촉), 카메라 최근접 ≥0.15m) + src/export_anchors.py(COMB_LINE·틈 양끝·돌출 양끝·끝단 2D 투영 → overlay/overlay_anchors.json).",
+      "accept": "G4 PASS. evidence/scene_qc.json, overlay_anchors.json.",
+      "deps": [
+        "T-16"
+      ]
+    },
+    {
+      "id": "T-18",
+      "do": "C03·C06·C07·C08 대표 프레임 540p 24spp 렌더 → MP4 인코딩 → src/verify_luma.py(부품 마스크별 L*, §6.1 목표) + src/verify_brush.py(가닥 투영 폭 ≥1.5px 계산, 2M 스트레스 재인코딩 후 검증자 감상).",
+      "accept": "G4.5·G4.6 PASS. evidence/luma_qc.json, brush_qc.json.",
+      "deps": [
+        "T-17"
+      ]
+    },
+    {
+      "id": "T-19",
+      "do": "scripts/run_pipeline.sh 완성, RUN_ALL.ps1(-VerifyOnly -Rebake, 24F 청크·이어하기·render_log.csv), MANIFEST.json 재생성, 깨끗한 폴더 재현 테스트(sha256 일치).",
+      "accept": "재현 테스트 PASS.",
+      "deps": [
+        "T-11"
+      ]
+    }
+  ]
+}

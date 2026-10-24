@@ -1,0 +1,2 @@
+{"_tool": "faster-whisper word_timestamps=True, language=ko", "words": [{"word": "스커트", "start": 0.0, "end": 0.0, "cut": "C02", "frame": null}],
+ "_check": "명사 선행 노출: subject_first_F <= noun_first_F - 6 (C02 '스커트 디플렉터', C03 '틈', C08 '빗')"}
