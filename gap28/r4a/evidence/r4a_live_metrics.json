@@ -1,0 +1,1491 @@
+{
+ "tripod_px": 0.5,
+ "handheld_ok_px": 1.5,
+ "luma_range": [
+  75,
+  135
+ ],
+ "clips": [
+  {
+   "clip": "20260824_142342",
+   "frames": 181,
+   "duration_s": 6.062,
+   "fps": 30.0,
+   "luma_mean": 100.1,
+   "luma_in_range_pct": 100.0,
+   "motion_px_median": 0.1,
+   "motion_px_p90": 0.28,
+   "tripod_overall": true,
+   "diff_median": 0.31,
+   "dark_pct_max": 2.4,
+   "windows": {
+    "L1": [
+     {
+      "score": 2.97,
+      "f0": 70,
+      "f1": 159,
+      "t0": 2.3,
+      "t1": 5.3,
+      "luma": 100.6,
+      "motion_px": 0.04,
+      "diff": 0.12,
+      "dark_tail_pct": 2.3,
+      "tripod": true
+     },
+     {
+      "score": 2.9,
+      "f0": 25,
+      "f1": 114,
+      "t0": 0.8,
+      "t1": 3.8,
+      "luma": 100.0,
+      "motion_px": 0.12,
+      "diff": 0.35,
+      "dark_tail_pct": 2.2,
+      "tripod": true
+     }
+    ],
+    "L2": [
+     {
+      "score": 0.93,
+      "f0": 91,
+      "f1": 180,
+      "t0": 3.0,
+      "t1": 6.0,
+      "luma": 100.8,
+      "motion_px": 0.72,
+      "diff": 0.85,
+      "dark_tail_pct": 2.2,
+      "tripod": false
+     },
+     {
+      "score": 0.51,
+      "f0": 16,
+      "f1": 105,
+      "t0": 0.5,
+      "t1": 3.5,
+      "luma": 99.8,
+      "motion_px": 0.14,
+      "diff": 0.39,
+      "dark_tail_pct": 2.2,
+      "tripod": true
+     }
+    ],
+    "L3": [
+     {
+      "score": 2.0,
+      "f0": 91,
+      "f1": 180,
+      "t0": 3.0,
+      "t1": 6.0,
+      "luma": 100.8,
+      "motion_px": 0.72,
+      "diff": 0.85,
+      "dark_tail_pct": 2.2,
+      "tripod": false
+     },
+     {
+      "score": 2.0,
+      "f0": 1,
+      "f1": 90,
+      "t0": 0.0,
+      "t1": 3.0,
+      "luma": 99.4,
+      "motion_px": 0.16,
+      "diff": 0.44,
+      "dark_tail_pct": 2.2,
+      "tripod": true
+     },
+     {
+      "score": 1.9,
+      "f0": 46,
+      "f1": 135,
+      "t0": 1.5,
+      "t1": 4.5,
+      "luma": 100.4,
+      "motion_px": 0.08,
+      "diff": 0.24,
+      "dark_tail_pct": 2.2,
+      "tripod": true
+     }
+    ],
+    "L4": [
+     {
+      "score": 2.9,
+      "f0": 40,
+      "f1": 129,
+      "t0": 1.3,
+      "t1": 4.3,
+      "luma": 100.3,
+      "motion_px": 0.09,
+      "diff": 0.28,
+      "dark_tail_pct": 2.2,
+      "tripod": true
+     },
+     {
+      "score": 2.36,
+      "f0": 85,
+      "f1": 174,
+      "t0": 2.8,
+      "t1": 5.8,
+      "luma": 100.7,
+      "motion_px": 0.1,
+      "diff": 0.24,
+      "dark_tail_pct": 2.2,
+      "tripod": true
+     }
+    ]
+   }
+  },
+  {
+   "clip": "20260824_142638",
+   "frames": 1161,
+   "duration_s": 38.7,
+   "fps": 30.0,
+   "luma_mean": 90.6,
+   "luma_in_range_pct": 100.0,
+   "motion_px_median": 0.14,
+   "motion_px_p90": 0.35,
+   "tripod_overall": true,
+   "diff_median": 0.65,
+   "dark_pct_max": 3.8,
+   "windows": {
+    "L1": [
+     {
+      "score": 2.93,
+      "f0": 502,
+      "f1": 591,
+      "t0": 16.7,
+      "t1": 19.7,
+      "luma": 85.7,
+      "motion_px": 0.09,
+      "diff": 0.22,
+      "dark_tail_pct": 1.3,
+      "tripod": true
+     },
+     {
+      "score": 2.91,
+      "f0": 433,
+      "f1": 522,
+      "t0": 14.4,
+      "t1": 17.4,
+      "luma": 86.1,
+      "motion_px": 0.12,
+      "diff": 0.3,
+      "dark_tail_pct": 1.5,
+      "tripod": true
+     },
+     {
+      "score": 2.91,
+      "f0": 373,
+      "f1": 462,
+      "t0": 12.4,
+      "t1": 15.4,
+      "luma": 87.1,
+      "motion_px": 0.13,
+      "diff": 0.3,
+      "dark_tail_pct": 1.1,
+      "tripod": true
+     }
+    ],
+    "L2": [
+     {
+      "score": 1.01,
+      "f0": 1054,
+      "f1": 1143,
+      "t0": 35.1,
+      "t1": 38.1,
+      "luma": 91.4,
+      "motion_px": 0.92,
+      "diff": 2.66,
+      "dark_tail_pct": 2.9,
+      "tripod": false
+     },
+     {
+      "score": 0.59,
+      "f0": 1009,
+      "f1": 1098,
+      "t0": 33.6,
+      "t1": 36.6,
+      "luma": 89.4,
+      "motion_px": 0.2,
+      "diff": 0.92,
+      "dark_tail_pct": 1.1,
+      "tripod": true
+     },
+     {
+      "score": 0.54,
+      "f0": 4,
+      "f1": 93,
+      "t0": 0.1,
+      "t1": 3.1,
+      "luma": 88.9,
+      "motion_px": 0.55,
+      "diff": 1.16,
+      "dark_tail_pct": 1.0,
+      "tripod": false
+     }
+    ],
+    "L3": [
+     {
+      "score": 2.8,
+      "f0": 1063,
+      "f1": 1152,
+      "t0": 35.4,
+      "t1": 38.4,
+      "luma": 92.7,
+      "motion_px": 0.97,
+      "diff": 3.2,
+      "dark_tail_pct": 3.3,
+      "tripod": false
+     },
+     {
+      "score": 2.52,
+      "f0": 571,
+      "f1": 660,
+      "t0": 19.0,
+      "t1": 22.0,
+      "luma": 92.6,
+      "motion_px": 0.16,
+      "diff": 1.62,
+      "dark_tail_pct": 0.3,
+      "tripod": true
+     },
+     {
+      "score": 2.49,
+      "f0": 616,
+      "f1": 705,
+      "t0": 20.5,
+      "t1": 23.5,
+      "luma": 95.1,
+      "motion_px": 0.17,
+      "diff": 2.07,
+      "dark_tail_pct": 0.3,
+      "tripod": true
+     }
+    ],
+    "L4": [
+     {
+      "score": 2.82,
+      "f0": 496,
+      "f1": 585,
+      "t0": 16.5,
+      "t1": 19.5,
+      "luma": 85.7,
+      "motion_px": 0.11,
+      "diff": 0.26,
+      "dark_tail_pct": 1.3,
+      "tripod": true
+     },
+     {
+      "score": 2.79,
+      "f0": 373,
+      "f1": 462,
+      "t0": 12.4,
+      "t1": 15.4,
+      "luma": 87.1,
+      "motion_px": 0.13,
+      "diff": 0.3,
+      "dark_tail_pct": 1.1,
+      "tripod": true
+     },
+     {
+      "score": 2.77,
+      "f0": 436,
+      "f1": 525,
+      "t0": 14.5,
+      "t1": 17.5,
+      "luma": 86.1,
+      "motion_px": 0.12,
+      "diff": 0.3,
+      "dark_tail_pct": 1.5,
+      "tripod": true
+     }
+    ]
+   }
+  },
+  {
+   "clip": "20260824_151547",
+   "frames": 342,
+   "duration_s": 11.413,
+   "fps": 30.0,
+   "luma_mean": 52.6,
+   "luma_in_range_pct": 8.8,
+   "motion_px_median": 2.49,
+   "motion_px_p90": 13.15,
+   "tripod_overall": false,
+   "diff_median": 3.12,
+   "dark_pct_max": 64.1,
+   "windows": {
+    "L1": [
+     {
+      "score": 1.56,
+      "f0": 31,
+      "f1": 120,
+      "t0": 1.0,
+      "t1": 4.0,
+      "luma": 49.4,
+      "motion_px": 1.65,
+      "diff": 1.47,
+      "dark_tail_pct": 61.3,
+      "tripod": false
+     },
+     {
+      "score": 1.42,
+      "f0": 136,
+      "f1": 225,
+      "t0": 4.5,
+      "t1": 7.5,
+      "luma": 71.9,
+      "motion_px": 3.04,
+      "diff": 3.03,
+      "dark_tail_pct": 59.2,
+      "tripod": false
+     },
+     {
+      "score": 1.16,
+      "f0": 91,
+      "f1": 180,
+      "t0": 3.0,
+      "t1": 6.0,
+      "luma": 63.6,
+      "motion_px": 3.54,
+      "diff": 3.33,
+      "dark_tail_pct": 55.8,
+      "tripod": false
+     }
+    ],
+    "L2": [
+     {
+      "score": 1.61,
+      "f0": 151,
+      "f1": 240,
+      "t0": 5.0,
+      "t1": 8.0,
+      "luma": 68.6,
+      "motion_px": 3.04,
+      "diff": 3.0,
+      "dark_tail_pct": 61.1,
+      "tripod": false
+     },
+     {
+      "score": 1.16,
+      "f0": 49,
+      "f1": 138,
+      "t0": 1.6,
+      "t1": 4.6,
+      "luma": 51.1,
+      "motion_px": 2.5,
+      "diff": 2.36,
+      "dark_tail_pct": 59.9,
+      "tripod": false
+     },
+     {
+      "score": 1.0,
+      "f0": 232,
+      "f1": 321,
+      "t0": 7.7,
+      "t1": 10.7,
+      "luma": 39.1,
+      "motion_px": 3.59,
+      "diff": 3.55,
+      "dark_tail_pct": 61.5,
+      "tripod": false
+     }
+    ],
+    "L3": [
+     {
+      "score": 2.35,
+      "f0": 166,
+      "f1": 255,
+      "t0": 5.5,
+      "t1": 8.5,
+      "luma": 62.9,
+      "motion_px": 3.09,
+      "diff": 2.97,
+      "dark_tail_pct": 63.0,
+      "tripod": false
+     },
+     {
+      "score": 1.87,
+      "f0": 88,
+      "f1": 177,
+      "t0": 2.9,
+      "t1": 5.9,
+      "luma": 62.8,
+      "motion_px": 3.57,
+      "diff": 3.34,
+      "dark_tail_pct": 55.6,
+      "tripod": false
+     },
+     {
+      "score": 1.6,
+      "f0": 43,
+      "f1": 132,
+      "t0": 1.4,
+      "t1": 4.4,
+      "luma": 50.1,
+      "motion_px": 2.04,
+      "diff": 1.99,
+      "dark_tail_pct": 60.7,
+      "tripod": false
+     }
+    ],
+    "L4": [
+     {
+      "score": 0.93,
+      "f0": 133,
+      "f1": 222,
+      "t0": 4.4,
+      "t1": 7.4,
+      "luma": 72.1,
+      "motion_px": 3.06,
+      "diff": 3.08,
+      "dark_tail_pct": 58.9,
+      "tripod": false
+     },
+     {
+      "score": 0.82,
+      "f0": 34,
+      "f1": 123,
+      "t0": 1.1,
+      "t1": 4.1,
+      "luma": 49.4,
+      "motion_px": 1.62,
+      "diff": 1.54,
+      "dark_tail_pct": 61.3,
+      "tripod": false
+     },
+     {
+      "score": 0.69,
+      "f0": 88,
+      "f1": 177,
+      "t0": 2.9,
+      "t1": 5.9,
+      "luma": 62.8,
+      "motion_px": 3.57,
+      "diff": 3.34,
+      "dark_tail_pct": 55.6,
+      "tripod": false
+     }
+    ]
+   }
+  },
+  {
+   "clip": "20260824_151753",
+   "frames": 324,
+   "duration_s": 10.8,
+   "fps": 30.0,
+   "luma_mean": 116.0,
+   "luma_in_range_pct": 100.0,
+   "motion_px_median": 24.55,
+   "motion_px_p90": 73.74,
+   "tripod_overall": false,
+   "diff_median": 5.95,
+   "dark_pct_max": 18.1,
+   "windows": {
+    "L1": [
+     {
+      "score": 1.17,
+      "f0": 10,
+      "f1": 99,
+      "t0": 0.3,
+      "t1": 3.3,
+      "luma": 111.8,
+      "motion_px": 6.31,
+      "diff": 5.0,
+      "dark_tail_pct": 0.3,
+      "tripod": false
+     },
+     {
+      "score": 1.0,
+      "f0": 55,
+      "f1": 144,
+      "t0": 1.8,
+      "t1": 4.8,
+      "luma": 114.9,
+      "motion_px": 12.26,
+      "diff": 6.82,
+      "dark_tail_pct": 0.2,
+      "tripod": false
+     },
+     {
+      "score": 1.0,
+      "f0": 100,
+      "f1": 189,
+      "t0": 3.3,
+      "t1": 6.3,
+      "luma": 119.4,
+      "motion_px": 29.76,
+      "diff": 7.1,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     }
+    ],
+    "L2": [
+     {
+      "score": 1.7,
+      "f0": 172,
+      "f1": 261,
+      "t0": 5.7,
+      "t1": 8.7,
+      "luma": 120.2,
+      "motion_px": 56.98,
+      "diff": 7.68,
+      "dark_tail_pct": 6.1,
+      "tripod": false
+     },
+     {
+      "score": 1.52,
+      "f0": 127,
+      "f1": 216,
+      "t0": 4.2,
+      "t1": 7.2,
+      "luma": 119.1,
+      "motion_px": 43.13,
+      "diff": 6.73,
+      "dark_tail_pct": 0.7,
+      "tripod": false
+     },
+     {
+      "score": 1.51,
+      "f0": 34,
+      "f1": 123,
+      "t0": 1.1,
+      "t1": 4.1,
+      "luma": 114.1,
+      "motion_px": 8.19,
+      "diff": 5.95,
+      "dark_tail_pct": 0.5,
+      "tripod": false
+     }
+    ],
+    "L3": [
+     {
+      "score": 2.0,
+      "f0": 1,
+      "f1": 90,
+      "t0": 0.0,
+      "t1": 3.0,
+      "luma": 111.0,
+      "motion_px": 7.71,
+      "diff": 5.01,
+      "dark_tail_pct": 0.2,
+      "tripod": false
+     },
+     {
+      "score": 2.0,
+      "f0": 46,
+      "f1": 135,
+      "t0": 1.5,
+      "t1": 4.5,
+      "luma": 114.5,
+      "motion_px": 9.34,
+      "diff": 6.34,
+      "dark_tail_pct": 0.4,
+      "tripod": false
+     },
+     {
+      "score": 2.0,
+      "f0": 91,
+      "f1": 180,
+      "t0": 3.0,
+      "t1": 6.0,
+      "luma": 118.5,
+      "motion_px": 27.69,
+      "diff": 7.23,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     }
+    ],
+    "L4": [
+     {
+      "score": 1.0,
+      "f0": 1,
+      "f1": 90,
+      "t0": 0.0,
+      "t1": 3.0,
+      "luma": 111.0,
+      "motion_px": 7.71,
+      "diff": 5.01,
+      "dark_tail_pct": 0.2,
+      "tripod": false
+     },
+     {
+      "score": 1.0,
+      "f0": 46,
+      "f1": 135,
+      "t0": 1.5,
+      "t1": 4.5,
+      "luma": 114.5,
+      "motion_px": 9.34,
+      "diff": 6.34,
+      "dark_tail_pct": 0.4,
+      "tripod": false
+     },
+     {
+      "score": 1.0,
+      "f0": 91,
+      "f1": 180,
+      "t0": 3.0,
+      "t1": 6.0,
+      "luma": 118.5,
+      "motion_px": 27.69,
+      "diff": 7.23,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     }
+    ]
+   }
+  },
+  {
+   "clip": "20260824_151924",
+   "frames": 88,
+   "duration_s": 2.933,
+   "fps": 30.0,
+   "luma_mean": 100.8,
+   "luma_in_range_pct": 100.0,
+   "motion_px_median": 7.82,
+   "motion_px_p90": 10.22,
+   "tripod_overall": false,
+   "diff_median": 7.22,
+   "dark_pct_max": 3.0,
+   "windows": {}
+  },
+  {
+   "clip": "20260824_152209",
+   "frames": 4289,
+   "duration_s": 143.016,
+   "fps": 30.0,
+   "luma_mean": 109.0,
+   "luma_in_range_pct": 80.1,
+   "motion_px_median": 0.07,
+   "motion_px_p90": 0.24,
+   "tripod_overall": true,
+   "diff_median": 0.33,
+   "dark_pct_max": 13.4,
+   "windows": {
+    "L1": [
+     {
+      "score": 2.96,
+      "f0": 484,
+      "f1": 573,
+      "t0": 16.1,
+      "t1": 19.1,
+      "luma": 91.4,
+      "motion_px": 0.04,
+      "diff": 0.15,
+      "dark_tail_pct": 3.7,
+      "tripod": true
+     },
+     {
+      "score": 2.95,
+      "f0": 1234,
+      "f1": 1323,
+      "t0": 41.1,
+      "t1": 44.1,
+      "luma": 92.9,
+      "motion_px": 0.05,
+      "diff": 0.16,
+      "dark_tail_pct": 4.5,
+      "tripod": true
+     },
+     {
+      "score": 2.95,
+      "f0": 3406,
+      "f1": 3495,
+      "t0": 113.5,
+      "t1": 116.5,
+      "luma": 99.0,
+      "motion_px": 0.07,
+      "diff": 0.14,
+      "dark_tail_pct": 1.5,
+      "tripod": true
+     }
+    ],
+    "L2": [
+     {
+      "score": 0.76,
+      "f0": 2296,
+      "f1": 2385,
+      "t0": 76.5,
+      "t1": 79.5,
+      "luma": 128.6,
+      "motion_px": 0.25,
+      "diff": 4.66,
+      "dark_tail_pct": 8.9,
+      "tripod": true
+     },
+     {
+      "score": 0.73,
+      "f0": 2398,
+      "f1": 2487,
+      "t0": 79.9,
+      "t1": 82.9,
+      "luma": 136.8,
+      "motion_px": 0.11,
+      "diff": 5.92,
+      "dark_tail_pct": 10.7,
+      "tripod": true
+     },
+     {
+      "score": 0.6,
+      "f0": 3211,
+      "f1": 3300,
+      "t0": 107.0,
+      "t1": 110.0,
+      "luma": 135.0,
+      "motion_px": 0.1,
+      "diff": 1.48,
+      "dark_tail_pct": 2.3,
+      "tripod": true
+     }
+    ],
+    "L3": [
+     {
+      "score": 2.95,
+      "f0": 2407,
+      "f1": 2496,
+      "t0": 80.2,
+      "t1": 83.2,
+      "luma": 134.3,
+      "motion_px": 0.12,
+      "diff": 5.77,
+      "dark_tail_pct": 10.1,
+      "tripod": true
+     },
+     {
+      "score": 2.93,
+      "f0": 2452,
+      "f1": 2541,
+      "t0": 81.7,
+      "t1": 84.7,
+      "luma": 131.1,
+      "motion_px": 0.14,
+      "diff": 4.95,
+      "dark_tail_pct": 2.1,
+      "tripod": true
+     },
+     {
+      "score": 2.9,
+      "f0": 2296,
+      "f1": 2385,
+      "t0": 76.5,
+      "t1": 79.5,
+      "luma": 128.6,
+      "motion_px": 0.25,
+      "diff": 4.66,
+      "dark_tail_pct": 8.9,
+      "tripod": true
+     }
+    ],
+    "L4": [
+     {
+      "score": 2.92,
+      "f0": 3409,
+      "f1": 3498,
+      "t0": 113.6,
+      "t1": 116.6,
+      "luma": 99.0,
+      "motion_px": 0.07,
+      "diff": 0.14,
+      "dark_tail_pct": 1.5,
+      "tripod": true
+     },
+     {
+      "score": 2.9,
+      "f0": 1234,
+      "f1": 1323,
+      "t0": 41.1,
+      "t1": 44.1,
+      "luma": 92.9,
+      "motion_px": 0.05,
+      "diff": 0.16,
+      "dark_tail_pct": 4.5,
+      "tripod": true
+     },
+     {
+      "score": 2.89,
+      "f0": 460,
+      "f1": 549,
+      "t0": 15.3,
+      "t1": 18.3,
+      "luma": 91.6,
+      "motion_px": 0.04,
+      "diff": 0.15,
+      "dark_tail_pct": 3.8,
+      "tripod": true
+     }
+    ]
+   }
+  },
+  {
+   "clip": "20260824_152835",
+   "frames": 2745,
+   "duration_s": 91.5,
+   "fps": 30.0,
+   "luma_mean": 95.9,
+   "luma_in_range_pct": 90.2,
+   "motion_px_median": 0.29,
+   "motion_px_p90": 0.95,
+   "tripod_overall": true,
+   "diff_median": 0.48,
+   "dark_pct_max": 6.5,
+   "windows": {
+    "L1": [
+     {
+      "score": 2.93,
+      "f0": 2605,
+      "f1": 2694,
+      "t0": 86.8,
+      "t1": 89.8,
+      "luma": 105.2,
+      "motion_px": 0.11,
+      "diff": 0.18,
+      "dark_tail_pct": 0.1,
+      "tripod": true
+     },
+     {
+      "score": 2.93,
+      "f0": 2557,
+      "f1": 2646,
+      "t0": 85.2,
+      "t1": 88.2,
+      "luma": 105.2,
+      "motion_px": 0.1,
+      "diff": 0.19,
+      "dark_tail_pct": 0.2,
+      "tripod": true
+     },
+     {
+      "score": 2.93,
+      "f0": 2503,
+      "f1": 2592,
+      "t0": 83.4,
+      "t1": 86.4,
+      "luma": 104.6,
+      "motion_px": 0.12,
+      "diff": 0.18,
+      "dark_tail_pct": 0.2,
+      "tripod": true
+     }
+    ],
+    "L2": [
+     {
+      "score": 1.58,
+      "f0": 1420,
+      "f1": 1509,
+      "t0": 47.3,
+      "t1": 50.3,
+      "luma": 98.4,
+      "motion_px": 10.57,
+      "diff": 6.18,
+      "dark_tail_pct": 3.5,
+      "tripod": false
+     },
+     {
+      "score": 1.54,
+      "f0": 1375,
+      "f1": 1464,
+      "t0": 45.8,
+      "t1": 48.8,
+      "luma": 106.6,
+      "motion_px": 6.42,
+      "diff": 4.88,
+      "dark_tail_pct": 2.2,
+      "tripod": false
+     },
+     {
+      "score": 1.35,
+      "f0": 1789,
+      "f1": 1878,
+      "t0": 59.6,
+      "t1": 62.6,
+      "luma": 74.6,
+      "motion_px": 4.85,
+      "diff": 2.11,
+      "dark_tail_pct": 1.2,
+      "tripod": false
+     }
+    ],
+    "L3": [
+     {
+      "score": 2.87,
+      "f0": 1378,
+      "f1": 1467,
+      "t0": 45.9,
+      "t1": 48.9,
+      "luma": 106.4,
+      "motion_px": 6.84,
+      "diff": 5.11,
+      "dark_tail_pct": 2.3,
+      "tripod": false
+     },
+     {
+      "score": 2.71,
+      "f0": 1810,
+      "f1": 1899,
+      "t0": 60.3,
+      "t1": 63.3,
+      "luma": 83.4,
+      "motion_px": 4.84,
+      "diff": 1.95,
+      "dark_tail_pct": 1.1,
+      "tripod": false
+     },
+     {
+      "score": 2.26,
+      "f0": 2308,
+      "f1": 2397,
+      "t0": 76.9,
+      "t1": 79.9,
+      "luma": 109.3,
+      "motion_px": 0.38,
+      "diff": 1.47,
+      "dark_tail_pct": 0.5,
+      "tripod": true
+     }
+    ],
+    "L4": [
+     {
+      "score": 2.84,
+      "f0": 2491,
+      "f1": 2580,
+      "t0": 83.0,
+      "t1": 86.0,
+      "luma": 104.4,
+      "motion_px": 0.13,
+      "diff": 0.2,
+      "dark_tail_pct": 0.2,
+      "tripod": true
+     },
+     {
+      "score": 2.82,
+      "f0": 2545,
+      "f1": 2634,
+      "t0": 84.8,
+      "t1": 87.8,
+      "luma": 105.1,
+      "motion_px": 0.12,
+      "diff": 0.2,
+      "dark_tail_pct": 0.2,
+      "tripod": true
+     },
+     {
+      "score": 2.81,
+      "f0": 2638,
+      "f1": 2727,
+      "t0": 87.9,
+      "t1": 90.9,
+      "luma": 105.2,
+      "motion_px": 0.13,
+      "diff": 0.19,
+      "dark_tail_pct": 0.1,
+      "tripod": true
+     }
+    ]
+   }
+  },
+  {
+   "clip": "20260824_154101",
+   "frames": 341,
+   "duration_s": 11.367,
+   "fps": 30.0,
+   "luma_mean": 72.4,
+   "luma_in_range_pct": 34.9,
+   "motion_px_median": 0.49,
+   "motion_px_p90": 58.32,
+   "tripod_overall": true,
+   "diff_median": 1.11,
+   "dark_pct_max": 37.0,
+   "windows": {
+    "L1": [
+     {
+      "score": 2.13,
+      "f0": 19,
+      "f1": 108,
+      "t0": 0.6,
+      "t1": 3.6,
+      "luma": 51.3,
+      "motion_px": 0.4,
+      "diff": 0.87,
+      "dark_tail_pct": 33.9,
+      "tripod": true
+     },
+     {
+      "score": 2.08,
+      "f0": 64,
+      "f1": 153,
+      "t0": 2.1,
+      "t1": 5.1,
+      "luma": 49.3,
+      "motion_px": 0.4,
+      "diff": 0.83,
+      "dark_tail_pct": 33.3,
+      "tripod": true
+     },
+     {
+      "score": 2.06,
+      "f0": 115,
+      "f1": 204,
+      "t0": 3.8,
+      "t1": 6.8,
+      "luma": 45.5,
+      "motion_px": 0.29,
+      "diff": 0.65,
+      "dark_tail_pct": 36.6,
+      "tripod": true
+     }
+    ],
+    "L2": [
+     {
+      "score": 1.5,
+      "f0": 223,
+      "f1": 312,
+      "t0": 7.4,
+      "t1": 10.4,
+      "luma": 113.5,
+      "motion_px": 29.66,
+      "diff": 2.28,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     },
+     {
+      "score": 1.01,
+      "f0": 127,
+      "f1": 216,
+      "t0": 4.2,
+      "t1": 7.2,
+      "luma": 46.8,
+      "motion_px": 1.68,
+      "diff": 1.37,
+      "dark_tail_pct": 30.6,
+      "tripod": false
+     },
+     {
+      "score": 0.47,
+      "f0": 1,
+      "f1": 90,
+      "t0": 0.0,
+      "t1": 3.0,
+      "luma": 53.9,
+      "motion_px": 0.58,
+      "diff": 1.37,
+      "dark_tail_pct": 34.3,
+      "tripod": false
+     }
+    ],
+    "L3": [
+     {
+      "score": 2.94,
+      "f0": 169,
+      "f1": 258,
+      "t0": 5.6,
+      "t1": 8.6,
+      "luma": 82.7,
+      "motion_px": 25.05,
+      "diff": 2.82,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     },
+     {
+      "score": 1.53,
+      "f0": 250,
+      "f1": 339,
+      "t0": 8.3,
+      "t1": 11.3,
+      "luma": 105.1,
+      "motion_px": 48.08,
+      "diff": 3.62,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     },
+     {
+      "score": 1.43,
+      "f0": 73,
+      "f1": 162,
+      "t0": 2.4,
+      "t1": 5.4,
+      "luma": 48.8,
+      "motion_px": 0.39,
+      "diff": 0.81,
+      "dark_tail_pct": 34.0,
+      "tripod": true
+     }
+    ],
+    "L4": [
+     {
+      "score": 1.92,
+      "f0": 103,
+      "f1": 192,
+      "t0": 3.4,
+      "t1": 6.4,
+      "luma": 46.4,
+      "motion_px": 0.33,
+      "diff": 0.72,
+      "dark_tail_pct": 36.5,
+      "tripod": true
+     },
+     {
+      "score": 1.79,
+      "f0": 13,
+      "f1": 102,
+      "t0": 0.4,
+      "t1": 3.4,
+      "luma": 51.9,
+      "motion_px": 0.41,
+      "diff": 1.01,
+      "dark_tail_pct": 34.1,
+      "tripod": true
+     },
+     {
+      "score": 1.35,
+      "f0": 58,
+      "f1": 147,
+      "t0": 1.9,
+      "t1": 4.9,
+      "luma": 49.6,
+      "motion_px": 0.41,
+      "diff": 0.85,
+      "dark_tail_pct": 33.0,
+      "tripod": true
+     }
+    ]
+   }
+  },
+  {
+   "clip": "20260824_162328",
+   "frames": 679,
+   "duration_s": 22.633,
+   "fps": 30.0,
+   "luma_mean": 92.1,
+   "luma_in_range_pct": 60.5,
+   "motion_px_median": 17.93,
+   "motion_px_p90": 247.18,
+   "tripod_overall": false,
+   "diff_median": 6.51,
+   "dark_pct_max": 41.4,
+   "windows": {
+    "L1": [
+     {
+      "score": 1.73,
+      "f0": 31,
+      "f1": 120,
+      "t0": 1.0,
+      "t1": 4.0,
+      "luma": 110.2,
+      "motion_px": 12.09,
+      "diff": 1.62,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     },
+     {
+      "score": 1.1,
+      "f0": 76,
+      "f1": 165,
+      "t0": 2.5,
+      "t1": 5.5,
+      "luma": 109.0,
+      "motion_px": 14.17,
+      "diff": 5.4,
+      "dark_tail_pct": 6.1,
+      "tripod": false
+     },
+     {
+      "score": 1.03,
+      "f0": 502,
+      "f1": 591,
+      "t0": 16.7,
+      "t1": 19.7,
+      "luma": 75.2,
+      "motion_px": 26.86,
+      "diff": 5.85,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     }
+    ],
+    "L2": [
+     {
+      "score": 2.44,
+      "f0": 457,
+      "f1": 546,
+      "t0": 15.2,
+      "t1": 18.2,
+      "luma": 81.6,
+      "motion_px": 41.66,
+      "diff": 7.49,
+      "dark_tail_pct": 29.5,
+      "tripod": false
+     },
+     {
+      "score": 2.13,
+      "f0": 94,
+      "f1": 183,
+      "t0": 3.1,
+      "t1": 6.1,
+      "luma": 103.1,
+      "motion_px": 26.98,
+      "diff": 8.26,
+      "dark_tail_pct": 19.0,
+      "tripod": false
+     },
+     {
+      "score": 2.1,
+      "f0": 250,
+      "f1": 339,
+      "t0": 8.3,
+      "t1": 11.3,
+      "luma": 104.4,
+      "motion_px": 136.24,
+      "diff": 10.37,
+      "dark_tail_pct": 18.0,
+      "tripod": false
+     }
+    ],
+    "L3": [
+     {
+      "score": 2.0,
+      "f0": 82,
+      "f1": 171,
+      "t0": 2.7,
+      "t1": 5.7,
+      "luma": 108.6,
+      "motion_px": 14.93,
+      "diff": 5.83,
+      "dark_tail_pct": 10.4,
+      "tripod": false
+     },
+     {
+      "score": 2.0,
+      "f0": 127,
+      "f1": 216,
+      "t0": 4.2,
+      "t1": 7.2,
+      "luma": 99.2,
+      "motion_px": 106.69,
+      "diff": 12.04,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     },
+     {
+      "score": 2.0,
+      "f0": 172,
+      "f1": 261,
+      "t0": 5.7,
+      "t1": 8.7,
+      "luma": 106.1,
+      "motion_px": 223.68,
+      "diff": 13.44,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     }
+    ],
+    "L4": [
+     {
+      "score": 1.04,
+      "f0": 31,
+      "f1": 120,
+      "t0": 1.0,
+      "t1": 4.0,
+      "luma": 110.2,
+      "motion_px": 12.09,
+      "diff": 1.62,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     },
+     {
+      "score": 1.0,
+      "f0": 76,
+      "f1": 165,
+      "t0": 2.5,
+      "t1": 5.5,
+      "luma": 109.0,
+      "motion_px": 14.17,
+      "diff": 5.4,
+      "dark_tail_pct": 6.1,
+      "tripod": false
+     },
+     {
+      "score": 1.0,
+      "f0": 121,
+      "f1": 210,
+      "t0": 4.0,
+      "t1": 7.0,
+      "luma": 100.1,
+      "motion_px": 89.96,
+      "diff": 11.1,
+      "dark_tail_pct": 0.0,
+      "tripod": false
+     }
+    ]
+   }
+  },
+  {
+   "clip": "20260824_162808",
+   "frames": 295,
+   "duration_s": 9.833,
+   "fps": 30.0,
+   "luma_mean": 99.7,
+   "luma_in_range_pct": 83.1,
+   "motion_px_median": 0.86,
+   "motion_px_p90": 94.98,
+   "tripod_overall": false,
+   "diff_median": 1.25,
+   "dark_pct_max": 56.0,
+   "windows": {
+    "L1": [
+     {
+      "score": 2.61,
+      "f0": 55,
+      "f1": 144,
+      "t0": 1.8,
+      "t1": 4.8,
+      "luma": 93.6,
+      "motion_px": 0.87,
+      "diff": 0.62,
+      "dark_tail_pct": 0.6,
+      "tripod": false
+     },
+     {
+      "score": 2.54,
+      "f0": 1,
+      "f1": 90,
+      "t0": 0.0,
+      "t1": 3.0,
+      "luma": 93.8,
+      "motion_px": 0.95,
+      "diff": 0.86,
+      "dark_tail_pct": 0.5,
+      "tripod": false
+     },
+     {
+      "score": 2.15,
+      "f0": 100,
+      "f1": 189,
+      "t0": 3.3,
+      "t1": 6.3,
+      "luma": 95.6,
+      "motion_px": 2.01,
+      "diff": 1.1,
+      "dark_tail_pct": 4.7,
+      "tripod": false
+     }
+    ],
+    "L2": [
+     {
+      "score": 1.88,
+      "f0": 202,
+      "f1": 291,
+      "t0": 6.7,
+      "t1": 9.7,
+      "luma": 107.2,
+      "motion_px": 96.5,
+      "diff": 14.82,
+      "dark_tail_pct": 14.9,
+      "tripod": false
+     },
+     {
+      "score": 1.65,
+      "f0": 127,
+      "f1": 216,
+      "t0": 4.2,
+      "t1": 7.2,
+      "luma": 101.6,
+      "motion_px": 6.48,
+      "diff": 3.64,
+      "dark_tail_pct": 5.3,
+      "tripod": false
+     },
+     {
+      "score": 0.85,
+      "f0": 19,
+      "f1": 108,
+      "t0": 0.6,
+      "t1": 3.6,
+      "luma": 93.7,
+      "motion_px": 1.05,
+      "diff": 0.86,
+      "dark_tail_pct": 0.9,
+      "tripod": false
+     }
+    ],
+    "L3": [
+     {
+      "score": 2.66,
+      "f0": 139,
+      "f1": 228,
+      "t0": 4.6,
+      "t1": 7.6,
+      "luma": 102.7,
+      "motion_px": 11.34,
+      "diff": 5.45,
+      "dark_tail_pct": 2.9,
+      "tripod": false
+     },
+     {
+      "score": 2.08,
+      "f0": 55,
+      "f1": 144,
+      "t0": 1.8,
+      "t1": 4.8,
+      "luma": 93.6,
+      "motion_px": 0.87,
+      "diff": 0.62,
+      "dark_tail_pct": 0.6,
+      "tripod": false
+     },
+     {
+      "score": 2.0,
+      "f0": 184,
+      "f1": 273,
+      "t0": 6.1,
+      "t1": 9.1,
+      "luma": 111.9,
+      "motion_px": 46.77,
+      "diff": 12.57,
+      "dark_tail_pct": 5.0,
+      "tripod": false
+     }
+    ],
+    "L4": [
+     {
+      "score": 2.25,
+      "f0": 55,
+      "f1": 144,
+      "t0": 1.8,
+      "t1": 4.8,
+      "luma": 93.6,
+      "motion_px": 0.87,
+      "diff": 0.62,
+      "dark_tail_pct": 0.6,
+      "tripod": false
+     },
+     {
+      "score": 2.04,
+      "f0": 1,
+      "f1": 90,
+      "t0": 0.0,
+      "t1": 3.0,
+      "luma": 93.8,
+      "motion_px": 0.95,
+      "diff": 0.86,
+      "dark_tail_pct": 0.5,
+      "tripod": false
+     },
+     {
+      "score": 1.33,
+      "f0": 100,
+      "f1": 189,
+      "t0": 3.3,
+      "t1": 6.3,
+      "luma": 95.6,
+      "motion_px": 2.01,
+      "diff": 1.1,
+      "dark_tail_pct": 4.7,
+      "tripod": false
+     }
+    ]
+   }
+  }
+ ]
+}
