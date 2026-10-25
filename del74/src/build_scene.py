@@ -348,7 +348,8 @@ def hide_intervals(objs, intervals):
     for a, b in intervals: h[(FR >= a) & (FR <= b)] = 1.0
     for ob in objs: anim.bake_fcurves(ob, FR, {'hide_render': h}, interp='CONSTANT')
 iso04 = [(394, 551)]; iso08 = [(865, 964)]
-hide_intervals([BODY, CAB, NOSE, DECK, BLOCK, CASE, STATOR, TERM, JBOX, CPL_L, KN_L] + list(C_CABLE.objects) + [o for o in C_ENGINE.objects if o.name.startswith('LINER')], iso04 + iso08)
+hide_intervals([BODY, CAB, NOSE, DECK, BLOCK, TERM, JBOX, CPL_L, KN_L] + list(C_CABLE.objects) + [o for o in C_ENGINE.objects if o.name.startswith('LINER')], iso04 + iso08)
+hide_intervals([CASE, STATOR], [(394, 487)] + iso08)   # C05(488–551)에는 케이스·고정자를 남겨 커터 링이 회전자를 드러낸다
 hide_intervals([ROTOR, SHAFT_C, FLANGE] + [o for o in C_GEN.objects if o.name.startswith('GEN_POLE')], iso08)
 hide_intervals([CRANK] + [o for o in C_ENGINE.objects if o.name.startswith(('PISTON', 'ROD', 'CRANK_'))], iso08)
 hide_intervals([BOGIE_R] + list(C_CARS.objects), iso04 + iso08)

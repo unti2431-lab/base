@@ -75,14 +75,14 @@
   },
   {
    "path": "src/build_scene.py",
-   "bytes": 35807,
-   "sha256": "5c3c94581a0569f7bd08917f7bcd3435edc7423f1f85f5da3a1e995daa2c370d",
+   "bytes": 35942,
+   "sha256": "281d095fd74c64554d34ba12b29697e1973edcf692d5e689fbcaf991cb679959",
    "drive_file_id": ""
   },
   {
    "path": "src/camera_keys.json",
-   "bytes": 7340,
-   "sha256": "2374c30d4aa45de257d1a2f2dd744192a196298614315ef9c2f0e849c8195682",
+   "bytes": 7586,
+   "sha256": "1ae14fb99e8dedd0c561d5e79b03897e0d117458b2b04b884e81d480069181de",
    "drive_file_id": ""
   },
   {
@@ -94,7 +94,7 @@
   {
    "path": "src/del74_bake.npz",
    "bytes": 859632,
-   "sha256": "4ba9ea82acb2ec9ef12339832c96405091d2ac586d31e9f2089e5bd2b868318d",
+   "sha256": "e8c98061aaee1f9a238c08d864d323a17d9809814330110cd53a62d79d940269",
    "drive_file_id": ""
   },
   {
@@ -176,6 +176,12 @@
    "drive_file_id": ""
   },
   {
+   "path": "review/R02/gen_ring_505_520_540.png",
+   "bytes": 441782,
+   "sha256": "1bbf703bc892d2310f17d6570a89bfa9a05bb32b24407b4ffd4cf93f8d1470a7",
+   "drive_file_id": ""
+  },
+  {
    "path": "review/R02/postcomp_test_318_1140.png",
    "bytes": 6107831,
    "sha256": "ff8c8535b622665ebb14793a52fa7e3b8a2fc0c23575b445aef1591777638545",
@@ -207,8 +213,8 @@
   },
   {
    "path": "review/R02/stills_270p/F0505.png",
-   "bytes": 145554,
-   "sha256": "a0d9faa52bf90144498bbe6f6f99bdff785c4f5ca34a8cca4e66df8abaf31c40",
+   "bytes": 136914,
+   "sha256": "268ac8854b617c9a6e1e56b220044501b45f39bf1db8389f3a7235ad18c07172",
    "drive_file_id": ""
   },
   {
@@ -231,14 +237,14 @@
   },
   {
    "path": "review/R02/stills_270p/contact_graybox.png",
-   "bytes": 1282217,
-   "sha256": "beb221834f218e3e2dae92920739f5b0f49d7a628ab2a73f290e6f07323e8198",
+   "bytes": 1249903,
+   "sha256": "8aa2af8ef325cbc185a51a20e6ef641b953221a8ef1b5ad9f4efda5e844cf567",
    "drive_file_id": ""
   },
   {
    "path": "review/R02/stills_270p/render_log.json",
-   "bytes": 641,
-   "sha256": "4cd7d16044b516b0826755e20c14a011aba31f74439b259d38fb6583bf272f40",
+   "bytes": 82,
+   "sha256": "bc5f219c75ee0d1be2b6ceca1a1f0004a0f8ef02b33dfcf01529a9311046e676",
    "drive_file_id": ""
   },
   {
@@ -286,13 +292,43 @@
   {
    "path": "render/del74_scene.blend",
    "bytes": 61338558,
-   "sha256": "fc16f5ed5995a43ec8b02537e3c21fab7ac0db4c3c1748816104005209a5d32c",
+   "sha256": "8d143456c9e46a770ff0ece37c28900167a736c97de8ff143c3f5af45b44e8c1",
    "drive_file_id": ""
   },
   {
    "path": "render/del74_scene.blend1",
    "bytes": 61338558,
-   "sha256": "6b10774a5e2f0c7de5cab741cec145176a18d587f6b4b2a9b667e60cfad518b7",
+   "sha256": "31368a65ca1c5c2e3845db9c078b03217aabed7f486a887ed5349de9016238b7",
+   "drive_file_id": ""
+  },
+  {
+   "path": "render/gen_check/F0505.png",
+   "bytes": 136914,
+   "sha256": "268ac8854b617c9a6e1e56b220044501b45f39bf1db8389f3a7235ad18c07172",
+   "drive_file_id": ""
+  },
+  {
+   "path": "render/gen_check/F0520.png",
+   "bytes": 168097,
+   "sha256": "dac574fd26b615fa4a2aeed19e7368b4c7f34ae917e1743ea05473c569763459",
+   "drive_file_id": ""
+  },
+  {
+   "path": "render/gen_check/F0540.png",
+   "bytes": 149442,
+   "sha256": "62fc7897c6e55e2e17f00547cea77a99ee9773d6ddde7532ee75a4afa83e4ef4",
+   "drive_file_id": ""
+  },
+  {
+   "path": "render/gen_check/pair.png",
+   "bytes": 782943,
+   "sha256": "5eb189f657ab131b3e61620a3e753fc4d4403b80485cfcf77c6dab255b094928",
+   "drive_file_id": ""
+  },
+  {
+   "path": "render/gen_check/render_log.json",
+   "bytes": 242,
+   "sha256": "32d00e18ed4c0a292cb0a1eebe22f8b0296fd4560684c25a21832ed735f227c8",
    "drive_file_id": ""
   },
   {
@@ -322,13 +358,13 @@
   {
    "path": "evidence/bake_qc.json",
    "bytes": 3689,
-   "sha256": "2f3fea5bda583ede97effb2453672a494115b891fa51ea3b838e2128bb77e59c",
+   "sha256": "dd290e71db4b9abe948191b92a12b71a5ab18b850f60d0f805575a57002c0ff5",
    "drive_file_id": ""
   },
   {
    "path": "evidence/geometry_qc.json",
    "bytes": 3608,
-   "sha256": "42609f023f02a7bfb892ff75b4a554531a2a4add0081fceba4571bf181ed6504",
+   "sha256": "7c5eaf342cb017157d44ecaac4b116f4e0b8bd860b1cc5f6ed76d0965524f92c",
    "drive_file_id": ""
   },
   {

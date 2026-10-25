@@ -1,0 +1,23 @@
+[
+ {
+  "frame": 505,
+  "sec": 4.1,
+  "pct": 25,
+  "spp": 8,
+  "device": "CPU"
+ },
+ {
+  "frame": 520,
+  "sec": 4.5,
+  "pct": 25,
+  "spp": 8,
+  "device": "CPU"
+ },
+ {
+  "frame": 540,
+  "sec": 4.0,
+  "pct": 25,
+  "spp": 8,
+  "device": "CPU"
+ }
+]
