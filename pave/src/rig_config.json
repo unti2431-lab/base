@@ -1,0 +1,112 @@
+{
+  "_note": "PAVE 리그 수치 정본. 단위 m, s, rev/s. UNVERIFIED 항목은 LOCK 기종 매뉴얼/에셋 실측으로 교체 후 재베이크.",
+  "fps": 30,
+  "frames": 1200,
+  "auger": {
+    "diameter": 0.38,
+    "pitch": 0.38,
+    "rps_left": 1.0,
+    "rps_right": 1.0,
+    "omega_sign_left": 1,
+    "omega_sign_right": 1,
+    "half_width": 1.6,
+    "gearbox_half": 0.15,
+    "reverse_outer": 0.35,
+    "fill_efficiency": 0.55,
+    "_UNVERIFIED": [
+      "diameter",
+      "pitch",
+      "rps_*",
+      "omega_sign_*",
+      "half_width",
+      "axis_z",
+      "gearbox_housing"
+    ],
+    "axis_z": 0.24,
+    "gearbox_housing": {
+      "half_x": 0.15,
+      "half_y": 0.12,
+      "bottom_z": 0.12
+    }
+  },
+  "zones": [
+    {
+      "name": "GEARBOX",
+      "from": 0.0,
+      "to": 0.15,
+      "hand_left": 0,
+      "hand_right": 0,
+      "intent": "none"
+    },
+    {
+      "name": "REVERSE",
+      "from": 0.15,
+      "to": 0.35,
+      "hand_left": -1,
+      "hand_right": 1,
+      "intent": "inward"
+    },
+    {
+      "name": "FORWARD",
+      "from": 0.35,
+      "to": 1.6,
+      "hand_left": 1,
+      "hand_right": -1,
+      "intent": "outward"
+    }
+  ],
+  "_hand": "+1 = 오른나사(RH, +x축 기준), -1 = 왼나사(LH). 반송속도 v = -hand * sign(omega) * pitch * rps * fill_efficiency (x축 +는 오른쪽)",
+  "variants": {
+    "A_real": {
+      "reverse_zone": "reverse",
+      "envelope": "steady"
+    },
+    "B_noRev": {
+      "reverse_zone": "forward",
+      "envelope": "gap_forms"
+    },
+    "AB_fill": {
+      "reverse_zone": "reverse",
+      "envelope": "gap_fills"
+    }
+  },
+  "particles": {
+    "seed": 7,
+    "n_mix": 400,
+    "n_coarse": 60,
+    "y_band": [
+      -0.18,
+      0.18
+    ],
+    "life_s": [
+      3.0,
+      8.0
+    ],
+    "spawn_y": -0.45,
+    "despawn_y": 0.4,
+    "drift_v": 0.12,
+    "lift": 0.03,
+    "r_mix": 0.012,
+    "r_coarse": 0.022
+  },
+  "head": {
+    "target": 0.26,
+    "ripple": 0.05,
+    "gap_sigma": 0.18,
+    "_note": "반죽 높이(기층 위)는 설계 포락선. 목표는 오거 축 높이 근처(현장 지침: 반죽 높이를 오거 축 부근으로 유지). 1D 이류 모델은 덩어리로 밀리는 아스콘과 맞지 않아 폐기."
+  },
+  "feed": {
+    "conveyor_inner": 0.25,
+    "conveyor_outer": 0.75
+  },
+  "events": {
+    "C07_gearbox_reveal_F": 631,
+    "B_gap_start_F": 661,
+    "B_gap_full_F": 751,
+    "C07_streak_F": 796,
+    "C09_reverse_highlight_F": 941,
+    "AB_fill_start_F": 961,
+    "AB_fill_90_F": 1051,
+    "_note": "BEATS.csv 사건 F와 일치. VO 실측 후 ±6F 조정은 여기만 고치고 재베이크."
+  }
+}
