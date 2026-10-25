@@ -1,0 +1,8 @@
+{
+  "_doc": "G-ASSET-1 에셋 매핑. file은 assets/ 기준 상대 경로. replaces=숨길 프록시, parent=LOCO(기관차 로컬 좌표), location/rotation_deg/scale은 프록시 치수에 맞춘 뒤 기입. collide_with는 verify_scene 쌍에 자동 추가.",
+  "parts": [
+    {"name": "ASSET_HOOD", "file": "sd40_body/long_hood.fbx", "replaces": "BODY_HOOD", "parent": "LOCO", "location": [-3.2, 0, 1.35], "rotation_deg": [0, 0, 0], "scale": 1.0, "collide_with": ["ENGINE_BLOCK", "GEN_CASE"]},
+    {"name": "ASSET_CAB", "file": "sd40_body/cab.fbx", "replaces": "BODY_CAB", "parent": "LOCO", "location": [7.3, 0, 1.35], "rotation_deg": [0, 0, 0], "scale": 1.0, "collide_with": []},
+    {"name": "ASSET_NOSE", "file": "sd40_body/short_hood.fbx", "replaces": "BODY_NOSE", "parent": "LOCO", "location": [9.5, 0, 1.35], "rotation_deg": [0, 0, 0], "scale": 1.0, "collide_with": []}
+  ]
+}

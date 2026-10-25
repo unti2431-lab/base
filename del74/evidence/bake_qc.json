@@ -1,0 +1,193 @@
+{
+  "ALL": "PASS",
+  "n_pass": 28,
+  "n_total": 28,
+  "checks": {
+    "no_slip": {
+      "status": "PASS",
+      "detail": {
+        "max_abs_err_m": 2.9837243786801082e-15
+      }
+    },
+    "gear_mesh": {
+      "status": "PASS",
+      "detail": {
+        "max_abs_err_rad": 0.0
+      }
+    },
+    "gear_on_axle": {
+      "status": "PASS",
+      "detail": {}
+    },
+    "crank_rotor_1to1": {
+      "status": "PASS",
+      "detail": {}
+    },
+    "motor_rotor_sync_after_launch": {
+      "status": "PASS",
+      "detail": {
+        "ptp_rad": 1.4210854715202004e-14
+      }
+    },
+    "event_first_turn": {
+      "status": "PASS",
+      "detail": {
+        "got": 894,
+        "target": 894
+      }
+    },
+    "event_slack_release": {
+      "status": "PASS",
+      "detail": {
+        "got": [
+          983,
+          1004,
+          1025,
+          1046
+        ],
+        "target": [
+          983,
+          1004,
+          1025,
+          1046
+        ]
+      }
+    },
+    "event_engage": {
+      "status": "PASS",
+      "detail": {
+        "got": 318,
+        "target": 318
+      }
+    },
+    "event_crank_stop": {
+      "status": "PASS",
+      "detail": {
+        "got": 330,
+        "target": 330
+      }
+    },
+    "slack_bounds": {
+      "status": "PASS",
+      "detail": {
+        "S_m": [
+          0.08000000052096023,
+          0.042206792167942986,
+          0.05111475832558021,
+          0.060022724483964396
+        ]
+      }
+    },
+    "cars_never_outrun_loco_on_launch": {
+      "status": "PASS",
+      "detail": {}
+    },
+    "no_jump_car_relative": {
+      "status": "PASS",
+      "detail": {
+        "max_rel_move_m": 0.004022999985934916
+      }
+    },
+    "loop_wheel_phase": {
+      "status": "PASS",
+      "detail": {
+        "residual_rad": 0.0
+      }
+    },
+    "loop_crank_phase": {
+      "status": "PASS",
+      "detail": {
+        "residual_rad": 3.552713678800501e-14
+      }
+    },
+    "loop_velocity": {
+      "status": "PASS",
+      "detail": {}
+    },
+    "loop_camera_W0": {
+      "status": "PASS",
+      "detail": {
+        "max_abs_diff": 3.9968028886505635e-15
+      }
+    },
+    "loop_coupler_state": {
+      "status": "PASS",
+      "detail": {}
+    },
+    "piston_geometry": {
+      "status": "PASS",
+      "detail": {
+        "stroke_m": 0.2539999998003298
+      }
+    },
+    "camera_left_side": {
+      "status": "PASS",
+      "detail": {
+        "min_y": 1.7889060454499681
+      }
+    },
+    "camera_never_still": {
+      "status": "PASS",
+      "detail": {
+        "still_frames": [],
+        "count": 0
+      }
+    },
+    "camera_jumps_only_at_hard_cuts": {
+      "status": "PASS",
+      "detail": {
+        "jumps_at": [
+          187,
+          394,
+          706,
+          965,
+          1078
+        ]
+      }
+    },
+    "range01_skin_ghost": {
+      "status": "PASS",
+      "detail": {}
+    },
+    "range01_ghost_vis": {
+      "status": "PASS",
+      "detail": {}
+    },
+    "range01_gearbox": {
+      "status": "PASS",
+      "detail": {}
+    },
+    "range01_clutch": {
+      "status": "PASS",
+      "detail": {}
+    },
+    "range01_driveshaft": {
+      "status": "PASS",
+      "detail": {}
+    },
+    "iso_drop_nonneg": {
+      "status": "PASS",
+      "detail": {}
+    },
+    "noun_pre_exposure_ge6": {
+      "status": "PASS",
+      "detail": {
+        "기관차": 55,
+        "엔진": 12,
+        "바퀴": 10,
+        "십육 기통": 32,
+        "발전기": 17,
+        "케이블": 58,
+        "대차": 20,
+        "차축": 39,
+        "전동기": 35,
+        "객차": 18,
+        "변속기": 21,
+        "클러치": 8,
+        "구동축": 8,
+        "발전소": 70,
+        "전기 기관차": 48
+      }
+    }
+  }
+}

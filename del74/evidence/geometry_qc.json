@@ -1,0 +1,255 @@
+{
+  "bake_sha256": "4ba9ea82acb2ec9ef12339832c96405091d2ac586d31e9f2089e5bd2b868318d",
+  "config_sha256": "cef43cac66abae0769e6ca01eae40cdb56f9b02e08e56e8dc999bc7d6d0a4836",
+  "channels": {
+    "frames": [
+      1418
+    ],
+    "t": [
+      1418
+    ],
+    "loco_x": [
+      1418
+    ],
+    "loco_v": [
+      1418
+    ],
+    "wheel_theta": [
+      1418
+    ],
+    "gear_theta": [
+      1418
+    ],
+    "pinion_theta": [
+      1418
+    ],
+    "rotor_motor": [
+      1418,
+      6
+    ],
+    "crank_theta": [
+      1418
+    ],
+    "crank_omega": [
+      1418
+    ],
+    "piston": [
+      1418,
+      16
+    ],
+    "rotor_gen": [
+      1418
+    ],
+    "engine_vib": [
+      1418
+    ],
+    "ghost_x": [
+      1418
+    ],
+    "ghost_vis": [
+      1418
+    ],
+    "ghost_theta": [
+      1418
+    ],
+    "skin_ghost": [
+      1418
+    ],
+    "cutter_r": [
+      1418,
+      5
+    ],
+    "iso_drop": [
+      1418
+    ],
+    "electric_u": [
+      1418
+    ],
+    "motor_pulse": [
+      1418,
+      6
+    ],
+    "light_link": [
+      1418
+    ],
+    "car_x": [
+      1418,
+      4
+    ],
+    "car_wheel_theta": [
+      1418,
+      4
+    ],
+    "coupler_slack": [
+      1418,
+      4
+    ],
+    "coupler_S": [
+      4
+    ],
+    "car_offsets": [
+      4
+    ],
+    "gearbox": [
+      1418
+    ],
+    "clutch": [
+      1418
+    ],
+    "driveshaft": [
+      1418
+    ],
+    "cam_pos": [
+      1418,
+      3
+    ],
+    "cam_target": [
+      1418,
+      3
+    ],
+    "cam_lens": [
+      1418
+    ],
+    "cam_fstop": [
+      1418
+    ],
+    "cam_chain": [
+      1418
+    ]
+  },
+  "loop": {
+    "v0_m_s": 1.47916,
+    "wheel_revs_total": 6,
+    "wheel_phase_residual_rad": 0.0,
+    "omega_run_rad_s": 6.024641,
+    "crank_revs_total": 39,
+    "crank_phase_residual_rad": 3.552713678800501e-14,
+    "launch_accel1_m_s2": 0.01818,
+    "cam_F1417_minus_F1_local": [
+      0.0,
+      0.0,
+      -0.0
+    ]
+  },
+  "events": {
+    "whistle_F": 1,
+    "decel_start_F": 100,
+    "stop_F": 187,
+    "ghost_insert_F": [
+      187,
+      200
+    ],
+    "ghost_approach_F": 295,
+    "ghost_engage_F": 318,
+    "crank_stop_F": 330,
+    "engine_stall_F": 363,
+    "rewind_F": [
+      370,
+      393
+    ],
+    "crank_ramp_F": [
+      404,
+      470
+    ],
+    "ignition_highlight_F": [
+      404,
+      413,
+      423,
+      432,
+      442,
+      451,
+      461,
+      470
+    ],
+    "ghost_reappear_F": 461,
+    "coupling_pass_F": 500,
+    "cutter_generator_F": [
+      498,
+      512
+    ],
+    "electric_start_F": 540,
+    "electric_cable_end_F": 705,
+    "cutter_axles_F": [
+      720,
+      738,
+      756
+    ],
+    "cutter_motor_F": [
+      774,
+      790
+    ],
+    "motor_pulse_F": [
+      792,
+      800,
+      808,
+      816,
+      824,
+      832
+    ],
+    "rotor_free_spin_F": [
+      838,
+      894
+    ],
+    "iso_C08_F": [
+      865,
+      880,
+      940,
+      964
+    ],
+    "first_turn_F": 894,
+    "slack_release_F": [
+      983,
+      1004,
+      1025,
+      1046
+    ],
+    "slack_values_m": [
+      0.08,
+      0.0422,
+      0.0511,
+      0.06
+    ],
+    "fullpath_pulse_F": [
+      [
+        1085,
+        1133
+      ],
+      [
+        1232,
+        1256
+      ]
+    ],
+    "ghosts_C10_F": {
+      "gearbox": [
+        1126,
+        1134,
+        1152,
+        1160
+      ],
+      "clutch": [
+        1168,
+        1176,
+        1188,
+        1196
+      ],
+      "driveshaft": [
+        1196,
+        1204,
+        1224,
+        1232
+      ]
+    },
+    "skin_close_F": [
+      1330,
+      1370
+    ],
+    "v0_reached_F": 1324,
+    "hard_cuts_F": [
+      187,
+      394,
+      706,
+      965,
+      1078
+    ]
+  }
+}

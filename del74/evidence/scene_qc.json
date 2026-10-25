@@ -1,0 +1,18 @@
+{
+ "step": 10,
+ "pairs": 24,
+ "frames_checked": 142,
+ "collisions": [],
+ "design_contacts": [],
+ "camera_min_surface_dist": 0.4687,
+ "camera_min_at": {
+  "F": 971,
+  "object": "DECK"
+ },
+ "PASS": {
+  "collisions_zero": true,
+  "camera_clearance_ge_0.15": true
+ },
+ "ALL": "PASS",
+ "sec": 12.7
+}

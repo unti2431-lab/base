@@ -1,0 +1,11 @@
+{
+  "file": "DEL74_VO_R2_Hyuk.mp3",
+  "sha256": "96771068d7503d2f68ff8f9d8a83519efd43d8b08d7f6e998dfd92ed5b15e1de",
+  "duration_s": 47.0726,
+  "fps": 30,
+  "total_frames": 1416,
+  "frame_convention": "t = (F - 1) / fps, F in [1, 1416] inclusive",
+  "voice": "ElevenLabs Hyuk (user recording)",
+  "script": "DEL74_SCRIPT_R2.md",
+  "note": "mp3 원본은 드라이브 제작 폴더 audio/ 에 있음. 이 저장소에는 포함하지 않는다. 재녹음 시 새 LOCK + BEATS 재계산."
+}

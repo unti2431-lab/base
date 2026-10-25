@@ -1,0 +1,126 @@
+{
+ "_doc": "재질 7종 정본(STYLE 명도 3층). build_scene.py가 읽어 Principled BSDF를 만든다. 값 변경은 여기서만.",
+ "M_PAINT": {
+  "layer": "mid",
+  "base_color": [
+   0.35,
+   0.35,
+   0.35
+  ],
+  "roughness": 0.35,
+  "metallic": 0.0,
+  "noise_bump": 0.1,
+  "edge_wear": 0.02,
+  "note": "도색 확정 전 플레이스홀더(LOCK)"
+ },
+ "M_CAST": {
+  "layer": "mid",
+  "base_color": [
+   0.3,
+   0.3,
+   0.31
+  ],
+  "roughness": 0.55,
+  "metallic": 0.9,
+  "noise_bump": 0.25,
+  "edge_wear": 0.03,
+  "note": "주조: 엔진 블록·전동기 하우징·발전기 케이스·대차 프레임"
+ },
+ "M_DARK": {
+  "layer": "low",
+  "base_color": [
+   0.06,
+   0.06,
+   0.065
+  ],
+  "roughness": 0.5,
+  "metallic": 0.8,
+  "noise_bump": 0.1,
+  "edge_wear": 0.01,
+  "note": "다크 스틸: 차축·기어 몸체·클램프·레일 복부"
+ },
+ "M_MACH": {
+  "layer": "high",
+  "base_color": [
+   0.65,
+   0.65,
+   0.66
+  ],
+  "roughness": 0.18,
+  "metallic": 1.0,
+  "anisotropic": 0.6,
+  "noise_bump": 0.02,
+  "edge_wear": 0.0,
+  "note": "가공면: 답면·레일 두부·저널·피스톤·치면·너클"
+ },
+ "M_COPPER": {
+  "layer": "accent",
+  "base_color": [
+   0.95,
+   0.64,
+   0.54
+  ],
+  "roughness": 0.3,
+  "metallic": 1.0,
+  "noise_bump": 0.05,
+  "edge_wear": 0.0,
+  "note": "구리: 고정자 코일·단자·버스바 (3D 액센트, 청록 아님)"
+ },
+ "M_CABLE": {
+  "layer": "low",
+  "base_color": [
+   0.03,
+   0.03,
+   0.03
+  ],
+  "roughness": 0.85,
+  "metallic": 0.0,
+  "noise_bump": 0.0,
+  "edge_wear": 0.0,
+  "note": "케이블 피복 무광, 고주파 꼬임 금지"
+ },
+ "M_GHOST": {
+  "layer": "ghost",
+  "base": "M_PAINT",
+  "glass_ior": 1.2,
+  "glass_roughness": 0.12,
+  "tint": [
+   0.85,
+   0.92,
+   1.0
+  ],
+  "note": "외피 고스트: skin_ghost 값으로 Mix, Is Camera Ray 분기, 백페이스 컬링"
+ },
+ "M_GROUND": {
+  "layer": "mid",
+  "base_color": [
+   0.12,
+   0.115,
+   0.11
+  ],
+  "roughness": 0.95,
+  "metallic": 0.0,
+  "noise_bump": 0.6,
+  "edge_wear": 0.0,
+  "note": "자갈·침목 바탕(Voronoi F1 임계 0.4, 밝은 골재 비중 낮게)"
+ },
+ "M_SKY": {
+  "zenith": [
+   0.05,
+   0.15,
+   0.4
+  ],
+  "horizon": [
+   0.3,
+   0.48,
+   0.72
+  ],
+  "cloud_strength": 0.25,
+  "sun_elevation_deg": 42,
+  "sun_azimuth_deg": 215,
+  "sun_strength": 3.0,
+  "note": "카메라 레이 그라디언트 + Nishita 조명(태양 디스크 끔)",
+  "horizon_pos": 0.12,
+  "zenith_pos": 0.65
+ }
+}

@@ -1,0 +1,20 @@
+{
+  "_doc": "충돌 검사 쌍. 문자열=오브젝트명, {proto, instancer}=컬렉션 인스턴스 안 프로토타입. 숨김(hide_render) 오브젝트는 자동 제외. 에셋 통합 후 import_assets.py가 asset_map.json 부품을 추가한다.",
+  "pairs": [
+    [{"proto": "WHEEL_01_L", "instancer": "BOGIE_FRONT"}, "RAIL_L"],
+    [{"proto": "WHEEL_01_R", "instancer": "BOGIE_FRONT"}, "RAIL_R"],
+    [{"proto": "WHEEL_03_L", "instancer": "BOGIE_REAR"}, "RAIL_L"],
+    [{"proto": "GEAR_03", "instancer": "BOGIE_FRONT"}, {"proto": "PINION_03", "instancer": "BOGIE_FRONT"}],
+    [{"proto": "GEAR_01", "instancer": "BOGIE_FRONT"}, {"proto": "PINION_01", "instancer": "BOGIE_FRONT"}],
+    [{"proto": "MOTOR_03", "instancer": "BOGIE_FRONT"}, {"proto": "AXLE_03", "instancer": "BOGIE_FRONT"}],
+    [{"proto": "MOTOR_03", "instancer": "BOGIE_FRONT"}, "RAIL_L"],
+    [{"proto": "BOGIE_FRAME", "instancer": "BOGIE_FRONT"}, "DECK"],
+    ["PISTON_01", "LINER_01"], ["PISTON_02", "LINER_02"], ["PISTON_15", "LINER_15"], ["PISTON_16", "LINER_16"],
+    ["ROD_01", "CRANK_JOURNAL_01"], ["ROD_02", "CRANK_JOURNAL_00"], ["ROD_01", "CRANK_WEB_01"], ["ROD_03", "ROD_04"],
+    ["GEN_ROTOR", "GEN_STATOR"], ["GEN_STATOR", "GEN_CASE"],
+    ["CABLE_01", "DECK"], ["CABLE_06", "GEN_CASE"],
+    ["KNUCKLE_LOCO_REAR", "CAR_01_KNUCKLE_F"], ["CAR_01_KNUCKLE_R", "CAR_02_KNUCKLE_F"],
+    ["CAR_01_BODY", "BODY_HOOD"],
+    ["GHOST_SHAFT", "DECK"]
+  ]
+}

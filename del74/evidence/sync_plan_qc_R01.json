@@ -1,0 +1,116 @@
+{
+  "summary": {
+    "cuts": 16,
+    "total_frames": 1416,
+    "shot_median_s": 3.065,
+    "shot_max_s": 3.97,
+    "shot_min_s": 2.0,
+    "cuts_per_10s": 3.39
+  },
+  "noun_pre_exposure": [
+    {
+      "noun": "기관차",
+      "first_F": 56,
+      "cut": "C01",
+      "cut_start_F": 1,
+      "lead_F": 55,
+      "status": "PASS"
+    },
+    {
+      "noun": "엔진",
+      "first_F": 98,
+      "cut": "C02",
+      "cut_start_F": 79,
+      "lead_F": 19,
+      "status": "PASS"
+    },
+    {
+      "noun": "바퀴",
+      "first_F": 115,
+      "cut": "C02",
+      "cut_start_F": 79,
+      "lead_F": 36,
+      "status": "PASS"
+    },
+    {
+      "noun": "십육 기통",
+      "first_F": 426,
+      "cut": "C04",
+      "cut_start_F": 394,
+      "lead_F": 32,
+      "status": "PASS"
+    },
+    {
+      "noun": "발전기",
+      "first_F": 505,
+      "cut": "C05",
+      "cut_start_F": 488,
+      "lead_F": 17,
+      "status": "PASS"
+    },
+    {
+      "noun": "케이블",
+      "first_F": 610,
+      "cut": "C06a",
+      "cut_start_F": 552,
+      "lead_F": 58,
+      "status": "PASS"
+    },
+    {
+      "noun": "대차",
+      "first_F": 662,
+      "cut": "C06b",
+      "cut_start_F": 642,
+      "lead_F": 20,
+      "status": "PASS"
+    },
+    {
+      "noun": "차축",
+      "first_F": 745,
+      "cut": "C07a",
+      "cut_start_F": 706,
+      "lead_F": 39,
+      "status": "PASS"
+    },
+    {
+      "noun": "전동기",
+      "first_F": 809,
+      "cut": "C07b",
+      "cut_start_F": 774,
+      "lead_F": 35,
+      "status": "PASS"
+    },
+    {
+      "noun": "객차",
+      "first_F": 983,
+      "cut": "C09",
+      "cut_start_F": 965,
+      "lead_F": 18,
+      "status": "PASS"
+    },
+    {
+      "noun": "변속기",
+      "first_F": 1147,
+      "cut": "C10b",
+      "cut_start_F": 1138,
+      "lead_F": 9,
+      "status": "PASS(추정오차 여유 부족 — ASR로 재확인)"
+    },
+    {
+      "noun": "클러치",
+      "first_F": 1176,
+      "cut": "C10b",
+      "cut_start_F": 1138,
+      "lead_F": 38,
+      "status": "PASS"
+    },
+    {
+      "noun": "구동축",
+      "first_F": 1204,
+      "cut": "C10b",
+      "cut_start_F": 1138,
+      "lead_F": 66,
+      "status": "PASS"
+    }
+  ]
+}

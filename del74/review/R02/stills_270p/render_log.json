@@ -1,0 +1,58 @@
+[
+ {
+  "frame": 1,
+  "sec": 3.6,
+  "pct": 25,
+  "spp": 8,
+  "device": "CPU"
+ },
+ {
+  "frame": 150,
+  "sec": 5.8,
+  "pct": 25,
+  "spp": 8,
+  "device": "CPU"
+ },
+ {
+  "frame": 318,
+  "sec": 4.7,
+  "pct": 25,
+  "spp": 8,
+  "device": "CPU"
+ },
+ {
+  "frame": 426,
+  "sec": 2.7,
+  "pct": 25,
+  "spp": 8,
+  "device": "CPU"
+ },
+ {
+  "frame": 505,
+  "sec": 3.6,
+  "pct": 25,
+  "spp": 8,
+  "device": "CPU"
+ },
+ {
+  "frame": 745,
+  "sec": 4.5,
+  "pct": 25,
+  "spp": 8,
+  "device": "CPU"
+ },
+ {
+  "frame": 894,
+  "sec": 4.2,
+  "pct": 25,
+  "spp": 8,
+  "device": "CPU"
+ },
+ {
+  "frame": 1100,
+  "sec": 2.9,
+  "pct": 25,
+  "spp": 8,
+  "device": "CPU"
+ }
+]

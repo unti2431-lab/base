@@ -1,0 +1,19 @@
+{
+  "round": "R02",
+  "tasks": [
+    {"id": "T00", "title": "환경·재현 기준값", "deps": [], "do": "WORK_INSTRUCTIONS §0. venv, Blender 4.5, RUN_ALL -VerifyOnly", "accept": ["bake_qc ALL PASS 28/28", "geometry_qc.loop.v0_m_s == 1.47916", "VO sha256 일치"], "blocked_by_user": []},
+    {"id": "T01", "title": "에셋 스모크(가짜)", "deps": ["T00"], "do": "import_assets --fake, 의도적 충돌로 verify_scene FAIL 확인", "accept": ["REPORT에 FAIL 캡처", "정상 배치 시 PASS"], "blocked_by_user": []},
+    {"id": "T02", "title": "외피 에셋 통합", "deps": ["T01"], "do": "WORK_INSTRUCTIONS §1", "accept": ["scene_qc ALL PASS", "치수 ±1%", "LICENSES.csv 기입", "M_GHOST·pass_index 1"], "blocked_by_user": ["G-ASSET-1 구매·라이선스"]},
+    {"id": "T03", "title": "크랭크·피스톤·로드 디테일", "deps": ["T00"], "do": "§2-1", "accept": ["원점·회전축 불변", "verify_scene PASS", "540p 스틸 F150·F426 판독 OK"], "blocked_by_user": []},
+    {"id": "T04", "title": "인벌류트 기어·차륜 프로파일", "deps": ["T00"], "do": "§2-2, §2-3", "accept": ["치면 material_index 1", "간극 0.3mm", "F894 스틸 맞물림 판독 OK"], "blocked_by_user": []},
+    {"id": "T05", "title": "전동기·발전기·케이블·대차·연결기·객차 디테일", "deps": ["T03", "T04"], "do": "§2-4~9", "accept": ["폴리 예산 ≤5M", "scene_qc PASS", "u 속성 유지"], "blocked_by_user": []},
+    {"id": "T06", "title": "도색 확정·룩", "deps": ["T02"], "do": "§3", "accept": ["실차 사진 2장 reference/paint/", "materials.json 갱신", "3층 판독 리뷰어 OK"], "blocked_by_user": ["실차 사진 확보"]},
+    {"id": "T07", "title": "후합성 파이프 검증", "deps": ["T00"], "do": "§4", "accept": ["6프레임 comp PNG", "청록 외 의미색 없음"], "blocked_by_user": []},
+    {"id": "T08", "title": "G5 애니매틱 270p", "deps": ["T03", "T04", "T07"], "do": "§5", "accept": ["animatic_270p.mp4", "sync_qc.json 명사 선행 전부 PASS", "카메라 정지 0", "루프 SSIM ≥0.85"], "blocked_by_user": []},
+    {"id": "T09", "title": "G6 핵심 4초 540p", "deps": ["T08"], "do": "§6", "accept": ["key4s_540p.mp4", "판독 질문 3개 예"], "blocked_by_user": []},
+    {"id": "T10", "title": "G7 전편 540p + 리뷰", "deps": ["T05", "T06", "T09"], "do": "§7", "accept": ["preview_540p.mp4", "UI 마스크·저비트레이트·실기 판독", "review/R02 패킷"], "blocked_by_user": ["사용자 리뷰"]},
+    {"id": "T11", "title": "사운드 믹스", "deps": ["T08"], "do": "§8-3 SFX_CUES.csv 기준", "accept": ["mix.wav −14 LUFS / −1 dBTP", "큐 오차 ≤1F"], "blocked_by_user": ["효과음 소스·라이선스"]},
+    {"id": "T12", "title": "G8 최종 1080p", "deps": ["T10", "T11"], "do": "§8", "accept": ["delivery_qc.json 1080×1920/30fps/1416F/디코드 오류 0", "render_log.csv", "재현성 재실행 일치"], "blocked_by_user": []},
+    {"id": "T13", "title": "G9 공개", "deps": ["T12"], "do": "§9", "accept": ["RELEASE_CHECK.md"], "blocked_by_user": ["F8 출처", "F12 원문", "자막·CTA·승인"]}
+  ]
+}

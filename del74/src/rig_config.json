@@ -1,0 +1,140 @@
+{
+  "_doc": "DEL74 수치 단일원. 코드에 수치 하드코딩 금지. 단위 m, s, rad. 좌표: X=진행 방향(+X 전방), Y=좌측(카메라 측, 180° 규칙 → 카메라 Y>0), Z=상, 원점=기관차 차체 중심 직하 레일 두부 상면. 상태: LOCK=변경 금지, EST=추정(외형용, 실차 자료 확보 시 교체), VIS=시각 전용(실제 값 아님).",
+  "fps": 30,
+  "total_frames": 1416,
+  "bake_frames": [0, 1417],
+  "loco": {
+    "length_body": {"v": 20.787, "s": "LOCK F4"},
+    "width": {"v": 3.127, "s": "LOCK F4"},
+    "height": {"v": 4.254, "s": "LOCK F4"},
+    "length_over_couplers": {"v": 21.9, "s": "EST"},
+    "coupler_height": {"v": 0.880, "s": "F12 SECONDARY"},
+    "deck_z": {"v": 1.35, "s": "EST 대틀 상면"},
+    "underframe_bottom_z": {"v": 1.05, "s": "EST"},
+    "cab_x": {"v": [6.0, 8.6], "s": "EST 전방 캡"},
+    "generator_x": {"v": [3.2, 5.6], "s": "EST 캡 뒤 주발전기"},
+    "engine_x": {"v": [-2.2, 3.0], "s": "EST 16-645 길이 5.2"},
+    "radiator_x": {"v": [-9.6, -3.0], "s": "EST"},
+    "crank_axis_z": {"v": 1.9, "s": "EST"},
+    "paint_albedo_placeholder": {"v": 0.35, "s": "LOCK 도색 확정 전"}
+  },
+  "pivots": {
+    "_doc": "DEL_PIVOTS.json PIV-r1 값. 오프라인에서 PIV-r1 원본과 대조해 다르면 이 절만 교체하고 재베이크.",
+    "bogie_center_half": {"v": 6.2485, "s": "LOCK F12 12.497/2"},
+    "axle_offsets_in_bogie": {"v": [-1.854, -0.101, 1.854], "s": "PIV-r1 가정: 외측 축 중점=대차 중심, 간격 1.753/1.955"},
+    "fixed_wheelbase": {"v": 3.708, "s": "F12"}
+  },
+  "wheel": {
+    "radius": {"v": 0.508, "s": "F11 1016/2"},
+    "sink": {"v": 0.0001, "s": "LOCK 침하 0.1mm"},
+    "gauge_inner_rail": {"v": 1.435, "s": "표준궤 두부 안쪽 면"},
+    "flange_lateral_play": {"v": 0.0075, "s": "LOCK"},
+    "tread_width": {"v": 0.135, "s": "EST"}
+  },
+  "drive": {
+    "gear_ratio": {"v": 2.85, "s": "F11 57:20, 수치 비표시"},
+    "gear_teeth": {"v": 57, "s": "F11"},
+    "pinion_teeth": {"v": 20, "s": "F11"},
+    "gear_pitch_radius": {"v": 0.380, "s": "EST (차륜 반경 0.508 미만)"},
+    "pinion_pitch_radius": {"v": 0.13333, "s": "= gear_pitch_radius*20/57"},
+    "gear_face_width": {"v": 0.11, "s": "EST"},
+    "tooth_clearance": {"v": 0.0003, "s": "LOCK 치면 간극"},
+    "gear_side_y": {"v": 0.55, "s": "EST 대치차 중심 y: 좌측 차륜 안쪽(inboard), C08 고립에서 좌측 차륜을 숨겨 노출"},
+    "motor_axis_offset_x_sign": {"v": -1, "s": "전동기 축은 차축에서 대차 중심 쪽(-x for front bogie axle1 etc.)"},
+    "motor_housing_radius": {"v": 0.36, "s": "EST"},
+    "motor_length": {"v": 1.1, "s": "EST"},
+    "rotor_free_spin_omega": {"v": 6.0, "s": "VIS C07b 무부하 회전 최고 각속도 rad/s"}
+  },
+  "engine": {
+    "cylinders": {"v": 16, "s": "LOCK F9"},
+    "bore": {"v": 0.230, "s": "LOCK F9"},
+    "stroke": {"v": 0.254, "s": "LOCK F9"},
+    "crank_radius": {"v": 0.127, "s": "= stroke/2"},
+    "rod_length": {"v": 0.57, "s": "EST 외형용"},
+    "bank_angle_deg": {"v": 45, "s": "F14"},
+    "throws": {"v": 8, "s": "F14"},
+    "throw_phase_deg": {"v": [0, 180, 90, 270, 45, 225, 135, 315], "s": "VIS 균등 분포, 점화 순서 아님"},
+    "throw_pitch_x": {"v": 0.56, "s": "EST 실린더 피치"},
+    "crank_x0": {"v": -1.56, "s": "EST 첫 스로 x (엔진 중심 0.4 기준 -7*0.56/2 + 0.4)"},
+    "coupling_flange_x": {"v": 3.0, "s": "EST 크랭크→회전자 커플링"},
+    "omega_idle": {"v": 2.4, "s": "VIS rad/s (약 0.38 rev/s)"},
+    "omega_run_target": {"v": 6.0, "s": "VIS rad/s (약 0.95 rev/s; 2.5 rev/s는 근접 컷에서 모션블러 스미어 실측), 루프 정수 회전으로 재역산됨"},
+    "idle_vibration_amp": {"v": 0.0005, "s": "VIS 블록 Z 진동 0.5mm"},
+    "idle_vibration_hz": {"v": 2.0, "s": "VIS"}
+  },
+  "generator": {
+    "rotor_axis_z": {"v": 1.9, "s": "= crank_axis_z (직결)"},
+    "rotor_x": {"v": [3.3, 5.3], "s": "EST"},
+    "rotor_radius": {"v": 0.55, "s": "EST"},
+    "case_radius": {"v": 0.95, "s": "EST"},
+    "terminal_xyz": {"v": [5.6, 0.6, 1.5], "s": "EST 출력 단자(케이스 끝 x=5.4 바깥, 대틀 1.35 위; 청록 펄스 u=0)"}
+  },
+  "cable": {
+    "path_xyz": {"v": [[5.6, 0.6, 1.5], [5.75, 0.95, 1.46], [5.85, 1.0, 1.2], [5.95, 1.0, 1.0], [6.3, 1.0, 0.95], [7.0, 0.9, 0.8]], "s": "EST 단자→대틀 관통(구멍 deck_hole_xy)→전방 대차 정션박스(u=1)"},
+    "deck_hole_xy": {"v": [5.88, 1.0], "s": "대틀 케이블 관통 구멍 중심"},
+    "deck_hole_radius": {"v": 0.22, "s": "6본 다발 + 그로밋"},
+    "count": {"v": 6, "s": "전동기 6기"},
+    "radius": {"v": 0.018, "s": "EST"},
+    "junction_box_xyz": {"v": [7.0, 0.9, 0.8], "s": "EST"}
+  },
+  "car": {
+    "count": {"v": 4, "s": "BEATS C09 4타"},
+    "length_over_couplers": {"v": 23.5, "s": "F13"},
+    "bogie_center_spacing": {"v": 15.9, "s": "F13"},
+    "wheel_radius": {"v": 0.43, "s": "F13 860/2"},
+    "coupler_height": {"v": 0.890, "s": "F13"},
+    "body_width": {"v": 3.1, "s": "EST"},
+    "body_height": {"v": 3.7, "s": "EST"},
+    "floor_z": {"v": 1.2, "s": "EST"}
+  },
+  "coupler": {
+    "slack_1_target": {"v": 0.08, "s": "VIS 첫 연결기 유격(시각 과장)"},
+    "release_frames_target": {"v": [983, 1004, 1025, 1046], "s": "VO_WORDS: 객차/순차/순차/끌고"},
+    "knuckle_clearance": {"v": 0.001, "s": "LOCK"}
+  },
+  "master_speed": {
+    "v0_target": {"v": 1.5, "s": "VIS 주행 속도, 루프 정수 회전으로 재역산"},
+    "decel_frames": {"v": [100, 187], "s": "C02 내부에서 감속"},
+    "launch_frame": {"v": 894, "s": "VO 출발하는 순간"},
+    "accel2_end_frame": {"v": 1324, "s": "C11b 시작 = v0 도달"}
+  },
+  "hypothetical_shaft": {
+    "x_engine_end": {"v": -2.2, "s": "엔진 출력단"},
+    "x_axle_end": {"v": -6.35, "s": "후방 대차 중앙축 x = -6.2485-0.101"},
+    "axis_z": {"v": 1.2, "s": "EST"},
+    "radius": {"v": 0.09, "s": "EST"},
+    "insert_frames": {"v": [187, 200], "s": "C03a 삽입"},
+    "approach_frame": {"v": 295, "s": "C03b 2단 접근"},
+    "engage_frame": {"v": 318, "s": "VO 물리면"},
+    "crank_stop_frames": {"v": [318, 330], "s": "체결 뒤 12F 안에 정지"},
+    "stall_frame": {"v": 363, "s": "VO 꺼져 — 진동 정지"},
+    "rewind_frames": {"v": [370, 393], "s": "되감기(역회전·후퇴)"},
+    "reappear_frame": {"v": 461, "s": "C04 바퀴 대신 1F 재등장"},
+    "insert_offset": {"v": 0.8, "s": "삽입 시작 시 x 오프셋(엔진 쪽으로)"},
+    "engage_travel": {"v": 0.05, "s": "최종 체결 이동량"}
+  },
+  "devices": {
+    "skin_ghost_up": {"v": [90, 120], "s": "C02 D1"},
+    "skin_ghost_down": {"v": [1330, 1370], "s": "C11b D1 역"},
+    "cutter_generator": {"v": [498, 512, 0.45], "s": "C05 [시작F, 완전개방F, 반경]"},
+    "cutter_axles": {"v": [[720, 730, 0.42], [738, 748, 0.42], [756, 766, 0.42]], "s": "C07a 차축 1·2·3"},
+    "cutter_motor": {"v": [774, 790, 0.62], "s": "C07b 전동기 하우징"},
+    "iso_drop_C04": {"v": [394, 400, 487], "s": "[시작, 완료, 종료] 지면 하강 유지 구간(C04–C05는 연속이므로 C05 끝까지 유지)"},
+    "iso_hold_until_C05": {"v": 551, "s": ""},
+    "iso_restore_C06": {"v": [552, 560], "s": "C06a 시작에 지면 복귀"},
+    "iso_drop_C08": {"v": [865, 880, 940, 964], "s": "[하강 시작, 완료, 복귀 시작, 복귀 완료]"},
+    "iso_drop_depth": {"v": 3.0, "s": "지면 Z 하강량"},
+    "electric_cable_pulse": {"v": [540, 705], "s": "u 0→1 ease-in"},
+    "electric_motor_pulses": {"v": [792, 800, 808, 816, 824, 832], "s": "C07b 6타"},
+    "electric_fullpath_pulses": {"v": [[1085, 1133], [1232, 1256]], "s": "C10a·C10b"},
+    "ghosts_C10": {"v": {"gearbox": [1126, 1134, 1152, 1160], "clutch": [1168, 1176, 1188, 1196], "driveshaft": [1196, 1204, 1224, 1232]}, "s": "[등장 시작, 등장 완료, 소멸 시작, 소멸 완료]"},
+    "light_link_C11a": {"v": [1257, 1323, 1.0], "s": "엔진+발전기 +1 EV"}
+  },
+  "hard_cuts": {"v": [187, 394, 706, 965, 1078], "s": "LOCK R02"},
+  "camera": {
+    "sensor_width_mm": 36.0,
+    "sensor_fit": "VERTICAL",
+    "min_move_speed": {"v": 0.05, "s": "m/s, 카메라 정지 판정 임계(렌즈 램프 없을 때)"},
+    "keys_file": "camera_keys.json"
+  }
+}

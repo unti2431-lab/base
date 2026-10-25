@@ -1,0 +1,19 @@
+# 생성물(재현 가능) — 드라이브/로컬 거점에 둔다
+render/*.blend
+render/*.blend1
+render/passes/
+render/passes_exr/
+render/comp/
+render/final_tmp/
+render/key4s/
+render/test_passes/
+render/vram_tmp.txt
+env/
+venv/
+__pycache__/
+*.pyc
+audio/*.mp3
+audio/*.wav
+assets/**/*.fbx
+assets/**/*.obj
+assets/**/*.blend
