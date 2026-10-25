@@ -1,0 +1,28 @@
+{
+  "_comment": "GAP28 R4 작업표. id/deps/do/accept. blocked_by_user 는 사용자 입력 대기.",
+  "round": "R4",
+  "tasks": [
+    {"id": "R4-ENV", "deps": [], "do": "bpy 4.5.14 venv, 재현 기준값 5개 확인", "accept": "retime/kin/verify_bake 출력이 R3 와 동일", "blocked_by_user": false},
+    {"id": "R4a-2-INOUT", "deps": ["R4-ENV"], "do": "540p 발췌본으로 L1–L4 In/Out 1F 확정, 가림 비율, 루프 SSIM", "accept": "LIVE_SELECT_FINAL.md, loop_ssim.json", "blocked_by_user": true, "needs": "USER_TODO #1"},
+    {"id": "R4a-2-SOLVE", "deps": ["R4a-2-INOUT"], "do": "162808 F230–254 매치무브, track_import.py, solved_pose_L2.json", "accept": "재투영 <= 2px 또는 폴백 명시", "blocked_by_user": true, "needs": "USER_TODO #1"},
+    {"id": "R4a-2-MAT", "deps": ["R4-ENV"], "do": "재질 레퍼런스 스틸 7장 추출, rig_config 실측값(psd/car.threshold/textures)", "accept": "reference/live_material/ 7장, config 항목에 _src/_fact", "blocked_by_user": false},
+    {"id": "R4b-DOOR", "deps": ["R4-ENV"], "do": "car.x_offset_m=2.225, measure.x_m=4.45, foot.x_m=4.55, verify_bake 문 정렬 검사", "accept": "히어로 x·측정 x 가 문 개구 안, 재현 기준값 불변", "blocked_by_user": false},
+    {"id": "R4b-PSD", "deps": ["R4b-DOOR", "R4a-2-MAT"], "do": "스크린도어 모듈(유리벽·문짝·프레임·헤더·문턱 발판·쉐브론 노랑) 전장 배치, 히어로 ±12m 열림", "accept": "verify_scene 미선언 충돌 0, PSD_DOOR×CAR 0", "blocked_by_user": false},
+    {"id": "R4b-CAR", "deps": ["R4b-DOOR"], "do": "차체 프로파일 스윕, 문턱 스텝, 고무 빗살, 기기함, 대차·차륜, 히어로 1량 고정밀", "accept": "WHEEL×RAIL 선언 접촉, 그 외 충돌 0", "blocked_by_user": false},
+    {"id": "R4b-PLATFORM", "deps": ["R4b-PSD"], "do": "립 챔퍼, 패널 이음, 슬롯 프레임, 도상 concrete, 점자블록 돌기(히어로 ±6m)", "accept": "충돌 0, 카메라 경계 PASS", "blocked_by_user": false},
+    {"id": "R4b-PANEL", "deps": ["R4b-PLATFORM"], "do": "발판 천공 외형 + 시안 끝단 띠 + 고무 립, 배열 53/생존 5 수평 격납, 인물 삭제, 레일 I형, 루버", "accept": "G-RATIO 5/53 PASS, 발판 기하 계약 8항목 PASS, F628 유지", "blocked_by_user": false},
+    {"id": "R4b-STILLS", "deps": ["R4b-PANEL", "R4b-CAR"], "do": "540p 스틸 16장 시트", "accept": "stills_r4b_540p_sheet.png", "blocked_by_user": false},
+    {"id": "R4c-MAT", "deps": ["R4b-STILLS"], "do": "재질 12종 PBR, 거리 기반 노멀 페이드, LICENSES.csv", "accept": "G-LOOK >= 12/13, ΔE <= 6 (3종)", "blocked_by_user": false, "optional_input": "USER_TODO #5"},
+    {"id": "R4c-RHYTHM", "deps": ["R4c-MAT"], "do": "270p 애니매틱 G-RHYTHM 재측정", "accept": "median >= 6.0 또는 샷별 수치·다음 레버 보고", "blocked_by_user": false},
+    {"id": "R4d-CAM", "deps": ["R4b-STILLS"], "do": "camera_plan lens_groups/ease/noise/ramp, B05·B08·B12 눈높이 분리, B13 수직 부감 유지", "accept": "verify_cam_bounds·verify_projection PASS", "blocked_by_user": false},
+    {"id": "R4d-LAW", "deps": ["R4b-PANEL", "R4d-CAM"], "do": "B10–B12 재설계(53 전개→격납→5 잔존), 경계 동행 부감, 기준선 흰색", "accept": "경계선·사라지는 발판이 전 프레임 화면 안, 비율 LOCK PASS", "blocked_by_user": false},
+    {"id": "R4d-EVENTS", "deps": ["R4d-CAM"], "do": "치수선·기준선 성장 사건 timing_s.json + SFX_CUES", "accept": "사건 F 와 큐 차이 <= 1F", "blocked_by_user": false},
+    {"id": "R4d-ANIM", "deps": ["R4d-LAW", "R4d-EVENTS", "R4c-MAT"], "do": "270p 전편 애니매틱 + 리듬·룩 측정", "accept": "render/anim_r4d, rhythm/look json", "blocked_by_user": false},
+    {"id": "R4e-A", "deps": ["R4a-2-SOLVE", "R4d-ANIM"], "do": "전환 A 프로젝션 브리지: 투영 재질, Mix 드라이버 F181–192, B01 p0·속도 이음, 핵심 4초 540p", "accept": "SSIM >= 0.80, 속도 불연속 0", "blocked_by_user": true, "needs": "USER_TODO #1"},
+    {"id": "R4e-B", "deps": ["R4a-2-INOUT", "R4d-ANIM"], "do": "전환 B 가림 와이프: F1020→L3 F2466 1F 컷, 밝기 차·가림 비율 측정, 핵심 4초 540p", "accept": "가림 >= 60%, 밝기 차 <= 15", "blocked_by_user": true, "needs": "USER_TODO #1"},
+    {"id": "R4e-STRESS", "deps": ["R4e-A", "R4e-B"], "do": "2 Mbps 스트레스 재인코딩, 정상속도 판독 기록", "accept": "판독 기록 2건", "blocked_by_user": false},
+    {"id": "R4f-RIM", "deps": ["R4c-MAT"], "do": "림 라이트 승강장 뒷벽 상단으로 (변수 1개), 210프레임 전후 비교", "accept": "G-LOOK 전후 수치", "blocked_by_user": false},
+    {"id": "R4-VERIFY", "deps": ["R4d-ANIM", "R4e-STRESS", "R4f-RIM"], "do": "별도 에이전트 독립 재측정", "accept": "수치 일치 또는 불일치 목록", "blocked_by_user": false},
+    {"id": "R4-REPORT", "deps": ["R4-VERIFY"], "do": "REPORT_R4.md, LOCKS_R4 이력, MANIFEST sha256, 깨끗한 폴더 재현, 패키지 zip", "accept": "재현 기준값 5개 일치, sha256 일치", "blocked_by_user": false}
+  ]
+}
