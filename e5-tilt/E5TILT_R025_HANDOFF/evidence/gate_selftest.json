@@ -23,7 +23,7 @@
       "expected": "exit 0",
       "exit": 0,
       "ok": true,
-      "log": "lt_R025_proxy.blend\"\nimported ASSET_BODY_01_FAKE_CLEAN -> BODY_01\nimported ASSET_BOGIE_01_R_FAKE_COLLIDE -> BOGIE_01_R\nInfo: Saved as \"smoke.blend\"\nIMPORT OK /tmp/e5tilt_selftest_myaxhfqr/smoke.blend\n"
+      "log": "lt_R025_proxy.blend\"\nimported ASSET_BODY_01_FAKE_CLEAN -> BODY_01\nimported ASSET_BOGIE_01_R_FAKE_COLLIDE -> BOGIE_01_R\nInfo: Saved as \"smoke.blend\"\nIMPORT OK /tmp/e5tilt_selftest_m0hxe8bq/smoke.blend\n"
     },
     "import_smoke_collision_detected": {
       "expected": "FAIL",

@@ -1,0 +1,383 @@
+{
+ "package": "E5TILT_R025_HANDOFF",
+ "files": [
+  {
+   "path": ".gitignore",
+   "bytes": 101,
+   "sha256": "c9195fda240674ad948ef7409fcbcc3016ef0a8856805f58f651e7fd9746b8aa",
+   "drive_file_id": ""
+  },
+  {
+   "path": "AGENTS.md",
+   "bytes": 4549,
+   "sha256": "804a3290ec226c32f0a3726700af34321b9aa17b79447d617be770c14e5c9b45",
+   "drive_file_id": ""
+  },
+  {
+   "path": "BEATS_R025.csv",
+   "bytes": 2638,
+   "sha256": "06fb7f2ceceee899fa6672541900f54c0aa8d95bea61bcca6dee7d31e2d2d600",
+   "drive_file_id": ""
+  },
+  {
+   "path": "HANDOFF_R025.md",
+   "bytes": 6741,
+   "sha256": "2c6aaaf807b5de699c93ca9a22958f1168bb23bf68145df34ce5ba3aa5a21d80",
+   "drive_file_id": ""
+  },
+  {
+   "path": "LOCKS.md",
+   "bytes": 4946,
+   "sha256": "e381202b97ea4c8af8998a7d9d5adfa064da8bc34fef222927288276f78cab58",
+   "drive_file_id": ""
+  },
+  {
+   "path": "PRODUCTION_PLAN_R025.md",
+   "bytes": 19385,
+   "sha256": "343a61edd38298528733a84053a648e320cc2fd20e0b05599e1f1977b2da2008",
+   "drive_file_id": ""
+  },
+  {
+   "path": "README.md",
+   "bytes": 1784,
+   "sha256": "d9c7ee2799e3a4422f73eda4782bf604cec163ff47770b0540540c4c5bba3044",
+   "drive_file_id": ""
+  },
+  {
+   "path": "REPORT.md",
+   "bytes": 3700,
+   "sha256": "facf507361019c4e9532cf241b1ec8f17e74aeff71bb20fd2bbdc48910b09619",
+   "drive_file_id": ""
+  },
+  {
+   "path": "RUN_ALL.ps1",
+   "bytes": 5704,
+   "sha256": "c0c23d535ed8060c545f330bd930c9267c6620fd943ae8cde63cddedea3743d4",
+   "drive_file_id": ""
+  },
+  {
+   "path": "TASKS.json",
+   "bytes": 4949,
+   "sha256": "75ab861d2394b709bbad7008a97a21128b1ade4e89cf79383045901914c089e9",
+   "drive_file_id": ""
+  },
+  {
+   "path": "assets/LICENSES.csv",
+   "bytes": 172,
+   "sha256": "0a8d747fc1014cf78ee7fee07a6aa4403efbdcadfb77ed16802a2993d3e17f5b",
+   "drive_file_id": ""
+  },
+  {
+   "path": "assets/README.md",
+   "bytes": 985,
+   "sha256": "ebeecc5cfcf3548d61c16d901c338a2c93d1d8f7abce3baaac6a8371926d0f37",
+   "drive_file_id": ""
+  },
+  {
+   "path": "audio/R024_ORIGINAL_AUDIO.m4a",
+   "bytes": 586203,
+   "sha256": "6a51b934211050c97f30cdf00a103154f7b3ca7a71bc5c223978116a32c73b8d",
+   "drive_file_id": ""
+  },
+  {
+   "path": "audio/SFX_CUES.csv",
+   "bytes": 1020,
+   "sha256": "aa363f4e76479d4a690e3ad24243cef9241e563a02e7d11003bd4964502bfcde",
+   "drive_file_id": ""
+  },
+  {
+   "path": "audio/VO_LOCK.json",
+   "bytes": 410,
+   "sha256": "4279046d415dd72df8ddf1da0a872c48ded3b36dfe3cfc2d001a3199dd5fcdb7",
+   "drive_file_id": ""
+  },
+  {
+   "path": "audio/VO_PHRASES.json",
+   "bytes": 1961,
+   "sha256": "bba7adfdc82f70a48959b572d710638b22445693caae56f661c030757b0fca8a",
+   "drive_file_id": ""
+  },
+  {
+   "path": "evidence/bake_qc.json",
+   "bytes": 3663,
+   "sha256": "981f94a2065887b58ea6f3bada2124d8c6eb5d37b405c01ac53f34d2e2e145c4",
+   "drive_file_id": ""
+  },
+  {
+   "path": "evidence/gate_selftest.json",
+   "bytes": 888,
+   "sha256": "4bcec7a926167beedd0e71dc1dbb2cca7d38d98957a083a6d47664775b7d541a",
+   "drive_file_id": ""
+  },
+  {
+   "path": "evidence/geometry_qc.json",
+   "bytes": 1256,
+   "sha256": "bf13f5b8242a28025f20536677bddcc31f97a1d632d204b2d330117d4999665c",
+   "drive_file_id": ""
+  },
+  {
+   "path": "evidence/render_log_animatic.csv",
+   "bytes": 34034,
+   "sha256": "a513d68fe2a0d724751328d1b99cb473ab866744633b178cbbad374c66003b77",
+   "drive_file_id": ""
+  },
+  {
+   "path": "evidence/repro_qc.json",
+   "bytes": 548,
+   "sha256": "49800f37509962095cea70a07f6587b6e03609d2015f2fef6be9f903417a9d25",
+   "drive_file_id": ""
+  },
+  {
+   "path": "evidence/scene_qc.json",
+   "bytes": 2045,
+   "sha256": "77f6af928b446dc084168669606965ebf137e7ccd1a080c28c6a0105d1e9cf90",
+   "drive_file_id": ""
+  },
+  {
+   "path": "evidence/sync_qc.json",
+   "bytes": 1426,
+   "sha256": "4eccd7537ec0f48dd275a482aa09df85632f367f8cf9d5ea3a27da1d3d54b570",
+   "drive_file_id": ""
+  },
+  {
+   "path": "reference/REFERENCE_NOTES.md",
+   "bytes": 5375,
+   "sha256": "d98e851d265feb3a5b0303e4f1b021e5e2910ead1d066f5633625bfc4a0bd4ed",
+   "drive_file_id": ""
+  },
+  {
+   "path": "reference/TILT_R024_SHADED_WORK_PREVIEW_ORIGINAL_AUDIO.mp4",
+   "bytes": 2615849,
+   "sha256": "66f30a8eeda2f58f7443a1bc0c1e916798b5f40de28189a21fefc865bccf884f",
+   "drive_file_id": ""
+  },
+  {
+   "path": "reference/contact_R024_2fps.jpg",
+   "bytes": 177727,
+   "sha256": "ea2ea6cf13cdf0abde76f136c040ba2fed442bbac548dac33bfce6c2f02e3434",
+   "drive_file_id": ""
+  },
+  {
+   "path": "reference/contact_ref_2fps.jpg",
+   "bytes": 228985,
+   "sha256": "c9c23056a4354e1c8d7187c9ce33371727484ef941cc8e33dfff60fb9db08f41",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/CHANGELOG.md",
+   "bytes": 1350,
+   "sha256": "8de3f6ae4af46a2b55029d3f0a8d165feddbe7a4ea6fd656fe6524b5cdc42c51",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/contact_270p.jpg",
+   "bytes": 81128,
+   "sha256": "e38809dc6e0735317c407d7fbd23746fe06c6a8345416b6e8255d8f247375398",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/e5tilt_R025_animatic_270p.mp4",
+   "bytes": 1835208,
+   "sha256": "d1a6454e233bbf3479716cd8d7b53bdfd8be96d0ac1a440dceb9bd218d687ae4",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/key_F0300_540p_overlay.png",
+   "bytes": 391418,
+   "sha256": "eba784d30b44af42dcb35fccca423bc1b90606241f55df54fc9b8d806609352f",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/key_F0345_540p_overlay.png",
+   "bytes": 403613,
+   "sha256": "d8e8e58e1f20ca93750e1fb77a7618621f6c534083707daec33ad5930a8322ae",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/key_F0470_540p_overlay.png",
+   "bytes": 406512,
+   "sha256": "82492ef27f6e0a6c1a381c7c46cb00551074e6142c06f45e58a5a04d8e676905",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/key_F0560_540p_overlay.png",
+   "bytes": 391608,
+   "sha256": "7809ad242be90065b19410e886346827af47fdd418939af11de2eeed6cc3d3e4",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/loop_ssim.json",
+   "bytes": 35,
+   "sha256": "21e0b6e97016c4b647e8185d84d545142b286753199d2bdad1dc12db6f9d8bce",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/qc_summary.json",
+   "bytes": 782,
+   "sha256": "0bdcf72e5bdf27d3afa1b941378718edf51eee93d3ad9b2dfb85aeac85482b4b",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/stress_2M.mp4",
+   "bytes": 6561574,
+   "sha256": "c2a5b4ac0eb63211dadf18f0b7264f8d1c6d6c093237bec579307f0ec70823ba",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/round_a/contact_270p_R025a.jpg",
+   "bytes": 81220,
+   "sha256": "e7241d351b6b0691df2d8d5b3c257df961bf6f7c726a7252943e591a2118ed6b",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/round_a/e5tilt_R025a_animatic_270p.mp4",
+   "bytes": 1791139,
+   "sha256": "25daa656ccd2ef598d730a903de5c16a80cc251417ebc53c01e9538d3201cc14",
+   "drive_file_id": ""
+  },
+  {
+   "path": "review/R025/round_a/sync_qc_R025a.json",
+   "bytes": 1424,
+   "sha256": "f2f76f4cc1bdd9a58ba4ae94d54d42209defe6ecd5bddf9a4d335db511b87b01",
+   "drive_file_id": ""
+  },
+  {
+   "path": "scripts/encode.sh",
+   "bytes": 943,
+   "sha256": "c3773ad3131fce33123be20b7b604f93084e23fc2cb7dfbfd5d03ebc3c0e7e56",
+   "drive_file_id": ""
+  },
+  {
+   "path": "scripts/make_manifest.py",
+   "bytes": 963,
+   "sha256": "4b0d98c02590c99838d6652c86339e4b8ea2a393b22095b0270b14960596657f",
+   "drive_file_id": ""
+  },
+  {
+   "path": "scripts/make_review.sh",
+   "bytes": 1607,
+   "sha256": "903ad7ef00d2a452601f85a836a4bedb9332e18c8e60ece2e99257ac229b4881",
+   "drive_file_id": ""
+  },
+  {
+   "path": "scripts/run_pipeline.sh",
+   "bytes": 1060,
+   "sha256": "5f28881c18e75d3ea0cea376566b7b3dc43a52b1bd8d1b93d4a9fd52279ec8aa",
+   "drive_file_id": ""
+  },
+  {
+   "path": "scripts/setup_env.sh",
+   "bytes": 516,
+   "sha256": "6fd0e819fab3ea21caae6d4de8d77b629c234e78b9c68cb9ddcf3df6173fc816",
+   "drive_file_id": ""
+  },
+  {
+   "path": "scripts/vo_words.py",
+   "bytes": 1610,
+   "sha256": "482d51574f7408dd93bb2df23c75a2089cb04d736682f6748e6b1146cc8f64e2",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/ASSET_MAP.TEMPLATE.json",
+   "bytes": 943,
+   "sha256": "7dd7ec2de453471787e8bfcee41de61fc7fcb939bbea397a74bcdd1b574d0857",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/build.py",
+   "bytes": 43467,
+   "sha256": "49d9deda8f15cd7057df2c1fdeef9bfedd0f39c472fde21364557bf181a67f5b",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/cameras.json",
+   "bytes": 7200,
+   "sha256": "d7e1fa92ebd4c42d5c6fb39d4a7495b3a0b81b2d479c25861efbfce17ae43f35",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/common.py",
+   "bytes": 3053,
+   "sha256": "d7cc3d914398d67db68e04e142fee1ea8986c064d61197a632e833c53f0c7230",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/comp_overlays.py",
+   "bytes": 6596,
+   "sha256": "ad60997c1529187767b0d288baef48876a546e99cf22cbc129e8829d6b4f7c43",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/import_assets.py",
+   "bytes": 4379,
+   "sha256": "52bcdaf5b7ca1ddec1dbb9eca4e45cba179c770091b0c0340ab369dbdb816d87",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/kin.py",
+   "bytes": 17590,
+   "sha256": "ed170ee90876041577ed383137d6eb2b7ded57a90500b3c1fc9892692be50d7d",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/make_beats.py",
+   "bytes": 3577,
+   "sha256": "f71872aab0dfb634740704c77e6b3e295e5f7102ba3bb068f9ebffdbcd2c485a",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/render_frames.py",
+   "bytes": 3746,
+   "sha256": "f191ea4344792b22a53a6a8eebeedb5647ff45cae9419f0a4d1f9a38c3188ef1",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/rig_config.json",
+   "bytes": 5379,
+   "sha256": "1766dd1e67098375352299fd9fbdd1e37444e52fa6a3650646c7727d0a2dbb1c",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/selftest_gates.py",
+   "bytes": 3530,
+   "sha256": "bb8ed387e412b7a8b729fdbd9bcc220f3f1f1500d7878f3b92e97f312cfd653c",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/sfx_cues.py",
+   "bytes": 2240,
+   "sha256": "229e0a6525206f1a724ccd7b9d1b2a8388a2273979fb684b69a1555af9de0aa4",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/sync_qc.py",
+   "bytes": 3203,
+   "sha256": "715240c079d5bf87f8c4fa52972458976d0db7a9484030ca7efcfa813937380e",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/tilt_bake.npz",
+   "bytes": 826691,
+   "sha256": "c892008e42e4610db214fbb815e9b89cab68396c98b5e0addfd1cad9c33fba3e",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/verify_bake.py",
+   "bytes": 9396,
+   "sha256": "658913d957a04c6db911375c216b78c382ffe1d07f91b6ce961e5a61d1942a2c",
+   "drive_file_id": ""
+  },
+  {
+   "path": "src/verify_scene.py",
+   "bytes": 7099,
+   "sha256": "0645ee798c46087461c514efbfa801b968b68728b5256b6c502fb39170535afe",
+   "drive_file_id": ""
+  },
+  {
+   "path": "work/e5tilt_R025_proxy.blend",
+   "bytes": 5166754,
+   "sha256": "49ce98619fff90ddca4cedc179810a54f8104a1e886604ab396a47f620caa4fe",
+   "drive_file_id": ""
+  }
+ ]
+}

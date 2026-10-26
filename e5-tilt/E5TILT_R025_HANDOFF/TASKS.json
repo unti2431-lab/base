@@ -1,32 +1,153 @@
 {
-  "round": "R026 (first Codex round)",
-  "rules": "one variable per round; G3+G4 must PASS after every change; see AGENTS.md",
-  "blocked_by_user": [
-    {"id": "G-1", "what": "VO decision: keep R024_ORIGINAL_AUDIO (provisional LOCK) or re-record the 9-line proposal in BEATS_R025.csv", "unblocks": ["T03", "T09"]},
-    {"id": "G-2", "what": "reference photos: E5 bogie exterior, air spring / auxiliary reservoir / leveling valve layout", "unblocks": ["T05"]},
-    {"id": "G-3", "what": "buy or license an E5 body model; record in assets/LICENSES.csv (commercial video use, attribution)", "unblocks": ["T06"]},
-    {"id": "G-4", "what": "confirm 1.5 deg and R4000 at 320 km/h in JR East Tech 31 PDF (currently press sources)", "unblocks": ["T10"]}
-  ],
-  "tasks": [
-    {"id": "T01", "deps": [], "do": "Reproduce the base: scripts/run_pipeline.sh verify (or RUN_ALL.ps1 -VerifyOnly) and selftest_gates.py",
-     "accept": ["G3 PASS, G4 PASS, selftest all ok", "events equal HANDOFF_R025.md §3 (tilt_start_F 305, tilt_reach_F 364, tilt_return_F 705, spring_dh 0.0497 m)", "REPORT.md entry"]},
-    {"id": "T02", "deps": ["T01"], "do": "Close the motion gap: animatic YAVG mean is below 9. Raise camera move amplitude in cameras.json for C02/C04/C05/C07 (dolly/arc, not shake), keep W0 match",
-     "accept": ["sync_qc motion_mean_ge_9 PASS on the 270p animatic", "no_static_second PASS", "G3 camera_never_static + w0_pose_match PASS"]},
-    {"id": "T03", "deps": ["T01", "G-1"], "do": "Word timestamps: scripts/vo_words.py locally -> audio/VO_WORDS.json; fill noun_first_F in BEATS_R025.csv; if a noun lands before its object, move rig_config xray / cameras keys (never move the VO)",
-     "accept": ["sync_qc noun_first PASS (object first exposure <= noun F - 6 for every row)"]},
-    {"id": "T04", "deps": ["T01"], "do": "C06 readability of 1.5 deg: try in order lens 135 mm / camera height to the window line / longer ghost+amber lines in comp_overlays.py; geometry and angle stay true",
-     "accept": ["540p still of F470 where the amber wedge between ghost line and body line is >= 6 px at the frame edge", "no change to theta_max_deg"]},
-    {"id": "T05", "deps": ["T01", "G-2"], "do": "Hero bogie remodel (hard-surface, 40-60k tris) replacing the proxy parts with the same object names and pivots; bevel baked into meshes",
-     "accept": ["G4 PASS with zero collisions (designed contacts only)", "540p stills C03 F200 and C05 F345 in review/R026"]},
-    {"id": "T06", "deps": ["T01", "G-3"], "do": "Import the purchased E5 body via ASSET_MAP.json onto BODY_01/BODY_02; hide proxies; keep livery shader or the asset materials (decide in REPORT)",
-     "accept": ["import_assets.py run logged", "G4 PASS with collide_with pairs", "no motion added to assets (parented to rig slots)"]},
-    {"id": "T07", "deps": ["T05", "T06"], "do": "Look pass: material layers readable at 540p encode (white body / mid-grey bogie / black rubber), sun angle, sky exposure -0.5 EV if the body clips",
-     "accept": ["540p contact sheet; rubber vs frame luminance difference >= 0.3 measured on F345", "2 Mbps stress encode of C05 shows no shimmer on slab joints"]},
-    {"id": "T08", "deps": ["T07"], "do": "Key 4 s G6: RUN_ALL.ps1 -Stage key4s -Start 319 -End 438 (C05 + head of C06) on the user GPU",
-     "accept": ["review/R026/key4s_540p.mp4 watched at normal speed: spring height change and body lean read without pausing"]},
-    {"id": "T09", "deps": ["T03"], "do": "Sound: build the mix from audio/SFX_CUES.csv (+-1F), duck under VO, -14 LUFS / -1 dBTP, loop tail cross-fade C09 -> C01",
-     "accept": ["loudnorm JSON in evidence", "assets/LICENSES.csv rows for every SFX file"]},
-    {"id": "T10", "deps": ["T08", "T09", "G-4"], "do": "Captions (R08 one-line, basak-shorts-caption skill) incl. '1.5°' label at C06; final 1080p RUN_ALL.ps1 -Stage final",
-     "accept": ["delivery_qc_final.json: 803 frames, decode errors 0, bt709", "first/last frame SSIM >= 0.85", "RELEASE_CHECK.md drafted for the user"]}
-  ]
+ "round": "R026 (first Codex round)",
+ "rules": "one variable per round; G3+G4 must PASS after every change; see AGENTS.md",
+ "blocked_by_user": [
+  {
+   "id": "G-1",
+   "what": "VO decision: keep R024_ORIGINAL_AUDIO (provisional LOCK) or re-record the 9-line proposal in BEATS_R025.csv",
+   "unblocks": [
+    "T03",
+    "T09"
+   ]
+  },
+  {
+   "id": "G-2",
+   "what": "reference photos: E5 bogie exterior, air spring / auxiliary reservoir / leveling valve layout",
+   "unblocks": [
+    "T05"
+   ]
+  },
+  {
+   "id": "G-3",
+   "what": "buy or license an E5 body model; record in assets/LICENSES.csv (commercial video use, attribution)",
+   "unblocks": [
+    "T06"
+   ]
+  },
+  {
+   "id": "G-4",
+   "what": "confirm 1.5 deg and R4000 at 320 km/h in JR East Tech 31 PDF (currently press sources)",
+   "unblocks": [
+    "T10"
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "T01",
+   "deps": [],
+   "do": "Reproduce the base: scripts/run_pipeline.sh verify (or RUN_ALL.ps1 -VerifyOnly) and selftest_gates.py",
+   "accept": [
+    "G3 PASS, G4 PASS, selftest all ok",
+    "events equal HANDOFF_R025.md §3 (tilt_start_F 305, tilt_reach_F 364, tilt_return_F 705, spring_dh 0.0497 m)",
+    "REPORT.md entry"
+   ]
+  },
+  {
+   "id": "T02",
+   "deps": [
+    "T01"
+   ],
+   "do": "Close the motion gap. Measured on the 270p animatic: mean 5.10 (target 9, reference 12.1, R024 3.5), lowest seconds C07 s17 0.97, C06 s14 1.14, C04 s9 1.55. A camera-only round (R025b: cabin orbit, C06 dolly-zoom) moved the mean only 4.86 -> 5.10, so do not repeat camera-only fixes. In order: (1) cabin shots: frame the window so outside scenery streaks past behind the cup (motion with meaning); (2) re-measure after the look pass T07, because flat proxy surfaces under-report frame difference; (3) C06: replace the dolly-zoom with a slow push + rail-level drop if still < 3",
+   "accept": [
+    "sync_qc motion_mean_ge_9 PASS on the 270p animatic, or a REPORT.md note with the measured value and why the remaining gap is texture-bound (user decides)",
+    "no_static_second PASS",
+    "G3 camera_never_static + w0_pose_match PASS"
+   ]
+  },
+  {
+   "id": "T03",
+   "deps": [
+    "T01",
+    "G-1"
+   ],
+   "do": "Word timestamps: scripts/vo_words.py locally -> audio/VO_WORDS.json; fill noun_first_F in BEATS_R025.csv; if a noun lands before its object, move rig_config xray / cameras keys (never move the VO)",
+   "accept": [
+    "sync_qc noun_first PASS (object first exposure <= noun F - 6 for every row)"
+   ]
+  },
+  {
+   "id": "T04",
+   "deps": [
+    "T01"
+   ],
+   "do": "C06 readability of 1.5 deg: try in order lens 135 mm / camera height to the window line / longer ghost+amber lines in comp_overlays.py; geometry and angle stay true",
+   "accept": [
+    "540p still of F470 where the amber wedge between ghost line and body line is >= 6 px at the frame edge",
+    "no change to theta_max_deg"
+   ]
+  },
+  {
+   "id": "T05",
+   "deps": [
+    "T01",
+    "G-2"
+   ],
+   "do": "Hero bogie remodel (hard-surface, 40-60k tris) replacing the proxy parts with the same object names and pivots; bevel baked into meshes",
+   "accept": [
+    "G4 PASS with zero collisions (designed contacts only)",
+    "540p stills C03 F200 and C05 F345 in review/R026"
+   ]
+  },
+  {
+   "id": "T06",
+   "deps": [
+    "T01",
+    "G-3"
+   ],
+   "do": "Import the purchased E5 body via ASSET_MAP.json onto BODY_01/BODY_02; hide proxies; keep livery shader or the asset materials (decide in REPORT)",
+   "accept": [
+    "import_assets.py run logged",
+    "G4 PASS with collide_with pairs",
+    "no motion added to assets (parented to rig slots)"
+   ]
+  },
+  {
+   "id": "T07",
+   "deps": [
+    "T05",
+    "T06"
+   ],
+   "do": "Look pass: material layers readable at 540p encode (white body / mid-grey bogie / black rubber), sun angle, sky exposure -0.5 EV if the body clips",
+   "accept": [
+    "540p contact sheet; rubber vs frame luminance difference >= 0.3 measured on F345",
+    "2 Mbps stress encode of C05 shows no shimmer on slab joints"
+   ]
+  },
+  {
+   "id": "T08",
+   "deps": [
+    "T07"
+   ],
+   "do": "Key 4 s G6: RUN_ALL.ps1 -Stage key4s -Start 319 -End 438 (C05 + head of C06) on the user GPU",
+   "accept": [
+    "review/R026/key4s_540p.mp4 watched at normal speed: spring height change and body lean read without pausing"
+   ]
+  },
+  {
+   "id": "T09",
+   "deps": [
+    "T03"
+   ],
+   "do": "Sound: build the mix from audio/SFX_CUES.csv (+-1F), duck under VO, -14 LUFS / -1 dBTP, loop tail cross-fade C09 -> C01",
+   "accept": [
+    "loudnorm JSON in evidence",
+    "assets/LICENSES.csv rows for every SFX file"
+   ]
+  },
+  {
+   "id": "T10",
+   "deps": [
+    "T08",
+    "T09",
+    "G-4"
+   ],
+   "do": "Captions (R08 one-line, basak-shorts-caption skill) incl. '1.5°' label at C06; final 1080p RUN_ALL.ps1 -Stage final",
+   "accept": [
+    "delivery_qc_final.json: 803 frames, decode errors 0, bt709",
+    "first/last frame SSIM >= 0.85",
+    "RELEASE_CHECK.md drafted for the user"
+   ]
+  }
+ ]
 }

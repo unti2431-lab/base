@@ -1,0 +1,39 @@
+{
+  "round": "R025b",
+  "G3_bake": "PASS",
+  "G4_scene": "PASS",
+  "gate_selftest": "PASS",
+  "reproducibility": "PASS",
+  "G5_sync": {
+    "cuts_on_vo_gaps": "PASS",
+    "noun_first": "NOT_DECIDABLE",
+    "motion_mean_ge_9": "FAIL",
+    "no_static_second": "FAIL",
+    "hard_cuts_6_to_16": "PASS"
+  },
+  "motion_mean": 5.1,
+  "motion_min": 0.97,
+  "loop_ssim_first_last": 0.965439,
+  "hard_cuts_detected_s": [
+    3.9,
+    7.46667,
+    10.6,
+    13.8,
+    16.5333,
+    20.0333
+  ],
+  "camera_min_clearance_m": {
+    "C01": 0.596,
+    "C02": 0.814,
+    "C03": 4.227,
+    "C04": 0.2,
+    "C05": 0.794,
+    "C06": 4.047,
+    "C07": 0.189,
+    "C08": 0.652,
+    "C09": 0.7
+  },
+  "G6_key4s": "NOT_PERFORMED (needs GPU)",
+  "G7_preview": "NOT_PERFORMED",
+  "G8_final": "NOT_PERFORMED"
+}

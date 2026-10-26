@@ -1,7 +1,10 @@
 {
   "PASS": {
     "cuts_on_vo_gaps": "PASS",
-    "noun_first": "NOT_DECIDABLE"
+    "noun_first": "NOT_DECIDABLE",
+    "motion_mean_ge_9": "FAIL",
+    "no_static_second": "FAIL",
+    "hard_cuts_6_to_16": "PASS"
   },
   "values": {
     "cuts_on_vo_gaps": [
@@ -38,7 +41,46 @@
         "frames_from_gap": 0
       }
     ],
-    "noun_first": "VO_WORDS.json missing (whisper model download blocked in cloud). Run scripts/vo_words.py locally."
+    "noun_first": "VO_WORDS.json missing (whisper model download blocked in cloud). Run scripts/vo_words.py locally.",
+    "motion_per_s": [
+      15.09,
+      14.28,
+      6.13,
+      8.28,
+      3.49,
+      3.18,
+      3.07,
+      3.87,
+      2.17,
+      1.55,
+      6.29,
+      3.66,
+      4.92,
+      8.2,
+      1.14,
+      1.74,
+      4.8,
+      0.97,
+      2.0,
+      7.23,
+      7.0,
+      7.52,
+      6.05,
+      3.98,
+      2.49,
+      2.86,
+      5.63
+    ],
+    "motion_mean": 5.1,
+    "motion_min": 0.97,
+    "hard_cuts_detected_s": [
+      3.9,
+      7.46667,
+      10.6,
+      13.8,
+      16.5333,
+      20.0333
+    ]
   },
-  "result": "INCOMPLETE"
+  "result": "FAIL"
 }
