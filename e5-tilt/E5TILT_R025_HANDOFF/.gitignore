@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+work/frames_*/
+work/dbg*/
+work/stills/
+work/*.blend1
+work/vo.wav
+work/sheet*.png

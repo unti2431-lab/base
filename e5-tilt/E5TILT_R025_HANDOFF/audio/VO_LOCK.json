@@ -1,0 +1,11 @@
+{
+  "file": "audio/R024_ORIGINAL_AUDIO.m4a",
+  "source": "TILT_R024_SHADED_WORK_PREVIEW_ORIGINAL_AUDIO.mp4 (audio stream copy)",
+  "sha256": "6a51b934211050c97f30cdf00a103154f7b3ca7a71bc5c223978116a32c73b8d",
+  "duration_s": 26.749002,
+  "frames_at_30fps": 802,
+  "codec": "aac",
+  "sample_rate": 44100,
+  "channels": 1,
+  "status": "PROVISIONAL LOCK - user must confirm (blocker G-1). Re-record = new LOCK."
+}

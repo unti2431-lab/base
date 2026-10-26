@@ -1,0 +1,37 @@
+{
+  "result": "PASS",
+  "tests": {
+    "bake_camera_jump": {
+      "expected": "FAIL",
+      "exit": 1,
+      "ok": true
+    },
+    "bake_roll_over_limit": {
+      "expected": "FAIL",
+      "exit": 1,
+      "ok": true
+    },
+    "scene_sunk_valve": {
+      "expected": "FAIL",
+      "exit": 1,
+      "ok": true,
+      "hit": [
+        "  \"FRAME|LVALVE_L\": {"
+      ]
+    },
+    "import_smoke_runs": {
+      "expected": "exit 0",
+      "exit": 0,
+      "ok": true,
+      "log": "lt_R025_proxy.blend\"\nimported ASSET_BODY_01_FAKE_CLEAN -> BODY_01\nimported ASSET_BOGIE_01_R_FAKE_COLLIDE -> BOGIE_01_R\nInfo: Saved as \"smoke.blend\"\nIMPORT OK /tmp/e5tilt_selftest_myaxhfqr/smoke.blend\n"
+    },
+    "import_smoke_collision_detected": {
+      "expected": "FAIL",
+      "exit": 1,
+      "ok": true,
+      "hit": [
+        "  \"ASSET_BOGIE_01_R_FAKE_COLLIDE|FRAME\": {"
+      ]
+    }
+  }
+}

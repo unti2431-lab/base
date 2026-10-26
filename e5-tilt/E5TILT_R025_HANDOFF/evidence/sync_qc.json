@@ -1,0 +1,44 @@
+{
+  "PASS": {
+    "cuts_on_vo_gaps": "PASS",
+    "noun_first": "NOT_DECIDABLE"
+  },
+  "values": {
+    "cuts_on_vo_gaps": [
+      {
+        "cut_F": 54,
+        "frames_from_gap": 0
+      },
+      {
+        "cut_F": 118,
+        "frames_from_gap": 0
+      },
+      {
+        "cut_F": 225,
+        "frames_from_gap": 0
+      },
+      {
+        "cut_F": 319,
+        "frames_from_gap": 0
+      },
+      {
+        "cut_F": 415,
+        "frames_from_gap": 0
+      },
+      {
+        "cut_F": 497,
+        "frames_from_gap": 0
+      },
+      {
+        "cut_F": 602,
+        "frames_from_gap": 0
+      },
+      {
+        "cut_F": 713,
+        "frames_from_gap": 0
+      }
+    ],
+    "noun_first": "VO_WORDS.json missing (whisper model download blocked in cloud). Run scripts/vo_words.py locally."
+  },
+  "result": "INCOMPLETE"
+}

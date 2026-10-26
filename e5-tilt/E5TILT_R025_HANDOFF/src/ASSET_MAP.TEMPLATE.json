@@ -1,0 +1,13 @@
+{
+  "_doc": "Copy to ASSET_MAP.json. One entry per asset object. matrix = asset->slot local 4x4 (row-major). Slots are rig objects; never animate assets directly. Run: RUN_ALL.ps1 -AssetMap src\\ASSET_MAP.json",
+  "assets": [
+    {"slot": "BODY_01", "file": "assets/e5_lead_car.blend", "object": "E5_LeadCar", "kind": "blend",
+     "matrix": [1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1], "hide_proxy": true,
+     "collide_with": ["SPRING_?_TOP", "SKIRT_01_*", "GANGWAY_02_R", "WALL_L"]},
+    {"slot": "BODY_02", "file": "assets/e5_mid_car.blend", "object": "E5_MidCar", "kind": "blend",
+     "matrix": [1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1], "hide_proxy": true, "collide_with": ["GANGWAY_01_F"]},
+    {"slot": "BOGIE_01_R", "file": "assets/hero_bogie.glb", "object": "HeroBogie", "kind": "glb",
+     "matrix": [1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1], "hide_proxy": false,
+     "collide_with": ["BODY_01", "SKIRT_01_R_?", "RAIL_A_?", "SPRING_?_TOP"]}
+  ]
+}

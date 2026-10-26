@@ -1,0 +1,499 @@
+{
+ "_doc": "Shot keys. F = frame (may lie outside the shot range so the camera never eases to a stop inside the shot). cam/tgt are local coords of their anchor: x right, y forward (train direction), z up. 'hero' and 'world' frames are track frames at rail-top height; 'hero_body' is the rolled hero body frame with z from body bottom; 'iso' is world axes at iso.origin. Interpolation: non-uniform Catmull-Rom, end tangents 0. lens in mm on a 36 mm vertical sensor.",
+ "shots": [
+  {
+   "id": "C01",
+   "F": [
+    1,
+    53
+   ],
+   "cam_anchor": {
+    "type": "ramp",
+    "t0": 0.0,
+    "t1": 1.0,
+    "dy": 0.0
+   },
+   "tgt_anchor": {
+    "type": "hero"
+   },
+   "info": "E5 passes at 320 km/h; camera whips on board",
+   "keys": [
+    {
+     "F": 1,
+     "cam": [
+      -3.3,
+      -22.4,
+      1.0
+     ],
+     "tgt": [
+      0.0,
+      9.0,
+      1.5
+     ],
+     "lens": 24,
+     "fstop": 5.6
+    },
+    {
+     "F": 30,
+     "cam": [
+      -3.4,
+      -8.0,
+      1.15
+     ],
+     "tgt": [
+      0.0,
+      -4.0,
+      1.4
+     ],
+     "lens": 24,
+     "fstop": 5.6
+    },
+    {
+     "F": 63,
+     "cam": [
+      -3.1,
+      -5.0,
+      1.2
+     ],
+     "tgt": [
+      0.0,
+      -8.2,
+      1.0
+     ],
+     "lens": 26,
+     "fstop": 4.0
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "F": [
+    54,
+    117
+   ],
+   "cam_anchor": {
+    "type": "hero"
+   },
+   "tgt_anchor": {
+    "type": "hero"
+   },
+   "info": "skirt goes X-ray: body rides on two air springs",
+   "keys": [
+    {
+     "F": 44,
+     "cam": [
+      -3.2,
+      -5.2,
+      1.3
+     ],
+     "tgt": [
+      0.0,
+      -8.4,
+      1.0
+     ],
+     "lens": 26,
+     "fstop": 4.0
+    },
+    {
+     "F": 127,
+     "cam": [
+      -2.95,
+      -7.0,
+      1.0
+     ],
+     "tgt": [
+      -0.3,
+      -8.75,
+      0.8
+     ],
+     "lens": 32,
+     "fstop": 4.0
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "F": [
+    118,
+    224
+   ],
+   "cam_anchor": {
+    "type": "iso"
+   },
+   "tgt_anchor": {
+    "type": "iso"
+   },
+   "info": "isolated bogie turns 90 deg, air spring explodes into parts",
+   "keys": [
+    {
+     "F": 108,
+     "cam": [
+      -7.2,
+      -5.2,
+      1.7
+     ],
+     "tgt": [
+      0.0,
+      0.0,
+      0.6
+     ],
+     "lens": 44,
+     "fstop": 8.0
+    },
+    {
+     "F": 170,
+     "cam": [
+      -6.4,
+      -3.9,
+      1.45
+     ],
+     "tgt": [
+      0.0,
+      0.0,
+      0.66
+     ],
+     "lens": 44,
+     "fstop": 8.0
+    },
+    {
+     "F": 234,
+     "cam": [
+      -5.6,
+      -2.8,
+      1.3
+     ],
+     "tgt": [
+      0.0,
+      0.0,
+      0.7
+     ],
+     "lens": 46,
+     "fstop": 8.0
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "F": [
+    225,
+    318
+   ],
+   "cam_anchor": {
+    "type": "hero_body"
+   },
+   "tgt_anchor": {
+    "type": "hero_body"
+   },
+   "info": "cabin: curve entry, the drink leans outward",
+   "keys": [
+    {
+     "F": 215,
+     "cam": [
+      -0.8,
+      -5.46,
+      1.15
+     ],
+     "tgt": [
+      -1.15,
+      -5.0,
+      1.06
+     ],
+     "lens": 45,
+     "fstop": 2.8
+    },
+    {
+     "F": 328,
+     "cam": [
+      -0.88,
+      -5.36,
+      1.12
+     ],
+     "tgt": [
+      -1.15,
+      -5.0,
+      1.06
+     ],
+     "lens": 50,
+     "fstop": 2.8
+    }
+   ]
+  },
+  {
+   "id": "C05",
+   "F": [
+    319,
+    414
+   ],
+   "cam_anchor": {
+    "type": "hero"
+   },
+   "tgt_anchor": {
+    "type": "hero"
+   },
+   "info": "KEY 4s: outer spring fills, inner vents, body leans in (ghost twin shows the wedge)",
+   "keys": [
+    {
+     "F": 309,
+     "cam": [
+      -2.85,
+      -7.25,
+      0.95
+     ],
+     "tgt": [
+      -0.3,
+      -8.75,
+      0.78
+     ],
+     "lens": 36,
+     "fstop": 5.6
+    },
+    {
+     "F": 424,
+     "cam": [
+      -2.55,
+      -7.6,
+      0.92
+     ],
+     "tgt": [
+      -0.3,
+      -8.75,
+      0.78
+     ],
+     "lens": 38,
+     "fstop": 5.6
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "F": [
+    415,
+    496
+   ],
+   "cam_anchor": {
+    "type": "hero",
+    "dy": 30.0
+   },
+   "tgt_anchor": {
+    "type": "hero"
+   },
+   "info": "front axial: 1.5 deg against level rails and parapets",
+   "keys": [
+    {
+     "F": 405,
+     "cam": [
+      0.0,
+      1.0,
+      2.3
+     ],
+     "tgt": [
+      0.0,
+      8.0,
+      2.0
+     ],
+     "lens": 115,
+     "fstop": 8.0
+    },
+    {
+     "F": 506,
+     "cam": [
+      0.0,
+      -2.0,
+      2.25
+     ],
+     "tgt": [
+      0.0,
+      8.0,
+      2.0
+     ],
+     "lens": 120,
+     "fstop": 8.0
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "F": [
+    497,
+    601
+   ],
+   "cam_anchor": {
+    "type": "hero_body"
+   },
+   "tgt_anchor": {
+    "type": "hero_body"
+   },
+   "info": "cabin: the lean is reduced",
+   "keys": [
+    {
+     "F": 487,
+     "cam": [
+      -0.84,
+      -5.44,
+      1.14
+     ],
+     "tgt": [
+      -1.15,
+      -5.0,
+      1.06
+     ],
+     "lens": 50,
+     "fstop": 2.8
+    },
+    {
+     "F": 611,
+     "cam": [
+      -0.92,
+      -5.34,
+      1.12
+     ],
+     "tgt": [
+      -1.15,
+      -5.0,
+      1.06
+     ],
+     "lens": 56,
+     "fstop": 2.8
+    }
+   ]
+  },
+  {
+   "id": "C08",
+   "F": [
+    602,
+    712
+   ],
+   "cam_anchor": {
+    "type": "hero"
+   },
+   "tgt_anchor": {
+    "type": "hero"
+   },
+   "info": "curve exit: both springs return to the same height, skirt closes",
+   "keys": [
+    {
+     "F": 592,
+     "cam": [
+      -2.7,
+      -7.5,
+      0.95
+     ],
+     "tgt": [
+      -0.3,
+      -8.75,
+      0.8
+     ],
+     "lens": 34,
+     "fstop": 5.6
+    },
+    {
+     "F": 660,
+     "cam": [
+      -3.3,
+      -4.0,
+      1.6
+     ],
+     "tgt": [
+      0.0,
+      -8.2,
+      1.2
+     ],
+     "lens": 26,
+     "fstop": 5.6
+    },
+    {
+     "F": 722,
+     "cam": [
+      -3.5,
+      3.5,
+      2.5
+     ],
+     "tgt": [
+      0.0,
+      -6.0,
+      1.8
+     ],
+     "lens": 24,
+     "fstop": 5.6
+    }
+   ]
+  },
+  {
+   "id": "C09",
+   "F": [
+    713,
+    803
+   ],
+   "cam_anchor": {
+    "type": "w0",
+    "match": "C01"
+   },
+   "tgt_anchor": {
+    "type": "hero"
+   },
+   "info": "one crane move: wide over the viaduct as the train leaves the curve, down over the parapet to the W0 frame (= F1)",
+   "keys": [
+    {
+     "F": 703,
+     "cam": [
+      -30.0,
+      -150.0,
+      16.0
+     ],
+     "tgt": [
+      0.0,
+      -25.0,
+      2.0
+     ],
+     "lens": 30,
+     "fstop": 8.0
+    },
+    {
+     "F": 760,
+     "cam": [
+      -12.0,
+      -60.0,
+      6.5
+     ],
+     "tgt": [
+      0.0,
+      0.0,
+      1.8
+     ],
+     "lens": 26,
+     "fstop": 8.0
+    },
+    {
+     "F": 785,
+     "cam": [
+      -3.9,
+      -30.0,
+      2.7
+     ],
+     "tgt": [
+      0.0,
+      6.0,
+      1.6
+     ],
+     "lens": 24,
+     "fstop": 5.6
+    },
+    {
+     "F": 803,
+     "cam": [
+      -3.3,
+      -22.4,
+      1.0
+     ],
+     "tgt": [
+      0.0,
+      9.0,
+      1.5
+     ],
+     "lens": 24,
+     "fstop": 5.6
+    }
+   ]
+  }
+ ]
+}

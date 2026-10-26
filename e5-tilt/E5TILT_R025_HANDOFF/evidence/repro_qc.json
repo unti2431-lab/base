@@ -1,0 +1,11 @@
+{
+  "gate": "reproducibility (skill 10.6)",
+  "result": "PASS",
+  "method": "package copied to a clean folder without tilt_bake.npz and evidence/*.json, then scripts/run_pipeline.sh verify (kin -> G3 -> build -> G4 -> sfx -> sync)",
+  "env": "Linux, python3.11 venv, bpy 4.5.14, numpy 1.26.4",
+  "tilt_bake_sha256_clean": "8ac9234666b22d3395939da785fcd1cc52093bf01374e8c2cd2fcc159a82c97e",
+  "tilt_bake_sha256_package": "8ac9234666b22d3395939da785fcd1cc52093bf01374e8c2cd2fcc159a82c97e",
+  "events_identical": true,
+  "scene_qc_identical": true,
+  "date": "2026-10-26"
+}

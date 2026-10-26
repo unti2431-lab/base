@@ -1,0 +1,124 @@
+{
+  "gate": "G4",
+  "result": "PASS",
+  "PASS": {
+    "collisions": "PASS",
+    "camera_clearance": "PASS"
+  },
+  "frames_checked": 162,
+  "step": 5,
+  "pairs_checked": 2347,
+  "collisions": {},
+  "designed_contacts": {
+    "AXLEBOX|WHEELSET_01_R_1": {
+      "frames": 162,
+      "first": [
+        1,
+        198
+      ]
+    },
+    "AXLEBOX|WHEELSET_01_R_2": {
+      "frames": 162,
+      "first": [
+        1,
+        198
+      ]
+    },
+    "ISO_GHOST_BODY|ISO_SPRING_L_TOP": {
+      "frames": 35,
+      "first": [
+        1,
+        80
+      ]
+    },
+    "ISO_GHOST_BODY|ISO_SPRING_R_TOP": {
+      "frames": 35,
+      "first": [
+        1,
+        80
+      ]
+    },
+    "ISO_SPRING_L_BASE|ISO_SPRING_L_BELLOWS": {
+      "frames": 34,
+      "first": [
+        1,
+        80
+      ]
+    },
+    "ISO_SPRING_R_BASE|ISO_SPRING_R_BELLOWS": {
+      "frames": 34,
+      "first": [
+        1,
+        80
+      ]
+    },
+    "MOTOR|WHEELSET_01_R_1": {
+      "frames": 162,
+      "first": [
+        1,
+        100
+      ]
+    },
+    "MOTOR|WHEELSET_01_R_2": {
+      "frames": 162,
+      "first": [
+        1,
+        100
+      ]
+    },
+    "SPRING_L_BASE|SPRING_L_BELLOWS": {
+      "frames": 162,
+      "first": [
+        1,
+        80
+      ]
+    },
+    "SPRING_R_BASE|SPRING_R_BELLOWS": {
+      "frames": 162,
+      "first": [
+        1,
+        80
+      ]
+    },
+    "ISO_GHOST_BODY|ISO_LROD_L": {
+      "frames": 2,
+      "first": [
+        181,
+        20
+      ]
+    },
+    "ISO_GHOST_BODY|ISO_LROD_R": {
+      "frames": 2,
+      "first": [
+        181,
+        20
+      ]
+    },
+    "ISO_GHOST_BODY|ISO_SPRING_L_BELLOWS": {
+      "frames": 126,
+      "first": [
+        181,
+        80
+      ]
+    },
+    "ISO_GHOST_BODY|ISO_SPRING_R_BELLOWS": {
+      "frames": 126,
+      "first": [
+        181,
+        80
+      ]
+    }
+  },
+  "camera_min_clearance_m": {
+    "C01": 0.596,
+    "C02": 0.814,
+    "C03": 4.227,
+    "C04": 0.237,
+    "C05": 0.88,
+    "C06": 4.051,
+    "C07": 0.218,
+    "C08": 0.652,
+    "C09": 0.7
+  },
+  "camera_min_rule_m": 0.15
+}

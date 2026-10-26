@@ -1,0 +1,143 @@
+{
+  "gate": "G3",
+  "result": "PASS",
+  "PASS": {
+    "wheel_no_slip": "PASS",
+    "roll_max": "PASS",
+    "spring_dh_vs_roll": "PASS",
+    "spring_stroke_range": "PASS",
+    "inner_spring_vents": "PASS",
+    "lean_to_inner": "PASS",
+    "body_jump": "PASS",
+    "max_shot_len": "PASS",
+    "cuts_per_10s": "PASS",
+    "shots_contiguous": "PASS",
+    "camera_continuity": "PASS",
+    "camera_never_static": "PASS",
+    "w0_pose_match": "PASS",
+    "w0_scenery_phase": "PASS",
+    "tilt_in_key_shot": "PASS",
+    "tilt_out_in_C08": "PASS",
+    "explode_inside_C03": "PASS",
+    "drink_lean_C04": "PASS",
+    "drink_reduced_C07": "PASS",
+    "speed_cap": "PASS"
+  },
+  "values": {
+    "wheel_no_slip": {
+      "value": 3.6629714274837955e-07,
+      "rule": "relative slip < 0.2 %"
+    },
+    "roll_max": {
+      "value": [
+        0.0,
+        1.4999999999998892
+      ],
+      "rule": "0 <= theta <= 1.5 +/- 0.02 deg"
+    },
+    "spring_dh_vs_roll": {
+      "value": 2.220446049250313e-16,
+      "rule": "|dh - s_lat sin(theta)| < 2 mm"
+    },
+    "spring_stroke_range": {
+      "value": [
+        0.3445743694220152,
+        0.6554256305779852
+      ],
+      "rule": "stroke in [0,1]"
+    },
+    "inner_spring_vents": {
+      "value": [
+        0.25513189910752243,
+        0.3048681008924776
+      ],
+      "rule": "left(inner) lower, right(outer) higher in a left curve"
+    },
+    "lean_to_inner": {
+      "value": -0.02617694830678402,
+      "rule": "body up vector x (track frame) < 0 = leans left/inner"
+    },
+    "body_jump": {
+      "value": 3.864728863012257e-05,
+      "rule": "per-frame body travel / hero travel within 1 +/- 0.25"
+    },
+    "max_shot_len": {
+      "value": 3.7,
+      "rule": "longest shot <= 4.0 s"
+    },
+    "cuts_per_10s": {
+      "value": 2.9887920298879207,
+      "rule": "2.5..5 hard cuts / 10 s (reference: 1.9 hard cuts, 5.6 transitions / 10 s)"
+    },
+    "shots_contiguous": {
+      "value": true,
+      "rule": "shots tile F1..Fend with no gap/overlap"
+    },
+    "camera_continuity": {
+      "value": {
+        "C01": 0.0,
+        "C02": 0.0,
+        "C03": 0.0,
+        "C04": 0.0,
+        "C05": 0.0,
+        "C06": 0.0,
+        "C07": 0.0,
+        "C08": 0.0,
+        "C09": 0.0
+      },
+      "rule": "no per-frame acceleration spike > 4x local median + 0.05 m/F^2 inside a shot"
+    },
+    "camera_never_static": {
+      "value": {
+        "C01": 0,
+        "C02": 0,
+        "C03": 0,
+        "C04": 0,
+        "C05": 0,
+        "C06": 0,
+        "C07": 0,
+        "C08": 0,
+        "C09": 0
+      },
+      "rule": "no run of >= 6 frames with camera fully still"
+    },
+    "w0_pose_match": {
+      "value": {
+        "dpos_m": 3.269556043734273e-11,
+        "dang_deg": 0.0
+      },
+      "rule": "last frame camera = first frame camera (train-relative)"
+    },
+    "w0_scenery_phase": {
+      "value": 23.0,
+      "rule": "masts/slabs repeat at the W0 camera"
+    },
+    "tilt_in_key_shot": {
+      "value": 0.7529461342161842,
+      "rule": ">= 70 % of the tilt-in motion happens inside C05"
+    },
+    "tilt_out_in_C08": {
+      "value": 0.9920095829344278,
+      "rule": ">= 85 % of the tilt-out motion happens inside C08"
+    },
+    "explode_inside_C03": {
+      "value": [
+        120,
+        206
+      ],
+      "rule": "iso rotate + explode inside C03 with >= 10F hold"
+    },
+    "drink_lean_C04": {
+      "value": 2.9005116482371958,
+      "rule": "max residual in C04 >= 2.5 deg"
+    },
+    "drink_reduced_C07": {
+      "value": 1.5000000153753048,
+      "rule": "mean residual in C07 <= 60 % of C04 max"
+    },
+    "speed_cap": {
+      "value": 88.88888888888889,
+      "rule": "<= v_max"
+    }
+  }
+}
