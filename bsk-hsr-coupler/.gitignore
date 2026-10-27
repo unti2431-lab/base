@@ -1,3 +1,4 @@
 render/
 *.pyc
 __pycache__/
+*.blend1
