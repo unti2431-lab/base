@@ -1,0 +1,20 @@
+{
+  "SCH_LINK_ENGAGE": {
+    "local_F": 97,
+    "world_F": 907
+  },
+  "SCH_LOCKED": {
+    "local_F": 120,
+    "world_F": 930
+  },
+  "derived": {
+    "link_length_m": 0.325852562953138,
+    "gap_engage_m": 0.05990862430944459,
+    "theta_deflect_max_abs_deg": -14.268085847667027,
+    "theta_lock_deg": 0.0,
+    "snap_visible": true,
+    "tip_in_notch_at_snap": true
+  },
+  "grade": "CONCEPT",
+  "note": "events detected from bake mode column, not copied from targets"
+}

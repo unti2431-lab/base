@@ -1,0 +1,35 @@
+{
+  "metrics": {
+    "link_length_err_max_m": 5.551115123125783e-17,
+    "loop_closure_err_max_m": 0.0,
+    "cam_penetration_max_m": 0.0,
+    "pin_radius_err_max_m": 1.3877787807814457e-17,
+    "theta_step_max_deg": 3.56108328379222,
+    "link_ang_step_max_deg": 0.9295891680735461,
+    "event_engage_delta_F": 1,
+    "event_locked_delta_F": 0,
+    "gap_monotone_until_lock": true,
+    "g3_window": [
+      60,
+      179
+    ],
+    "g3_window_fits": true,
+    "deflection_frames": 17,
+    "snap_visible": true,
+    "theta_deflect_max_abs_deg": 14.268085847667027
+  },
+  "PASS": {
+    "link_length": true,
+    "loop_closure": true,
+    "no_cam_penetration": true,
+    "pin_on_circle": true,
+    "no_jumps": true,
+    "events_on_target": true,
+    "gap_monotone": true,
+    "g3_window_fits": true,
+    "deflection_readable": true,
+    "snap_visible": true
+  },
+  "ALL_PASS": true,
+  "grade": "T (bake-level only; geometry is CONCEPT)"
+}
