@@ -1,0 +1,39 @@
+{
+  "metrics": {
+    "lock_shape_matches_config": true,
+    "penetration_area_max_m2": 0.0,
+    "lock_lock_hits": 0,
+    "lock_crosses_own_face_frames": 0,
+    "frames_not_at_max_free_alpha": 0,
+    "alpha_max_deg": 0.0,
+    "alpha_step_max_deg": 2.523676170734692,
+    "JP_FIRST_CONTACT_delta_F": 0,
+    "JP_RETRACT_PEAK_delta_F": 15,
+    "JP_LOCKED_delta_F": 0,
+    "gap_monotone_until_lock": true,
+    "g3_window": [
+      80,
+      199
+    ],
+    "g3_window_fits": true,
+    "retraction_deg": 10.034962107194595,
+    "deflection_frames": 122,
+    "return_deg_last_8F": 9.70944235404023,
+    "nose_in_neck_groove_at_lock": true
+  },
+  "PASS": {
+    "lock_shape_matches_config": true,
+    "no_penetration": true,
+    "lock_inside_housing": true,
+    "spring_follows_max_free": true,
+    "no_jumps": true,
+    "events_on_target": true,
+    "gap_monotone": true,
+    "g3_window_fits": true,
+    "retraction_readable": true,
+    "snap_visible": true,
+    "wedge_at_lock": true
+  },
+  "ALL_PASS": true,
+  "grade": "T (bake-level only; geometry is CONCEPT_ONLY)"
+}

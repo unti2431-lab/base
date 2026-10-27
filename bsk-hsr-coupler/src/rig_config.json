@@ -258,5 +258,209 @@
       "device": "CPU",
       "motion_blur": true
     }
+  },
+  "test_A_shibata": {
+    "shot": 6,
+    "world_frame_start": 361,
+    "world_frame_end": 510,
+    "bake_frames": 200,
+    "bake_note": "150F = shot 06, plus 50F post-roll so the G3 window [E-60,E+59] fits with E=140",
+    "lock_model_note": "CONCEPT_ONLY. Rotary lock (回転錠) with vertical pivot, fully inside its own housing. The partner's round protrusion (突起, a knuckle with a neck groove at its base) enters this head's chamber (懐); its head pushes the lock nose aside against the spring (PDF p3 §2.2, D grade). When the faces meet, the neck groove reaches the nose, the spring returns the lock and the nose sits in the groove behind the protrusion head (wedge). Lock-to-lock face contact of the real design is NOT modelled; replace when G0-B drawings arrive. NOTE for VO: in this model the lock catches the partner's PROTRUSION inside its OWN chamber (VO S2 says '상대편 잠금실에' - re-check wording after G0-B).",
+    "events_target": {
+      "JP_FIRST_CONTACT": {
+        "world_F": 372,
+        "local_F": 12,
+        "source": "R8 §7.1 budget, pre-TTS",
+        "status": "HOLD"
+      },
+      "JP_RETRACT_PEAK": {
+        "world_F": 425,
+        "local_F": 65,
+        "source": "R8 §7.1 budget, pre-TTS",
+        "status": "HOLD"
+      },
+      "JP_LOCKED": {
+        "world_F": 500,
+        "local_F": 140,
+        "source": "R8 §7.1 budget, pre-TTS",
+        "status": "HOLD"
+      }
+    },
+    "geometry": {
+      "front_plate_half_width": {
+        "value": 0.3,
+        "source": "D",
+        "status": "CONCEPT"
+      },
+      "front_plate_half_height": {
+        "value": 0.22,
+        "source": "D",
+        "status": "CONCEPT"
+      },
+      "front_plate_thickness": {
+        "value": 0.06,
+        "source": "D",
+        "status": "CONCEPT"
+      },
+      "housing_depth": {
+        "value": 0.4,
+        "source": "D",
+        "status": "CONCEPT"
+      },
+      "protrusion_x": {
+        "value": 0.11,
+        "source": "D (PDF p2: round protrusion / round chamber, point-symmetric)",
+        "status": "CONCEPT"
+      },
+      "protrusion_y": {
+        "value": 0.07,
+        "source": "CONCEPT",
+        "status": "CONCEPT",
+        "note": "unused (stadium model uses protrusion_length)"
+      },
+      "protrusion_head_radius": {
+        "value": 0.045,
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "protrusion_neck_radius": {
+        "value": 0.03,
+        "source": "CONCEPT: neck groove that the lock nose drops into",
+        "status": "CONCEPT"
+      },
+      "lock_pivot": {
+        "value": [
+          -0.03,
+          -0.11
+        ],
+        "source": "CONCEPT (grid search)",
+        "status": "CONCEPT",
+        "note": "A-local xy of the vertical pivot"
+      },
+      "lock_radius": {
+        "value": 0.107,
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "lock_hub_radius": {
+        "value": 0.03,
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "lock_span_deg": {
+        "value": [
+          -63.0,
+          12.0
+        ],
+        "source": "CONCEPT",
+        "status": "CONCEPT",
+        "note": "D-shaped body sector at alpha=0; the nose is a separate tooth (lock_tooth)"
+      },
+      "lock_thickness": {
+        "value": 0.05,
+        "source": "D",
+        "status": "CONCEPT"
+      },
+      "alpha_ready_deg": {
+        "value": 0.0,
+        "source": "CONCEPT (PDF p1: 'about 45 deg' is HOLD, not used)",
+        "status": "CONCEPT"
+      },
+      "spring_anchor": {
+        "value": [
+          -0.22,
+          -0.3
+        ],
+        "source": "D (PDF p2: return spring between lock lever and housing bracket)",
+        "status": "CONCEPT"
+      },
+      "spring_lock_radius": {
+        "value": 0.09,
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "spring_lock_angle_deg": {
+        "value": 200.0,
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "design_clearance": {
+        "value": 0.0015,
+        "source": "skill §5",
+        "status": "LOCK"
+      },
+      "protrusion_length": {
+        "value": 0.11,
+        "source": "CONCEPT",
+        "status": "CONCEPT",
+        "note": "from the face to the rounded tip (B-local y)"
+      },
+      "protrusion_neck_length": {
+        "value": 0.036,
+        "source": "CONCEPT",
+        "status": "CONCEPT",
+        "note": "groove length at the base; release gap emerges from this"
+      },
+      "chamber_window_half": {
+        "value": 0.05,
+        "source": "CONCEPT",
+        "status": "CONCEPT",
+        "note": "square window half-size in the face for the partner's protrusion (head r + 5 mm)"
+      },
+      "lock_flat_top_y": {
+        "value": -0.015,
+        "source": "CONCEPT",
+        "status": "CONCEPT",
+        "note": "body is cut flat at this y so it stays behind the face"
+      },
+      "lock_tooth": {
+        "value": {
+          "x0": -0.078,
+          "x1": -0.046,
+          "y0": -0.031,
+          "y1": -0.015
+        },
+        "source": "CONCEPT",
+        "status": "CONCEPT",
+        "note": "nose tooth rectangle in A-local at alpha=0; left face bears on the partner's neck (x=-xc+rn), bottom face is what the partner head's shoulder must pass for release"
+      }
+    },
+    "motion": {
+      "gap_start": {
+        "value": 0.24,
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "approach_profile": "fast smoothstep to first contact (F12), slow smoothstep to release gap (F134, found by the solver), snap 6F, hold",
+      "snap_frames": {
+        "value": 6,
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "post_lock_tension_pull": {
+        "value": 0.0012,
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "tension_pull_frames": [
+        165,
+        200
+      ]
+    },
+    "camera": {
+      "mode": "world",
+      "elevation_deg": 72.0,
+      "azimuth_deg_start": -14.0,
+      "azimuth_deg_end": 14.0,
+      "azimuth_hold_frames_around_lock": 15,
+      "distance": 2.25,
+      "lens_mm": 40,
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "_source": "same framing rules as TEST B (R8 §5)"
+    }
   }
 }

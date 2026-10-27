@@ -1,0 +1,25 @@
+{
+  "JP_FIRST_CONTACT": {
+    "local_F": 12,
+    "world_F": 372
+  },
+  "JP_RETRACT_PEAK": {
+    "local_F": 80,
+    "world_F": 440
+  },
+  "JP_LOCKED": {
+    "local_F": 140,
+    "world_F": 500
+  },
+  "derived": {
+    "gap_contact_m": 0.08360000000000001,
+    "gap_return_start_m": 0.010800000000000004,
+    "alpha_min_deg": -10.034962107194595,
+    "retraction_deg": 10.034962107194595,
+    "alpha_at_release_deg": -10.034962107194595,
+    "nose_in_neck_groove_at_lock": true,
+    "lock_max_y_m": -0.015
+  },
+  "grade": "CONCEPT_ONLY",
+  "note": "events detected from bake; lock-to-lock engagement of the real design not modelled"
+}
