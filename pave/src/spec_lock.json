@@ -1,0 +1,8 @@
+{
+  "_note": "SPEC LOCK 기록. blender 는 사용자 결정(G-PAVE-04) 후 scripts/setup_env.sh --blender 가 기록한다. 직접 고치지 말 것.",
+  "blender": null,
+  "fps": 30,
+  "fps_status": "PROVISIONAL (확정 음성 후 LOCK)",
+  "resolution": [1080, 1920],
+  "frames": 1200
+}

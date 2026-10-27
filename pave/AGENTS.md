@@ -4,18 +4,22 @@
 
 ## 0. 읽는 순서 (작업 전 전부)
 
-1. `pave/LOCKS.md` — 이 파일보다 우선한다.
-2. `pave/SCENARIO_v1.md` — 비트표, 샷 리스트, 룩.
-3. `pave/BEATS.csv` — 컷 경계와 사건 F.
-4. `pave/src/rig_config.json`, `pave/src/pave_kin.py` — 운동 정본과 프로토타입 베이크.
-5. 스킬 `blender-short-3d-pipeline` §3.1(버전 차이), §5(빌드·베이크 코드), §10(검증), §11(렌더·인코딩).
-6. `heavy-mech-series/RANKING_v2.md` §3 — 원안에서 바뀐 이유.
+경로는 패키지 루트(`PAVE_R01_HANDOFF/`, 저장소에서는 `pave/`) 기준이다.
+
+1. `START_HERE.md` — 첫 실행 명령과 착수 보고.
+2. `LOCKS.md` — 이 파일보다 우선한다.
+3. `SCENARIO_v1.md` — 비트표, 샷 리스트, 룩.
+4. `BEATS.csv` — 컷 경계와 사건 F.
+5. `src/rig_config.json`, `src/pave_kin.py` — 운동 정본과 프로토타입 베이크.
+6. `src/common_bpy.py` — 버전 가드, 채널백 베이크, BVH 충돌 함수(빌드 스크립트는 이것만 import).
+7. 스킬 `blender-short-3d-pipeline`(없으면 `reference/PIPELINE_EXCERPT.md`) — 검증·렌더·인코딩 규범.
+8. `reference/RANKING_v2.md` §3 — 원안에서 바뀐 이유(저장소에서는 `heavy-mech-series/RANKING_v2.md`).
 
 ## 1. 반드시
 
 - 모든 Blender 스크립트 첫 줄에 버전 가드(LOCK 밖이면 중단). 버전 상수(EEVEE ID, 하늘 타입)를 쓴다.
 - 운동 입력은 `pave_kin.py`가 만든 `src/bake/*` **하나뿐**이다. 손 키프레임을 쓰지 않는다(카메라 제외). 카메라도 BEATS.csv 사건 F에 키를 박는다.
-- 애니메이션은 스킬 §5 `bake_fcurves`(채널백 API, 슬롯 명시)로 넣는다. 빌드 직후 프레임 2개에서 카메라·오거 위치와 회전을 출력해 실제로 움직이는지 확인한다.
+- 애니메이션은 `src/common_bpy.py`의 `bake_fcurves`(채널백 API, 슬롯 명시)로 넣는다. 빌드 직후 프레임 2개에서 카메라·오거 위치와 회전을 출력해 실제로 움직이는지 확인한다.
 - 오거 날개는 **절차적 나선**으로 만든다. RMC 리그가 있으면 그것을 가져와 `hand`, `pitch`, 구간 길이만 바꾼다. 날개 메시의 감김 부호를 메시에서 다시 측정해 config의 `hand_*`와 대조한다(§4 V2).
 - 회전 위상: 오거 회전각 = `theta_l/theta_r`(npz). 반죽 표면의 물결과 골재 들림이 이 위상에 묶여 있으므로 다른 값을 쓰지 않는다.
 - 베벨은 메시에 굽는다(인스턴스에는 모디파이어가 없다). 맞닿는 부품은 1–2 mm 간극을 둔다.
@@ -35,8 +39,8 @@
 
 | ID | 작업 | 산출물 | 통과 조건 |
 |---|---|---|---|
-| T01 | 환경: LOCK 버전 bpy(클라우드는 PyPI `bpy==4.5.14` 또는 `5.2.2`), numpy | `scripts/setup_env.sh` 작성·실행 로그 | 버전 가드 통과 |
-| T02 | 베이크 재현: `python3 src/pave_kin.py` | `src/bake/*`, `bake_qc.json` | `ALL_PASS: true`, AB_fill `fill_90_F` = events ±1 |
+| T01 | 환경: `scripts/setup_env.sh --blender <4.5 또는 5.2>`(LOCK 버전 bpy + numpy) | 실행 로그 | `scripts/run_pipeline.sh --check-bpy` 버전 가드 통과 |
+| T02 | 베이크 재현: `scripts/run_pipeline.sh` | `src/bake/*`, `bake_qc.json` | `ALL_PASS: true`, AB_fill `fill_90_F` = events ±1 |
 | T03 | 에셋: 피니셔 외형 후보 3개 비교(Fab 유료/CC0) → 사용자 선택 대기 | `assets/CANDIDATES.md`, `assets/LICENSES.csv` | 상업 영상 사용 가능 확인. **사용자 승인 전 구매 금지** |
 | T04 | 오거 리그: 좌우 정방향(FWD)·역방향(REV) 날개, 축, 기어박스 하우징, 엔드게이트. 변형 B는 REV 자리에 FWD 날개 | `src/build_auger.py` | V1·V2 PASS |
 | T05 | 내부: 호퍼, 슬랫 컨베이어 2열(체인 피치 보존, 스킬 §4.1), 스크리드는 형상만 | `src/build_internals.py` | V3 PASS |

@@ -1,2 +1,5 @@
 src/bake/
 __pycache__/
+.venv/
+blend/
+evidence/
