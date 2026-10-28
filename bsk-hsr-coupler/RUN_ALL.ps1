@@ -21,12 +21,23 @@ param(
   [ValidateSet("animatic","key4s","key4s_gpu","final")] [string]$Preset = "animatic",
   [int[]]$Range = @(),
   [int]$Chunk = 24,
-  [string]$Blender = $(if ($env:BLENDER_EXE) { $env:BLENDER_EXE } else { "C:\Program Files\Blender Foundation\Blender 4.5\blender.exe" }),
+  [string]$Blender = "",
   [switch]$Apply,
   [switch]$VerifyOnly
 )
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
+# Blender path: -Blender > blender_path.txt > $env:BLENDER_EXE > default install path
+if (-not $Blender) {
+  if (Test-Path "blender_path.txt") { $Blender = (Get-Content "blender_path.txt" -Raw).Trim().Trim('"') }
+  elseif ($env:BLENDER_EXE) { $Blender = $env:BLENDER_EXE }
+  else { $Blender = "C:\Program Files\Blender Foundation\Blender 4.5\blender.exe" }
+}
+# every run leaves a log the agent (Cowork / Claude Code) can read back from the folder
+New-Item -ItemType Directory -Force logs | Out-Null
+$LogFile = "logs\RUN_{0}_{1}_{2}.log" -f $Step, $Test, (Get-Date -Format "yyyyMMdd_HHmmss")
+Start-Transcript -Path $LogFile | Out-Null
+trap { Write-Host "RUN_STATUS: FAIL $_" -ForegroundColor Red; "FAIL $Step $Test $(Get-Date -Format s) $_" | Out-File "logs\LAST_STATUS.txt" -Encoding utf8; Stop-Transcript | Out-Null; exit 1 }
 $Py = Join-Path $PSScriptRoot ".venv\Scripts\python.exe"
 if ($VerifyOnly) { $Step = "verify" }
 
@@ -79,7 +90,12 @@ switch ($Step) {
   "render" {
     foreach ($k in $Sel) {
       $t = $Tests[$k]; Verify-Test $t
-      $r0, $r1 = if ($Range.Count -eq 2) { $Range[0], $Range[1] } else { 1, $t.frames }
+      if ($Range.Count -eq 2) { $r0, $r1 = $Range[0], $Range[1] }
+      elseif ($Preset -like "key4s*") {   # G3 window [E-60, E+59] from the fresh bake (moves after -Step vo -Apply)
+        $ev = Get-Content "evidence\$($t.tag)_events.json" -Raw | ConvertFrom-Json
+        $E = if ($k -eq "A") { $ev.JP_LOCKED.local_F } else { $ev.SCH_LOCKED.local_F }; $r0, $r1 = ($E - 60), ($E + 59)
+        Write-Host "G3 window $($t.tag): F$r0-F$r1 (E=$E)" -ForegroundColor Cyan
+      } else { $r0, $r1 = 1, $t.frames }
       $out = "render\$($t.tag)_$Preset"; New-Item -ItemType Directory -Force $out | Out-Null
       $log = "render\$($t.tag)_$Preset`_render_log.csv"; if (-not (Test-Path $log)) { "chunk_start,chunk_end,seconds,vram_mib,retries,status" | Out-File $log -Encoding utf8 }
       $failed = @()
@@ -114,3 +130,6 @@ switch ($Step) {
 Get-ChildItem evidence, review, audio -File -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.Extension -notin ".blend1" } |
   ForEach-Object { [pscustomobject]@{ path = (Resolve-Path -Relative $_.FullName); bytes = $_.Length; sha256 = (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower() } } |
   ConvertTo-Json | Out-File MANIFEST.json -Encoding utf8
+"PASS $Step $Test $(Get-Date -Format s) log=$LogFile" | Out-File "logs\LAST_STATUS.txt" -Encoding utf8
+Write-Host "RUN_STATUS: PASS ($Step $Test) log=$LogFile" -ForegroundColor Green
+Stop-Transcript | Out-Null
