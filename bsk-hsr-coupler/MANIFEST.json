@@ -1,0 +1,122 @@
+[
+  {
+    "path": ".\\evidence\\L10_EVIDENCE_R9a.md",
+    "bytes": 6650,
+    "sha256": "442ff031ceb0f9c690efb5110f19569633e28d3c856ae7b4e6da7b905e2700a8"
+  },
+  {
+    "path": ".\\evidence\\TEST_A_SHIB.blend",
+    "bytes": 1115060,
+    "sha256": "d9db8c4f36446d2b01c4ddbfac12c70442728d85082543cf0bb12297bb3854f3"
+  },
+  {
+    "path": ".\\evidence\\TEST_B_SCH.blend",
+    "bytes": 1420921,
+    "sha256": "ca5f4052fd0b04cf7043b64c09388a3faec13798c0456bd721aa5a3f86fb6ebe"
+  },
+  {
+    "path": ".\\evidence\\W0_BLOCK.blend",
+    "bytes": 2072371,
+    "sha256": "913aa889828d44c88658d3db144066ce412b404f3d54e0d128a1871ec78f3475"
+  },
+  {
+    "path": ".\\evidence\\schB_bake.npz",
+    "bytes": 15724,
+    "sha256": "27ea5a5be8317d1e042b8924aa8e2131f7381eb9b4a4e81331fb3cee709e51b9"
+  },
+  {
+    "path": ".\\evidence\\schB_bake_qc.json",
+    "bytes": 934,
+    "sha256": "87f218905d311bfc2fadd920a12571f0e8f7c4479707e85e0003e88eb2682aca"
+  },
+  {
+    "path": ".\\evidence\\schB_events.json",
+    "bytes": 469,
+    "sha256": "31684e9cb3e94af57802ff3b9f36d723329930152677a047487855ee2cb00137"
+  },
+  {
+    "path": ".\\evidence\\schB_scene_qc.json",
+    "bytes": 678,
+    "sha256": "e44352b753be75f67218efc3b89c07114fee3a8547a17968ad7f3d1b342c5327"
+  },
+  {
+    "path": ".\\evidence\\shibA_bake.npz",
+    "bytes": 12370,
+    "sha256": "df58c67e7c43c8012a1fec58aea20262dd76df15bef0ea7fc3540c97d9e0ef7a"
+  },
+  {
+    "path": ".\\evidence\\shibA_bake_qc.json",
+    "bytes": 1061,
+    "sha256": "3edfbf722f2fc8884e3ee966cd4923e7d48e58c1ffb56e4fb914020024f39a06"
+  },
+  {
+    "path": ".\\evidence\\shibA_events.json",
+    "bytes": 630,
+    "sha256": "ee62f6a5f07f256d094c4e3907fde6fcf4941fbb63baee1558ae7861900243fa"
+  },
+  {
+    "path": ".\\evidence\\shibA_scene_qc.json",
+    "bytes": 714,
+    "sha256": "d5725c3f4348d3115ca507756f5357f5545ff1b3c92684aef9328a7e485b27a5"
+  },
+  {
+    "path": ".\\evidence\\w0_build_meta.json",
+    "bytes": 453,
+    "sha256": "8611a9246f82a97e25c6e6d752e4c89a32dfa32c6403bb78904d25e8cc1c7efc"
+  },
+  {
+    "path": ".\\evidence\\w0_loop_qc.json",
+    "bytes": 1585,
+    "sha256": "781bd5bb496c5a9dac116d588a469a50383f0d2665e89a2f807ceb7f64e6e11e"
+  },
+  {
+    "path": ".\\review\\W0_loop_seam_270p_CONCEPT.mp4",
+    "bytes": 263765,
+    "sha256": "0596f867b3998c6785bb2d210f1710cfd4d413ea21194acca4840345d0a8b6f5"
+  },
+  {
+    "path": ".\\review\\W0_loop_seam_270p_CONCEPT_contact.jpg",
+    "bytes": 57921,
+    "sha256": "e3a622e8dc3dff271a5a0d3b1bf77aa4879d695b35e7fa1b8780197ae99134ec"
+  },
+  {
+    "path": ".\\review\\W0_loop_seam_270p_CONCEPT_stress2M.mp4",
+    "bytes": 1592601,
+    "sha256": "ab6086bb04d4d3ac4527d5e2fde9c4aad2b42cfe94e3df7c53e1d298ab5607bc"
+  },
+  {
+    "path": ".\\review\\schB_animatic_270p_CONCEPT.mp4",
+    "bytes": 248111,
+    "sha256": "b327e60e43f2bc0998d88102ffefcd3aedf20885e1ab7f51cf390b5e889511ff"
+  },
+  {
+    "path": ".\\review\\schB_animatic_270p_CONCEPT_contact.jpg",
+    "bytes": 58495,
+    "sha256": "ed054bc4a66b2d8f403e574fbb9b12209e1f4219dcad282ed0eab2d3d9c6529d"
+  },
+  {
+    "path": ".\\review\\shibA_animatic_270p_CONCEPT.mp4",
+    "bytes": 205515,
+    "sha256": "7dc7a4fe9f20bb24a44c54387b382c3fea0a26d85dac2e13b5a03846c7dae01d"
+  },
+  {
+    "path": ".\\review\\shibA_animatic_270p_CONCEPT_contact.jpg",
+    "bytes": 55210,
+    "sha256": "72db974dc00a5959b0c73446e47ad309cb83137bdc7eb2d450640aa4c28f96e7"
+  },
+  {
+    "path": ".\\review\\R09a\\CHANGELOG.md",
+    "bytes": 1331,
+    "sha256": "7f6c1fa2071b35f3015806e72210c1c756b295b89d0bcff3f06b2107d7debe97"
+  },
+  {
+    "path": ".\\audio\\VO_LOCK.TEMPLATE.json",
+    "bytes": 1924,
+    "sha256": "ecf68c6e64f99e537049d631b7681b905b2bec227c3d47f2c4284ca7ffc0722a"
+  },
+  {
+    "path": ".\\audio\\VO_SCRIPT_R9.md",
+    "bytes": 4732,
+    "sha256": "2c63f3191fe35ab178e2e8d5a5bf2ec35d6ebb4f17016acfe08279f71cabc042"
+  }
+]

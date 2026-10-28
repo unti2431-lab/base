@@ -123,3 +123,6 @@
 - [KTX-Sancheon — Wikipedia](https://en.wikipedia.org/wiki/KTX-Sancheon)
 - [KTX-산천 — 위키백과](https://ko.wikipedia.org/wiki/KTX-%EC%82%B0%EC%B2%9C)
 - [뉴데일리 2026-05-17 KTX·SRT 중련연결 첫 시연](https://biz.newdaily.co.kr/site/data/html/2026/05/17/2026051700002.html)
+
+---
+**정정 (R9a 검증, 2026-10-29):** §1 G0-C와 Sources의 특허 설명 중 US8800792B2는 Voith 계열이 아니라 **Dellner Couplers(EGO International)** 특허이고, US2214036A는 **Van Dorn 타이트락**으로 샤르펜베르크 계열 근거가 아니다. 샤르펜베르크 원리의 1차 근거는 US2161724(Karl Scharfenberg, 1939)이다. 상세: `evidence/L10_EVIDENCE_R9a.md`.

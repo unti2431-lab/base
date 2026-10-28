@@ -485,5 +485,160 @@
       ],
       "_source": "same framing rules as TEST B (R8 §5)"
     }
+  },
+  "w0_loop": {
+    "_note": "L08 W0 loop blocking (proxy only). World Z up, coupling axis Y, coupled face plane y=0. E5 on y<0, E6 on y>0. No vehicle markings. Every number here is CONCEPT framing/proportion, never shown as a measurement.",
+    "frames": {
+      "shot01": [
+        1,
+        50
+      ],
+      "shot02": [
+        51,
+        120
+      ],
+      "shot13": [
+        1186,
+        1260
+      ],
+      "virtual_seam_F": 1261,
+      "source": "CCL_R8 §4 SHOT LOCK",
+      "status": "LOCK"
+    },
+    "speed": {
+      "env_speed_m_per_frame": {
+        "value": 0.5555555555555556,
+        "source": "CONCEPT: 60 km/h at 30 fps, chosen so 1260 F x speed = 700 m = 14 x env tile",
+        "status": "CONCEPT"
+      },
+      "env_tile_m": {
+        "value": 50.0,
+        "source": "CONCEPT: slab 5 m x 10, pole every 50 m",
+        "status": "CONCEPT"
+      },
+      "wheel_radius": {
+        "value": 0.4298,
+        "source": "CONCEPT (~0.86 m wheel); tuned so the 6-fold wheel marker repeats exactly after 1260 F",
+        "status": "CONCEPT"
+      }
+    },
+    "geometry": {
+      "coupler_height": {
+        "value": 1.0,
+        "source": "CONCEPT",
+        "status": "CONCEPT",
+        "note": "coupler axis height above rail top"
+      },
+      "e5_body_width": {
+        "value": 3.35,
+        "source": "S (general reference, proportion only)",
+        "status": "CONCEPT"
+      },
+      "e6_body_width": {
+        "value": 2.945,
+        "source": "D (PDF p8, proportion only)",
+        "status": "CONCEPT"
+      },
+      "body_height": {
+        "value": 3.65,
+        "source": "S (proportion only)",
+        "status": "CONCEPT"
+      },
+      "e5_nose_length": {
+        "value": 15.0,
+        "source": "S (proportion only)",
+        "status": "CONCEPT"
+      },
+      "e6_nose_length": {
+        "value": 13.0,
+        "source": "D (PDF p8, proportion only)",
+        "status": "CONCEPT"
+      },
+      "nose_tip_y": {
+        "value": 1.15,
+        "source": "CONCEPT",
+        "status": "CONCEPT",
+        "note": "|y| of each nose tip; coupler heads span the gap to y=0"
+      },
+      "skirt_z": {
+        "value": 0.32,
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      }
+    },
+    "camera": {
+      "lens_mm": {
+        "value": 28.0,
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "P0": {
+        "value": [
+          3.7,
+          -4.3,
+          0.88
+        ],
+        "source": "CONCEPT low-angle follow (shot 01)",
+        "status": "CONCEPT"
+      },
+      "T0": {
+        "value": [
+          0.0,
+          -0.25,
+          1.12
+        ],
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "v0_per_frame": {
+        "value": [
+          -0.005,
+          0.011,
+          0.0004
+        ],
+        "source": "CONCEPT slow follow drift",
+        "status": "CONCEPT"
+      },
+      "vt0_per_frame": {
+        "value": [
+          0.0,
+          0.0035,
+          0.0
+        ],
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "P_in": {
+        "value": [
+          0.62,
+          -0.3,
+          1.02
+        ],
+        "source": "CONCEPT Z-axis entry end pose (F120) / return start (F1186)",
+        "status": "CONCEPT"
+      },
+      "T_in": {
+        "value": [
+          -0.05,
+          0.55,
+          0.99
+        ],
+        "source": "CONCEPT",
+        "status": "CONCEPT"
+      },
+      "entry_end_speed": {
+        "value": 0.012,
+        "source": "CONCEPT m/frame along the dolly axis at F120 (carries into the cut)",
+        "status": "CONCEPT"
+      },
+      "interp": "quintic Hermite with position, velocity and acceleration matched at F50 and at the seam F1261 (acceleration 0, same as the linear follow)"
+    },
+    "qc": {
+      "seam_pos_tol_m": 0.0001,
+      "seam_rot_tol_deg": 0.01,
+      "seam_vel_tol_m_per_frame": 0.0005,
+      "seam_rotvel_tol_deg_per_frame": 0.01,
+      "camera_clearance_m": 0.15
+    }
   }
 }

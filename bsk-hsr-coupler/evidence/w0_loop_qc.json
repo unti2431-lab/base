@@ -1,0 +1,58 @@
+{
+  "seam_F": 1261,
+  "camera_pos_delta_m": 0.0,
+  "camera_rot_delta_deg": 0.0,
+  "lens_F1": 28.0,
+  "lens_F1261": 28.0,
+  "velocity_F1_F2": [
+    -0.005000114440917969,
+    0.01100015640258789,
+    0.0004000067710876465
+  ],
+  "velocity_F1260_F1261": [
+    -0.0049283504486083984,
+    0.010901927947998047,
+    0.00039654970169067383
+  ],
+  "velocity_delta_m_per_frame": 0.00012169984064136053,
+  "angvel_F1_F2_deg": [
+    -6.42688280072994e-05,
+    -6.831006908751498e-05,
+    0.014310054286966047
+  ],
+  "angvel_F1260_F1261_deg": [
+    -6.496319133423736e-05,
+    -5.7288531611154685e-05,
+    0.014264079259032792
+  ],
+  "angvel_delta_deg_per_frame": 4.7282762421797807e-05,
+  "env_phase_delta_m": 0.0,
+  "env_velocity_delta_m_per_frame": 0.0,
+  "wheel_phase_delta_rad_mod_60deg": 0.0,
+  "lights_identical": true,
+  "join_F50_kink_m_per_frame": 0.00010392412960692898,
+  "join_F50_speed_m_per_frame": 0.012089854867639551,
+  "camera_speed_min_max_m_per_frame": [
+    0.0027768891352902008,
+    0.12645040508563477
+  ],
+  "camera_speed_max_frame_to_frame_change": 0.005485664379357144,
+  "camera_min_surface_distance_m": 0.33000001311302185,
+  "camera_min_at_F": 1186,
+  "camera_min_object": "E5_HEAD",
+  "negative_scale_objects": [],
+  "PASS": {
+    "seam_position": true,
+    "seam_rotation": true,
+    "seam_fov": true,
+    "seam_velocity": true,
+    "seam_angular_velocity": true,
+    "seam_env_phase": true,
+    "seam_wheel_phase": true,
+    "seam_lights": true,
+    "join_F50_no_kink": true,
+    "camera_clearance": true,
+    "no_negative_scale": true
+  },
+  "ALL_PASS": true
+}

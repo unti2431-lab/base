@@ -1,0 +1,21 @@
+{
+  "seam_F": 1261,
+  "env_speed_m_per_frame": 0.5555555555555556,
+  "env_tile_m": 50.0,
+  "env_total_shift_m": 700.0,
+  "wheel_marker_turns_6fold": 1555,
+  "wheel_omega_rad_per_frame": 1.2923747556434202,
+  "wheel_effective_radius_m": 0.42987187201669486,
+  "dolly_dir": [
+    -0.6334465327441822,
+    0.7733186771878712,
+    0.0269019268227159
+  ],
+  "keyed_frames": [
+    1,
+    121,
+    1185,
+    1261
+  ],
+  "grade": "CONCEPT_ONLY proxy blocking"
+}

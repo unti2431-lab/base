@@ -12,7 +12,7 @@ from mathutils import Vector, Matrix
 
 LOCK = (4, 5); assert bpy.app.version[:2] == LOCK, f"Blender {bpy.app.version_string} != LOCK {LOCK}"
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
-CFG = json.load(open(os.path.join(HERE, "rig_config.json"))); T = CFG["test_A_shibata"]
+CFG = json.load(open(os.path.join(HERE, "rig_config.json"), encoding="utf-8")); T = CFG["test_A_shibata"]
 G = {k: v["value"] for k, v in T["geometry"].items()}; CAM = T["camera"]; N = T["bake_frames"]
 Z = np.load(os.path.join(ROOT, "evidence", "shibA_bake.npz")); B = Z["bake"]; LOCK_POLY = Z["lock_poly"]; PROT_POLY = Z["prot_poly"]
 EV = json.load(open(os.path.join(ROOT, "evidence", "shibA_events.json")))
