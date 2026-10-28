@@ -137,11 +137,23 @@ for f in (1, EV["JP_RETRACT_PEAK"]["local_F"], E):
     sc.frame_set(f); print(f"F{f}: HEAD_B y={Bh[0].matrix_world.translation.y:+.4f} LOCK_A rz={math.degrees(A[1].rotation_euler.z):+.2f} cam=({cam.location.x:+.3f},{cam.location.y:+.3f},{cam.location.z:+.3f})")
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT, "evidence", "TEST_A_SHIB.blend"))   # bpy.ops allowed: save
 
-ap = argparse.ArgumentParser(); ap.add_argument("--render", nargs=2, type=int); ap.add_argument("--preset", default="animatic"); ap.add_argument("--out", default=None)
-args = ap.parse_args(sys.argv[1:])
+ap = argparse.ArgumentParser(); ap.add_argument("--render", nargs=2, type=int); ap.add_argument("--preset", default="animatic"); ap.add_argument("--out", default=None); ap.add_argument("--gpu", action="store_true")
+argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]     # blender.exe -b -P script.py -- args
+args = ap.parse_args(argv)
+if args.gpu:   # local RTX: OptiX, fall back to CUDA
+    cp = bpy.context.preferences.addons["cycles"].preferences
+    for dev_type in ("OPTIX", "CUDA"):
+        try:
+            cp.compute_device_type = dev_type; cp.get_devices()
+            gpus = [d for d in cp.devices if d.type == dev_type]
+            if gpus:
+                for d in cp.devices: d.use = d.type == dev_type
+                sc.cycles.device = 'GPU'; print(f"GPU: {dev_type} {[d.name for d in gpus]}"); break
+        except TypeError: continue
+    else: raise SystemExit("--gpu given but no OPTIX/CUDA device found")
 if args.render:
     Rr = CFG["render"][args.preset]; sc.render.resolution_x, sc.render.resolution_y = Rr["res"]; sc.render.resolution_percentage = 100
-    sc.cycles.samples = Rr["samples"]; sc.render.use_motion_blur = Rr["motion_blur"]; out = args.out or os.path.join(ROOT, "render", f"shibA_{args.preset}")
+    sc.cycles.samples = Rr["samples"]; sc.cycles.use_adaptive_sampling = Rr.get("adaptive", False); sc.render.use_motion_blur = Rr["motion_blur"]; out = args.out or os.path.join(ROOT, "render", f"shibA_{args.preset}")
     os.makedirs(out, exist_ok=True)
     for f in range(args.render[0], args.render[1] + 1):
         fp = os.path.join(out, f"{f:04d}.png")

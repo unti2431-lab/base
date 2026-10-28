@@ -1,0 +1,25 @@
+{
+  "revision": "R9",
+  "tasks": [
+    {"id": "L01", "do": "Environment: RUN_ALL.ps1 -Step setup (Blender 4.5 path, .venv, ffmpeg, nvidia-smi)", "deps": [],
+     "accept": ["setup prints BLENDER 4.5.x and 'venv ok'", "no missing-tool warning for ffmpeg/ffprobe/nvidia-smi"]},
+    {"id": "L02", "do": "Reproduce cloud baseline: RUN_ALL.ps1 -Step baseline -Test all", "deps": ["L01"],
+     "accept": ["BASELINE PASS", "evidence/*_scene_qc.json ALL_PASS"]},
+    {"id": "L03", "do": "GPU timing: -Step timing -Test all for presets key4s_gpu and final; record s/frame and VRAM in REPORT.md; extrapolate full-film render time", "deps": ["L02"],
+     "accept": ["both presets measured", "no TDR/crash", "estimate written"]},
+    {"id": "L04", "do": "VO lock: put the 10 WAV files in audio/, fill VO_LOCK.json, run -Step vo; if no violations run -Step vo -Apply then -Step verify", "deps": ["L02"], "blocked_by_user": "recording (audio/VO_SCRIPT_R9.md)",
+     "accept": ["audio/VO_LOCK.json has sha256+duration for every file", "audio/vo_sync_report.json violations == [] and overlaps == []", "-Step verify PASS after -Apply"]},
+    {"id": "L05", "do": "Round R9-1 (one variable): TEST A camera distance 2.25 -> 1.6 m in rig_config.test_A_shibata.camera.distance; render 540p G3 window [E-60,E+59] with -Preset key4s_gpu", "deps": ["L04"],
+     "accept": ["lock retraction clearly readable in the 540p MP4 at normal speed and in the 2M stress file", "review/R09_1/CHANGELOG.md written"]},
+    {"id": "L06", "do": "Round R9-2 (one variable): TEST B link material -> orange accent, hook plate -> mid grey (build_schB.py materials only); render 540p G3 window", "deps": ["L04"],
+     "accept": ["link vs face plate separable in 540p and stress file", "scene QC still ALL_PASS", "CHANGELOG written"]},
+    {"id": "L07", "do": "Springs: replace SPRING bars with a helix (Geometry Nodes or curve) whose wire radius is constant and only pitch changes with spring_len", "deps": ["L05", "L06"],
+     "accept": ["wire radius constant across frames (measure 3 frames)", "scene QC ALL_PASS"]},
+    {"id": "L08", "do": "W0 loop blocking (Workbench/EEVEE): proxy boxes for E5+E6 coupled nose, camera Z-axis entry F1-120 and return F1186-1260; virtual F1261 == F1 (position, rotation, FOV, velocity)", "deps": ["L02"],
+     "accept": ["F1 vs F1260+1 camera pose delta < 1e-4 m / 0.01 deg", "velocity continuity across the seam", "270p MP4"]},
+    {"id": "L09", "do": "E6 nose (option a): model only the visible front ~4 m + open cover pocket from reference photos; no JR markings", "deps": ["L08"], "blocked_by_user": "E6 front/side/oblique photos with licence page",
+     "accept": ["E6_NOSE_v1.blend", "two 540p stills from the W0 angle", "photo licences recorded in assets/LICENSES.csv"]},
+    {"id": "L10", "do": "Evidence upgrade: Voith press release (KTX II front ends, one4 type 10), patents US2161724 / US2214036A / US8800792B2, JR East Tech-31 p.29, KSR2018F107 -> evidence/ and grade update in LOCKS.md FACT table", "deps": [],
+     "accept": ["each file saved with source URL and access date", "C03 / SCH-01 grade updated only if the primary text says so"]}
+  ]
+}

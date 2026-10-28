@@ -257,6 +257,29 @@
       "engine": "CYCLES",
       "device": "CPU",
       "motion_blur": true
+    },
+    "key4s_gpu": {
+      "res": [
+        540,
+        960
+      ],
+      "samples": 128,
+      "adaptive": true,
+      "engine": "CYCLES",
+      "device": "GPU",
+      "motion_blur": true
+    },
+    "final": {
+      "res": [
+        1080,
+        1920
+      ],
+      "samples": 256,
+      "adaptive": true,
+      "engine": "CYCLES",
+      "device": "GPU",
+      "motion_blur": true,
+      "_note": "skill §3.3 start values; noise threshold decided from a representative frame"
     }
   },
   "test_A_shibata": {

@@ -1,0 +1,25 @@
+{
+  "_note": "Copy to VO_LOCK.json. sha256/duration are filled by src/vo_words.py. place_F = Blender 1-based frame where the file's first sample sits.",
+  "revision": "R9",
+  "voice": {"engine": "FILL_ME (e.g. ElevenLabs)", "voice_name": "FILL_ME", "model": "FILL_ME", "speed": 1.1, "settings": {}},
+  "fps": 30,
+  "selection": {"S2b": "S2b_A", "S3a": "S3a"},
+  "files": {
+    "S1a":   {"file": "VO_R9_S1a.wav",   "place_F": 10},
+    "S1b":   {"file": "VO_R9_S1b.wav",   "place_F": 100},
+    "S2a":   {"file": "VO_R9_S2a.wav",   "place_F": 190},
+    "S2b_A": {"file": "VO_R9_S2b_A.wav", "place_F": 350},
+    "S2b_B": {"file": "VO_R9_S2b_B.wav", "place_F": 350},
+    "S3a":   {"file": "VO_R9_S3a.wav",   "place_F": 640},
+    "S3a_K": {"file": "VO_R9_S3a_K.wav", "place_F": 640},
+    "S3b":   {"file": "VO_R9_S3b.wav",   "place_F": 780},
+    "S5a":   {"file": "VO_R9_S5a.wav",   "place_F": 1090},
+    "S5b":   {"file": "VO_R9_S5b.wav",   "place_F": 1175}
+  },
+  "event_words": {
+    "test_A_shibata": {"JP_FIRST_CONTACT": ["S2b", "맞닿으면"], "JP_RETRACT_PEAK": ["S2b", "밀렸다가"], "JP_LOCKED": ["S2b", "맞물립니다"]},
+    "test_B_scharfenberg": {"SCH_LINK_ENGAGE": ["S3b", "걸려"], "SCH_LOCKED": ["S3b", "이어집니다"]}
+  },
+  "lead_frames": {"preferred": 6, "min": 6, "max": 30},
+  "shot_windows": {"JP": [361, 510], "SCH": [811, 960]}
+}

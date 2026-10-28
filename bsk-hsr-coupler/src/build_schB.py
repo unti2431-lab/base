@@ -218,11 +218,23 @@ for f in (1, E):
 os.makedirs(os.path.join(ROOT, "evidence"), exist_ok=True)
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT, "evidence", "TEST_B_SCH.blend"))   # bpy.ops allowed: save
 
-ap = argparse.ArgumentParser(); ap.add_argument("--render", nargs=2, type=int); ap.add_argument("--preset", default="animatic"); ap.add_argument("--out", default=None)
-args = ap.parse_args(sys.argv[1:])
+ap = argparse.ArgumentParser(); ap.add_argument("--render", nargs=2, type=int); ap.add_argument("--preset", default="animatic"); ap.add_argument("--out", default=None); ap.add_argument("--gpu", action="store_true")
+argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]     # blender.exe -b -P script.py -- args
+args = ap.parse_args(argv)
+if args.gpu:   # local RTX: OptiX, fall back to CUDA
+    cp = bpy.context.preferences.addons["cycles"].preferences
+    for dev_type in ("OPTIX", "CUDA"):
+        try:
+            cp.compute_device_type = dev_type; cp.get_devices()
+            gpus = [d for d in cp.devices if d.type == dev_type]
+            if gpus:
+                for d in cp.devices: d.use = d.type == dev_type
+                sc.cycles.device = 'GPU'; print(f"GPU: {dev_type} {[d.name for d in gpus]}"); break
+        except TypeError: continue
+    else: raise SystemExit("--gpu given but no OPTIX/CUDA device found")
 if args.render:
     R = CFG["render"][args.preset]; sc.render.resolution_x, sc.render.resolution_y = R["res"]; sc.render.resolution_percentage = 100
-    sc.cycles.samples = R["samples"]; sc.render.use_motion_blur = R["motion_blur"]; out = args.out or os.path.join(ROOT, "render", f"schB_{args.preset}")
+    sc.cycles.samples = R["samples"]; sc.cycles.use_adaptive_sampling = R.get("adaptive", False); sc.render.use_motion_blur = R["motion_blur"]; out = args.out or os.path.join(ROOT, "render", f"schB_{args.preset}")
     os.makedirs(out, exist_ok=True); import time
     for f in range(args.render[0], args.render[1] + 1):
         fp = os.path.join(out, f"{f:04d}.png")
