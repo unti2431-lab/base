@@ -8,6 +8,7 @@ No bpy.ops except save/render. Head B = point-symmetric instance (Z 180 deg) of 
 import sys, os, json, math, argparse, time
 import numpy as np
 import bpy, bmesh
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import spring_helix
 from mathutils import Vector, Matrix
 
 LOCK = (4, 5); assert bpy.app.version[:2] == LOCK, f"Blender {bpy.app.version_string} != LOCK {LOCK}"
@@ -85,7 +86,7 @@ ME_FLOOR = box("HOUSING_FLOOR", 2 * hw * 0.9, hd, 0.02, center=(0, -ft - hd / 2,
 # knuckle: the top-view stadium (with neck) extruded +-rh in z (CONCEPT: square-ish section; a round section would need a lathe)
 ME_PROT = extrude_poly("KNUCKLE", PROT_POLY, -G["protrusion_head_radius"], G["protrusion_head_radius"], bevel=0.0)   # no bevel: a bevel fills the concave neck corner and eats the 1.5 mm clearance
 ME_LOCK = extrude_poly("ROTARY_LOCK", LOCK_POLY, -LT / 2, LT / 2, bevel=0.003)
-ME_MAINPIN = cyl("MAIN_PIN", 0.018, LT + 0.08); ME_SPRING = cyl("SPRING_BAR", 0.010, 1.0, center=(0, 0.5, 0), axis='Y', segs=12)
+ME_MAINPIN = cyl("MAIN_PIN", 0.018, LT + 0.08)
 
 def build_head(tag):
     root = new_ob(f"HEAD_{tag}", None)
@@ -93,7 +94,7 @@ def build_head(tag):
     new_ob(f"HFLOOR_{tag}", ME_FLOOR, root, M_HOUSING); new_ob(f"KNUCKLE_{tag}", ME_PROT, root, M_PROT)
     piv = new_ob(f"PIVOT_{tag}", None, root, loc=Pv); new_ob(f"MAINPIN_{tag}", ME_MAINPIN, piv, M_HOUSING)
     lock = new_ob(f"LOCK_{tag}", ME_LOCK, piv, M_LOCK, loc=(-Pv.x, -Pv.y, 0))      # mesh is in A-local coords; parent pivot at Pv
-    spr = new_ob(f"SPRING_{tag}", ME_SPRING, root, M_SPRING, loc=(G["spring_anchor"][0], G["spring_anchor"][1], 0))
+    spr = None   # L07: helix spring is created after the bake arrays are read (see below)
     return root, piv, lock, spr
 A = build_head("A"); Bh = build_head("B"); Bh[0].rotation_euler = (0, 0, math.pi)
 new_ob("STUDIO_FLOOR", box("FLOORBOX", 4, 4, 0.02, center=(0, 0, -hh - 0.12), bevel=0), None, M_FLOOR)
@@ -105,7 +106,10 @@ spy = Pv.y + G["spring_lock_radius"] * np.cos(math.radians(G["spring_lock_angle_
 for (root, piv, lock, spr), sgn in ((A, -1), (Bh, +1)):
     bake_fcurves(root, F, {"location": np.stack([np.zeros_like(g), sgn * g / 2, np.zeros_like(g)], 1)})
     bake_fcurves(piv, F, {"rotation_euler": np.stack([np.zeros_like(al), np.zeros_like(al), al], 1)})
-    bake_fcurves(spr, F, {"rotation_euler": np.stack([np.zeros_like(sp_ang), np.zeros_like(sp_ang), sp_ang], 1), "scale": np.stack([np.ones_like(sl), sl, np.ones_like(sl)], 1)})
+    # L07 helix spring: absolute shape key per frame (wire radius constant, pitch follows the baked length); +y axis from the anchor
+    spr = spring_helix.make_spring(f"SPRING_{root.name[-1]}", sl.tolist(), F.tolist(), wire_r=0.006, coil_r=0.018, n_coils=9, n_ring=8, mat=M_SPRING)
+    spr.parent = root; spr.location = (G["spring_anchor"][0], G["spring_anchor"][1], 0.0)
+    bake_fcurves(spr, F, {"rotation_euler": np.stack([np.zeros_like(sp_ang), np.zeros_like(sp_ang), sp_ang], 1)})
 
 # ---------------- camera ----------------
 E = EV["JP_LOCKED"]["local_F"]; hold = CAM["azimuth_hold_frames_around_lock"]

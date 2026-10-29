@@ -1,4 +1,4 @@
-# LOCKS.md — R9a (2026-10-29, FACT 등급은 evidence/L10_EVIDENCE_R9a.md 원문 대조 결과)
+# LOCKS.md — R10 (2026-10-29; R9a FACT 등급 + C03 사용 기준 결정 반영)
 
 ## SPEC (LOCK)
 | 항목 | 값 |
@@ -18,7 +18,7 @@
 | JP-01 | 시바타 계열: 수직 피벗 회전정, 복원 스프링, 쐐기 접촉 | **P(부분)** — 신칸센용 밀착연결기 = 廻り子式, 錠이 연결면 사이 체결 유지(일본제철 E8). 반달 형상·스프링·쐐기면은 D | 원리로만. '반달 모양'은 D → **VO S2b_B** |
 | JP-02 | 대기각 약 45°, 후퇴 10–15° | D (HOLD) | **금지** |
 | SCH-01 | 콘·펀넬, 훅 원판·고리·스프링, 폐루프 | **P** — US2161724(K. Scharfenberg) 회전 훅 원판+고리+스프링, 피벗 평행사변형 / US8800792B2(Dellner) 보강 | 원리로만(차량명 없이) |
-| C03 | KTX-산천(KTX II) 연결기 = Voith Scharfenberg One4 | **P(부분)** — Voith 보도자료 "KTX II … drive with One4 couplers", 전두부 Voith. 'type 10'·초기 10편성은 S/D | **V 전까지 금지** → `VO_R9_S3a_K` 미사용 (P 허용으로 완화할지는 사용자 결정) |
+| C03 | KTX-산천(KTX II) 연결기 = Voith Scharfenberg One4 | **P(부분)** — Voith 보도자료 "KTX II … drive with One4 couplers", 전두부 Voith. 'type 10'·초기 10편성은 S/D | **R10: P 기준으로 사용 승인** → `VO_R9_S3a_K` 사용, 샷08 앞 30F KTX 중련 외관 허용. 조건: ① E4·E5 PDF 보관(`evidence/L10/`) ② "type 10"·"초기 10편성"·1,500/1,000 kN **금지** ③ 호대 미특정 ④ 설명란 표기 "Voith Turbo Scharfenberg One4(제조사 보도자료)" |
 | N1 | 2026 KTX-산천–SRT 중련 시범운행(4/30–5/14), 5/15 승객 운행 | **P** (아시아경제 원문 E7) | 설명란·한국 축 근거(연결기 형식 주장 금지) |
 | ABS | 완충·확관 | OUT | 본편 제외 |
 

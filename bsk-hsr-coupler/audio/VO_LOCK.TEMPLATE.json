@@ -11,7 +11,7 @@
   "fps": 30,
   "selection": {
     "S2b": "S2b_B",
-    "S3a": "S3a"
+    "S3a": "S3a_K"
   },
   "files": {
     "S1a": {
@@ -44,7 +44,7 @@
     },
     "S3b": {
       "file": "VO_R9_S3b.wav",
-      "place_F": 780
+      "place_F": 800
     },
     "S5a": {
       "file": "VO_R9_S5a.wav",
@@ -96,5 +96,5 @@
       960
     ]
   },
-  "_selection_note": "R9a: S2b_B (no '반달 모양') because the half-moon shape is still D grade (L10). Switch to S2b_A only after G0-B confirms it."
+  "_selection_note": "R9a: S2b_B (no '반달 모양') because the half-moon shape is still D grade (L10). Switch to S2b_A only after G0-B confirms it. R10: S3a_K selected (C03 accepted at grade P on Voith primary statement; no 'type 10', no 1,500/1,000 kN, no series number). S3b budget moved 780 -> 800 to clear the longer S3a_K; vo_words.py recomputes from measured audio."
 }

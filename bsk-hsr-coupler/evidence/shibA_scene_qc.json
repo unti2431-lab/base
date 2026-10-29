@@ -60,7 +60,7 @@
   ],
   "pair_checks": 2451,
   "overlapping_pairs": {},
-  "camera_min_surface_distance_m": 1.9833728075027466,
+  "camera_min_surface_distance_m": 1.3364769220352173,
   "PASS": {
     "no_overlap": true,
     "camera_clearance": true

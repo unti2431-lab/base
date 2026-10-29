@@ -41,3 +41,11 @@
   7. setup: ffmpeg/ffprobe/nvidia-smi 누락 시 경고만 → FAIL (L01 accept와 일치)
 - 게이트 값: L01·L02·L03 **NOT_PERFORMED (로컬)** — `D:\claude blender` 폴더 연결 대기
 
+
+## 2026-10-29 R10 (클라우드 검증 세션이 제작 역할로 전환해 진행) L05·L06·L07·C03 결정
+- 변경 파일: `src/rig_config.json`(test_A 카메라 distance 1.6), `src/build_schB.py`(재질 2줄, 스프링 블록), `src/build_shibataA.py`(스프링 블록), `src/spring_helix.py`(신규), `audio/VO_LOCK.TEMPLATE.json`(selection S3a_K, S3b place_F 800), `LOCKS.md`(C03 R10 규칙), `TASKS.json`(R10 상태, L11·L12 신설), `CCL_R10_DELTA.md`, `OPUS_BRIEF_R10.md`
+- 실행 명령: build→verify_scene (A·B), 540p 24spp CPU 렌더 G3 창(A F80–199, B F60–179), encode_preview
+- 게이트 값: 씬 QC A·B ALL_PASS(충돌 0, A 카메라 최근접 1.34 m) / 스프링 와이어 반지름 0.00600 m 일정(3프레임×2리그) / 길이 추종 오차 <0.5 mm
+- 렌더 기록: key4s(540×960, 24spp, CPU 4코어) A 17–28 s/F, B 23–25 s/F
+- 산출물: `review/shibA_key4s_R91_F80-199.mp4`, `review/schB_key4s_R92_F60-179.mp4`(+stress2M, contact), `review/R09_1|R09_2|R10_L07/CHANGELOG.md`
+- 질문 / 블로커: L05·L06 accept의 "정상속도 판독"은 사용자 시청이 조건. 스프링 앵커 끝에 브래킷이 없음(개념 단계, G5 전 보강 후보). 이 라운드는 검증 세션이 제작을 겸했으므로 **다음 검증은 다른 세션(로컬 Opus 또는 신규 클라우드)**이 맡는다.

@@ -476,14 +476,14 @@
       "azimuth_deg_start": -14.0,
       "azimuth_deg_end": 14.0,
       "azimuth_hold_frames_around_lock": 15,
-      "distance": 2.25,
+      "distance": 1.6,
       "lens_mm": 40,
       "target": [
         0.0,
         0.0,
         0.0
       ],
-      "_source": "same framing rules as TEST B (R8 §5)"
+      "_source": "R9-1 (L05): distance 2.25 -> 1.6 m, one variable; elevation LOCK (>=60)"
     }
   },
   "w0_loop": {

@@ -1,5 +1,5 @@
 {
- "revision": "R9a",
+ "revision": "R10",
  "tasks": [
   {
    "id": "L01",
@@ -48,7 +48,8 @@
     "audio/vo_sync_report.json violations == [] and overlaps == []",
     "-Step verify PASS after -Apply"
    ],
-   "status_R9a": "BLOCKED by user: 10 WAV recordings + voice name (default selection S2b_B)"
+   "status_R9a": "BLOCKED by user: 10 WAV recordings + voice name (default selection S2b_B)",
+   "status_R10": "BLOCKED by user: 10 WAV + voice name. Selection now S2b_B + S3a_K (C03 accepted); S3b budget place_F 800"
   },
   {
    "id": "L05",
@@ -60,7 +61,8 @@
     "lock retraction clearly readable in the 540p MP4 at normal speed and in the 2M stress file",
     "review/R09_1/CHANGELOG.md written"
    ],
-   "status_R9a": "blocked by L04"
+   "status_R9a": "blocked by L04",
+   "status_R10": "DONE in cloud (R9-1): distance 1.6 m, scene QC ALL_PASS, 540p G3 MP4 review/shibA_key4s_R91_F80-199.mp4 - awaiting user view"
   },
   {
    "id": "L06",
@@ -73,7 +75,8 @@
     "scene QC still ALL_PASS",
     "CHANGELOG written"
    ],
-   "status_R9a": "blocked by L04"
+   "status_R9a": "blocked by L04",
+   "status_R10": "DONE in cloud (R9-2): link orange / plate grey, scene QC ALL_PASS, 540p G3 MP4 review/schB_key4s_R92_F60-179.mp4 - awaiting user view"
   },
   {
    "id": "L07",
@@ -86,7 +89,8 @@
     "wire radius constant across frames (measure 3 frames)",
     "scene QC ALL_PASS"
    ],
-   "status_R9a": "blocked by L05/L06"
+   "status_R9a": "blocked by L05/L06",
+   "status_R10": "DONE in cloud: src/spring_helix.py, wire r 0.006 constant on 3 frames x 2 rigs, scene QC ALL_PASS"
   },
   {
    "id": "L08",
@@ -123,7 +127,33 @@
     "each file saved with source URL and access date",
     "C03 / SCH-01 grade updated only if the primary text says so"
    ],
-   "status_R9a": "PARTIAL: 9 primary sources read (evidence/L10_EVIDENCE_R9a.md); PDF originals not saved; press74 unreachable"
+   "status_R9a": "PARTIAL: 9 primary sources read (evidence/L10_EVIDENCE_R9a.md); PDF originals not saved; press74 unreachable",
+   "status_R10": "PARTIAL: 9 sources read; C03 accepted at grade P (LOCKS R10). STILL OPEN: save PDF printouts to evidence/L10/ (local browser)"
+  },
+  {
+   "id": "L11",
+   "do": "Shot 08 KTX-Sancheon coupled-run exterior cut (F631-660, 30F): proxy or licensed model, no series number, no 'type 10'; feeds the Korean-infrastructure axis (N1) now that C03 is accepted at grade P",
+   "deps": [
+    "L09"
+   ],
+   "blocked_by_user": "KTX-Sancheon reference photos / licensed model",
+   "accept": [
+    "30F block renders at 540p",
+    "no markings that identify a series",
+    "LOCKS C03 conditions met"
+   ],
+   "status_R10": "NEW"
+  },
+  {
+   "id": "L12",
+   "do": "Save L10 primary sources as PDF printouts: evidence/L10/E1_US2161724.pdf ... E9 (local browser), record access date in L10_EVIDENCE_R9a.md",
+   "deps": [],
+   "blocked_by_user": "browser on the PC (cloud session hosts are blocked)",
+   "accept": [
+    "9 PDFs present",
+    "sha256 in MANIFEST.json"
+   ],
+   "status_R10": "NEW"
   }
  ]
 }
