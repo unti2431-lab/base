@@ -8,7 +8,8 @@
 |---|---|---|---|
 | 1 | `PRODUCTION_PLAN_R3.md` | 사용자 | 검증 결과, 버전 A/B 비교, 공개 기준, 블로커 |
 | 2 | `prompts/LOCKS.md` | 모두 | 사실 상태표(FACT), 규격(SPEC), 형상·스타일 고정 문구. **고치는 곳은 여기뿐** |
-| 3 | `handoff/V5_42S/SCENES_V5.md` + `CUTS_V5.csv` | Codex·사용자 | **현재 42초 V4 음성 기준 장면 정본(15컷).** V4 분석·사실 점검·새 구성 |
+| 3 | `handoff/V6_OMNI/DIRECTIVE_V6.md` | 사용자·Codex | **최신 정본: Omni 단독 · 텍스트 없는 15샷 지시서** (V4 음성 LOCK) |
+| 3-0 | `handoff/V5_42S/SCENES_V5.md` + `CUTS_V5.csv` | 참고 | V4 분석·사실 점검·샷 경계(V6이 이 경계를 씀) |
 | 3-1 | `handoff/R4_REEDIT/AGENTS.md` | Codex | 작업 규칙·렌더러·QC 공통 지시서(60초 판 기준으로 작성, 규칙은 V5에도 적용) |
 | 4 | `handoff/R4_REEDIT/VO_PATCH_R4.txt` | 사용자 | ElevenLabs로 만들 패치 3문장 |
 | 5 | `prompts/FLOW_A_R2.md` + `prompts/out/*.txt` | 사용자 | 새 키프레임(imagegen)·Flow 영상이 필요할 때의 장면 구성과 완성 프롬프트 |
