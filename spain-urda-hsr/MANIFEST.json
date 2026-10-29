@@ -1,0 +1,206 @@
+{
+  "package": "spain-urda-hsr",
+  "created": "2026-10-29",
+  "files": [
+    {
+      "path": "BEATS.csv",
+      "bytes": 2697,
+      "sha256": "a8f45de46b8cc95bdf2442dfc9f0d3ad9b67f257a64a1024c4a6a8f96ee135c9"
+    },
+    {
+      "path": "PACKAGE_README.md",
+      "bytes": 5182,
+      "sha256": "b81d47ca762c3f7e5633a4653fa384c3c3a7327fbc46cedb0e645341daba26b5"
+    },
+    {
+      "path": "PRODUCTION_PLAN_R3.md",
+      "bytes": 24155,
+      "sha256": "6aa0b754bf7fb264c1717fb27f061a25cddc4a4fd4760d400f528f46fdfe48b6"
+    },
+    {
+      "path": "blender/rig_config.json",
+      "bytes": 2804,
+      "sha256": "2c71ac2cd0795bcc81b576fb7b976368e2f73adf76e52dd160a3abbc1973a7f8"
+    },
+    {
+      "path": "evidence/braking_calc.json",
+      "bytes": 1419,
+      "sha256": "582285ded9f9de97e957a58a7b9c4a6a0f666870194786c8c68f1716aae98d20"
+    },
+    {
+      "path": "evidence/braking_calc.py",
+      "bytes": 2098,
+      "sha256": "56d539b4e5b1fb7ef29241d1322cc4f5b234f8c1481a1720443a4fe34b51d856"
+    },
+    {
+      "path": "handoff/R4_REEDIT/AGENTS.md",
+      "bytes": 26451,
+      "sha256": "5bca7605058d6dc2b6be5822a19c771b0dae0857b9adc44612115967302ee84c"
+    },
+    {
+      "path": "handoff/R4_REEDIT/CUTS_R4.csv",
+      "bytes": 3687,
+      "sha256": "ffa4b91fc94590e9f9bd8d20073603e41096d569340c615430a0fd070a5f4a05"
+    },
+    {
+      "path": "handoff/R4_REEDIT/TASKS.json",
+      "bytes": 2821,
+      "sha256": "a640b7ad4d185c06d16252f6a42241169867dd805185511117961a9322294614"
+    },
+    {
+      "path": "handoff/R4_REEDIT/VO_PATCH_R4.txt",
+      "bytes": 995,
+      "sha256": "8e6216d9c076301a7b4dbceaad8db6fb6fc54aed8f5028a84d31f55896dd8ac3"
+    },
+    {
+      "path": "prompts/FLOW_A_R1.md",
+      "bytes": 13272,
+      "sha256": "846247b59c09e8ac4c207ff2e39a2411f2c73ae41e3d7f8ed37a0ad674bd0b66"
+    },
+    {
+      "path": "prompts/FLOW_A_R2.md",
+      "bytes": 27346,
+      "sha256": "caa16d960b9e16da5f6b8eaf159e59bd09cc30a695cb4f983b967e6840882887"
+    },
+    {
+      "path": "prompts/LOCKS.md",
+      "bytes": 7430,
+      "sha256": "da8408e70a96ee3b8582ced4f38b7b5816fe0b5d83afba24945275077782c9db"
+    },
+    {
+      "path": "prompts/build_prompts.py",
+      "bytes": 2348,
+      "sha256": "78bf4dd9ee65a972562c9c058c5f3c05f1dc01be0cf78a19ff8e4dbd9f3a2918"
+    },
+    {
+      "path": "prompts/out/K01_CLEAN.txt",
+      "bytes": 1721,
+      "sha256": "598e393bfca0e7b4879f558d00899b4f2891291f60c40e9b4f6a3eeb070169e1"
+    },
+    {
+      "path": "prompts/out/K01_MP4.txt",
+      "bytes": 301,
+      "sha256": "193c938e2b83e562c4bfeb3d7e123e85106072abfaaca7c8878ef39c821cf7b9"
+    },
+    {
+      "path": "prompts/out/K02_CLEAN.txt",
+      "bytes": 1359,
+      "sha256": "d8433ddf2cc7b0b32c3a30f323ffa6c6c37f829cb3f3a3e348e68b4a2d93484b"
+    },
+    {
+      "path": "prompts/out/K02_MP4.txt",
+      "bytes": 205,
+      "sha256": "ebbe1e053d95d424b354acae3867a62921d1c1c57a384d7cab361ae3957d2108"
+    },
+    {
+      "path": "prompts/out/K03_CLEAN.txt",
+      "bytes": 1787,
+      "sha256": "88cd7054f3250a4c4058034ae885f56e8d977c776742e61338c564c31950893d"
+    },
+    {
+      "path": "prompts/out/K03_INFO.txt",
+      "bytes": 1012,
+      "sha256": "75f6a1e05d33551d5ddb146fd3349249ea2326410c624b6eed6b2a6992b01c85"
+    },
+    {
+      "path": "prompts/out/K03_MP4.txt",
+      "bytes": 391,
+      "sha256": "e219ad5e9c29aae986a8abdfd073628b76e9683d7caf3460930f1026f8e98705"
+    },
+    {
+      "path": "prompts/out/K04_CLEAN.txt",
+      "bytes": 1204,
+      "sha256": "2f8b835a727f06f6ff13b7b52f03892031091d5869c7469e74298ec74ccffa6a"
+    },
+    {
+      "path": "prompts/out/K04_INFO.txt",
+      "bytes": 810,
+      "sha256": "f6146159c758ff621606fea87908d4a76f5c44101b3b6b803742bc64b48bcf92"
+    },
+    {
+      "path": "prompts/out/K04_MP4.txt",
+      "bytes": 300,
+      "sha256": "ecc909f2b9b0691a559daebb41d9e50fc18b2822788d87fa53643f7f24e99a2c"
+    },
+    {
+      "path": "prompts/out/K05_MP4.txt",
+      "bytes": 350,
+      "sha256": "ff79d0b774f987a713bf25be3a2a9df7820354b17efaa34f8cb4a77b2c27c022"
+    },
+    {
+      "path": "prompts/out/K06_CLEAN.txt",
+      "bytes": 734,
+      "sha256": "e77fb662eef1cdf8371c51c4737d77972727dc20a517cfba81af956beade9e76"
+    },
+    {
+      "path": "prompts/out/K06_INFO.txt",
+      "bytes": 703,
+      "sha256": "85fd54f49432ebb63853e871104d9a69c048ca60340d219c8efe48e0916707a4"
+    },
+    {
+      "path": "prompts/out/K06_MP4.txt",
+      "bytes": 274,
+      "sha256": "a327e8494bded614561cc865066a94713fca76c7b54b3342fbd2f2f249523d57"
+    },
+    {
+      "path": "prompts/out/K07_INFO.txt",
+      "bytes": 933,
+      "sha256": "92e110266096f65a3d8f7893ea521770b686ba98835f1464f171694666ce1781"
+    },
+    {
+      "path": "prompts/out/K07_MP4.txt",
+      "bytes": 270,
+      "sha256": "ffd866fb884e19fdb4b1f1133a46c74fbbe84bc3b7614b6300726d059501999e"
+    },
+    {
+      "path": "prompts/out/K08_CLEAN.txt",
+      "bytes": 912,
+      "sha256": "ee8cca95656f91e0b1f98a127fae99a561abdc42e587008917e5855528ca4ea1"
+    },
+    {
+      "path": "prompts/out/K08_MP4.txt",
+      "bytes": 193,
+      "sha256": "83fef70bc68aba5eac601547b1cafd943093735640a72184176cf2d55fe55ae9"
+    },
+    {
+      "path": "prompts/out/K09_CLEAN.txt",
+      "bytes": 1215,
+      "sha256": "98d4472010db6d055e34f2f7145f6f7a592e09a2f31e23eb8586d667498ea29a"
+    },
+    {
+      "path": "prompts/out/K09_INFO.txt",
+      "bytes": 1049,
+      "sha256": "faa4eca62d2f129522a932e670bf317092d47143f281be3da9b70004d8163b81"
+    },
+    {
+      "path": "prompts/out/K09_MP4.txt",
+      "bytes": 546,
+      "sha256": "115baa966f937287f00f677c6d2ff9eeb1bbfdca60ea54155f520a835ce75500"
+    },
+    {
+      "path": "prompts/out/K10_CLEAN.txt",
+      "bytes": 1603,
+      "sha256": "379e81bcc27d9819a5d8a6307d4fa70702a7f5d678aadf1ab7f0b670a035887c"
+    },
+    {
+      "path": "prompts/out/K10_MP4.txt",
+      "bytes": 197,
+      "sha256": "bb691c8c30dd8bae9e71171f8f4f1f607be48c09ca586ae739b9410d2fff2113"
+    },
+    {
+      "path": "prompts/out/K11_CLEAN.txt",
+      "bytes": 764,
+      "sha256": "ab53b0ff562d30af06f4b968c0936367f003f71067089bea9606eb2f185b5e74"
+    },
+    {
+      "path": "prompts/out/K11_MP4.txt",
+      "bytes": 227,
+      "sha256": "c438c920c4d16ea305e7bcb7736a01b5ae2b4f83fba4b03cfbb858c0ca3043fb"
+    },
+    {
+      "path": "vo/VO_SCRIPT_R3.txt",
+      "bytes": 754,
+      "sha256": "a2c86022baeac064c098028912c53f905fa288d27f0d83c4f37f425a2cdd5f06"
+    }
+  ]
+}
