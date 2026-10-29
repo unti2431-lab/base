@@ -85,6 +85,24 @@ out of focus and unreadable, cool blue-grey light, calm and quiet
 
 - 실존 기관 로고·제복 금지. 얼굴이 보이지 않는다. 화면 글자는 판독 불가.
 
+## [SITE LOCK — SATELLITE]
+
+```
+a straight-down satellite-style view of a wide flat dry plain of ochre, pale-brown and
+dusty-green rectangular fields, sparse olive groves, a few thin pale farm tracks, no town
+in frame; one straight railway line crosses the whole frame as a single thin, clean,
+pale-grey line with a slightly darker ballast edge; it is the only straight man-made line
+in the frame and it never branches, curves or crosses another railway
+```
+
+## [STYLE LOCK — INTERIOR]  ← K08 전용, 프롬프트 맨 끝
+
+```
+one single continuous vertical 9:16 photograph, no split, no seam, no panel, no border.
+documentary photorealism, dim interior lit only by cool blue-grey screen light, soft
+contrast, subtle film grain, calm and quiet mood, no text, no letters, no logos, no faces.
+```
+
 ## [STYLE LOCK]  ← 프롬프트 맨 끝에 둔다
 
 ```
@@ -112,3 +130,4 @@ no letters except the unit.
 | 날짜 | 라운드 | 변경 | 사유 | 영향 컷 |
 |---|---|---|---|---|
 | 2026-10-29 | R3 | 최초 작성 | R2 검증 결과 반영 | 전체 |
+| 2026-10-29 | R3.1 | [SITE LOCK — SATELLITE], [STYLE LOCK — INTERIOR] 추가 | K09는 9 km 고도라 복선·전주 서술이 맞지 않음, K08은 실내 | K08, K09 |

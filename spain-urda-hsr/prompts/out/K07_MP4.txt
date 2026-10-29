@@ -1,0 +1,6 @@
+Camera still. The train does not move.
+0.0-0.5 clean scene only
+0.5-1.8 a short gold band draws out from the nose of the train and stops after a short
+        distance
+1.8-2.6 a thin orange-red stop line appears across the track at its end, then the number
+2.6-4.0 hold

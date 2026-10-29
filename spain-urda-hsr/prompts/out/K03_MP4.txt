@@ -1,0 +1,8 @@
+Camera almost still, a very slow push forward along the line. The train does not move.
+0.0-0.6 clean scene only
+0.6-1.6 a thin gold line appears at the nose of the train
+1.6-4.2 the gold band extends along the track, away from the train, toward the far
+        distance
+4.2-5.0 the number assembles beside the band at mid distance
+5.0-6.0 hold on the final composition
+Nothing else changes.

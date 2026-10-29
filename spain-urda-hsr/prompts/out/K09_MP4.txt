@@ -1,0 +1,8 @@
+Camera nearly still, a very slow descent.
+0.0-0.6 clean scene only
+0.6-1.6 the orange-red dot appears on the far part of the line and stays fixed
+1.6-2.4 the blue-white dot appears on the near part of the line
+2.4-3.4 the gold line traces along the railway between them and the number appears
+3.4-6.0 the blue-white dot moves along the railway toward the orange-red dot and the gold
+        line shortens behind it; the clip ends while a clear gap still remains between
+        the two dots. The dots never touch. The orange-red dot never moves.

@@ -1,0 +1,12 @@
+Edit the attached photograph. Keep everything exactly as it is. Add only: a short
+translucent gold band lying flat on the ballast of the near track, starting at the nose
+of the train and ending a short distance ahead — about half the length of the train —
+with a thin orange-red stop line drawn across the track at its far end. Beside the short
+band, on the open ground next to the track, one gold number "100 m" in clean Latin
+digits lying flat in perspective. Nothing else is added.
+graphics are built into the real 3D space of the scene, follow perspective and
+occlusion, and lie on or float just above the real surfaces they refer to.
+colour code: teal = information flow along the cable; gold = the single key number;
+orange-red = the stopped train / stop point only; restrained blue-white = neutral marks.
+at most one number with a unit, written in Latin digits; no words, no Korean, no Hangul,
+no letters except the unit.

@@ -1,0 +1,4 @@
+The camera tracks along the line at the same speed as the train and keeps the same
+distance behind it. The train runs steadily away along the straight track; ballast streaks
+past nearest to camera. Smooth, steady, no shake, no cut. The train is already moving in
+the very first frame and never slows.

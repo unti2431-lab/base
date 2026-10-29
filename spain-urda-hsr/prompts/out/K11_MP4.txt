@@ -1,0 +1,3 @@
+The camera keeps the same position relative to the track as in the start frame. The train
+decelerates smoothly and comes to rest well before the far red signal. Steady, no shake.
+The framing at the end matches the start frame.

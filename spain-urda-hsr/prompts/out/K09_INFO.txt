@@ -1,0 +1,13 @@
+Edit the attached photograph. Keep everything exactly as it is. Add only three small
+graphics, all placed exactly on the railway line itself: one small blue-white marker dot
+on the part of the line nearest to camera; one small orange-red marker dot further along
+the same line, about three quarters of the way toward the far edge; and one thin gold
+line traced precisely on top of the railway between the two dots. Beside the gold line,
+on the fields next to the railway at mid distance, one gold number "25 km" in clean Latin
+digits. Both dots sit on the same single railway line. Nothing else is added.
+graphics are built into the real 3D space of the scene, follow perspective and
+occlusion, and lie on or float just above the real surfaces they refer to.
+colour code: teal = information flow along the cable; gold = the single key number;
+orange-red = the stopped train / stop point only; restrained blue-white = neutral marks.
+at most one number with a unit, written in Latin digits; no words, no Korean, no Hangul,
+no letters except the unit.

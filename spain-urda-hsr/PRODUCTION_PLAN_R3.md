@@ -9,7 +9,9 @@
 | 파일 | 내용 |
 |---|---|
 | `prompts/LOCKS.md` | FACT · SPEC · 형상 · 스타일 LOCK(정본) |
-| `prompts/FLOW_A_R1.md` | 버전 A Flow 프롬프트(CLEAN · INFO · MP4) |
+| `prompts/FLOW_A_R2.md` | **버전 A 장면 구성 + 프롬프트(정본).** 키프레임 imagegen → Flow 영상 |
+| `prompts/build_prompts.py` → `prompts/out/` | LOCK을 채운 붙여 넣기용 완성 프롬프트 25개 |
+| `prompts/FLOW_A_R1.md` | R1 (기록용) |
 | `BEATS.csv` | 두 버전이 함께 쓰는 비트표(프레임 단위) |
 | `vo/VO_SCRIPT_R3.txt` | 음성 합성에 바로 붙여 넣을 대본 |
 | `evidence/braking_calc.py` / `.json` | 영상에 나오는 모든 거리 수치의 계산 근거 |
@@ -133,7 +135,7 @@ N11 우리 고속철도도 같습니다. 보이지 않으면, 속도를 낮춥�
 ## 4. 버전 A — Google Flow 단독, 빠른 제작
 
 ### 4.1 경로 판정
-- 경로 A(Flow 단독). 수치 그래픽은 Flow의 INFO 패스로 넣고(숫자와 단위만, 장면당 1개), 한글은 자막 레이어에만 둡니다.
+- 경로 A. 키프레임(CLEAN·INFO)은 imagegen, 움직임은 Flow. 수치 그래픽은 imagegen 편집 INFO 패스로 넣고(숫자와 단위만, 장면당 1개), 한글은 자막 레이어에만 둡니다.
 - C로 올리지 않는 이유: 시의성이 우선이고, 비례 오차는 검수 기준("한눈에 길이 차이가 보이는가")으로 관리할 수 있습니다.
 
 ### 4.2 파이프라인
@@ -148,7 +150,8 @@ T0 기능 확인 → VO 합성·실측(G2) → CLEAN R1 → 검수 → INFO R1 �
 |---|---|---|---|
 | T0 | 사용자 | Flow | 9:16 Frames to Video 가능 여부와 클립 길이 옵션 확인 (`FLOW_A_R1.md` T0) |
 | VO | 사용자 | ElevenLabs | 파일 sha256·길이 기록, 40~46초 |
-| 생성 | 사용자 | Flow | `FLOW_A_R1.md`의 순서대로. 짝 컷은 순차 |
+| 키프레임 | 사용자 | imagegen (9:16, 참조 편집) | `FLOW_A_R2.md` §1 순서대로. 짝 컷·INFO는 참조 첨부 |
+| 영상 | 사용자 | Flow Frames to Video / Image to Video | `prompts/out/K##_MP4.txt` |
 | 검수 | Claude | basak-shorts-review | 라운드마다 `CLEAN_REVIEW_R*.md`, 조건부 컷은 참조 첨부로 재생성 |
 | 룩 | Claude | capcut-dual-look | 2초 프리뷰와 4분할 비교 후 승인 |
 | 자막 | Claude | basak-shorts-caption | 확정 음성 타이밍에 맞춤 |

@@ -1,0 +1,4 @@
+Slow, steady forward motion along the track; sleepers pass one by one, clearly visible.
+0.0-1.0 clean scene only
+1.0-3.0 the number assembles on the ballast ahead and slowly approaches with the track
+3.0-6.0 slow steady motion continues, the number holds and stays readable

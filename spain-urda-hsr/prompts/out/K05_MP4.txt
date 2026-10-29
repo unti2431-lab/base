@@ -1,0 +1,6 @@
+Camera completely still.
+0.0-1.0 teal pulses keep travelling along the cable as before
+1.0-2.6 no new pulses appear at the far end; the remaining pulses fade out one by one,
+        from the far end toward the camera
+2.6-4.0 the cable is plain and dark, nothing moves
+No flashing, no red light, no sparks, no smoke. The cable itself does not change.

@@ -1,0 +1,6 @@
+Very slow forward dolly along the track, a few centimetres per second.
+0.0-0.4 clean scene only
+0.4-1.2 the far end of the cable begins to glow faintly teal
+1.2-3.4 teal pulses travel along the cable toward the camera, one after another, evenly
+        spaced
+3.4-4.0 a steady stream of pulses, hold
