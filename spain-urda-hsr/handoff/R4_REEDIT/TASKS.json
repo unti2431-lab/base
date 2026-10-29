@@ -1,0 +1,88 @@
+{
+  "project": "spain-urda-hsr R4 reedit",
+  "tasks": [
+    {
+      "id": "T01",
+      "do": "입력 확인: 음성 sha256·길이, transcript 문장 대조(CUTS_R4.csv anchor_text), flow_raw 8개 메타, 패치 음성 유무 → 트랙 P/K 결정",
+      "deps": [],
+      "accept": "work/R4/INPUT_CHECK.json, ENV.json 존재. 문장 불일치 3개 이상이면 중단·보고",
+      "ref": "AGENTS §3"
+    },
+    {
+      "id": "G-VO",
+      "do": "사용자: VO_PATCH_R4.txt의 P1·P2·P3를 같은 보이스로 생성해 input/VO_PATCH_R4/에 저장",
+      "deps": [],
+      "blocked_by_user": true,
+      "accept": "P1/P2/P3 파일 3개"
+    },
+    {
+      "id": "T02",
+      "do": "음성 패치: 무음 가운데에서 자르기, 10 ms 크로스페이드, 무음 길이·게인 맞춤, 재전사",
+      "deps": [
+        "T01",
+        "G-VO"
+      ],
+      "accept": "VO_R4_MASTER.wav, VO_SPLICE.json, transcript_R4.json. 길이 54~72 s(꼬리 제외 시 51~69 s)",
+      "ref": "AGENTS §4",
+      "skip_if": "트랙 K"
+    },
+    {
+      "id": "T03",
+      "do": "타임라인: 허용 경계 후보 → 무음 정렬 → DP로 18컷 72~96F, 꼬리 길이 결정, 싱크 사건 F 계산",
+      "deps": [
+        "T01"
+      ],
+      "soft_deps": [
+        "T02"
+      ],
+      "accept": "EDIT_TIMELINE_R4.csv, SYNC_QC.json 위반 0",
+      "ref": "AGENTS §5"
+    },
+    {
+      "id": "T04",
+      "do": "2.5D 렌더러 tools/r25d 구현 + 단위 테스트(같은 spec 2회 렌더 sha256 동일, marker가 경로 밖으로 나가면 예외)",
+      "deps": [
+        "T01"
+      ],
+      "accept": "tests 통과, 샘플 spec 렌더 1개",
+      "ref": "AGENTS §6"
+    },
+    {
+      "id": "T05",
+      "do": "컷 spec C03~C18 작성·렌더(270p 미리보기 → 1080p). 사건 F는 T03 결과를 읽음",
+      "deps": [
+        "T03",
+        "T04"
+      ],
+      "accept": "work/R4/frames/C*/, 270p 컨택트시트 사용자 확인 1회",
+      "ref": "AGENTS §7"
+    },
+    {
+      "id": "T06",
+      "do": "합성: Flow 구간 + 2.5D + 질감 통일 패스 + 자막 R08 + 믹스(-14 LUFS, TP<=-1) + bt709 인코딩",
+      "deps": [
+        "T05"
+      ],
+      "accept": "FLOW_A_R4_1080x1920.mp4",
+      "ref": "AGENTS §6.6, §9"
+    },
+    {
+      "id": "T07",
+      "do": "QC 전 항목 + 재현성 재실행 + FACT_GATE_R4.md + STATUS.json(r4 블록, gate는 BLOCKED/VERIFYING만) + REPORT_R4.md",
+      "deps": [
+        "T06"
+      ],
+      "accept": "QC_R4.json에 FAIL 0 (NOT_PERFORMED는 사용자 이관 목록에)",
+      "ref": "AGENTS §8–11"
+    },
+    {
+      "id": "G-FACT",
+      "do": "사용자: FACT_GATE_R4.md 검토, 한국 규정(G-1) 확인, 공개 승인",
+      "deps": [
+        "T07"
+      ],
+      "blocked_by_user": true,
+      "accept": "사용자 서명"
+    }
+  ]
+}
