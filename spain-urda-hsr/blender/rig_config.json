@@ -1,0 +1,40 @@
+{
+  "_note": "버전 B 리그 수치의 유일한 원천. 코드는 풀이만 담는다. UNVERIFIED 항목은 G1에서 확인 후 status를 바꾼다.",
+  "spec": {"fps": 24, "frames": [1, 1080], "res": [1080, 1920], "blender_lock": [4, 5], "time": "t=(F-1)/fps"},
+  "train": {
+    "length_m": 200.0, "width_m": 2.95, "height_m": 3.9,
+    "status": "length=편성 비유 단위(약 200 m). 폭·높이는 일반 고속차 범위 근사 UNVERIFIED-minor",
+    "asset": "구매 또는 CC0 일반형 고속열차 1종. 도장은 [TRAIN LOCK] 기준으로 다시 칠함. LICENSES.csv 필수"
+  },
+  "track": {
+    "gauge_m": 1.435, "status_gauge": "CONFIRMED (마드리드–세비야 고속선 표준궤)",
+    "sleeper_spacing_m": 0.60, "status_sleeper": "일반값 UNVERIFIED-minor",
+    "track_centre_distance_m": 4.0, "status_tcd": "UNVERIFIED — G1에서 확인",
+    "rail_profile": "UIC60 근사",
+    "catenary_mast_spacing_m": 60.0, "status_mast": "UNVERIFIED-minor"
+  },
+  "lzb": {
+    "centre_conductor": "궤간 중앙, 침목 상면 클립",
+    "second_conductor": "한쪽 레일 하부(foot)",
+    "crossing_interval_m": 100.0, "status_crossing": "UNVERIFIED-minor (영문 기술 문헌, 1차 문헌 미확인)",
+    "pulse_overlay": "2.5D 후합성 레이어(청록). 3D 씬 안 발광 금지"
+  },
+  "braking": {
+    "source": "evidence/braking_calc.json",
+    "a_main_mps2": 1.0, "a_conservative_mps2": 0.8, "t_react_s": 2.0,
+    "K03": {"v0_kmh": 200, "a_mps2": 1.0, "band_m": 1654.3, "screen": "1.5 km+", "time_compression": "x12 (55.6 s 제동 → 약 4.6 s)"},
+    "K07": {"v0_kmh": 40, "a_mps2": 1.0, "band_m": 84.0, "screen": "100 m", "time_compression": "x4"}
+  },
+  "corridor": {
+    "K09": {
+      "gap_m": 25000.0, "order_time": "08:36", "impact_time": "08:53~08:54",
+      "status": "REPORTED (교통부 장관 발언·교신 녹음 보도)",
+      "time_compression": "1020 s → 4.0 s (x255), 선형 시간축. 실제 속도 곡선은 재현하지 않음",
+      "end_state": "근접 마커가 먼 마커에 닿기 전 정지 화면으로 컷 (충돌 묘사 없음)",
+      "camera_altitude_m": 9000.0, "lens_mm": 50
+    }
+  },
+  "sun": {"elevation_deg": 7.0, "azimuth_deg": 110.0, "status": "10/28 08:45 CET 톨레도 근사값. 룩 기준일 뿐 사실 주장 아님"},
+  "look": {"view_transform": "AgX", "look": "AgX - Medium High Contrast", "luma_layers": ["열차 흰 차체(밝음)", "도상·침목 중간 회색", "들판 황토 중간-어두움"], "lzb_cable_albedo_max": 0.05, "sleeper_albedo": 0.35},
+  "events_F": {"K03_band_complete": 240, "K05_pulse_out": 420, "K06_speed_settle": 500, "K07_stop": 620, "K09_marker_stop": 850, "K11_decel_start": 980, "_note": "베이크에서 역산해 geometry_qc.json.events로 덮어쓴다. 지금 값은 설계 예산"}
+}

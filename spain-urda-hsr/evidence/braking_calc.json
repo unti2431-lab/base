@@ -1,0 +1,74 @@
+{
+  "assumption": {
+    "a_main": 1.0,
+    "a_conservative": 0.8,
+    "t_react_s": 2.0,
+    "trainset_m": 200
+  },
+  "stopping": [
+    {
+      "v_kmh": 40,
+      "a_mps2": 1.0,
+      "react_m": 22.2,
+      "brake_m": 61.7,
+      "total_m": 84.0,
+      "brake_s": 11.1,
+      "trainsets_200m": 0.42
+    },
+    {
+      "v_kmh": 40,
+      "a_mps2": 0.8,
+      "react_m": 22.2,
+      "brake_m": 77.2,
+      "total_m": 99.4,
+      "brake_s": 13.9,
+      "trainsets_200m": 0.5
+    },
+    {
+      "v_kmh": 137,
+      "a_mps2": 1.0,
+      "react_m": 76.1,
+      "brake_m": 724.1,
+      "total_m": 800.2,
+      "brake_s": 38.1,
+      "trainsets_200m": 4.0
+    },
+    {
+      "v_kmh": 137,
+      "a_mps2": 0.8,
+      "react_m": 76.1,
+      "brake_m": 905.1,
+      "total_m": 981.3,
+      "brake_s": 47.6,
+      "trainsets_200m": 4.91
+    },
+    {
+      "v_kmh": 200,
+      "a_mps2": 1.0,
+      "react_m": 111.1,
+      "brake_m": 1543.2,
+      "total_m": 1654.3,
+      "brake_s": 55.6,
+      "trainsets_200m": 8.27
+    },
+    {
+      "v_kmh": 200,
+      "a_mps2": 0.8,
+      "react_m": 111.1,
+      "brake_m": 1929.0,
+      "total_m": 2040.1,
+      "brake_s": 69.4,
+      "trainsets_200m": 10.2
+    }
+  ],
+  "corridor_25km": {
+    "avg_kmh_17min": 88.2,
+    "avg_kmh_18min": 83.3,
+    "minutes_at_40kmh": 37.5,
+    "minutes_at_200kmh": 7.5
+  },
+  "screen_values": {
+    "N3_200kmh_over_km": 1.5,
+    "N7_40kmh_within_m": 100
+  }
+}
