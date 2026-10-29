@@ -49,13 +49,13 @@
     },
     {
       "id": "T05",
-      "do": "컷 spec C03~C18 작성·렌더(270p 미리보기 → 1080p). 사건 F는 T03 결과를 읽음",
+      "do": "무대 축척(stage_path.json·호모그래피·stage_config.json) → 컷 spec C02~C18 작성·렌더(270p 미리보기 → 4K 렌더 후 1080p 다운샘플). 장면 정본 SCENES_R4b.md",
       "deps": [
         "T03",
         "T04"
       ],
-      "accept": "work/R4/frames/C*/, 270p 컨택트시트 사용자 확인 1회",
-      "ref": "AGENTS §7"
+      "accept": "SCENES_R4b §5 단위 테스트 통과, 270p 컨택트시트 사용자 확인 1회",
+      "ref": "SCENES_R4b.md"
     },
     {
       "id": "T06",

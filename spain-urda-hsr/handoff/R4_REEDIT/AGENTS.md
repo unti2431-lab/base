@@ -3,7 +3,7 @@
 > 대상: Flow A 60초 편집본(`FLOW_A_AUDIO_SYNC_1080x1920.mp4`)을 **18컷 · 컷당 3~4초 · 문제 구간 2.5D 인포그래픽**으로 다시 만드는 작업
 > 작업 루트(Windows): `C:/Users/lek/Documents/ChatGPT/나중에/FLOW_A_AUDIO_EDIT_20261029/`
 > 작성 2026-10-29 · 기준 문서: 블로커 요약 B01–B16, 이 저장소의 `PRODUCTION_PLAN_R3.md`, `prompts/LOCKS.md`, `evidence/braking_calc.json`
-> 함께 받는 파일: `CUTS_R4.csv`(18컷 설계), `TASKS.json`(작업·의존·완료 조건), `VO_PATCH_R4.txt`(음성 교체 문장)
+> 함께 받는 파일: `SCENES_R4b.md`(**장면 구성 정본, §7 대체**), `CUTS_R4.csv`(18컷 설계, R4b 반영), `TASKS.json`(작업·의존·완료 조건), `VO_PATCH_R4.txt`(음성 교체 문장)
 
 ---
 
@@ -210,7 +210,7 @@ specs/C03.json … C18.json
 
 ---
 
-## 7. 컷별 사양 (`CUTS_R4.csv`와 같은 내용, 렌더 지시 포함)
+## 7. 컷별 사양 — **R4b: `SCENES_R4b.md`가 이 절을 대체한다.** 아래 표는 기록용(R4 초판)
 
 표기: 소스 `FLOW:Kxx[in–out]` = 기존 클립 구간, `PLATE:Kxx@f` = 클립의 f번째 프레임 정지 판, `R25D` = 렌더러.
 

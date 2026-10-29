@@ -1,19 +1,19 @@
 cut,anchor_text,split_after,source,plate_frame,r25d_elements,key_word,key_event,sync_rule,track_K_alt,notes
-C01,스페인 고속열차 사고로 많은 사람이 목숨을 잃었습니다,,FLOW:K01,,,고속열차,열차 실루엣,F1부터 노출,,W0. 루프 시작
-C02,고속열차는 앞차를 보고 멈추지 않습니다,,FLOW:K02,,,,,,,
-C03,시속 200킬로미터라면,"라면,",PLATE:K03,0,band(start),,띠 시작,컷 시작+6F 안,,K03 영상은 열차가 움직여 판으로만 사용
-C04,비상제동을 걸어도 1킬로미터 넘게 미끄러집니다,,PLATE:K03,0,"band(grow to >=5 trainset), label '1 km+'",1킬로미터,띠 완성,단어 시작 -6F~0F,,note 가정: 감속 1.0 m/s² · 반응 2초
-C05,그래서 고속철도에는 세 겹의 안전장치가 있습니다,,R25D (bg PLATE:K02@0 dark),0,"3 layer cards, digits 1 2 3",세 겹,3번째 판 완성,<= '세 겹' 끝,,라벨 글자 없음
-C06,첫째 선로 속 케이블이,"첫째, 선로 속 케이블이",R25D,,"track iso section, centre+rail-foot conductor, pulse_train teal, label LZB",LZB,라벨 노출,>= 단어 시작 -6F,,케이블 형상 = 궤간 중앙 + 레일 하부 (개념도)
-C07,열차 속도를 쉬지 않고 감시하는 LZB,,R25D,,"camera pull back, train side silhouette, continuous teal ribbon",감시,리본 연속,컷 내내 끊김 없음,,연속성이 정보
-C08,둘째 신호기마다 속도를 다시 확인하는 ASFA,,R25D,,"trackside signal, ping once at signal point, label ASFA",ASFA,라벨 노출 + ping=열차 통과,>= 단어 시작 -6F,,C07 연속 리본과 대비
-C09,셋째 모든 열차의 위치를 보는 관제사,,FLOW:K08,,,관제사,관제실 노출,컷 시작 <= 단어 -6F,,얼굴 없음
-C10,사고 당일,"당일,",R25D (C05 구도),,3 layer cards; layer1 teal on,,,,,
-C11,첫 번째 장치가 노선 전체에서 멈췄습니다 / 남은 것은 신호기와 사람의 판단이었습니다,,R25D (C05 구도),,"layer1 teal -> grey far-to-near, no blink; note 보도 기준",멈췄습니다,꺼짐 시작,단어 시작 ±3F,,S9 포함
-C12,보도에 따르면 앞 열차가 서 있는 상황에서,"따르면, ... 상황에서,",R25D (bg PLATE:K09@0 dark),0,"top-down single line path; marker orange-red (stopped) far + red signal dot; marker blue-white near; note 개념도 · 축척 아님",,두 점 같은 경로,모든 프레임,,
-C13,뒤 열차에 운행 재개 허가가 나갔습니다,,R25D (C12 구도),,"radio from control icon to near marker; near marker departs along path; gap >= 40% height at end; note 보도 기준",허가,radio 시작,단어 시작 ±3F,,충돌 묘사 금지
-C14,규정상 이럴 땐 눈으로 보고 설 수 있는 시속 40 이하로 달려야 합니다,,FLOW:K06[선명 구간] + R25D,,"label '40 km/h' on ballast in perspective; note 스페인 교통부 설명",40,숫자 완성,>= 단어 시작 -6F,"S11 앞부분 + K06 선명 구간, 숫자 없음",P1 삽입 문장
+C01,스페인 고속열차 사고로 많은 사람이 목숨을 잃었습니다,,FLOW:K01,,,고속열차,열차 실루엣,F1부터 노출,,W0. 루프 시작 | 장면 정본: SCENES_R4b.md
+C02,고속열차는 앞차를 보고 멈추지 않습니다,,FLOW:K02 + haze,,haze far in last 12F,,,,,
+C03,시속 200킬로미터라면,"라면,",STAGE (PLATE:K03@0),0,sight_cone + eye icon,,띠 시작,컷 시작+6F 안,,K03 영상은 열차가 움직여 판으로만 사용
+C04,비상제동을 걸어도 1킬로미터 넘게 미끄러집니다,,STAGE,0,band 200 (1654 m) beyond cone; label '1 km+',1킬로미터,띠 완성,단어 시작 -6F~0F,,note 가정: 감속 1.0 m/s² · 반응 2초
+C05,그래서 고속철도에는 세 겹의 안전장치가 있습니다,,STAGE,0,legend icons 1·2·3 on in order,세 겹,3번째 판 완성,<= '세 겹' 끝,,라벨 글자 없음
+C06,첫째 선로 속 케이블이,"첫째, 선로 속 케이블이",ISO,,"track iso section, centre+rail-foot conductor, pulse_train teal, label LZB",LZB,라벨 노출,>= 단어 시작 -6F,,케이블 형상 = 궤간 중앙 + 레일 하부 (개념도)
+C07,열차 속도를 쉬지 않고 감시하는 LZB,,STAGE,0,"teal permit ribbon beyond cone, descending end; legend1 bright",감시,리본 연속,컷 내내 끊김 없음,,연속성이 정보
+C08,둘째 신호기마다 속도를 다시 확인하는 ASFA,,STAGE,0,"3 signals, chevron along track, ping at signals only; legend2 bright",ASFA,라벨 노출 + ping=열차 통과,>= 단어 시작 -6F,,C07 연속 리본과 대비
+C09,셋째 모든 열차의 위치를 보는 관제사,,FLOW:K08 + legend3 small,,,관제사,관제실 노출,컷 시작 <= 단어 -6F,,얼굴 없음
+C10,사고 당일,"당일,",STAGE,0,"all on: cone, ribbon, signals, legend; band hidden",,,,,
+C11,첫 번째 장치가 노선 전체에서 멈췄습니다 / 남은 것은 신호기와 사람의 판단이었습니다,,STAGE,0,ribbon grey far-to-near and retracts; legend1 grey; note 보도 기준,멈췄습니다,꺼짐 시작,단어 시작 ±3F,,S9 포함
+C12,보도에 따르면 앞 열차가 서 있는 상황에서,"따르면, ... 상황에서,",MAP (bg PLATE:K09@0 dark),0,single line; far red signal + orange-red stopped; near blue-white; note 개념도 · 축척 아님,,두 점 같은 경로,모든 프레임,,
+C13,뒤 열차에 운행 재개 허가가 나갔습니다,,MAP,,radio from headset icon to near marker; near departs; gap>=40%; note 보도 기준,허가,radio 시작,단어 시작 ±3F,,충돌 묘사 금지
+C14,규정상 이럴 땐 눈으로 보고 설 수 있는 시속 40 이하로 달려야 합니다,,STAGE (ribbon off),0,band_outline 200 flash then 40 band (84 m) stops inside cone; label '40 km/h'; note 스페인 교통부 설명,40,숫자 완성,>= 단어 시작 -6F,"S11 앞부분 + K06 선명 구간, 숫자 없음",P1 삽입 문장
 C15,왜 그런 판단이 내려졌는지는 아직 조사 중입니다,,FLOW:K10[초반] x0.8,,,,,,,정적. 다가오는 것 없음
-C16,우리 KTX도 장치가 속도를 감시합니다,,PLATE:K02 + R25D,0,teal ribbon unfold (C07 graphic reuse),감시합니다,리본 펼침,단어 중,"원래 S12, 그래픽 없음",P2 교체 문장
-C17,보이지 않으면 속도를 낮춥니다,,PLATE:K06 + R25D,0,"far track haze in; ribbon shortens and lowers",낮춥니다,리본 하강,단어 시작 ±3F,"원래 S13, 그래픽 없음, 사람·관제 이미지 금지",P3 교체 문장
-C18,(꼬리 · 무음성),,PLATE:K01 + R25D,0,"3-depth parallax push-in ending exactly on K01 F1",,,마지막 프레임 = K01 F1 (SSIM>=0.95),,루프 꼬리 2.5~3.5초. 앰비언스만
+C16,우리 KTX도 장치가 속도를 감시합니다,,PLATE:K02 + R25D,0,teal ribbon unfold,감시합니다,리본 펼침,단어 중,"원래 S12, 그래픽 없음",P2 교체 문장
+C17,보이지 않으면 속도를 낮춥니다,,FLOW:K06[선명 구간] + overlay,,haze shrinks cone; gold band shrinks to stay inside cone,낮춥니다,리본 하강,단어 시작 ±3F,"원래 S13, 그래픽 없음, 사람·관제 이미지 금지",P3 교체 문장
+C18,(꼬리 · 무음성),,PLATE:K01 + R25D,0,3-depth parallax push-in ending exactly on K01 F1,,,마지막 프레임 = K01 F1 (SSIM>=0.95),,루프 꼬리 2.5~3.5초. 앰비언스만

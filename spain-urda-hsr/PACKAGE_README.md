@@ -8,7 +8,8 @@
 |---|---|---|---|
 | 1 | `PRODUCTION_PLAN_R3.md` | 사용자 | 검증 결과, 버전 A/B 비교, 공개 기준, 블로커 |
 | 2 | `prompts/LOCKS.md` | 모두 | 사실 상태표(FACT), 규격(SPEC), 형상·스타일 고정 문구. **고치는 곳은 여기뿐** |
-| 3 | `handoff/R4_REEDIT/AGENTS.md` | Codex | 60초 음성 편집본을 18컷·2.5D로 다시 만드는 지시서 |
+| 3 | `handoff/V5_42S/SCENES_V5.md` + `CUTS_V5.csv` | Codex·사용자 | **현재 42초 V4 음성 기준 장면 정본(15컷).** V4 분석·사실 점검·새 구성 |
+| 3-1 | `handoff/R4_REEDIT/AGENTS.md` | Codex | 작업 규칙·렌더러·QC 공통 지시서(60초 판 기준으로 작성, 규칙은 V5에도 적용) |
 | 4 | `handoff/R4_REEDIT/VO_PATCH_R4.txt` | 사용자 | ElevenLabs로 만들 패치 3문장 |
 | 5 | `prompts/FLOW_A_R2.md` + `prompts/out/*.txt` | 사용자 | 새 키프레임(imagegen)·Flow 영상이 필요할 때의 장면 구성과 완성 프롬프트 |
 | 6 | `BEATS.csv`, `vo/VO_SCRIPT_R3.txt` | 참고 | 45초 R3 설계. **현재 녹음은 60초 R2 대본**이므로 R4 작업은 AGENTS.md가 우선 |
@@ -67,5 +68,6 @@ spain-urda-hsr/
   evidence/braking_calc.py  braking_calc.json
   prompts/LOCKS.md  FLOW_A_R2.md  FLOW_A_R1.md(기록)  build_prompts.py  out/*.txt(25)
   blender/rig_config.json
-  handoff/R4_REEDIT/AGENTS.md  CUTS_R4.csv  TASKS.json  VO_PATCH_R4.txt
+  handoff/R4_REEDIT/AGENTS.md  SCENES_R4b.md  CUTS_R4.csv  TASKS.json  VO_PATCH_R4.txt
+  handoff/V5_42S/SCENES_V5.md  CUTS_V5.csv
 ```

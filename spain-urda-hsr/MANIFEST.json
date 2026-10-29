@@ -9,8 +9,8 @@
     },
     {
       "path": "PACKAGE_README.md",
-      "bytes": 5182,
-      "sha256": "b81d47ca762c3f7e5633a4653fa384c3c3a7327fbc46cedb0e645341daba26b5"
+      "bytes": 5446,
+      "sha256": "ba2761f36684c62a2b8084ae7c4fe442ff0626159cb2bd394065b90a663d6bf5"
     },
     {
       "path": "PRODUCTION_PLAN_R3.md",
@@ -34,23 +34,38 @@
     },
     {
       "path": "handoff/R4_REEDIT/AGENTS.md",
-      "bytes": 26451,
-      "sha256": "5bca7605058d6dc2b6be5822a19c771b0dae0857b9adc44612115967302ee84c"
+      "bytes": 26555,
+      "sha256": "70106a8e516babccdeda239d79658cfc4c227fc64a310fcfa0773f76ccef3fb0"
     },
     {
       "path": "handoff/R4_REEDIT/CUTS_R4.csv",
-      "bytes": 3687,
-      "sha256": "ffa4b91fc94590e9f9bd8d20073603e41096d569340c615430a0fd070a5f4a05"
+      "bytes": 3741,
+      "sha256": "0ecd9d4c113d46117abe0b6154b22b7bdbde6f1340599c69f1e52d0176f5332f"
+    },
+    {
+      "path": "handoff/R4_REEDIT/SCENES_R4b.md",
+      "bytes": 12995,
+      "sha256": "7500ec63d13d0fd3dc479673264bd5f6857051347e98719fd09bb7a977a2f21a"
     },
     {
       "path": "handoff/R4_REEDIT/TASKS.json",
-      "bytes": 2821,
-      "sha256": "a640b7ad4d185c06d16252f6a42241169867dd805185511117961a9322294614"
+      "bytes": 2937,
+      "sha256": "c51c9fb52290c965a5dbc86e2ba456fbf233aa4e0bd2028fc8857d1c9d55415c"
     },
     {
       "path": "handoff/R4_REEDIT/VO_PATCH_R4.txt",
       "bytes": 995,
       "sha256": "8e6216d9c076301a7b4dbceaad8db6fb6fc54aed8f5028a84d31f55896dd8ac3"
+    },
+    {
+      "path": "handoff/V5_42S/CUTS_V5.csv",
+      "bytes": 4143,
+      "sha256": "cb3617e8a0e36791cb0d98f05b7530bf32cafcb230299e584c2e5b882c8922a7"
+    },
+    {
+      "path": "handoff/V5_42S/SCENES_V5.md",
+      "bytes": 14567,
+      "sha256": "99e5ad2b432ab6318e7b0f6c52909cc6b23d2628274a70d4cc44187a2f8d74e6"
     },
     {
       "path": "prompts/FLOW_A_R1.md",
